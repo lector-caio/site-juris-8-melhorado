@@ -1,0 +1,53 @@
+/* ============================================================
+   JURIS8 · TYPOGRAPHY
+   Display: Sora (bold geometric headlines, key words in orange).
+   UI/body: Plus Jakarta Sans. Mono: JetBrains Mono (numbers/code).
+   ============================================================ */
+:root {
+  --font-display: 'Sora', 'Plus Jakarta Sans', system-ui, sans-serif;
+  --font-sans:    'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+  --font-mono:    'JetBrains Mono', ui-monospace, 'SF Mono', monospace;
+
+  /* type scale (rem @ 16px root) */
+  --text-xs:   0.75rem;   /* 12 */
+  --text-sm:   0.875rem;  /* 14 */
+  --text-base: 1rem;      /* 16 */
+  --text-lg:   1.125rem;  /* 18 */
+  --text-xl:   1.25rem;   /* 20 */
+  --text-2xl:  1.5rem;    /* 24 */
+  --text-3xl:  1.875rem;  /* 30 */
+  --text-4xl:  2.375rem;  /* 38 */
+  --text-5xl:  3rem;      /* 48 */
+  --text-6xl:  3.75rem;   /* 60 */
+  --text-7xl:  4.75rem;   /* 76 */
+
+  /* weights */
+  --weight-regular:  400;
+  --weight-medium:   500;
+  --weight-semibold: 600;
+  --weight-bold:     700;
+  --weight-extra:    800;
+
+  /* line heights */
+  --leading-tight:   1.05;
+  --leading-snug:    1.2;
+  --leading-normal:  1.5;
+  --leading-relaxed: 1.65;
+
+  /* letter spacing */
+  --tracking-tighter: -0.03em;
+  --tracking-tight:   -0.015em;
+  --tracking-normal:  0em;
+  --tracking-wide:    0.04em;
+  --tracking-caps:    0.12em; /* uppercase eyebrows / labels */
+
+  /* semantic roles */
+  --font-heading: var(--font-display);
+  --font-body:    var(--font-sans);
+
+  /* ---- MEGA display ---- the oversized word that bleeds behind cards
+     (the "marketing" motif). Use on a single keyword, weight 800. */
+  --display-mega:  clamp(4rem, 22vw, 20rem); /* @kind font */
+  --display-huge:  clamp(3rem, 12vw, 9rem); /* @kind font */
+  --tracking-mega: -0.04em; /* @kind other */
+}

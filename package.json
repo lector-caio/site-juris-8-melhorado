@@ -1,0 +1,10 @@
+{
+  "name": "site-juris-8-melhorado",
+  "private": true,
+  "version": "1.0.0",
+  "description": "Site Juris8 — IA jurídica. Página única estática + função do formulário de contato.",
+  "engines": { "node": ">=18" },
+  "dependencies": {
+    "nodemailer": "^6.9.14"
+  }
+}

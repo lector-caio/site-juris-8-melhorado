@@ -1,0 +1,175 @@
+/* ============================================================
+   JURIS8 · COLORS
+   Bold orange brand over warm near-black ink, with amber/sunrise
+   accents. Base ramps first, then semantic aliases.
+   ============================================================ */
+:root {
+  /* ---- Brand orange ramp ---- */
+  --orange-50:  #FFF4EC;
+  --orange-100: #FFE3CF;
+  --orange-200: #FFC59B;
+  --orange-300: #FFA467;
+  --orange-400: #FF8636;
+  --orange-500: #F66B0A; /* primary brand (laranja base, sobrescrito pelo tema roxo da página) */
+  --orange-600: #EE5A00;
+  --orange-700: #C44700;
+  --orange-800: #98370A;
+  --orange-900: #6E280B;
+
+  /* ---- Amber / sunrise accent ---- */
+  --amber-300: #FFD27A;
+  --amber-400: #FFC04D;
+  --amber-500: #FFAA1A;
+
+  /* ---- Navy (brand secondary — navy base #00204D, sobrescrito pelo tema) ---- */
+  --navy-950: #001026;
+  --navy-900: #001A3D;
+  --navy-800: #00204D;
+  --navy-700: #0A305F;
+  --navy-600: #1A4173;
+  --navy-500: #2E5689;
+  --navy-200: #AFC0D6;
+  --navy-100: #D6DFEC;
+  --navy-50:  #EBF0F7;
+
+  /* ---- Warm ink (neutrals — with a faint navy undertone) ---- */
+  --ink-950: #001026;
+  --ink-900: #001A3D;
+  --ink-800: #0E2748;
+  --ink-700: #243653;
+  --ink-600: #3C4A63;
+  --ink-500: #5C667C;
+  --ink-400: #838DA0;
+  --ink-300: #AAB2C2;
+  --ink-200: #D3D8E2;
+  --ink-100: #E7EAF1;
+  --ink-75:  #EFF1F6;
+  --ink-50:  #F6F7FA;
+  --white:   #FFFFFF;
+
+  /* ---- Semantic status ---- */
+  --green-500:  #1F9D55;
+  --green-50:   #E7F6EE;
+  --red-500:    #E5484D;
+  --red-50:     #FCEBEC;
+  --blue-500:   #2A6FDB;
+  --blue-50:    #E9F0FC;
+  --yellow-500: #F0A800;
+  --yellow-50:  #FFF6E0;
+
+  /* ---- Brand gradients (used sparingly — kept tonal & subtle; the brand is mostly flat color) ---- */
+  --gradient-brand:   linear-gradient(135deg, #FF8526 0%, #F0590A 100%); /* @kind color */
+  --gradient-sunrise: linear-gradient(140deg, #FF9A3D 0%, #F66B0A 100%); /* @kind color */
+  --gradient-ember:   linear-gradient(135deg, #FB7A12 0%, #E8540F 100%); /* @kind color */
+  --gradient-ink:     linear-gradient(180deg, #042A56 0%, #001026 100%); /* @kind color */
+  /* radial glow used behind hero + dark panels */
+  --glow-orange: radial-gradient(circle at 70% 35%, rgba(246,107,10,0.55) 0%, rgba(246,107,10,0) 60%); /* @kind color */
+  --glow-navy:   radial-gradient(circle at 30% 20%, rgba(26,65,115,0.45) 0%, rgba(26,65,115,0) 60%); /* @kind color */
+  /* warm paper page background (premium, like the references) */
+  --paper: #FBFAF7;
+
+  /* ---- Layered SECTION backgrounds (premium depth for marketing surfaces) ----
+     Multi-stop fills used directly as a section `background`. Edge layers fade
+     the texture into the seam so adjacent sections blend instead of butting as
+     hard flat bands. Reusable by any consumer. */
+  --bg-paper:
+    radial-gradient(125% 78% at 50% -10%, rgba(255,255,255,0.92), rgba(255,255,255,0) 48%),
+    radial-gradient(72% 52% at 88% 0%, rgba(246,107,10,0.045), transparent 55%),
+    var(--paper); /* @kind color */
+  --bg-raised:
+    linear-gradient(180deg, #EFF1F6 0%, rgba(239,241,246,0) 12%, rgba(239,241,246,0) 88%, #EFF1F6 100%),
+    radial-gradient(rgba(16,32,58,0.05) 1px, transparent 1.5px) 0 0 / 22px 22px,
+    #EFF1F6; /* @kind color */
+  --bg-dark-tex:
+    linear-gradient(180deg, #001026 0%, rgba(0,16,38,0) 14%, rgba(0,16,38,0) 86%, #001026 100%),
+    repeating-linear-gradient(0deg, rgba(255,255,255,0.03) 0 1px, transparent 1px 50px),
+    repeating-linear-gradient(90deg, rgba(255,255,255,0.03) 0 1px, transparent 1px 50px),
+    #001026; /* @kind color */
+
+  /* ============================================================
+     SEMANTIC ALIASES
+     ============================================================ */
+  --brand:           var(--orange-500);
+  --brand-hover:     var(--orange-600);
+  --brand-press:     var(--orange-700);
+  --brand-soft:      var(--orange-50);
+  --brand-soft-2:    var(--orange-100);
+  --on-brand:        #FFFFFF;
+
+  /* navy (brand secondary) */
+  --accent-navy:     var(--navy-800);
+  --accent-navy-soft: var(--navy-50);
+  --on-navy:         #FFFFFF;
+
+  /* text */
+  --text-strong:  var(--ink-900);
+  --text-body:    var(--ink-700);
+  --text-muted:   var(--ink-500);
+  --text-faint:   var(--ink-400);
+  --text-inverse: #FFFFFF;
+  --text-inverse-muted: rgba(255,255,255,0.66);
+  --text-brand:   var(--orange-600);
+  --text-link:    var(--orange-600);
+
+  /* surfaces */
+  --surface-page:     var(--paper);
+  --surface-card:     #FFFFFF;
+  --surface-sunken:   var(--ink-75);
+  --surface-dark:     var(--navy-950);
+  --surface-dark-2:   var(--navy-900);
+  --surface-navy:     var(--navy-800);
+  --surface-brand:    var(--orange-500);
+
+  /* borders */
+  --border-subtle:  var(--ink-100);
+  --border-default: var(--ink-200);
+  --border-strong:  var(--ink-300);
+  --border-brand:   var(--orange-300);
+  --border-dark:    rgba(255,255,255,0.10);
+
+  /* status aliases */
+  --success: var(--green-500);
+  --danger:  var(--red-500);
+  --info:    var(--blue-500);
+  --warning: var(--yellow-500);
+}
+
+/* ============================================================
+   DARK PREMIUM THEME
+   Apply on any container: <div data-theme="dark"> … </div>
+   Near-black warm ink with metallic-sheen cards (Ajux/Grow vibe).
+   ============================================================ */
+[data-theme="dark"] {
+  --text-strong:  #FFFFFF;
+  --text-body:    rgba(255,255,255,0.78);
+  --text-muted:   rgba(255,255,255,0.56);
+  --text-faint:   rgba(255,255,255,0.40);
+  --text-inverse: var(--ink-900);
+  --text-brand:   var(--orange-300);
+  --text-link:    var(--orange-300);
+
+  --surface-page:   var(--navy-950);
+  --surface-card:   #042A56;
+  --surface-sunken: #001A3D;
+  --surface-dark:   #001026;
+  --surface-dark-2: #001A3D;
+
+  --border-subtle:  rgba(255,255,255,0.07);
+  --border-default: rgba(255,255,255,0.12);
+  --border-strong:  rgba(255,255,255,0.22);
+  --border-brand:   var(--orange-500);
+
+  /* metallic sheen overlays for premium cards (navy-based deep premium) */
+  --sheen-top:    linear-gradient(180deg, rgba(255,255,255,0.09) 0%, rgba(255,255,255,0) 42%); /* @kind color */
+  --sheen-edge:   linear-gradient(135deg, rgba(140,180,255,0.20) 0%, rgba(140,180,255,0) 32%); /* @kind color */
+  --card-dark-bg: linear-gradient(160deg, #103A6B 0%, #042A56 56%, #001230 100%); /* @kind color */
+  --card-gold-bg: linear-gradient(165deg, #FFD27A 0%, #FFAA1A 55%, #F08A00 100%); /* @kind color */
+}
+
+:root {
+  /* sheen tokens also available in light mode for dark feature panels */
+  --sheen-top:  linear-gradient(180deg, rgba(255,255,255,0.09) 0%, rgba(255,255,255,0) 42%); /* @kind color */
+  --sheen-edge: linear-gradient(135deg, rgba(140,180,255,0.20) 0%, rgba(140,180,255,0) 32%); /* @kind color */
+  --card-dark-bg: linear-gradient(160deg, #103A6B 0%, #042A56 56%, #001230 100%); /* @kind color */
+  --card-gold-bg: linear-gradient(165deg, #FFD27A 0%, #FFAA1A 55%, #F08A00 100%); /* @kind color */
+}

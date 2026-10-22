@@ -1,0 +1,66 @@
+/* ============================================================
+   JURIS8 · BASE — global accessibility & polish baseline.
+   Systemic defaults that every Juris8 surface inherits: a branded
+   keyboard focus ring (the interactive components render inline styles
+   with no focus state of their own), a reduced-motion guard, and a
+   brand-tinted text selection. Kept at specificity 0 via :where() so
+   any component or consumer can override without a fight.
+   ============================================================ */
+
+/* Keyboard focus — visible brand ring ONLY for keyboard/AT users
+   (:focus-visible), never on mouse click. Uses outline so it is never
+   clipped by a card's overflow:hidden and never shifts layout. Native text
+   fields (input/select/textarea) are excluded — they render their own brand
+   ring via component state, so this avoids a doubled ring on them. */
+:where(a, button, [role="button"], [role="switch"], [role="checkbox"], summary, [tabindex]):focus-visible {
+  outline: 2.5px solid var(--brand);
+  outline-offset: 2px;
+  border-radius: var(--radius-xs);
+}
+
+/* Custom radio/checkbox built on a visually-hidden native input: surface the
+   ring on the visual control next to the focused input. */
+:where(label):has(> input:focus-visible) :where(span:first-of-type),
+:where(label):has(input[type="radio"]:focus-visible) > span:first-child {
+  outline: 2.5px solid var(--brand);
+  outline-offset: 2px;
+}
+
+/* On dark panels the orange ring already reads well; nudge offset so it
+   clears translucent borders. */
+:where([data-theme="dark"]) :where(a, button, [role="button"], [role="switch"], [role="checkbox"], summary, [tabindex]):focus-visible {
+  outline-color: var(--orange-400);
+  outline-offset: 3px;
+}
+
+/* Respect users who ask for less motion — neutralise long transitions,
+   parallax and looping animations across the system. */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Loading shimmer (Skeleton) + dropdown entrance (Menu). Defined once
+   globally so components stay inline-styled and token-driven. */
+@keyframes j8-shimmer {
+  0%   { background-position: 200% 0; }
+  100% { background-position: -200% 0; }
+}
+@keyframes j8-menu-in {
+  from { opacity: 0; transform: translateY(-6px) scale(0.97); }
+  to   { opacity: 1; transform: none; }
+}
+
+/* Brand-tinted text selection — a small premium detail. */
+::selection {
+  background: var(--orange-100);
+  color: var(--ink-900);
+}
+:where([data-theme="dark"]) ::selection {
+  background: rgba(246, 107, 10, 0.35);
+  color: #fff;
+}
