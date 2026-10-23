@@ -1,0 +1,800 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" href="/assets/brand/juris8-favicon.ico" sizes="48x48">
+<link rel="icon" href="/assets/brand/juris8-favicon-32x32.png" sizes="32x32" type="image/png">
+<link rel="icon" href="/assets/brand/juris8-favicon-16x16.png" sizes="16x16" type="image/png">
+<link rel="icon" href="/assets/brand/juris8-icon-512.png" sizes="512x512" type="image/png">
+<link rel="apple-touch-icon" href="/assets/brand/juris8-apple-touch-icon.png">
+<meta name="theme-color" content="#7547EF">
+<script>window.__resources = {};</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://unpkg.com">
+<!-- Mesmo esquema da home: o CSS é declarado aqui e de novo no <helmet>, para a página
+     não aparecer sem estilo enquanto o runtime DC carrega o React. -->
+<link rel="stylesheet" href="/design-system/tokens/fonts.css">
+<link rel="stylesheet" href="/design-system/tokens/colors.css">
+<link rel="stylesheet" href="/design-system/tokens/typography.css">
+<link rel="stylesheet" href="/design-system/tokens/spacing.css">
+<link rel="stylesheet" href="/design-system/tokens/effects.css">
+<link rel="stylesheet" href="/design-system/tokens/base.css">
+<link rel="stylesheet" href="/assets/site/j8-base.css">
+<link rel="stylesheet" href="/assets/site/j8-pages.css">
+<script src="/assets/site/j8-pages.js"></script>
+<script src="/support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<title>Juris8 DET Monitor | Monitore o DET dos seus clientes e gere receita recorrente</title>
+<meta name="description" content="Monitore o Domicílio Eletrônico Trabalhista (DET) dos seus clientes, receba alertas antes do prazo correr e transforme prevenção em receita mensal recorrente para o escritório.">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Juris8">
+<meta property="og:title" content="Juris8 DET Monitor | Monitore o DET dos seus clientes e gere receita recorrente">
+<meta property="og:description" content="Monitore o Domicílio Eletrônico Trabalhista (DET) dos seus clientes, receba alertas antes do prazo correr e transforme prevenção em receita mensal recorrente para o escritório.">
+<meta property="og:image" content="/assets/media/hero-det.jpg">
+<meta name="robots" content="noindex, nofollow">
+<script type="application/ld+json">
+[
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": "Juris8 DET Monitor | Monitore o DET dos seus clientes e gere receita recorrente",
+    "description": "Monitore o Domicílio Eletrônico Trabalhista (DET) dos seus clientes, receba alertas antes do prazo correr e transforme prevenção em receita mensal recorrente para o escritório.",
+    "inLanguage": "pt-BR",
+    "isPartOf": {
+      "@type": "WebSite",
+      "name": "Juris8",
+      "url": "https://juris8.com"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "Juris8",
+      "logo": "https://juris8.com/assets/brand/logo-juris8.png",
+      "sameAs": [
+        "https://www.instagram.com/juris8.ai"
+      ]
+    },
+    "breadcrumb": {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Juris8",
+          "item": "https://juris8.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "DET Monitor",
+          "item": "https://juris8.com/det"
+        }
+      ]
+    }
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Preciso ter certificado digital A1 ou A3?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Funciona com ambos. A configuração é feita uma única vez por escritório."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "O cliente final vê a ferramenta diretamente?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Não. O escritório é o ponto de contato. O cliente recebe orientação do próprio advogado, não da plataforma."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Quanto tempo leva para configurar tudo?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "O upload do certificado leva poucos minutos. A procuração de cada cliente leva cerca de cinco minutos por empresa."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Como funciona a cobrança da comissão?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Faturamos a mensalidade do cliente final e repassamos sua comissão automaticamente, todo mês."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Posso monitorar CNPJs de clientes que ainda não fecharam contrato?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Não. O monitoramento só é ativado depois que o cliente assina a procuração específica."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "O certificado fica salvo para sempre?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Você pode revogar o acesso a qualquer momento diretamente na ferramenta, sem precisar de suporte."
+        }
+      }
+    ]
+  }
+]
+</script>
+<link rel="stylesheet" href="/design-system/tokens/fonts.css">
+<link rel="stylesheet" href="/design-system/tokens/colors.css">
+<link rel="stylesheet" href="/design-system/tokens/typography.css">
+<link rel="stylesheet" href="/design-system/tokens/spacing.css">
+<link rel="stylesheet" href="/design-system/tokens/effects.css">
+<link rel="stylesheet" href="/design-system/tokens/base.css">
+<link rel="stylesheet" href="/assets/site/j8-base.css">
+<link rel="stylesheet" href="/assets/site/j8-pages.css">
+<script src="https://unpkg.com/lucide@latest"></script>
+<style>
+/* ── DET Monitor: nota de mercado acima da calculadora ── */
+.rc-market { display: flex; align-items: flex-start; justify-content: center; gap: 10px; max-width: 760px; margin: 44px auto 26px; text-align: left; font-size: 15.5px; line-height: 1.6; color: #C3B0E6; }
+.rc-market svg { flex: none; width: 20px; height: 20px; margin-top: 2px; color: #C9B5FF; }
+.rc-market b { color: #fff; }
+</style>
+</helmet>
+
+<div id="topo">
+
+  <!-- SECTION: header -->
+  <div class="lp-header-wrap">
+    <header class="lp-header" id="lp-header">
+      <a href="/" class="lp-header__logo" aria-label="Juris8, ir para a página inicial">
+        <img src="/assets/brand/logo-juris8.png" alt="Juris8" width="113" height="29">
+      </a>
+      <nav class="lp-nav" aria-label="Navegação da página">
+        <span class="lp-nav__ind" aria-hidden="true"></span>
+        <a href="#como-funciona">Como funciona</a>
+        <a href="#seguranca">Segurança</a>
+        <a href="#receita">Receita recorrente</a>
+        <a href="#faq">FAQ</a>
+      </nav>
+      <a href="https://wa.me/5547988061278?text=Ol%C3%A1%21%20Vim%20pelo%20site%20e%20quero%20conhecer%20o%20monitoramento%20DET%20do%20Juris8.%20Pode%20me%20apresentar%3F" class="lp-header__cta" target="_blank" rel="noopener noreferrer" data-track="whatsapp_click" data-track-ctx="header_cta" aria-label="Falar com especialista no WhatsApp">
+        <span class="lp-cta-long">Falar com especialista</span>
+        <span class="lp-cta-short">Especialista</span>
+        <span class="lp-header__cta-tile" aria-hidden="true"><svg viewBox="0 0 32 32" fill="currentColor"><path d="M16.01 3.2c-7.1 0-12.86 5.76-12.86 12.86 0 2.27.6 4.48 1.73 6.43L3.2 28.8l6.5-1.7a12.8 12.8 0 0 0 6.3 1.62h.01c7.1 0 12.86-5.76 12.86-12.86 0-3.44-1.34-6.67-3.77-9.1A12.78 12.78 0 0 0 16.01 3.2Zm0 23.5h-.01a10.6 10.6 0 0 1-5.4-1.48l-.39-.23-4.02 1.05 1.07-3.92-.25-.4a10.62 10.62 0 0 1 16.46-13.1 10.55 10.55 0 0 1 3.12 7.51c0 5.88-4.78 10.65-10.66 10.65Zm5.85-7.98c-.32-.16-1.9-.94-2.2-1.04-.3-.11-.5-.16-.72.16-.21.32-.82 1.03-1 1.25-.18.21-.37.24-.69.08-.32-.16-1.35-.5-2.58-1.59-.95-.85-1.6-1.9-1.78-2.22-.18-.32-.02-.49.14-.65.14-.14.32-.37.48-.56.16-.18.21-.32.32-.53.11-.21.05-.4-.03-.56-.08-.16-.72-1.74-.99-2.38-.26-.62-.52-.54-.72-.55l-.61-.01c-.21 0-.56.08-.85.4-.29.32-1.11 1.09-1.11 2.66 0 1.57 1.14 3.08 1.3 3.3.16.21 2.25 3.43 5.45 4.81.76.33 1.36.53 1.82.68.77.24 1.46.21 2.01.13.61-.09 1.9-.78 2.17-1.53.27-.74.27-1.38.19-1.51-.08-.13-.29-.21-.61-.37Z"/></svg></span>
+      </a>
+    </header>
+  </div>
+
+  <main>
+
+  <!-- SECTION: hero -->
+  <section class="lp-hero lp-hero--sub" id="inicio" aria-label="Apresentação do DET Monitor">
+    <div class="lp-hero__media" aria-hidden="true">
+      <picture>
+        <source srcset="/assets/media/hero-det.webp" type="image/webp">
+        <img class="lp-hero__photo" src="/assets/media/hero-det.jpg" alt="" width="2200" height="910" fetchpriority="high">
+      </picture>
+    </div>
+    <div class="lp-hero__inner">
+      <div data-reveal="">
+        <p class="lp-hero__eyebrow"><i data-lucide="radar" aria-hidden="true"></i>DET Monitor · Domicílio Eletrônico Trabalhista</p>
+        <h1 class="lp-hero__title lp-hero__title--md">Monitore o DET dos seus clientes. <em>Gere receita recorrente todo mês, sem custos.</em></h1>
+        <p class="lp-hero__lead">O DET (Domicílio Eletrônico Trabalhista) já está ativo e gerando autos de infração e multas para quem não monitora. Saia na frente dos outros escritórios, monitore o DET dos seus clientes e gere receita mensal recorrente.</p>
+        <div class="lp-hero__ctas">
+          <a href="#formulario" class="lp-cta" data-track="hero_cta_click" data-track-ctx="hero_det_primary">
+            <span class="lp-cta__sheen" aria-hidden="true"></span>
+            <span class="lp-cta__label">Quero vender o monitoramento DET</span>
+            <span class="lp-cta__icon" aria-hidden="true"><i data-lucide="arrow-right"></i></span>
+          </a>
+        </div>
+        <ul class="lp-hero__trust">
+          <li><i data-lucide="check" aria-hidden="true"></i>Proposta personalizada</li>
+          <li><i data-lucide="check" aria-hidden="true"></i>Demonstração gratuita</li>
+          <li><i data-lucide="check" aria-hidden="true"></i>Suporte personalizado</li>
+        </ul>
+      </div>
+
+      <div class="lp-hero__visual" data-reveal="">
+        <div class="lp-hero__scale">
+        <div class="hc" role="img" aria-label="Prévia do Painel DET do Juris8: carteira com 14 CNPJs monitorados e três alertas de hoje — uma notificação urgente, uma solicitação de documentos e um comunicado já resolvido.">
+          <div class="hc__top" aria-hidden="true">
+            <span class="hc__mark"><img src="/assets/brand/juris8-mark-white.png" alt=""></span>
+            <span class="hc__who"><b>Painel DET — carteira de clientes</b><span>Juris8 · monitorando 14 CNPJs</span></span>
+            <span class="hc__live">Ao vivo</span>
+          </div>
+          <div class="hc__body" aria-hidden="true">
+            <div class="hc__cap">Novos alertas — hoje <b>3 comunicações</b></div>
+            <div class="hc-row hc-row--hot hc-a" style="--d: .55s"><span class="hc-row__ic hc-row__ic--r"><i data-lucide="siren"></i></span><span class="hc-row__t"><b>Construtech Ltda</b><small>Notificação de fiscalização · Ciência tácita em 15 dias corridos</small></span><span class="hc-row__s"><span class="chip chip--urg">Urgente</span><time>08:14</time></span></div>
+            <div class="hc-row hc-a" style="--d: .8s"><span class="hc-row__ic hc-row__ic--a"><i data-lucide="file-search"></i></span><span class="hc-row__t"><b>Mercado Nobre SA</b><small>Solicitação de documentos · Seguro-desemprego contestado</small></span><span class="hc-row__s"><span class="chip chip--att">Atenção</span><time>07:52</time></span></div>
+            <div class="hc-row hc-a" style="--d: 1.05s"><span class="hc-row__ic hc-row__ic--g"><i data-lucide="check"></i></span><span class="hc-row__t"><b>Logística Ágil ME</b><small>Comunicado informativo · Nenhuma ação necessária</small></span><span class="hc-row__s"><span class="chip chip--ok">Resolvido</span><time>ontem</time></span></div>
+          </div>
+          <div class="hc__foot" aria-hidden="true"><span>11 CNPJs sem alertas nos últimos 30 dias</span><b>Ver todos →</b></div>
+          <span class="hc-toast hc-toast--br" style="--d: 2.5s" aria-hidden="true"><span class="hc-toast__ic"><i data-lucide="check-check"></i></span><span>Cliente avisado · 08:32<small>Orientação enviada no mesmo dia</small></span></span>
+        </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION: selos -->
+  <div class="lp-strip" aria-label="Destaques do DET Monitor">
+    <div class="lp-strip__track">
+      <div class="lp-strip__group">
+        <span><i data-lucide="radar" aria-hidden="true"></i>Monitoramento diário do DET</span>
+        <span><i data-lucide="building-2" aria-hidden="true"></i>Carteira multi-CNPJ</span>
+        <span><i data-lucide="bell-ring" aria-hidden="true"></i>Alertas antes da urgência</span>
+        <span><i data-lucide="history" aria-hidden="true"></i>Histórico e status</span>
+        <span><i data-lucide="repeat" aria-hidden="true"></i>Produto recorrente</span>
+        <span><i data-lucide="lock" aria-hidden="true"></i>LGPD</span>
+        <span><i data-lucide="zap" aria-hidden="true"></i>Alertas em tempo real</span>
+        <span><i data-lucide="headset" aria-hidden="true"></i>Suporte personalizado</span>
+      </div>
+      <div class="lp-strip__group" aria-hidden="true">
+        <span><i data-lucide="radar"></i>Monitoramento diário do DET</span>
+        <span><i data-lucide="building-2"></i>Carteira multi-CNPJ</span>
+        <span><i data-lucide="bell-ring"></i>Alertas antes da urgência</span>
+        <span><i data-lucide="history"></i>Histórico e status</span>
+        <span><i data-lucide="repeat"></i>Produto recorrente</span>
+        <span><i data-lucide="lock"></i>LGPD</span>
+        <span><i data-lucide="zap"></i>Alertas em tempo real</span>
+        <span><i data-lucide="headset"></i>Suporte personalizado</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- SECTION: reposicionamento -->
+  <section class="lp-sec lp-sec--soft lp-dots" id="reposicionamento" aria-labelledby="rp-title">
+    <div class="lp-wrap">
+      <div class="lp-pain__head">
+        <h2 class="lp-pain__title lp-words" id="rp-title">O advogado que chega primeiro não apaga incêndio. <span class="lp-accent">Ele evita que o incêndio comece.</span></h2>
+        <p class="lp-pain__lead" data-reveal="">Com o DET monitorado, o seu escritório deixa de ser chamado quando o prazo já está apertado e passa a ser a proteção preventiva do cliente — todo mês.</p>
+      </div>
+      <div class="vs">
+        <article class="vs__card vs__card--off" data-reveal="">
+          <span class="vs__tag"><i data-lucide="x" aria-hidden="true"></i>Sem monitoramento</span>
+          <h3>Você entra como custo.</h3>
+          <p>O cliente te chama quando o prazo já está apertado.</p>
+        </article>
+        <div class="vs__mid" aria-hidden="true"><span class="vs__arrow"><i data-lucide="arrow-right"></i></span><small>com o DET Monitor</small></div>
+        <article class="vs__card vs__card--on" data-reveal="" data-reveal-delay="120">
+          <span class="vs__tag"><i data-lucide="check" aria-hidden="true"></i>Com monitoramento</span>
+          <h3>Você entra como proteção. Você vira recorrente.</h3>
+          <p>Você avisa o cliente antes — e o serviço se renova todo mês.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION: telas reais do produto -->
+  <section class="lp-sec lp-sec--dark" id="telas" aria-labelledby="telas-title">
+    <div class="lp-glow" aria-hidden="true"></div>
+    <div class="lp-wrap">
+      <div class="sh" data-reveal="">
+        <span class="ey">Por dentro do DET Monitor</span>
+        <h2 class="sh__title" id="telas-title">As telas que seu escritório <span class="lp-accent">usa todo dia.</span></h2>
+        <p class="sh__lead">Do painel de alertas à carteira de CNPJs — tudo em um só lugar, pensado para a rotina de quem monitora o DET.</p>
+      </div>
+      <div class="scr" data-tabs="" data-auto="5200" id="telas-galeria" data-reveal="">
+        <div class="scr__frame">
+          <div class="scr__bar" aria-hidden="true"><span class="sx-app__dots"><i></i><i></i><i></i></span><span class="scr__url"><i data-lucide="lock"></i>app.juris8.com/det</span></div>
+          <div class="scr__view">
+            <figure class="scr__img" id="tela-1" role="tabpanel" aria-labelledby="tab-tela-1"><img src="/assets/media/det/dashboard-det.webp" alt="Dashboard do DET Monitor: empresas cadastradas e monitoradas, notificações, processos administrativos e comunicações de eConsignado." width="1800" height="878" loading="lazy" decoding="async"></figure>
+            <figure class="scr__img" id="tela-2" role="tabpanel" aria-labelledby="tab-tela-2"><img src="/assets/media/det/notificacoes-det.webp" alt="Caixa de notificações do DET com a lista de avisos recebidos de cada empresa." width="1800" height="878" loading="lazy" decoding="async"></figure>
+            <figure class="scr__img" id="tela-3" role="tabpanel" aria-labelledby="tab-tela-3"><img src="/assets/media/det/kanban-det.webp" alt="Quadro Kanban das mensagens do DET, organizadas por status de tratamento." width="1800" height="878" loading="lazy" decoding="async"></figure>
+            <figure class="scr__img" id="tela-4" role="tabpanel" aria-labelledby="tab-tela-4"><img src="/assets/media/det/detalhe-det.webp" alt="Detalhe de uma intimação do DET com o conteúdo da comunicação e os prazos." width="1800" height="878" loading="lazy" decoding="async"></figure>
+          </div>
+        </div>
+        <div class="scr__tabs" role="tablist" aria-label="Telas do DET Monitor">
+          <button type="button" class="scr__tab" role="tab" id="tab-tela-1" aria-controls="tela-1" aria-selected="true"><i data-lucide="layout-dashboard" aria-hidden="true"></i>Dashboard de monitoramento<span class="tp__bar" aria-hidden="true"></span></button>
+          <button type="button" class="scr__tab" role="tab" id="tab-tela-2" aria-controls="tela-2" aria-selected="false"><i data-lucide="inbox" aria-hidden="true"></i>Caixa de notificações DET<span class="tp__bar" aria-hidden="true"></span></button>
+          <button type="button" class="scr__tab" role="tab" id="tab-tela-3" aria-controls="tela-3" aria-selected="false"><i data-lucide="kanban" aria-hidden="true"></i>Quadro Kanban DET<span class="tp__bar" aria-hidden="true"></span></button>
+          <button type="button" class="scr__tab" role="tab" id="tab-tela-4" aria-controls="tela-4" aria-selected="false"><i data-lucide="file-text" aria-hidden="true"></i>Detalhe da intimação<span class="tp__bar" aria-hidden="true"></span></button>
+        </div>
+        <p class="scr__hint">Passe o mouse para pausar o carrossel</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION: como funciona (3 passos com painel) -->
+  <section class="lp-sec lp-sec--white" id="como-funciona" aria-labelledby="cf-title">
+    <div class="lp-wrap">
+      <div class="sh" data-reveal="">
+        <span class="ey">Como funciona</span>
+        <h2 class="sh__title" id="cf-title">3 passos para <span class="lp-accent">começar a monitorar.</span></h2>
+        <p class="sh__lead">Autorize o acesso, selecione os CNPJs e acompanhe todas as novas comunicações em um só lugar.</p>
+      </div>
+      <div class="tp" data-tabs="" data-auto="6500" id="cf-tabs">
+        <div class="tp__tabs" role="tablist" aria-label="Passos para começar" data-reveal="">
+          <button type="button" class="tp__tab" role="tab" id="cf-t1" aria-controls="cf-p1" aria-selected="true"><span class="tp__num" aria-hidden="true">01</span><span class="tp__k">Passo 01 · Acesso</span><span class="tp__t">Procuração e certificado digital</span><span class="tp__d"><span>O cliente concede a procuração em poucos minutos; o escritório envia o certificado digital uma única vez.</span></span><span class="tp__bar" aria-hidden="true"></span></button>
+          <button type="button" class="tp__tab" role="tab" id="cf-t2" aria-controls="cf-p2" aria-selected="false"><span class="tp__num" aria-hidden="true">02</span><span class="tp__k">Passo 02 · Configuração</span><span class="tp__t">Selecione os CNPJs a monitorar</span><span class="tp__d"><span>Clientes com procuração válida aparecem automaticamente para seleção.</span></span><span class="tp__bar" aria-hidden="true"></span></button>
+          <button type="button" class="tp__tab" role="tab" id="cf-t3" aria-controls="cf-p3" aria-selected="false"><span class="tp__num" aria-hidden="true">03</span><span class="tp__k">Passo 03 · Resposta</span><span class="tp__t">Receba e responda no mesmo dia</span><span class="tp__d"><span>Novas comunicações chegam na caixa unificada para orientação imediata.</span></span><span class="tp__bar" aria-hidden="true"></span></button>
+        </div>
+        <div class="tp__panels" data-reveal="" data-reveal-delay="120">
+          <div class="tp__panel" id="cf-p1" role="tabpanel" aria-labelledby="cf-t1">
+            <div class="sx-app" aria-hidden="true">
+              <div class="sx-app__bar"><span class="sx-app__dots"><i></i><i></i><i></i></span><span class="sx-app__mark"><img src="/assets/brand/juris8-mark-white.png" alt=""></span><b>Juris8 · Carteira ao vivo</b></div>
+              <div class="sx-app__body">
+                <span class="sx-cap"><i data-lucide="key-round"></i>Acesso ao DET do cliente</span>
+                <div class="mk-row sx-a" style="--d: .1s"><span class="mk-ic mk-ic--g"><i data-lucide="file-signature"></i></span><div><b>Procuração específica do cliente</b><small>processo simples · concluído em poucos minutos</small></div><span class="chip chip--ok">autorizado</span></div>
+                <div class="mk-row sx-a" style="--d: .3s"><span class="mk-ic"><i data-lucide="shield-check"></i></span><div><b>Certificado digital do escritório</b><small>enviado pela ferramenta apenas uma vez</small></div><span class="chip chip--pri">configurado</span></div>
+                <div class="mk-row mk-row--hot sx-a" style="--d: .5s"><span class="mk-ic mk-ic--d"><i data-lucide="building-2"></i></span><div><b>CNPJs com procuração</b><small>aparecem automaticamente para seleção</small></div><span class="chip chip--dark">3 disponíveis</span></div>
+                <div class="mk-ok sx-a" style="--d: .75s"><i data-lucide="check-circle-2"></i>Processo simples · concluído em poucos minutos</div>
+              </div>
+            </div>
+          </div>
+          <div class="tp__panel" id="cf-p2" role="tabpanel" aria-labelledby="cf-t2">
+            <div class="sx-app" aria-hidden="true">
+              <div class="sx-app__bar"><span class="sx-app__dots"><i></i><i></i><i></i></span><span class="sx-app__mark"><img src="/assets/brand/juris8-mark-white.png" alt=""></span><b>Juris8 · Seleção de CNPJs</b></div>
+              <div class="sx-app__body">
+                <span class="sx-cap"><i data-lucide="list-checks"></i>Escolha quais empresas deseja monitorar</span>
+                <div class="mk-cnpj sx-a" style="--d: .1s"><span><i data-lucide="check"></i></span><div><b>Construtech Ltda</b><small>CNPJ 12.345.678/0001-90 · procuração válida</small></div><span class="chip chip--ok">ativo</span></div>
+                <div class="mk-cnpj sx-a" style="--d: .25s"><span><i data-lucide="check"></i></span><div><b>Mercado Nobre SA</b><small>CNPJ 98.765.432/0001-11 · procuração válida</small></div><span class="chip chip--ok">ativo</span></div>
+                <div class="mk-cnpj is-off sx-a" style="--d: .4s"><span><i data-lucide="check"></i></span><div><b>Indústria Gama</b><small>CNPJ 11.222.333/0001-44 · aguardando procuração</small></div><span class="chip chip--att">pendente</span></div>
+                <div class="mk-ok sx-a" style="--d: .6s"><i data-lucide="radar"></i>2 CNPJs entram no monitoramento diário</div>
+              </div>
+            </div>
+          </div>
+          <div class="tp__panel" id="cf-p3" role="tabpanel" aria-labelledby="cf-t3">
+            <div class="sx-app" aria-hidden="true">
+              <div class="sx-app__bar"><span class="sx-app__dots"><i></i><i></i><i></i></span><span class="sx-app__mark"><img src="/assets/brand/juris8-mark-white.png" alt=""></span><b>Juris8 · Caixa de entrada unificada</b></div>
+              <div class="sx-app__body">
+                <span class="sx-cap"><i data-lucide="inbox"></i>Caixa de entrada unificada</span>
+                <div class="mk-row mk-row--hot sx-a" style="--d: .1s"><span class="mk-ic mk-ic--r"><i data-lucide="bell-ring"></i></span><div><b>Nova intimação recebida</b><small>Construtech Ltda · Notificação de fiscalização · Ciência tácita em 15 dias corridos</small></div><span class="chip chip--urg">ação necessária</span></div>
+                <div class="mk-row sx-a" style="--d: .35s"><span class="mk-ic mk-ic--g"><i data-lucide="send"></i></span><div><b>Orientação preparada</b><small>cliente recebe a orientação do advogado no mesmo dia</small></div><span class="chip chip--ok">pronto</span></div>
+                <div class="mk-ok sx-a" style="--d: .6s"><i data-lucide="clock-3"></i>Respondido no mesmo dia · prazo com folga</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <p class="stp__close" data-reveal="">Sem depender da memória de alguém. <span>Sem perder tempo conferindo manualmente. Sem descobrir tarde demais.</span></p>
+    </div>
+  </section>
+
+  <!-- SECTION: antes e depois -->
+  <section class="lp-sec lp-sec--dark" id="antes-depois" aria-labelledby="ba-title">
+    <div class="lp-glow" aria-hidden="true"></div>
+    <div class="lp-wrap">
+      <div class="sh" data-reveal="">
+        <span class="ey">Dois cenários</span>
+        <h2 class="sh__title" id="ba-title">Mesma comunicação trabalhista. <span class="lp-accent">Dois cenários completamente diferentes.</span></h2>
+      </div>
+      <div class="ba">
+        <article class="ba__col ba__col--before" data-reveal="">
+          <span class="ba__k">Antes — sem monitoramento</span>
+          <h3>O problema chega tarde</h3>
+          <ul class="ba__list">
+            <li><i data-lucide="x" aria-hidden="true"></i>Comunicação chega. Ninguém vê.</li>
+            <li><i data-lucide="x" aria-hidden="true"></i>O RH não sabe. O contador não avisa.</li>
+            <li><i data-lucide="x" aria-hidden="true"></i>O prazo corre sem ninguém agir.</li>
+            <li><i data-lucide="x" aria-hidden="true"></i>Cliente manda print desesperado no WhatsApp.</li>
+            <li><i data-lucide="x" aria-hidden="true"></i>Cliente se desespera e sonda outros advogados, colocando em risco a sua recorrência.</li>
+            <li><i data-lucide="x" aria-hidden="true"></i>Você entra tarde, com pouco prazo e cliente nervoso.</li>
+            <li><i data-lucide="x" aria-hidden="true"></i>Você entra como custo, não como parceiro.</li>
+          </ul>
+        </article>
+        <article class="ba__col ba__col--after" data-reveal="" data-reveal-delay="120">
+          <span class="ba__k">Depois — com DET Monitor</span>
+          <h3>O escritório chega primeiro</h3>
+          <ul class="ba__list">
+            <li><i data-lucide="check" aria-hidden="true"></i>DET monitorado automaticamente.</li>
+            <li><i data-lucide="check" aria-hidden="true"></i>Seu escritório recebe o alerta.</li>
+            <li><i data-lucide="check" aria-hidden="true"></i>A comunicação é analisada cedo.</li>
+            <li><i data-lucide="check" aria-hidden="true"></i>O cliente é orientado antes do prazo apertar.</li>
+            <li><i data-lucide="check" aria-hidden="true"></i>Histórico salvo. Equipe organizada.</li>
+            <li><i data-lucide="check" aria-hidden="true"></i>Você entra como proteção preventiva, todo mês.</li>
+          </ul>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION: segurança -->
+  <section class="lp-sec sx sx--light" id="seguranca" aria-labelledby="sg-title">
+    <div class="lp-wrap sx__grid">
+      <div class="sx__copy" data-reveal="">
+        <span class="ey">Segurança</span>
+        <h2 class="sx__title" id="sg-title">Seu certificado digital, <span class="lp-accent">protegido.</span></h2>
+        <p class="sx__lead">Entendemos a sensibilidade de enviar um certificado digital para qualquer ferramenta. Por isso, segurança e controle fazem parte de todo o processo.</p>
+        <ul class="sx__list">
+          <li><span class="sx__ic" aria-hidden="true"><i data-lucide="lock-keyhole"></i></span><p><strong>Armazenamento criptografado:</strong> o certificado é armazenado com criptografia de ponta a ponta e isolado por escritório — nunca compartilhado entre contas.</p></li>
+          <li><span class="sx__ic" aria-hidden="true"><i data-lucide="scan-eye"></i></span><p><strong>Acesso restrito e auditável:</strong> o uso fica limitado às consultas automatizadas ao DET. Todo acesso é registrado para auditoria pelo escritório.</p></li>
+          <li><span class="sx__ic" aria-hidden="true"><i data-lucide="upload-cloud"></i></span><p><strong>Upload único e revogável:</strong> o certificado é enviado uma única vez e pode ser revogado pelo escritório diretamente na ferramenta.</p></li>
+        </ul>
+        <p class="sx__badge"><i data-lucide="shield-check" aria-hidden="true"></i>Uso limitado às consultas automatizadas ao DET</p>
+      </div>
+      <div class="sx__media" data-reveal="" data-reveal-delay="120">
+        <div class="sx-app" role="img" aria-label="Prévia da área de certificado digital no Juris8: certificado A1 criptografado e isolado por escritório, registro de acessos ao DET e opção de revogar o acesso.">
+          <div class="sx-app__bar" aria-hidden="true"><span class="sx-app__dots"><i></i><i></i><i></i></span><span class="sx-app__mark"><img src="/assets/brand/juris8-mark-white.png" alt=""></span><b>Juris8 · Certificado digital</b></div>
+          <div class="sx-app__body" aria-hidden="true">
+            <div class="mk-cert sx-a" style="--d: .1s"><span><i data-lucide="key-round"></i></span><div><b>certificado-escritorio.pfx · A1</b><small>Criptografado de ponta a ponta · isolado por escritório</small><span class="mk-prog"><i style="--w: 100%"></i></span></div><span class="chip chip--ok"><i data-lucide="lock"></i>Protegido</span></div>
+            <span class="sx-cap"><i data-lucide="scroll-text"></i>Registro de acessos · auditoria</span>
+            <div class="mk-row sx-a" style="--d: .3s"><span class="mk-ic"><i data-lucide="radar"></i></span><div><b>Consulta automatizada ao DET</b><small>Construtech Ltda · hoje, 08:14</small></div><span class="chip">registrado</span></div>
+            <div class="mk-row sx-a" style="--d: .45s"><span class="mk-ic"><i data-lucide="radar"></i></span><div><b>Consulta automatizada ao DET</b><small>Mercado Nobre SA · hoje, 07:52</small></div><span class="chip">registrado</span></div>
+            <div class="mk-row sx-a" style="--d: .6s"><span class="mk-ic mk-ic--g"><i data-lucide="upload-cloud"></i></span><div><b>Upload do certificado</b><small>Enviado uma única vez pelo escritório</small></div><span class="chip chip--pri">único</span></div>
+            <div class="sx-app__foot"><span class="sx-live"></span>Revogável a qualquer momento, direto na ferramenta</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION: vantagens para o cliente -->
+  <section class="lp-sec lp-sec--soft" id="ganhos-cliente" aria-labelledby="gc-title">
+    <div class="lp-wrap">
+      <div class="sh" data-reveal="">
+        <span class="ey">Para apresentar ao cliente</span>
+        <h2 class="sh__title" id="gc-title">Quais as vantagens <span class="lp-accent">para o seu cliente?</span></h2>
+        <p class="sh__lead">Três benefícios simples para apresentar o serviço ao cliente.</p>
+      </div>
+      <div class="fg">
+        <article class="fc" data-reveal="" data-reveal-delay="0"><span class="fc__ic" aria-hidden="true"><i data-lucide="wallet"></i></span><span class="fc__n">01</span><h3>Risco trabalhista contido em valor previsível</h3><p>Em vez de risco de auto de infração e provisão imprevisível por multas e perdas de prazo, a empresa paga uma mensalidade fixa com cobertura preventiva.</p></article>
+        <article class="fc" data-reveal="" data-reveal-delay="90"><span class="fc__ic" aria-hidden="true"><i data-lucide="handshake"></i></span><span class="fc__n">02</span><h3>Obrigação delegada com responsabilidade</h3><p>RH e contabilidade da empresa não precisam acompanhar o portal diariamente. O escritório jurídico já cuida disso.</p></article>
+        <article class="fc" data-reveal="" data-reveal-delay="180"><span class="fc__ic" aria-hidden="true"><i data-lucide="landmark"></i></span><span class="fc__n">03</span><h3>Evita perdas com empréstimos consignados</h3><p>Quando um empregado contrata empréstimo consignado, a empresa é comunicada pelo DET e passa a ser obrigada a descontar o valor em folha e repassá-lo na guia do FGTS. Quem não acompanha paga o funcionário e continua devendo ao banco.</p></article>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION: receita recorrente -->
+  <section class="lp-sec lp-sec--dark" id="receita" aria-labelledby="rc-title">
+    <div class="lp-glow" aria-hidden="true"></div>
+    <div class="lp-wrap">
+      <div class="sh" data-reveal="">
+        <span class="ey">Receita recorrente</span>
+        <h2 class="sh__title" id="rc-title">Uma nova fonte de receita <span class="lp-accent">para o seu escritório.</span></h2>
+        <p class="sh__lead">Da apresentação ao cliente até a comissão mensal: veja como o serviço entra na rotina do escritório.</p>
+      </div>
+      <ol class="stp" style="--n: 5">
+        <li class="stp__item" data-reveal="" data-reveal-delay="0"><span class="stp__node" aria-hidden="true">01</span><h3>Apresente e venda</h3><p>Montamos uma página web personalizada para o seu escritório. Você apresenta ao cliente e envia a proposta. O cliente paga e você é comissionado.</p><a class="stp__link" href="https://wa.me/5547988061278?text=Ol%C3%A1%21%20Quero%20receber%20o%20modelo%20de%20proposta%20do%20DET%20Monitor%20para%20apresentar%20aos%20meus%20clientes." target="_blank" rel="noopener noreferrer" data-track="det_resource_click" data-track-ctx="modelo_proposta">Modelo de proposta<i data-lucide="arrow-right" aria-hidden="true"></i></a></li>
+        <li class="stp__item" data-reveal="" data-reveal-delay="80"><span class="stp__node" aria-hidden="true">02</span><h3>Obtenha acesso</h3><p>Obtenha uma procuração específica do cliente. O processo é simples e leva cerca de cinco minutos.</p><a class="stp__link" href="https://wa.me/5547988061278?text=Ol%C3%A1%21%20Quero%20o%20passo%20a%20passo%20da%20procura%C3%A7%C3%A3o%20do%20DET%20para%20os%20meus%20clientes." target="_blank" rel="noopener noreferrer" data-track="det_resource_click" data-track-ctx="passo_procuracao">Passo a passo da procuração<i data-lucide="arrow-right" aria-hidden="true"></i></a></li>
+        <li class="stp__item" data-reveal="" data-reveal-delay="160"><span class="stp__node" aria-hidden="true">03</span><h3>Configure</h3><p>Suba seu certificado digital na ferramenta apenas uma vez. Selecione os CNPJs a monitorar — todos com procuração aparecem na tela.</p></li>
+        <li class="stp__item" data-reveal="" data-reveal-delay="240"><span class="stp__node" aria-hidden="true">04</span><h3>Monitore</h3><p>Receba notificações e acesse uma caixa de entrada unificada. Não perca nenhum prazo e se antecipe.</p></li>
+        <li class="stp__item" data-reveal="" data-reveal-delay="320"><span class="stp__node" aria-hidden="true">05</span><h3>Seja comissionado todo mês</h3><p>Faturamos o serviço de forma recorrente e você recebe comissão. Cada cliente paga por proteção, enquanto o escritório monitora todos de forma simplificada.</p></li>
+      </ol>
+      <p class="rc-market" data-reveal=""><i data-lucide="info" aria-hidden="true"></i><span>Mensalidades praticadas no mercado variam de <b>R$ 300 a R$ 800 por CNPJ/mês</b>, conforme o porte. Quanto maior a mensalidade vendida, maior a sua comissão.</span></p>
+
+      <div class="calc" id="calc" data-reveal="">
+        <div class="calc__in">
+          <span class="ey">Calculadora interativa</span>
+          <h3>Simule sua comissão</h3>
+          <div class="calc__f">
+            <label for="calc-n">Número de CNPJs monitorados <output id="calc-n-out" for="calc-n">10</output></label>
+            <input class="calc__range" type="range" id="calc-n" min="1" max="100" step="1" aria-describedby="calc-hint">
+            <div class="calc__scale" aria-hidden="true"><span>1</span><span>50</span><span>100</span></div>
+          </div>
+          <div class="calc__f">
+            <label for="calc-m">Mensalidade média por CNPJ <output id="calc-m-out" for="calc-m">R$ 350</output></label>
+            <input class="calc__range" type="range" id="calc-m" min="300" max="800" step="10" aria-describedby="calc-hint">
+            <div class="calc__scale" aria-hidden="true"><span>R$ 300</span><span>R$ 550</span><span>R$ 800</span></div>
+          </div>
+          <p class="calc__hint" id="calc-hint"><i data-lucide="mouse-pointer-click" aria-hidden="true"></i>Arraste os controles para atualizar a simulação em tempo real.</p>
+        </div>
+        <div class="calc__out" aria-live="polite">
+          <div class="calc__row"><span>Receita bruta anual</span><b id="calc-bruta">R$ 42.000</b></div>
+          <div class="calc__row calc__row--neg"><span>Impostos (15%)</span><b id="calc-imp">− R$ 6.300</b></div>
+          <div class="calc__row calc__row--sub"><span>Receita líquida de impostos</span><b id="calc-liq">R$ 35.700</b></div>
+          <div class="calc__row calc__row--neg"><span>Custo Juris8 (R$ 120 / CNPJ / mês)</span><b id="calc-custo">− R$ 14.400</b></div>
+          <div class="calc__row calc__row--sub"><span>Base de cálculo</span><b id="calc-base">R$ 21.300</b></div>
+          <div class="calc__row calc__row--neg"><span>20% de retenção Juris8</span><b id="calc-ret">− R$ 4.260</b></div>
+          <div class="calc__total"><span>Comissão líquida anual para o advogado (80%)</span><b id="calc-total">R$ 17.040</b><small id="calc-mes">≈ R$ 1.420 por mês, com 10 CNPJs</small></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION: para quem -->
+  <section class="lp-sec lp-sec--white" id="para-quem" aria-labelledby="pq-title">
+    <div class="lp-wrap">
+      <div class="lp-pain__head">
+        <h2 class="lp-pain__title lp-words" id="pq-title">Para advogados que querem parar de ser <span class="lp-accent">chamados só no incêndio.</span></h2>
+        <p class="lp-pain__lead" data-reveal="">Escritórios que atendem empresas e querem transformar o acompanhamento do DET em um serviço preventivo e recorrente.</p>
+      </div>
+      <div class="fg fg--4">
+        <article class="fc" data-reveal="" data-reveal-delay="0"><span class="fc__ic" aria-hidden="true"><i data-lucide="briefcase"></i></span><h3>Trabalhista empresarial</h3><p>Defesa administrativa, consultivo e contencioso com foco em empresa.</p></article>
+        <article class="fc" data-reveal="" data-reveal-delay="80"><span class="fc__ic" aria-hidden="true"><i data-lucide="building"></i></span><h3>Full service empresarial</h3><p>Escritórios que atendem empresas com empregados em várias áreas.</p></article>
+        <article class="fc" data-reveal="" data-reveal-delay="160"><span class="fc__ic" aria-hidden="true"><i data-lucide="network"></i></span><h3>Grupos com múltiplos CNPJs</h3><p>Matrizes, filiais e holdings com muitos CNPJs para monitorar.</p></article>
+        <article class="fc" data-reveal="" data-reveal-delay="240"><span class="fc__ic" aria-hidden="true"><i data-lucide="repeat"></i></span><h3>Escritórios com clientes recorrentes</h3><p>Bancas que querem aumentar receita mensal com serviços preventivos.</p></article>
+      </div>
+      <p class="fg__note" data-reveal=""><i data-lucide="building-2" aria-hidden="true"></i><span>Atende um grupo com vários CNPJs? Veja o <a href="/det/det-monitor-grupos.html" class="lk">DET Monitor para grupos e holdings</a>.</span></p>
+    </div>
+  </section>
+
+  <!-- SECTION: ganhos (carrossel infinito; a 2ª cópia dos cards é só visual) -->
+  <section class="lp-sec lp-sec--dark gn" id="ganhos" aria-labelledby="gn-title">
+    <div class="gn__bg" aria-hidden="true"></div>
+    <div class="lp-wrap">
+      <div class="gn__head" data-reveal="">
+        <h2 class="gn__title" id="gn-title">Mais presença na carteira. <span class="lp-accent">Mais previsibilidade para vender.</span></h2>
+        <p class="gn__lead">O DET monitorado coloca o seu escritório na rotina do cliente antes do problema existir.</p>
+      </div>
+    </div>
+    <div class="gn-loop" data-reveal="">
+      <div class="gn-track">
+        <div class="gn-group">
+            <article class="gn-card"><span class="gn-ic" aria-hidden="true"><i data-lucide="repeat"></i></span><h3><span>Mais</span> recorrência</h3><p>Pare de vender hora. Venda um plano mensal que renova sozinho, todo mês, sem você pedir.</p></article>
+            <article class="gn-card"><span class="gn-ic" aria-hidden="true"><i data-lucide="users-round"></i></span><h3><span>Mais</span> proximidade</h3><p>O cliente te vê trabalhando antes do problema existir. É isso que segura contrato.</p></article>
+            <article class="gn-card"><span class="gn-ic" aria-hidden="true"><i data-lucide="lightbulb"></i></span><h3><span>Mais</span> oportunidades</h3><p>Cada alerta é um serviço novo na mesa: análise, defesa, regularização, consultoria.</p></article>
+            <article class="gn-card"><span class="gn-ic" aria-hidden="true"><i data-lucide="award"></i></span><h3><span>Mais</span> diferenciação</h3><p>Enquanto a concorrência espera o telefone tocar, você manda o aviso primeiro.</p></article>
+            <article class="gn-card"><span class="gn-ic" aria-hidden="true"><i data-lucide="layout-dashboard"></i></span><h3><span>Mais</span> controle</h3><p>A carteira inteira num painel só: histórico, status e responsável. Nada se perde.</p></article>
+            <article class="gn-card"><span class="gn-ic" aria-hidden="true"><i data-lucide="wallet-cards"></i></span><h3><span>Mais</span> previsibilidade</h3><p>Receita que entra todo mês sem depender de novo litígio. Você sabe quanto fatura antes do mês começar.</p></article>
+            <article class="gn-card"><span class="gn-ic" aria-hidden="true"><i data-lucide="lock"></i></span><h3><span>Mais</span> retenção</h3><p>Cliente protegido não troca de escritório. Cancelar o seu serviço vira um risco para ele.</p></article>
+            <article class="gn-card"><span class="gn-ic" aria-hidden="true"><i data-lucide="crown"></i></span><h3><span>Mais</span> autoridade</h3><p>Você deixa de ser o advogado do incêndio e vira o que cuida de tudo. Indicação vem sozinha.</p></article>
+            <article class="gn-card"><span class="gn-ic" aria-hidden="true"><i data-lucide="clock-3"></i></span><h3><span>Mais</span> tempo</h3><p>Zero conferência manual de DET. Sua equipe trabalha no que cobra caro, não no que é repetitivo.</p></article>
+        </div>
+        <div class="gn-group" aria-hidden="true">
+            <article class="gn-card"><span class="gn-ic"><i data-lucide="repeat"></i></span><h3><span>Mais</span> recorrência</h3><p>Pare de vender hora. Venda um plano mensal que renova sozinho, todo mês, sem você pedir.</p></article>
+            <article class="gn-card"><span class="gn-ic"><i data-lucide="users-round"></i></span><h3><span>Mais</span> proximidade</h3><p>O cliente te vê trabalhando antes do problema existir. É isso que segura contrato.</p></article>
+            <article class="gn-card"><span class="gn-ic"><i data-lucide="lightbulb"></i></span><h3><span>Mais</span> oportunidades</h3><p>Cada alerta é um serviço novo na mesa: análise, defesa, regularização, consultoria.</p></article>
+            <article class="gn-card"><span class="gn-ic"><i data-lucide="award"></i></span><h3><span>Mais</span> diferenciação</h3><p>Enquanto a concorrência espera o telefone tocar, você manda o aviso primeiro.</p></article>
+            <article class="gn-card"><span class="gn-ic"><i data-lucide="layout-dashboard"></i></span><h3><span>Mais</span> controle</h3><p>A carteira inteira num painel só: histórico, status e responsável. Nada se perde.</p></article>
+            <article class="gn-card"><span class="gn-ic"><i data-lucide="wallet-cards"></i></span><h3><span>Mais</span> previsibilidade</h3><p>Receita que entra todo mês sem depender de novo litígio. Você sabe quanto fatura antes do mês começar.</p></article>
+            <article class="gn-card"><span class="gn-ic"><i data-lucide="lock"></i></span><h3><span>Mais</span> retenção</h3><p>Cliente protegido não troca de escritório. Cancelar o seu serviço vira um risco para ele.</p></article>
+            <article class="gn-card"><span class="gn-ic"><i data-lucide="crown"></i></span><h3><span>Mais</span> autoridade</h3><p>Você deixa de ser o advogado do incêndio e vira o que cuida de tudo. Indicação vem sozinha.</p></article>
+            <article class="gn-card"><span class="gn-ic"><i data-lucide="clock-3"></i></span><h3><span>Mais</span> tempo</h3><p>Zero conferência manual de DET. Sua equipe trabalha no que cobra caro, não no que é repetitivo.</p></article>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION: faq -->
+  <section class="lp-sec fq" id="faq" aria-labelledby="fq-title">
+    <div class="lp-wrap fq__grid">
+      <div class="fq__head" data-reveal="">
+        <h2 class="fq__title" id="fq-title">Perguntas frequentes <span class="lp-accent">antes da demonstração.</span></h2>
+        <p class="fq__lead">Certificado, procuração, comissão e controle de acesso — o que os escritórios perguntam antes de começar.</p>
+        <span class="fq__deco" aria-hidden="true"><i data-lucide="message-circle-question"></i></span>
+      </div>
+      <div class="fq-list">
+        <div class="fq-item is-open">
+          <h3 class="fq-q"><button type="button" class="fq-btn" id="fq-b1" aria-expanded="true" aria-controls="fq-p1"><span class="fq-n" aria-hidden="true">01</span><span class="fq-t">Preciso ter certificado digital A1 ou A3?</span><span class="fq-ic" aria-hidden="true"><i data-lucide="plus"></i></span></button></h3>
+          <div class="fq-panel" id="fq-p1" role="region" aria-labelledby="fq-b1"><div class="fq-inner"><p>Funciona com ambos. A configuração é feita uma única vez por escritório.</p></div></div>
+        </div>
+        <div class="fq-item">
+          <h3 class="fq-q"><button type="button" class="fq-btn" id="fq-b2" aria-expanded="false" aria-controls="fq-p2"><span class="fq-n" aria-hidden="true">02</span><span class="fq-t">O cliente final vê a ferramenta diretamente?</span><span class="fq-ic" aria-hidden="true"><i data-lucide="plus"></i></span></button></h3>
+          <div class="fq-panel" id="fq-p2" role="region" aria-labelledby="fq-b2"><div class="fq-inner"><p>Não. O escritório é o ponto de contato. O cliente recebe orientação do próprio advogado, não da plataforma.</p></div></div>
+        </div>
+        <div class="fq-item">
+          <h3 class="fq-q"><button type="button" class="fq-btn" id="fq-b3" aria-expanded="false" aria-controls="fq-p3"><span class="fq-n" aria-hidden="true">03</span><span class="fq-t">Quanto tempo leva para configurar tudo?</span><span class="fq-ic" aria-hidden="true"><i data-lucide="plus"></i></span></button></h3>
+          <div class="fq-panel" id="fq-p3" role="region" aria-labelledby="fq-b3"><div class="fq-inner"><p>O upload do certificado leva poucos minutos. A procuração de cada cliente leva cerca de cinco minutos por empresa.</p></div></div>
+        </div>
+        <div class="fq-item">
+          <h3 class="fq-q"><button type="button" class="fq-btn" id="fq-b4" aria-expanded="false" aria-controls="fq-p4"><span class="fq-n" aria-hidden="true">04</span><span class="fq-t">Como funciona a cobrança da comissão?</span><span class="fq-ic" aria-hidden="true"><i data-lucide="plus"></i></span></button></h3>
+          <div class="fq-panel" id="fq-p4" role="region" aria-labelledby="fq-b4"><div class="fq-inner"><p>Faturamos a mensalidade do cliente final e repassamos sua comissão automaticamente, todo mês.</p></div></div>
+        </div>
+        <div class="fq-item">
+          <h3 class="fq-q"><button type="button" class="fq-btn" id="fq-b5" aria-expanded="false" aria-controls="fq-p5"><span class="fq-n" aria-hidden="true">05</span><span class="fq-t">Posso monitorar CNPJs de clientes que ainda não fecharam contrato?</span><span class="fq-ic" aria-hidden="true"><i data-lucide="plus"></i></span></button></h3>
+          <div class="fq-panel" id="fq-p5" role="region" aria-labelledby="fq-b5"><div class="fq-inner"><p>Não. O monitoramento só é ativado depois que o cliente assina a procuração específica.</p></div></div>
+        </div>
+        <div class="fq-item">
+          <h3 class="fq-q"><button type="button" class="fq-btn" id="fq-b6" aria-expanded="false" aria-controls="fq-p6"><span class="fq-n" aria-hidden="true">06</span><span class="fq-t">O certificado fica salvo para sempre?</span><span class="fq-ic" aria-hidden="true"><i data-lucide="plus"></i></span></button></h3>
+          <div class="fq-panel" id="fq-p6" role="region" aria-labelledby="fq-b6"><div class="fq-inner"><p>Você pode revogar o acesso a qualquer momento diretamente na ferramenta, sem precisar de suporte.</p></div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION: formulario (CTA final + contato comercial) -->
+  <section class="ct" id="formulario" aria-labelledby="ct-title">
+    <div class="lp-wrap">
+      <div class="ct-panel">
+        <div class="ct-panel__bg" aria-hidden="true"></div>
+        <div class="ct-copy" data-reveal="">
+          <h2 class="ct-title" id="ct-title">Seu próximo contrato mensal pode começar <span class="lp-accent">pelo DET.</span></h2>
+          <p>Empresas precisam acompanhar o Domicílio Eletrônico Trabalhista. A maioria ainda não tem processo para isso. Seu escritório pode ser quem resolve.</p>
+          <p class="ct-quote">Seu escritório não precisa esperar o problema chegar. Ele pode chegar primeiro.</p>
+          <ul class="ct-seals">
+            <li><i data-lucide="check" aria-hidden="true"></i>Demonstração gratuita</li>
+            <li><i data-lucide="lock" aria-hidden="true"></i>Sem compromisso</li>
+            <li><i data-lucide="message-circle" aria-hidden="true"></i>Suporte em português</li>
+          </ul>
+        </div>
+
+        <div class="ct-card" data-reveal="" data-reveal-delay="120">
+          <div id="lp-form-view">
+            <span class="ct-kicker">Contato comercial</span>
+            <h3 class="ct-card__t">Falar com um especialista</h3>
+            <p class="ct-card__d">Preencha os dados abaixo. Nossa equipe entrará em contato para apresentar o DET Monitor e calcular sua potencial receita recorrente.</p>
+            <form class="ct-form" id="lp-form" novalidate>
+              <div class="lp-field" id="f-nome">
+                <label for="c-nome">Nome completo</label>
+                <input type="text" id="c-nome" name="nome" required autocomplete="name" placeholder="Seu nome" aria-describedby="e-nome">
+                <span class="lp-field__error" id="e-nome">Informe seu nome.</span>
+              </div>
+              <div class="lp-field" id="f-email">
+                <label for="c-email">E-mail profissional</label>
+                <input type="email" id="c-email" name="email" required autocomplete="email" placeholder="voce@escritorio.com.br" aria-describedby="e-email">
+                <span class="lp-field__error" id="e-email">Informe um e-mail válido.</span>
+              </div>
+              <div class="lp-field" id="f-tel">
+                <label for="c-tel">Telefone / WhatsApp</label>
+                <input type="tel" id="c-tel" name="telefone" required autocomplete="tel" inputmode="tel" placeholder="(11) 99999-0000" aria-describedby="e-tel">
+                <span class="lp-field__error" id="e-tel">Informe um telefone com DDD.</span>
+              </div>
+              <div class="lp-field" id="f-empresa">
+                <label for="c-empresa">Nome do escritório</label>
+                <input type="text" id="c-empresa" name="empresa" required autocomplete="organization" placeholder="Escritório de Advocacia" aria-describedby="e-empresa">
+                <span class="lp-field__error" id="e-empresa">Informe o nome do escritório.</span>
+              </div>
+              <div class="lp-field ct-full" id="f-cnpjs">
+                <label for="c-cnpjs">Quantos CNPJs você pretende monitorar?</label>
+                <select id="c-cnpjs" name="cnpjs" required aria-describedby="e-cnpjs">
+                  <option value="">Selecione...</option>
+                  <option value="1-5">1 a 5 CNPJs</option>
+                  <option value="6-15">6 a 15 CNPJs</option>
+                  <option value="16-30">16 a 30 CNPJs</option>
+                  <option value="31-50">31 a 50 CNPJs</option>
+                  <option value="50+">Mais de 50 CNPJs</option>
+                </select>
+                <span class="lp-field__error" id="e-cnpjs">Selecione a quantidade de CNPJs.</span>
+              </div>
+              <div class="lp-field ct-full" id="f-msg">
+                <label for="c-msg">Mensagem <span class="ct-opt">(opcional)</span></label>
+                <textarea id="c-msg" name="mensagem" rows="3" placeholder="Conte um pouco sobre sua carteira ou o que gostaria de saber..."></textarea>
+              </div>
+              <div class="lp-field ct-full ct-consent" id="f-consent">
+                <label class="ct-check" for="c-consent"><input type="checkbox" id="c-consent" name="consent" required aria-describedby="e-consent"><span class="ct-box" aria-hidden="true"><i data-lucide="check"></i></span><span>Concordo em receber contato comercial e que meus dados sejam tratados conforme a LGPD.</span></label>
+                <span class="lp-field__error" id="e-consent">Marque para podermos entrar em contato.</span>
+              </div>
+
+              <input class="lp-hp" type="text" name="website" tabindex="-1" autocomplete="off" aria-hidden="true">
+
+              <button type="submit" class="lp-submit ct-full" id="lp-submit"><span id="lp-submit-label">Enviar solicitação</span><i data-lucide="send" aria-hidden="true"></i></button>
+              <div class="lp-alert ct-full" id="lp-alert" role="alert">Não foi possível enviar agora. Seus dados continuam preenchidos: tente novamente em instantes.</div>
+              <p class="ct-note ct-full"><i data-lucide="shield-check" aria-hidden="true"></i>Seus dados são tratados com confidencialidade e não serão compartilhados.</p>
+            </form>
+          </div>
+
+          <div class="ct-success" id="lp-success" role="region" aria-live="polite" aria-label="Solicitação enviada">
+            <div class="ct-success__ic" aria-hidden="true"><i data-lucide="check"></i></div>
+            <h3 id="lp-success-title" tabindex="-1">Obrigado!</h3>
+            <p>Sua solicitação foi enviada com sucesso. Um especialista entrará em contato em até 1 dia útil.</p>
+            <button type="button" class="ct-again" id="lp-again">Enviar outra solicitação</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  </main>
+
+  <!-- SECTION: footer (rodapé Juris8) -->
+  <footer class="jf">
+    <div class="jf__glow" aria-hidden="true"></div>
+    <div class="lp-wrap">
+      <div class="jf__top">
+        <div class="jf__brand">
+          <a href="/" class="jf__logo" aria-label="Juris8, ir para a página inicial"><img src="/assets/brand/logo-juris8-light.png" alt="Juris 8" width="125" height="32"></a>
+          <p class="jf__tag">A mais completa IA jurídica do Brasil. Pré-elaboração de peças, pesquisa, análise de documentos e transcrição — desenvolvidas por advogados, para advogados.</p>
+          <div class="jf__seals">
+            <span><i data-lucide="lock" aria-hidden="true"></i>LGPD</span>
+            <span><i data-lucide="sparkles" aria-hidden="true"></i>IA jurídica</span>
+          </div>
+          <div class="jf__social">
+            <a href="https://www.instagram.com/juris8.ai" target="_blank" rel="noopener noreferrer" aria-label="Instagram da Juris8" data-track="social_click" data-track-ctx="instagram">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4.2"/><circle cx="17.4" cy="6.6" r=".9" fill="currentColor" stroke="none"/></svg>
+            </a>
+            <a href="https://wa.me/5547988061278?text=Ol%C3%A1%21%20Vim%20pelo%20site%20e%20quero%20conhecer%20o%20monitoramento%20DET%20do%20Juris8.%20Pode%20me%20apresentar%3F" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp da Juris8" data-track="whatsapp_click" data-track-ctx="footer_icon">
+              <svg viewBox="0 0 32 32" fill="currentColor" aria-hidden="true"><path d="M16.01 3.2c-7.1 0-12.86 5.76-12.86 12.86 0 2.27.6 4.48 1.73 6.43L3.2 28.8l6.5-1.7a12.8 12.8 0 0 0 6.3 1.62h.01c7.1 0 12.86-5.76 12.86-12.86 0-3.44-1.34-6.67-3.77-9.1A12.78 12.78 0 0 0 16.01 3.2Zm0 23.5h-.01a10.6 10.6 0 0 1-5.4-1.48l-.39-.23-4.02 1.05 1.07-3.92-.25-.4a10.62 10.62 0 0 1 16.46-13.1 10.55 10.55 0 0 1 3.12 7.51c0 5.88-4.78 10.65-10.66 10.65Zm5.85-7.98c-.32-.16-1.9-.94-2.2-1.04-.3-.11-.5-.16-.72.16-.21.32-.82 1.03-1 1.25-.18.21-.37.24-.69.08-.32-.16-1.35-.5-2.58-1.59-.95-.85-1.6-1.9-1.78-2.22-.18-.32-.02-.49.14-.65.14-.14.32-.37.48-.56.16-.18.21-.32.32-.53.11-.21.05-.4-.03-.56-.08-.16-.72-1.74-.99-2.38-.26-.62-.52-.54-.72-.55l-.61-.01c-.21 0-.56.08-.85.4-.29.32-1.11 1.09-1.11 2.66 0 1.57 1.14 3.08 1.3 3.3.16.21 2.25 3.43 5.45 4.81.76.33 1.36.53 1.82.68.77.24 1.46.21 2.01.13.61-.09 1.9-.78 2.17-1.53.27-.74.27-1.38.19-1.51-.08-.13-.29-.21-.61-.37Z"/></svg>
+            </a>
+          </div>
+        </div>
+        <nav class="jf__links jf__links--4" aria-label="Rodapé">
+    <div class="jf__col">
+      <h2 class="jf__h">Soluções</h2>
+      <a href="/det" aria-current="page">DET Monitor</a>
+      <a href="/det/det-monitor-grupos.html">DET para grupos</a>
+      <a href="/det/empresas.html">DET para empresas</a>
+      <a href="/crm">CRM com IA</a>
+      <a href="/secretariajuridica">Secretaria jurídica</a>
+      <a href="/newsletter">Newsletter mensal</a>
+      <a href="/trabalhistaempresarial">Trabalhista empresarial</a>
+    </div>
+    <div class="jf__col">
+      <h2 class="jf__h">Plataforma</h2>
+      <a href="/agentejuridico">Agente Jurídico</a>
+      <a href="/agentejuridico#feature-redacao">Pré-elaboração de peças</a>
+      <a href="/agentejuridico#feature-jurisprudencia">Pesquisa de jurisprudência</a>
+      <a href="/agentejuridico#feature-analise">Análise de documentos</a>
+      <a href="/agentejuridico#feature-transcricao">Transcrição de audiências</a>
+    </div>
+    <div class="jf__col">
+      <h2 class="jf__h">Guia DET</h2>
+      <a href="/guia-det">Guia DET</a>
+      <a href="/guia-det#o-que-e">O que é o DET</a>
+      <a href="/guia-det#riscos">Riscos e prazos</a>
+      <a href="/guia-det#acesso">Quem pode acessar</a>
+    </div>
+    <div class="jf__col">
+      <h2 class="jf__h">Contato</h2>
+      <a href="https://wa.me/5547988061278?text=Ol%C3%A1%21%20Vim%20pelo%20site%20e%20quero%20conhecer%20o%20monitoramento%20DET%20do%20Juris8.%20Pode%20me%20apresentar%3F" target="_blank" rel="noopener noreferrer" data-track="whatsapp_click" data-track-ctx="footer_link">WhatsApp</a>
+      <a href="https://www.instagram.com/juris8.ai" target="_blank" rel="noopener noreferrer" data-track="social_click" data-track-ctx="instagram">Instagram</a>
+      <a href="#faq">FAQ</a>
+      <a href="/#solucoes">Todas as soluções</a>
+      <a href="/#planos">Planos</a>
+    </div>
+        </nav>
+      </div>
+      <div class="jf__bottom">
+        <span>© 2026 Juris8 · Todos os direitos reservados.</span>
+        <span class="jf__made"><i aria-hidden="true"></i>Desenvolvido por advogados, para advogados</span>
+        <a href="#topo" class="jf__up">Voltar ao topo<i data-lucide="chevron-up" aria-hidden="true"></i></a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- WhatsApp flutuante -->
+  <a class="lp-wa" href="https://wa.me/5547988061278?text=Ol%C3%A1%21%20Vim%20pelo%20site%20e%20quero%20conhecer%20o%20monitoramento%20DET%20do%20Juris8.%20Pode%20me%20apresentar%3F" target="_blank" rel="noopener noreferrer" aria-label="Fale com a Juris8 no WhatsApp" data-track="whatsapp_click" data-track-ctx="fab">
+    <span class="lp-wa__label">Fale com a Juris8</span>
+    <span class="lp-wa__btn"><span class="lp-wa__ring" aria-hidden="true"></span><svg viewBox="0 0 32 32" fill="currentColor" aria-hidden="true"><path d="M16.01 3.2c-7.1 0-12.86 5.76-12.86 12.86 0 2.27.6 4.48 1.73 6.43L3.2 28.8l6.5-1.7a12.8 12.8 0 0 0 6.3 1.62h.01c7.1 0 12.86-5.76 12.86-12.86 0-3.44-1.34-6.67-3.77-9.1A12.78 12.78 0 0 0 16.01 3.2Zm0 23.5h-.01a10.6 10.6 0 0 1-5.4-1.48l-.39-.23-4.02 1.05 1.07-3.92-.25-.4a10.62 10.62 0 0 1 16.46-13.1 10.55 10.55 0 0 1 3.12 7.51c0 5.88-4.78 10.65-10.66 10.65Zm5.85-7.98c-.32-.16-1.9-.94-2.2-1.04-.3-.11-.5-.16-.72.16-.21.32-.82 1.03-1 1.25-.18.21-.37.24-.69.08-.32-.16-1.35-.5-2.58-1.59-.95-.85-1.6-1.9-1.78-2.22-.18-.32-.02-.49.14-.65.14-.14.32-.37.48-.56.16-.18.21-.32.32-.53.11-.21.05-.4-.03-.56-.08-.16-.72-1.74-.99-2.38-.26-.62-.52-.54-.72-.55l-.61-.01c-.21 0-.56.08-.85.4-.29.32-1.11 1.09-1.11 2.66 0 1.57 1.14 3.08 1.3 3.3.16.21 2.25 3.43 5.45 4.81.76.33 1.36.53 1.82.68.77.24 1.46.21 2.01.13.61-.09 1.9-.78 2.17-1.53.27-.74.27-1.38.19-1.51-.08-.13-.29-.21-.61-.37Z"/></svg></span>
+  </a>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{}">
+/* Comportamentos comuns (header, formulário, FAQ, animações) vêm de /assets/site/j8-pages.js */
+class Component extends DCLogic {
+  componentDidMount() {
+    if (!window.J8) return;
+    this._j8 = window.J8.mount({
+      form: {"interest": "DET Monitor · escritórios", "source": "lp_det_monitor", "segment": "det"},
+      extra: (api) => {
+        /* Calculadora de comissão: (CNPJs × mensalidade × 12) − 15% de impostos − R$ 120/CNPJ/mês de custo Juris8; o advogado fica com 80% da base */
+        const n = document.getElementById('calc-n');
+        const m = document.getElementById('calc-m');
+        if (!n || !m) return;
+        const brl = (v) => 'R$ ' + window.J8.fmt(Math.round(v), 0);
+        const set = (id, txt) => { const el = document.getElementById(id); if (el) el.textContent = txt; };
+        const fill = (el) => el.style.setProperty('--p', ((el.value - el.min) / (el.max - el.min) * 100) + '%');
+        const calc = () => {
+          const cnpjs = Number(n.value), mensal = Number(m.value);
+          const bruta = cnpjs * mensal * 12;
+          const imp = bruta * 0.15;
+          const liq = bruta - imp;
+          const custo = cnpjs * 120 * 12;
+          const base = Math.max(0, liq - custo);
+          const ret = base * 0.2;
+          const total = base * 0.8;
+          set('calc-n-out', String(cnpjs));
+          set('calc-m-out', brl(mensal));
+          set('calc-bruta', brl(bruta));
+          set('calc-imp', '− ' + brl(imp));
+          set('calc-liq', brl(liq));
+          set('calc-custo', '− ' + brl(custo));
+          set('calc-base', brl(base));
+          set('calc-ret', '− ' + brl(ret));
+          set('calc-total', brl(total));
+          set('calc-mes', '≈ ' + brl(total / 12) + ' por mês, com ' + cnpjs + (cnpjs === 1 ? ' CNPJ' : ' CNPJs'));
+          fill(n); fill(m);
+        };
+        n.value = '10';
+        m.value = '350';
+        let tracked = false;
+        [n, m].forEach((el) => api.on(el, 'input', () => {
+          calc();
+          if (!tracked) { tracked = true; api.track('calculator_use', 'det_commission'); }
+        }));
+        calc();
+      }
+    });
+  }
+
+  componentDidUpdate() {
+    if (window.J8) window.J8.icons(0);
+  }
+
+  componentWillUnmount() {
+    if (this._j8) this._j8.destroy();
+  }
+
+  renderVals() { return {}; }
+}
+</script>
+</body>
+</html>

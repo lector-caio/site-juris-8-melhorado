@@ -1,14 +1,67 @@
 {
   "cleanUrls": false,
   "trailingSlash": false,
+  "redirects": [
+    {
+      "source": "/det.html",
+      "destination": "/det",
+      "permanent": true
+    }
+  ],
   "rewrites": [
-    { "source": "/home-juris8", "destination": "/index.html" }
+    {
+      "source": "/home-juris8",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/det",
+      "destination": "/det/index.html"
+    },
+    {
+      "source": "/DET",
+      "destination": "/det/index.html"
+    },
+    {
+      "source": "/DET/empresas.html",
+      "destination": "/det/empresas.html"
+    },
+    {
+      "source": "/DET/det-monitor-grupos.html",
+      "destination": "/det/det-monitor-grupos.html"
+    },
+    {
+      "source": "/guia-det",
+      "destination": "/guia-det/index.html"
+    },
+    {
+      "source": "/crm",
+      "destination": "/crm/index.html"
+    },
+    {
+      "source": "/secretariajuridica",
+      "destination": "/secretariajuridica/index.html"
+    },
+    {
+      "source": "/newsletter",
+      "destination": "/newsletter/index.html"
+    },
+    {
+      "source": "/trabalhistaempresarial",
+      "destination": "/trabalhistaempresarial/index.html"
+    },
+    {
+      "source": "/agentejuridico",
+      "destination": "/agentejuridico/index.html"
+    }
   ],
   "headers": [
     {
       "source": "/assets/(.*)",
       "headers": [
-        { "key": "Cache-Control", "value": "public, max-age=86400, stale-while-revalidate=604800" }
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=86400, stale-while-revalidate=604800"
+        }
       ]
     }
   ]

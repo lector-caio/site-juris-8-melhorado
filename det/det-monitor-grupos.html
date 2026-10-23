@@ -1,0 +1,698 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" href="/assets/brand/juris8-favicon.ico" sizes="48x48">
+<link rel="icon" href="/assets/brand/juris8-favicon-32x32.png" sizes="32x32" type="image/png">
+<link rel="icon" href="/assets/brand/juris8-favicon-16x16.png" sizes="16x16" type="image/png">
+<link rel="icon" href="/assets/brand/juris8-icon-512.png" sizes="512x512" type="image/png">
+<link rel="apple-touch-icon" href="/assets/brand/juris8-apple-touch-icon.png">
+<meta name="theme-color" content="#7547EF">
+<script>window.__resources = {};</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://unpkg.com">
+<!-- Mesmo esquema da home: o CSS é declarado aqui e de novo no <helmet>, para a página
+     não aparecer sem estilo enquanto o runtime DC carrega o React. -->
+<link rel="stylesheet" href="/design-system/tokens/fonts.css">
+<link rel="stylesheet" href="/design-system/tokens/colors.css">
+<link rel="stylesheet" href="/design-system/tokens/typography.css">
+<link rel="stylesheet" href="/design-system/tokens/spacing.css">
+<link rel="stylesheet" href="/design-system/tokens/effects.css">
+<link rel="stylesheet" href="/design-system/tokens/base.css">
+<link rel="stylesheet" href="/assets/site/j8-base.css">
+<link rel="stylesheet" href="/assets/site/j8-pages.css">
+<script src="/assets/site/j8-pages.js"></script>
+<script src="/support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<title>Juris8 DET Monitor | DET unificado para grupos empresariais e holdings</title>
+<meta name="description" content="Centralize o DET de todas as empresas do grupo numa caixa única, com alerta por CNPJ, prioridade por prazo e setup por procuração ou certificado do grupo.">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Juris8">
+<meta property="og:title" content="Juris8 DET Monitor | DET unificado para grupos empresariais e holdings">
+<meta property="og:description" content="Centralize o DET de todas as empresas do grupo numa caixa única, com alerta por CNPJ, prioridade por prazo e setup por procuração ou certificado do grupo.">
+<meta property="og:image" content="/assets/media/hero-det-grupos.jpg">
+<meta name="robots" content="noindex, nofollow">
+<script type="application/ld+json">
+[
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": "Juris8 DET Monitor | DET unificado para grupos empresariais e holdings",
+    "description": "Centralize o DET de todas as empresas do grupo numa caixa única, com alerta por CNPJ, prioridade por prazo e setup por procuração ou certificado do grupo.",
+    "inLanguage": "pt-BR",
+    "isPartOf": {
+      "@type": "WebSite",
+      "name": "Juris8",
+      "url": "https://juris8.com"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "Juris8",
+      "logo": "https://juris8.com/assets/brand/logo-juris8.png",
+      "sameAs": [
+        "https://www.instagram.com/juris8.ai"
+      ]
+    },
+    "breadcrumb": {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Juris8",
+          "item": "https://juris8.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "DET para grupos",
+          "item": "https://juris8.com/det/det-monitor-grupos.html"
+        }
+      ]
+    }
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Preciso de procuração para cada CNPJ do grupo?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Sim. A procuração eletrônica do DET é emitida por CNPJ — é o mecanismo que autoriza o acesso àquela caixa postal específica, mesmo dentro do mesmo grupo econômico."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Um único certificado digital serve para todos os CNPJs?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Sim, desde que a procuração de cada CNPJ esteja ativa. O certificado autentica o acesso; a procuração é o que autoriza a consulta de cada empresa."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "As filiais enxergam o DET umas das outras?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Não. Mesmo com um certificado único autenticando o grupo, os dados, alertas e histórico de cada CNPJ ficam segregados no painel."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Como adiciono uma nova empresa (aquisição, nova filial)?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Basta emitir a procuração eletrônica do novo CNPJ e selecioná-lo no painel. O certificado já cadastrado continua servindo para autenticar o acesso."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Quanto tempo leva para configurar um grupo com muitos CNPJs?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "A configuração da ferramenta leva minutos. O tempo total depende do ritmo de emissão das procurações de cada empresa, que pode ser feito de forma gradual."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "O certificado fica salvo para sempre?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Não. O certificado pode ser revogado pelo grupo a qualquer momento, diretamente na ferramenta."
+        }
+      }
+    ]
+  }
+]
+</script>
+<link rel="stylesheet" href="/design-system/tokens/fonts.css">
+<link rel="stylesheet" href="/design-system/tokens/colors.css">
+<link rel="stylesheet" href="/design-system/tokens/typography.css">
+<link rel="stylesheet" href="/design-system/tokens/spacing.css">
+<link rel="stylesheet" href="/design-system/tokens/effects.css">
+<link rel="stylesheet" href="/design-system/tokens/base.css">
+<link rel="stylesheet" href="/assets/site/j8-base.css">
+<link rel="stylesheet" href="/assets/site/j8-pages.css">
+<script src="https://unpkg.com/lucide@latest"></script>
+<style>
+
+</style>
+</helmet>
+
+<div id="topo">
+
+  <!-- SECTION: header -->
+  <div class="lp-header-wrap">
+    <header class="lp-header" id="lp-header">
+      <a href="/" class="lp-header__logo" aria-label="Juris8, ir para a página inicial">
+        <img src="/assets/brand/logo-juris8.png" alt="Juris8" width="113" height="29">
+      </a>
+      <nav class="lp-nav" aria-label="Navegação da página">
+        <span class="lp-nav__ind" aria-hidden="true"></span>
+        <a href="#riscos">O risco</a>
+        <a href="#como-funciona">Como funciona</a>
+        <a href="#seguranca">Segurança</a>
+        <a href="#consignado">Consignado</a>
+        <a href="#faq">FAQ</a>
+      </nav>
+      <a href="https://wa.me/5547988061278?text=Ol%C3%A1%21%20Quero%20centralizar%20o%20DET%20de%20todas%20as%20empresas%20do%20meu%20grupo.%20Pode%20me%20apresentar%20o%20DET%20Monitor%20para%20grupos%3F" class="lp-header__cta" target="_blank" rel="noopener noreferrer" data-track="whatsapp_click" data-track-ctx="header_cta" aria-label="Falar com especialista no WhatsApp">
+        <span class="lp-cta-long">Falar com especialista</span>
+        <span class="lp-cta-short">Especialista</span>
+        <span class="lp-header__cta-tile" aria-hidden="true"><svg viewBox="0 0 32 32" fill="currentColor"><path d="M16.01 3.2c-7.1 0-12.86 5.76-12.86 12.86 0 2.27.6 4.48 1.73 6.43L3.2 28.8l6.5-1.7a12.8 12.8 0 0 0 6.3 1.62h.01c7.1 0 12.86-5.76 12.86-12.86 0-3.44-1.34-6.67-3.77-9.1A12.78 12.78 0 0 0 16.01 3.2Zm0 23.5h-.01a10.6 10.6 0 0 1-5.4-1.48l-.39-.23-4.02 1.05 1.07-3.92-.25-.4a10.62 10.62 0 0 1 16.46-13.1 10.55 10.55 0 0 1 3.12 7.51c0 5.88-4.78 10.65-10.66 10.65Zm5.85-7.98c-.32-.16-1.9-.94-2.2-1.04-.3-.11-.5-.16-.72.16-.21.32-.82 1.03-1 1.25-.18.21-.37.24-.69.08-.32-.16-1.35-.5-2.58-1.59-.95-.85-1.6-1.9-1.78-2.22-.18-.32-.02-.49.14-.65.14-.14.32-.37.48-.56.16-.18.21-.32.32-.53.11-.21.05-.4-.03-.56-.08-.16-.72-1.74-.99-2.38-.26-.62-.52-.54-.72-.55l-.61-.01c-.21 0-.56.08-.85.4-.29.32-1.11 1.09-1.11 2.66 0 1.57 1.14 3.08 1.3 3.3.16.21 2.25 3.43 5.45 4.81.76.33 1.36.53 1.82.68.77.24 1.46.21 2.01.13.61-.09 1.9-.78 2.17-1.53.27-.74.27-1.38.19-1.51-.08-.13-.29-.21-.61-.37Z"/></svg></span>
+      </a>
+    </header>
+  </div>
+
+  <main>
+
+  <!-- SECTION: hero -->
+  <section class="lp-hero lp-hero--sub" id="inicio" aria-label="Apresentação do DET Monitor para grupos">
+    <div class="lp-hero__media" aria-hidden="true">
+      <picture>
+        <source srcset="/assets/media/hero-det-grupos.webp" type="image/webp">
+        <img class="lp-hero__photo" src="/assets/media/hero-det-grupos.jpg" alt="" width="2200" height="910" fetchpriority="high">
+      </picture>
+    </div>
+    <div class="lp-hero__inner">
+      <div data-reveal="">
+        <p class="lp-hero__eyebrow"><i data-lucide="network" aria-hidden="true"></i>DET Monitor · grupos e holdings com múltiplos CNPJs</p>
+        <h1 class="lp-hero__title lp-hero__title--md">Não está monitorando todos os seus CNPJs no DET? <em>Você pode ter perdido prazos.</em></h1>
+        <p class="lp-hero__lead">Hoje cada CNPJ do grupo monitora o Domicílio Eletrônico Trabalhista por conta própria — ou não monitora nenhum. Centralize o DET de todas as empresas do grupo numa caixa só, com alerta por CNPJ e prioridade por prazo.</p>
+        <div class="lp-hero__ctas lp-hero__ctas--row">
+          <a href="#formulario" class="lp-cta" data-track="hero_cta_click" data-track-ctx="hero_det_grupos_primary">
+            <span class="lp-cta__sheen" aria-hidden="true"></span>
+            <span class="lp-cta__label">Quero centralizar o DET do meu grupo</span>
+            <span class="lp-cta__icon" aria-hidden="true"><i data-lucide="arrow-right"></i></span>
+          </a>
+          <a href="#como-funciona" class="lp-btn-ghost" data-track="hero_cta_click" data-track-ctx="hero_det_grupos_secondary">Ver como funciona</a>
+        </div>
+        <ul class="lp-hero__trust">
+          <li><i data-lucide="check" aria-hidden="true"></i>Demonstração gratuita</li>
+          <li><i data-lucide="check" aria-hidden="true"></i>Sem compromisso</li>
+          <li><i data-lucide="check" aria-hidden="true"></i>Suporte em português</li>
+        </ul>
+      </div>
+
+      <div class="lp-hero__visual" data-reveal="">
+        <div class="lp-hero__scale">
+        <div class="hc" role="img" aria-label="Prévia da caixa única do grupo no Juris8: 14 CNPJs entre matriz e filiais, com uma solicitação urgente da filial de Minas Gerais, uma notificação da filial do Rio de Janeiro e a matriz em dia.">
+          <div class="hc__top" aria-hidden="true">
+            <span class="hc__mark"><img src="/assets/brand/juris8-mark-white.png" alt=""></span>
+            <span class="hc__who"><b>Caixa única do grupo</b><span>14 CNPJs · matriz + filiais</span></span>
+            <span class="hc__live">Ao vivo</span>
+          </div>
+          <div class="hc__body" aria-hidden="true">
+            <div class="hc__cap">Cada CNPJ tem o seu DET <b>por prazo</b></div>
+            <div class="hc-row hc-row--hot hc-a" style="--d: .55s"><span class="hc-row__ic hc-row__ic--r"><i data-lucide="siren"></i></span><span class="hc-row__t"><b>Filial · MG</b><small>Solicitação de documentos da fiscalização — prazo: 15 dias corridos</small></span><span class="hc-row__s"><span class="chip chip--urg">Urgente</span><time>2h</time></span></div>
+            <div class="hc-row hc-a" style="--d: .8s"><span class="hc-row__ic hc-row__ic--a"><i data-lucide="bell-ring"></i></span><span class="hc-row__t"><b>Filial · RJ</b><small>Notificação de fiscalização · 98.765.432/0001-11</small></span><span class="hc-row__s"><span class="chip chip--att">Atenção</span><time>5h</time></span></div>
+            <div class="hc-row hc-a" style="--d: 1.05s"><span class="hc-row__ic hc-row__ic--g"><i data-lucide="check"></i></span><span class="hc-row__t"><b>Matriz · SP</b><small>Sem novas comunicações · 12.345.678/0001-90</small></span><span class="hc-row__s"><span class="chip chip--ok">Em dia</span><time>1d</time></span></div>
+          </div>
+          <div class="hc__foot" aria-hidden="true"><span>+ 11 CNPJs do grupo monitorados</span><b>Ver grupo →</b></div>
+          <span class="hc-toast hc-toast--br" style="--d: 2.4s" aria-hidden="true"><span class="hc-toast__ic"><i data-lucide="bell-ring"></i></span><span>Alerta por CNPJ · antes do prazo<small>Filial · MG · jurídico central avisado</small></span></span>
+        </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION: selos -->
+  <div class="lp-strip" aria-label="Destaques do DET Monitor para grupos">
+    <div class="lp-strip__track">
+      <div class="lp-strip__group">
+        <span><i data-lucide="inbox" aria-hidden="true"></i>Caixa única multi-CNPJ</span>
+        <span><i data-lucide="radar" aria-hidden="true"></i>Monitoramento diário do DET</span>
+        <span><i data-lucide="bell-ring" aria-hidden="true"></i>Alerta antes do prazo</span>
+        <span><i data-lucide="network" aria-hidden="true"></i>Matriz + filiais</span>
+        <span><i data-lucide="history" aria-hidden="true"></i>Histórico por CNPJ</span>
+        <span><i data-lucide="lock" aria-hidden="true"></i>LGPD</span>
+        <span><i data-lucide="list-ordered" aria-hidden="true"></i>Prioridade por prazo</span>
+      </div>
+      <div class="lp-strip__group" aria-hidden="true">
+        <span><i data-lucide="inbox"></i>Caixa única multi-CNPJ</span>
+        <span><i data-lucide="radar"></i>Monitoramento diário do DET</span>
+        <span><i data-lucide="bell-ring"></i>Alerta antes do prazo</span>
+        <span><i data-lucide="network"></i>Matriz + filiais</span>
+        <span><i data-lucide="history"></i>Histórico por CNPJ</span>
+        <span><i data-lucide="lock"></i>LGPD</span>
+        <span><i data-lucide="list-ordered"></i>Prioridade por prazo</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- SECTION: reposicionamento -->
+  <section class="lp-sec lp-sec--soft lp-dots" id="reposicionamento" aria-labelledby="rp-title">
+    <div class="lp-wrap">
+      <div class="lp-pain__head">
+        <h2 class="lp-pain__title lp-words" id="rp-title">O DET não avisa duas vezes. <span class="lp-accent">O prazo corre mesmo que ninguém abra a comunicação.</span></h2>
+        <p class="lp-pain__lead" data-reveal="">Quanto mais filiais, mais pontos cegos. Centralizar o DET tira o grupo da dependência de cada unidade lembrar de conferir o próprio portal.</p>
+      </div>
+      <div class="vs">
+        <article class="vs__card vs__card--off" data-reveal="">
+          <span class="vs__tag"><i data-lucide="x" aria-hidden="true"></i>Monitorar CNPJ por CNPJ</span>
+          <h3>Cada filial por conta própria.</h3>
+          <p>Cada empresa do grupo confere — ou esquece de conferir — o próprio DET. Quanto mais filiais, mais pontos cegos.</p>
+        </article>
+        <div class="vs__mid" aria-hidden="true"><span class="vs__arrow"><i data-lucide="arrow-right"></i></span><small>centralize</small></div>
+        <article class="vs__card vs__card--on" data-reveal="" data-reveal-delay="120">
+          <span class="vs__tag"><i data-lucide="check" aria-hidden="true"></i>Monitorar o grupo inteiro</span>
+          <h3>Todos os CNPJs numa caixa só.</h3>
+          <p>Com alerta por empresa e prioridade por prazo. Nada depende da memória de uma filial.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION: riscos -->
+  <section class="lp-sec lp-sec--dark" id="riscos" aria-labelledby="rk-title">
+    <div class="lp-glow" aria-hidden="true"></div>
+    <div class="lp-wrap">
+      <div class="sh sh--wide" data-reveal="">
+        <span class="ey">O risco</span>
+        <h2 class="sh__title" id="rk-title">O DET não avisa duas vezes — <span class="lp-accent">e não sabe quantos CNPJs o grupo tem.</span></h2>
+        <p class="sh__lead">O Domicílio Eletrônico Trabalhista substituiu a carta registrada e o Diário Oficial na fiscalização do trabalho. O prazo corre a partir da ciência na caixa postal eletrônica, não do dia em que alguém decide checar o portal. E cada inscrição do grupo tem a sua própria caixa.</p>
+      </div>
+      <div class="fg fg--4">
+        <article class="fc" data-reveal="" data-reveal-delay="0"><span class="fc__ic" aria-hidden="true"><i data-lucide="mailbox"></i></span><span class="fc__n">01</span><h3>Uma caixa postal por CNPJ</h3><p>Cada empresa do grupo é uma caixa postal própria no DET. Monitorar a matriz não monitora as filiais.</p></article>
+        <article class="fc" data-reveal="" data-reveal-delay="80"><span class="fc__ic" aria-hidden="true"><i data-lucide="timer"></i></span><span class="fc__n">02</span><h3>O prazo corre sozinho</h3><p>A contagem começa independentemente de alguém ter aberto ou lido a comunicação. O relógio corre em silêncio.</p></article>
+        <article class="fc" data-reveal="" data-reveal-delay="160"><span class="fc__ic" aria-hidden="true"><i data-lucide="eye-off"></i></span><span class="fc__n">03</span><h3>A ciência tácita não espera ninguém</h3><p>Passados 15 dias corridos da postagem, a empresa é considerada notificada mesmo que ninguém tenha aberto a caixa, e o prazo de defesa administrativa já está correndo.</p></article>
+        <article class="fc" data-reveal="" data-reveal-delay="240"><span class="fc__ic" aria-hidden="true"><i data-lucide="copy"></i></span><span class="fc__n">04</span><h3>Risco multiplicado por CNPJ</h3><p>Quanto mais inscrições o grupo tem, mais portas podem ficar destrancadas ao mesmo tempo — e o risco não fica contido em uma unidade.</p></article>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION: antes e depois -->
+  <section class="lp-sec lp-sec--soft" id="antes-depois" aria-labelledby="ba-title">
+    <div class="lp-wrap">
+      <div class="sh" data-reveal="">
+        <span class="ey">Duas rotinas</span>
+        <h2 class="sh__title" id="ba-title">Monitorar CNPJ por CNPJ, ou monitorar <span class="lp-accent">o grupo inteiro de uma vez.</span></h2>
+      </div>
+      <div class="ba">
+        <article class="ba__col ba__col--before" data-reveal="">
+          <span class="ba__k">Antes — CNPJ por CNPJ</span>
+          <h3>O jurídico enxerga tarde</h3>
+          <ul class="ba__list">
+            <li><i data-lucide="x" aria-hidden="true"></i>Cada filial confere, ou esquece de conferir, seu próprio DET.</li>
+            <li><i data-lucide="x" aria-hidden="true"></i>Certificado e acesso diferentes para cada inscrição.</li>
+            <li><i data-lucide="x" aria-hidden="true"></i>O jurídico central não tem visão consolidada do grupo.</li>
+            <li><i data-lucide="x" aria-hidden="true"></i>A notificação é descoberta tarde, geralmente por print no WhatsApp.</li>
+            <li><i data-lucide="x" aria-hidden="true"></i>Auto de infração e multa entram como surpresa no fechamento.</li>
+          </ul>
+        </article>
+        <article class="ba__col ba__col--after" data-reveal="" data-reveal-delay="120">
+          <span class="ba__k">Depois — caixa única do grupo</span>
+          <h3>O grupo chega antes do prazo</h3>
+          <ul class="ba__list">
+            <li><i data-lucide="check" aria-hidden="true"></i>Todos os CNPJs monitorados a partir de um único painel.</li>
+            <li><i data-lucide="check" aria-hidden="true"></i>O alerta chega no dia, com prazo e urgência já classificados.</li>
+            <li><i data-lucide="check" aria-hidden="true"></i>Prioridade imediata para o CNPJ de prazo mais curto.</li>
+            <li><i data-lucide="check" aria-hidden="true"></i>Histórico organizado por empresa, disponível para compliance.</li>
+            <li><i data-lucide="check" aria-hidden="true"></i>Nenhuma filial fica invisível para quem responde pelo grupo.</li>
+          </ul>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION: como funciona (4 passos com painel) -->
+  <section class="lp-sec lp-sec--white" id="como-funciona" aria-labelledby="cf-title">
+    <div class="lp-wrap">
+      <div class="sh sh--wide" data-reveal="">
+        <span class="ey">Como funciona</span>
+        <h2 class="sh__title" id="cf-title">Setup simples por procuração <span class="lp-accent">ou certificado do grupo.</span></h2>
+        <p class="sh__lead">Outorgue procuração eletrônica do DET para a Juris8 (setup mais rápido, sem subir certificados) ou concentre as empresas em um certificado do próprio grupo. Acompanhe tudo em uma caixa única.</p>
+      </div>
+      <div class="tp" data-tabs="" data-auto="6500" id="cf-tabs">
+        <div class="tp__tabs" role="tablist" aria-label="Passos de configuração do grupo" data-reveal="">
+          <button type="button" class="tp__tab" role="tab" id="cf-t1" aria-controls="cf-p1" aria-selected="true"><span class="tp__num" aria-hidden="true">01</span><span class="tp__k">Passo 01 · Procuração</span><span class="tp__t">Emita a procuração por CNPJ</span><span class="tp__d"><span>O grupo outorga a procuração eletrônica do DET para as empresas que deseja monitorar — diretamente para a Juris8 (setup mais rápido) ou para um CNPJ concentrador do grupo.</span></span><span class="tp__bar" aria-hidden="true"></span></button>
+          <button type="button" class="tp__tab" role="tab" id="cf-t2" aria-controls="cf-p2" aria-selected="false"><span class="tp__num" aria-hidden="true">02</span><span class="tp__k">Passo 02 · Acesso</span><span class="tp__t">Procuração Juris8 ou Certificado Único</span><span class="tp__d"><span>Com procuração para a Juris8, o monitoramento utiliza a nossa infraestrutura e certificado. Se preferir, também é possível subir um único certificado do seu grupo.</span></span><span class="tp__bar" aria-hidden="true"></span></button>
+          <button type="button" class="tp__tab" role="tab" id="cf-t3" aria-controls="cf-p3" aria-selected="false"><span class="tp__num" aria-hidden="true">03</span><span class="tp__k">Passo 03 · Seleção</span><span class="tp__t">Selecione os CNPJs</span><span class="tp__d"><span>Todo CNPJ com procuração ativa aparece disponível na tela. Comece pelos mais críticos e adicione o resto no seu tempo.</span></span><span class="tp__bar" aria-hidden="true"></span></button>
+          <button type="button" class="tp__tab" role="tab" id="cf-t4" aria-controls="cf-p4" aria-selected="false"><span class="tp__num" aria-hidden="true">04</span><span class="tp__k">Passo 04 · Monitoramento</span><span class="tp__t">Acompanhe tudo em uma caixa única</span><span class="tp__d"><span>Toda nova comunicação, de qualquer CNPJ do grupo, chega classificada por empresa, prazo e urgência — num painel só.</span></span><span class="tp__bar" aria-hidden="true"></span></button>
+        </div>
+        <div class="tp__panels" data-reveal="" data-reveal-delay="120">
+          <div class="tp__panel" id="cf-p1" role="tabpanel" aria-labelledby="cf-t1">
+            <div class="sx-app" aria-hidden="true">
+              <div class="sx-app__bar"><span class="sx-app__dots"><i></i><i></i><i></i></span><span class="sx-app__mark"><img src="/assets/brand/juris8-mark-white.png" alt=""></span><b>Juris8 · Procurações do grupo</b></div>
+              <div class="sx-app__body">
+                <span class="sx-cap"><i data-lucide="file-signature"></i>Procuração eletrônica do DET · por CNPJ</span>
+                <div class="mk-row sx-a" style="--d: .1s"><span class="mk-ic mk-ic--g"><i data-lucide="check"></i></span><div><b>Matriz · SP</b><small>Procuração para a Juris8 · ativa</small></div><span class="chip chip--ok">ativa</span></div>
+                <div class="mk-row sx-a" style="--d: .25s"><span class="mk-ic mk-ic--g"><i data-lucide="check"></i></span><div><b>Filial · RJ</b><small>Procuração para a Juris8 · ativa</small></div><span class="chip chip--ok">ativa</span></div>
+                <div class="mk-row mk-row--hot sx-a" style="--d: .4s"><span class="mk-ic mk-ic--a"><i data-lucide="hourglass"></i></span><div><b>Filial · MG</b><small>Procuração em emissão pelo grupo</small><span class="mk-prog"><i style="--w: 60%"></i></span></div><span class="chip chip--att">em emissão</span></div>
+                <div class="mk-ok sx-a" style="--d: .6s"><i data-lucide="building-2"></i>Uma procuração por CNPJ, mesmo dentro do mesmo grupo</div>
+              </div>
+            </div>
+          </div>
+          <div class="tp__panel" id="cf-p2" role="tabpanel" aria-labelledby="cf-t2">
+            <div class="sx-app" aria-hidden="true">
+              <div class="sx-app__bar"><span class="sx-app__dots"><i></i><i></i><i></i></span><span class="sx-app__mark"><img src="/assets/brand/juris8-mark-white.png" alt=""></span><b>Juris8 · Como o grupo quer acessar?</b></div>
+              <div class="sx-app__body">
+                <span class="sx-cap"><i data-lucide="key-round"></i>Escolha o setup</span>
+                <div class="mk-cert sx-a" style="--d: .1s"><span><i data-lucide="zap"></i></span><div><b>Procuração direta para a Juris8</b><small>Setup mais rápido · sem enviar arquivos de certificado</small></div><span class="chip chip--pri">recomendado</span></div>
+                <div class="mk-cert sx-a" style="--d: .3s"><span><i data-lucide="shield-check"></i></span><div><b>Certificado único do grupo</b><small>Criptografado de ponta a ponta · revogável a qualquer momento</small></div><span class="chip">opcional</span></div>
+                <div class="mk-ok sx-a" style="--d: .55s"><i data-lucide="check-circle-2"></i>Nos dois casos: dados isolados por CNPJ e acesso auditável</div>
+              </div>
+            </div>
+          </div>
+          <div class="tp__panel" id="cf-p3" role="tabpanel" aria-labelledby="cf-t3">
+            <div class="sx-app" aria-hidden="true">
+              <div class="sx-app__bar"><span class="sx-app__dots"><i></i><i></i><i></i></span><span class="sx-app__mark"><img src="/assets/brand/juris8-mark-white.png" alt=""></span><b>Juris8 · Seleção de CNPJs</b></div>
+              <div class="sx-app__body">
+                <span class="sx-cap"><i data-lucide="list-checks"></i>CNPJs com procuração ativa</span>
+                <div class="mk-cnpj sx-a" style="--d: .1s"><span><i data-lucide="check"></i></span><div><b>Matriz · SP</b><small>12.345.678/0001-90 · procuração ativa</small></div><span class="chip chip--ok">ativo</span></div>
+                <div class="mk-cnpj sx-a" style="--d: .25s"><span><i data-lucide="check"></i></span><div><b>Filial · RJ</b><small>98.765.432/0001-11 · procuração ativa</small></div><span class="chip chip--ok">ativo</span></div>
+                <div class="mk-cnpj is-off sx-a" style="--d: .4s"><span><i data-lucide="check"></i></span><div><b>Filial · MG</b><small>22.111.444/0001-05 · aguardando procuração</small></div><span class="chip chip--att">pendente</span></div>
+                <div class="mk-ok sx-a" style="--d: .6s"><i data-lucide="plus-circle"></i>Comece pelos mais críticos e adicione o resto no seu tempo</div>
+              </div>
+            </div>
+          </div>
+          <div class="tp__panel" id="cf-p4" role="tabpanel" aria-labelledby="cf-t4">
+            <div class="sx-app" aria-hidden="true">
+              <div class="sx-app__bar"><span class="sx-app__dots"><i></i><i></i><i></i></span><span class="sx-app__mark"><img src="/assets/brand/juris8-mark-white.png" alt=""></span><b>Juris8 · Caixa única do grupo</b></div>
+              <div class="sx-app__body">
+                <span class="sx-cap"><i data-lucide="inbox"></i>Classificado por empresa, prazo e urgência</span>
+                <div class="mk-row mk-row--hot sx-a" style="--d: .1s"><span class="mk-ic mk-ic--r"><i data-lucide="bell-ring"></i></span><div><b>Filial · MG</b><small>Nova notificação — ciência tácita em 15 dias</small></div><span class="chip chip--urg">2h</span></div>
+                <div class="mk-row sx-a" style="--d: .3s"><span class="mk-ic mk-ic--g"><i data-lucide="check"></i></span><div><b>Matriz · SP</b><small>Sem novas comunicações</small></div><span class="chip">1d</span></div>
+                <div class="mk-ok sx-a" style="--d: .55s"><i data-lucide="list-ordered"></i>Prioridade imediata para o CNPJ de prazo mais curto</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <p class="stp__close" data-reveal="">Procuração direta para a Juris8 ou certificado do grupo. <span>Todos os CNPJs numa caixa só — sem depender de alguém lembrar de abrir cada portal.</span></p>
+      <p class="fg__note" data-reveal=""><i data-lucide="message-circle" aria-hidden="true"></i><span>Quer o passo a passo da procuração ou comparar as opções de setup? <a class="lk" href="https://wa.me/5547988061278?text=Ol%C3%A1%21%20Quero%20entender%20o%20passo%20a%20passo%20da%20procura%C3%A7%C3%A3o%20do%20DET%20e%20as%20op%C3%A7%C3%B5es%20de%20setup%20para%20o%20meu%20grupo." target="_blank" rel="noopener noreferrer" data-track="det_resource_click" data-track-ctx="grupos_passo_a_passo">Fale com um especialista</a>.</span></p>
+    </div>
+  </section>
+
+  <!-- SECTION: segurança -->
+  <section class="lp-sec lp-sec--dark sx sx--dark" id="seguranca" aria-labelledby="sg-title">
+    <div class="sx__bg" aria-hidden="true"></div>
+    <div class="lp-wrap sx__grid sx__grid--rev">
+      <div class="sx__copy" data-reveal="">
+        <span class="ey">Segurança</span>
+        <h2 class="sx__title" id="sg-title">Setup flexível e seguro. <span class="lp-accent">Dados isolados por empresa.</span></h2>
+        <p class="sx__lead">Entendemos a sensibilidade de credenciais e certificados. Você pode optar pelo setup rápido via procuração para a Juris8 ou subir seu certificado próprio com total segurança.</p>
+        <ul class="sx__list">
+          <li><span class="sx__ic" aria-hidden="true"><i data-lucide="zap"></i></span><p><strong>Procuração direta para a Juris8:</strong> a forma mais rápida de iniciar. O monitoramento é feito com a nossa infraestrutura — sem você precisar enviar arquivos de certificado.</p></li>
+          <li><span class="sx__ic" aria-hidden="true"><i data-lucide="lock-keyhole"></i></span><p><strong>Armazenamento criptografado:</strong> caso prefira utilizar o certificado do próprio grupo, ele é armazenado com criptografia de ponta a ponta, isolado por conta e revogável a qualquer momento.</p></li>
+          <li><span class="sx__ic" aria-hidden="true"><i data-lucide="scan-eye"></i></span><p><strong>Acesso restrito e auditável:</strong> o uso fica limitado às consultas automatizadas ao DET. Cada acesso, por CNPJ, fica registrado para auditoria do grupo.</p></li>
+          <li><span class="sx__ic" aria-hidden="true"><i data-lucide="layers"></i></span><p><strong>Dados isolados por CNPJ:</strong> alertas, relatórios e histórico de cada empresa permanecem totalmente separados — nenhuma filial enxerga o DET de outra sem permissão.</p></li>
+        </ul>
+      </div>
+      <div class="sx__media" data-reveal="" data-reveal-delay="120">
+        <div class="sx-app" role="img" aria-label="Prévia das permissões por CNPJ no Juris8: o jurídico central vê todas as empresas, e cada filial vê apenas o próprio DET, com registro de cada acesso.">
+          <div class="sx-app__bar" aria-hidden="true"><span class="sx-app__dots"><i></i><i></i><i></i></span><span class="sx-app__mark"><img src="/assets/brand/juris8-mark-white.png" alt=""></span><b>Juris8 · Permissões por CNPJ</b></div>
+          <div class="sx-app__body" aria-hidden="true">
+            <span class="sx-cap"><i data-lucide="users"></i>Quem enxerga o quê</span>
+            <div class="mk-row mk-row--hot sx-a" style="--d: .1s"><span class="mk-ic mk-ic--d"><i data-lucide="shield"></i></span><div><b>Jurídico central do grupo</b><small>Todos os 14 CNPJs · visão consolidada</small></div><span class="chip chip--pri">grupo</span></div>
+            <div class="mk-row sx-a" style="--d: .25s"><span class="mk-ic"><i data-lucide="building-2"></i></span><div><b>RH · Filial RJ</b><small>Somente 98.765.432/0001-11</small></div><span class="chip"><i data-lucide="lock"></i>isolado</span></div>
+            <div class="mk-row sx-a" style="--d: .4s"><span class="mk-ic"><i data-lucide="building-2"></i></span><div><b>RH · Filial MG</b><small>Somente 22.111.444/0001-05</small></div><span class="chip"><i data-lucide="lock"></i>isolado</span></div>
+            <span class="sx-cap" style="margin-top: 14px"><i data-lucide="scroll-text"></i>Trilha de auditoria</span>
+            <div class="mk-row sx-a" style="--d: .55s"><span class="mk-ic mk-ic--g"><i data-lucide="radar"></i></span><div><b>Consulta automatizada ao DET · Filial MG</b><small>hoje, 07:30 · registrado</small></div></div>
+            <div class="sx-app__foot"><span class="sx-live"></span>Certificado revogável a qualquer momento, direto na ferramenta</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION: benefícios -->
+  <section class="lp-sec lp-sec--soft" id="beneficios" aria-labelledby="bn-title">
+    <div class="lp-wrap">
+      <div class="lp-pain__head">
+        <h2 class="lp-pain__title lp-words" id="bn-title">O que muda quando o grupo para de <span class="lp-accent">olhar CNPJ por CNPJ.</span></h2>
+        <p class="lp-pain__lead" data-reveal="">Uma visão de matriz para o jurídico, um processo único para as unidades e um histórico pronto para o compliance.</p>
+      </div>
+      <div class="fg">
+        <article class="fc" data-reveal="" data-reveal-delay="0"><span class="fc__ic" aria-hidden="true"><i data-lucide="eye"></i></span><h3>Visão de matriz</h3><p>O jurídico central enxerga o DET de todas as empresas, sem depender de cada unidade lembrar de avisar.</p></article>
+        <article class="fc" data-reveal="" data-reveal-delay="80"><span class="fc__ic" aria-hidden="true"><i data-lucide="list-ordered"></i></span><h3>Prioridade entre unidades</h3><p>Veja de imediato qual CNPJ tem o prazo mais curto e direcione atenção para onde o risco é maior primeiro.</p></article>
+        <article class="fc" data-reveal="" data-reveal-delay="160"><span class="fc__ic" aria-hidden="true"><i data-lucide="trending-up"></i></span><h3>Escala com o grupo</h3><p>Nova filial, aquisição ou fusão: adicionar um CNPJ é rápido, sem repetir toda a configuração.</p></article>
+        <article class="fc" data-reveal="" data-reveal-delay="0"><span class="fc__ic" aria-hidden="true"><i data-lucide="workflow"></i></span><h3>Processo padronizado</h3><p>Todas as unidades seguem o mesmo fluxo de triagem e resposta, em vez do costume particular de cada filial.</p></article>
+        <article class="fc" data-reveal="" data-reveal-delay="80"><span class="fc__ic" aria-hidden="true"><i data-lucide="clipboard-check"></i></span><h3>Auditoria centralizada</h3><p>Histórico, status e responsável de cada comunicação ficam registrados por CNPJ e disponíveis para compliance.</p></article>
+        <article class="fc" data-reveal="" data-reveal-delay="160"><span class="fc__ic" aria-hidden="true"><i data-lucide="mouse-pointer-click"></i></span><h3>Menos conferência manual</h3><p>A equipe para de checar portal por portal e passa a agir apenas quando existe um alerta real.</p></article>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION: para quem -->
+  <section class="lp-sec lp-sec--white" id="para-quem" aria-labelledby="pq-title">
+    <div class="lp-wrap">
+      <div class="sh" data-reveal="">
+        <span class="ey">Para quem é</span>
+        <h2 class="sh__title" id="pq-title">Feito para grupos que <span class="lp-accent">levam resultados a sério.</span></h2>
+      </div>
+      <ul class="pills" data-reveal="">
+        <li><i data-lucide="check" aria-hidden="true"></i>Holdings com múltiplas filiais</li>
+        <li><i data-lucide="check" aria-hidden="true"></i>Grupos econômicos em expansão</li>
+        <li><i data-lucide="check" aria-hidden="true"></i>Redes com unidades em vários estados</li>
+        <li><i data-lucide="check" aria-hidden="true"></i>Departamentos jurídicos internos</li>
+        <li><i data-lucide="check" aria-hidden="true"></i>CNPJ por unidade operacional</li>
+        <li><i data-lucide="check" aria-hidden="true"></i>Grupos pós fusão ou aquisição</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- SECTION: consignado -->
+  <section class="lp-sec lp-sec--dark" id="consignado" aria-labelledby="cs-title">
+    <div class="lp-glow" aria-hidden="true"></div>
+    <div class="lp-wrap">
+      <div class="sh sh--wide" data-reveal="">
+        <span class="ey">Consignado CLT</span>
+        <h2 class="sh__title" id="cs-title">Consignado CLT: a obrigação que chega por CNPJ <span class="lp-accent">e ninguém acompanha.</span></h2>
+        <p class="sh__lead">Cada empréstimo consignado contratado por um empregado é comunicado à empresa pelo DET daquele CNPJ. A partir dali ela é obrigada a descontar em folha e repassar ao banco. Sem acompanhamento, a empresa paga o funcionário integralmente e segue devendo ao banco — em cada filial, em silêncio.</p>
+      </div>
+      <div class="fg fg--4">
+        <article class="fc" data-reveal="" data-reveal-delay="0"><span class="fc__ic" aria-hidden="true"><i data-lucide="mail-warning"></i></span><span class="fc__n">01</span><h3>Notificação por CNPJ</h3><p>Quando o empregado contrata o consignado, o banco comunica a empresa pelo DET da inscrição onde ele está vinculado. Se ninguém monitora aquele CNPJ, ninguém vê a notificação.</p></article>
+        <article class="fc" data-reveal="" data-reveal-delay="80"><span class="fc__ic" aria-hidden="true"><i data-lucide="receipt"></i></span><span class="fc__n">02</span><h3>Obrigação de descontar em folha</h3><p>A partir da ciência, a empresa é obrigada a reter a parcela na folha do empregado e repassar ao banco. Se a notificação passa despercebida, o desconto simplesmente não acontece.</p></article>
+        <article class="fc" data-reveal="" data-reveal-delay="160"><span class="fc__ic" aria-hidden="true"><i data-lucide="landmark"></i></span><span class="fc__n">03</span><h3>Dívida silenciosa com o banco</h3><p>O empregado recebe o salário cheio, o banco não recebe o repasse, e a empresa acumula inadimplência sem saber — parcela a parcela, mês a mês.</p></article>
+        <article class="fc" data-reveal="" data-reveal-delay="240"><span class="fc__ic" aria-hidden="true"><i data-lucide="map-pin"></i></span><span class="fc__n">04</span><h3>Risco multiplicado por filial</h3><p>Cada CNPJ do grupo tem sua própria caixa no DET. Um consignado contratado na filial do Paraná não aparece na caixa da matriz. Sem monitoramento centralizado, o problema se repete em cada unidade.</p></article>
+      </div>
+      <div class="cl" data-reveal="">
+        <span class="cl__ic" aria-hidden="true"><i data-lucide="shield-check"></i></span>
+        <div><h3>Com o DET Monitor, o consignado não passa despercebido.</h3><p>Toda notificação de consignado — de qualquer CNPJ do grupo — chega classificada e com prazo no mesmo painel. A empresa desconta no mês certo e <b>evita acumular dívida com o banco</b>.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION: faq -->
+  <section class="lp-sec fq" id="faq" aria-labelledby="fq-title">
+    <div class="lp-wrap fq__grid">
+      <div class="fq__head" data-reveal="">
+        <h2 class="fq__title" id="fq-title">Perguntas frequentes <span class="lp-accent">antes de configurar o grupo inteiro.</span></h2>
+        <p class="fq__lead">Procuração, certificado, permissões e novas empresas no grupo.</p>
+        <span class="fq__deco" aria-hidden="true"><i data-lucide="message-circle-question"></i></span>
+      </div>
+      <div class="fq-list">
+        <div class="fq-item is-open">
+          <h3 class="fq-q"><button type="button" class="fq-btn" id="fq-b1" aria-expanded="true" aria-controls="fq-p1"><span class="fq-n" aria-hidden="true">01</span><span class="fq-t">Preciso de procuração para cada CNPJ do grupo?</span><span class="fq-ic" aria-hidden="true"><i data-lucide="plus"></i></span></button></h3>
+          <div class="fq-panel" id="fq-p1" role="region" aria-labelledby="fq-b1"><div class="fq-inner"><p>Sim. A procuração eletrônica do DET é emitida por CNPJ — é o mecanismo que autoriza o acesso àquela caixa postal específica, mesmo dentro do mesmo grupo econômico.</p></div></div>
+        </div>
+        <div class="fq-item">
+          <h3 class="fq-q"><button type="button" class="fq-btn" id="fq-b2" aria-expanded="false" aria-controls="fq-p2"><span class="fq-n" aria-hidden="true">02</span><span class="fq-t">Um único certificado digital serve para todos os CNPJs?</span><span class="fq-ic" aria-hidden="true"><i data-lucide="plus"></i></span></button></h3>
+          <div class="fq-panel" id="fq-p2" role="region" aria-labelledby="fq-b2"><div class="fq-inner"><p>Sim, desde que a procuração de cada CNPJ esteja ativa. O certificado autentica o acesso; a procuração é o que autoriza a consulta de cada empresa.</p></div></div>
+        </div>
+        <div class="fq-item">
+          <h3 class="fq-q"><button type="button" class="fq-btn" id="fq-b3" aria-expanded="false" aria-controls="fq-p3"><span class="fq-n" aria-hidden="true">03</span><span class="fq-t">As filiais enxergam o DET umas das outras?</span><span class="fq-ic" aria-hidden="true"><i data-lucide="plus"></i></span></button></h3>
+          <div class="fq-panel" id="fq-p3" role="region" aria-labelledby="fq-b3"><div class="fq-inner"><p>Não. Mesmo com um certificado único autenticando o grupo, os dados, alertas e histórico de cada CNPJ ficam segregados no painel.</p></div></div>
+        </div>
+        <div class="fq-item">
+          <h3 class="fq-q"><button type="button" class="fq-btn" id="fq-b4" aria-expanded="false" aria-controls="fq-p4"><span class="fq-n" aria-hidden="true">04</span><span class="fq-t">Como adiciono uma nova empresa (aquisição, nova filial)?</span><span class="fq-ic" aria-hidden="true"><i data-lucide="plus"></i></span></button></h3>
+          <div class="fq-panel" id="fq-p4" role="region" aria-labelledby="fq-b4"><div class="fq-inner"><p>Basta emitir a procuração eletrônica do novo CNPJ e selecioná-lo no painel. O certificado já cadastrado continua servindo para autenticar o acesso.</p></div></div>
+        </div>
+        <div class="fq-item">
+          <h3 class="fq-q"><button type="button" class="fq-btn" id="fq-b5" aria-expanded="false" aria-controls="fq-p5"><span class="fq-n" aria-hidden="true">05</span><span class="fq-t">Quanto tempo leva para configurar um grupo com muitos CNPJs?</span><span class="fq-ic" aria-hidden="true"><i data-lucide="plus"></i></span></button></h3>
+          <div class="fq-panel" id="fq-p5" role="region" aria-labelledby="fq-b5"><div class="fq-inner"><p>A configuração da ferramenta leva minutos. O tempo total depende do ritmo de emissão das procurações de cada empresa, que pode ser feito de forma gradual.</p></div></div>
+        </div>
+        <div class="fq-item">
+          <h3 class="fq-q"><button type="button" class="fq-btn" id="fq-b6" aria-expanded="false" aria-controls="fq-p6"><span class="fq-n" aria-hidden="true">06</span><span class="fq-t">O certificado fica salvo para sempre?</span><span class="fq-ic" aria-hidden="true"><i data-lucide="plus"></i></span></button></h3>
+          <div class="fq-panel" id="fq-p6" role="region" aria-labelledby="fq-b6"><div class="fq-inner"><p>Não. O certificado pode ser revogado pelo grupo a qualquer momento, diretamente na ferramenta.</p></div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION: formulario (CTA final + contato comercial) -->
+  <section class="ct" id="formulario" aria-labelledby="ct-title">
+    <div class="lp-wrap">
+      <div class="ct-panel">
+        <div class="ct-panel__bg" aria-hidden="true"></div>
+        <div class="ct-copy" data-reveal="">
+          <h2 class="ct-title" id="ct-title">O próximo prazo perdido não precisa acontecer <span class="lp-accent">em nenhuma das suas empresas.</span></h2>
+          <p>Grupos com múltiplos CNPJs não precisam de mais um portal para checar. Precisam de um único lugar que já avisa antes do prazo apertar.</p>
+          <p class="ct-quote">O grupo não precisa esperar o problema chegar. Ele pode chegar antes do prazo.</p>
+          <ul class="ct-seals">
+            <li><i data-lucide="check" aria-hidden="true"></i>Demonstração gratuita</li>
+            <li><i data-lucide="lock" aria-hidden="true"></i>Sem compromisso</li>
+            <li><i data-lucide="message-circle" aria-hidden="true"></i>Suporte em português</li>
+          </ul>
+        </div>
+
+        <div class="ct-card" data-reveal="" data-reveal-delay="120">
+          <div id="lp-form-view">
+            <span class="ct-kicker">Contato comercial — grupos e holdings</span>
+            <h3 class="ct-card__t">Solicitar demonstração para o grupo</h3>
+            <p class="ct-card__d">Preencha os dados abaixo. Nossa equipe entra em contato para apresentar o DET Monitor para grupos e calcular o cenário do seu portfólio de CNPJs.</p>
+            <form class="ct-form" id="lp-form" novalidate>
+              <div class="lp-field" id="f-nome">
+                <label for="c-nome">Nome completo</label>
+                <input type="text" id="c-nome" name="nome" required autocomplete="name" placeholder="Seu nome" aria-describedby="e-nome">
+                <span class="lp-field__error" id="e-nome">Informe seu nome.</span>
+              </div>
+              <div class="lp-field" id="f-email">
+                <label for="c-email">E-mail corporativo</label>
+                <input type="email" id="c-email" name="email" required autocomplete="email" placeholder="voce@empresa.com.br" aria-describedby="e-email">
+                <span class="lp-field__error" id="e-email">Informe um e-mail válido.</span>
+              </div>
+              <div class="lp-field" id="f-tel">
+                <label for="c-tel">Telefone / WhatsApp</label>
+                <input type="tel" id="c-tel" name="telefone" required autocomplete="tel" inputmode="tel" placeholder="(11) 99999-0000" aria-describedby="e-tel">
+                <span class="lp-field__error" id="e-tel">Informe um telefone com DDD.</span>
+              </div>
+              <div class="lp-field" id="f-empresa">
+                <label for="c-empresa">Nome do grupo / holding</label>
+                <input type="text" id="c-empresa" name="empresa" required autocomplete="organization" placeholder="Grupo Exemplo S.A." aria-describedby="e-empresa">
+                <span class="lp-field__error" id="e-empresa">Informe o nome do grupo.</span>
+              </div>
+              <div class="lp-field ct-full" id="f-cnpjs">
+                <label for="c-cnpjs">Quantos CNPJs o grupo pretende monitorar?</label>
+                <select id="c-cnpjs" name="cnpjs" required aria-describedby="e-cnpjs">
+                  <option value="">Selecione...</option>
+                  <option value="ate-10">Até 10 CNPJs</option>
+                  <option value="11-30">De 11 a 30 CNPJs</option>
+                  <option value="31-60">De 31 a 60 CNPJs</option>
+                  <option value="60+">Mais de 60 CNPJs</option>
+                </select>
+                <span class="lp-field__error" id="e-cnpjs">Selecione a quantidade de CNPJs.</span>
+              </div>
+              <div class="lp-field ct-full" id="f-msg">
+                <label for="c-msg">Mensagem <span class="ct-opt">(opcional)</span></label>
+                <textarea id="c-msg" name="mensagem" rows="3" placeholder="Conte um pouco sobre o grupo, as filiais ou o que gostaria de saber..."></textarea>
+              </div>
+              <div class="lp-field ct-full ct-consent" id="f-consent">
+                <label class="ct-check" for="c-consent"><input type="checkbox" id="c-consent" name="consent" required aria-describedby="e-consent"><span class="ct-box" aria-hidden="true"><i data-lucide="check"></i></span><span>Concordo em receber contato comercial e que meus dados sejam tratados conforme a LGPD.</span></label>
+                <span class="lp-field__error" id="e-consent">Marque para podermos entrar em contato.</span>
+              </div>
+
+              <input class="lp-hp" type="text" name="website" tabindex="-1" autocomplete="off" aria-hidden="true">
+
+              <button type="submit" class="lp-submit ct-full" id="lp-submit"><span id="lp-submit-label">Enviar solicitação</span><i data-lucide="send" aria-hidden="true"></i></button>
+              <div class="lp-alert ct-full" id="lp-alert" role="alert">Não foi possível enviar agora. Seus dados continuam preenchidos: tente novamente em instantes.</div>
+              <p class="ct-note ct-full"><i data-lucide="shield-check" aria-hidden="true"></i>Seus dados são tratados com confidencialidade e não serão compartilhados.</p>
+            </form>
+          </div>
+
+          <div class="ct-success" id="lp-success" role="region" aria-live="polite" aria-label="Solicitação enviada">
+            <div class="ct-success__ic" aria-hidden="true"><i data-lucide="check"></i></div>
+            <h3 id="lp-success-title" tabindex="-1">Obrigado!</h3>
+            <p>Sua solicitação foi enviada com sucesso. Um especialista entrará em contato em até 1 dia útil.</p>
+            <button type="button" class="ct-again" id="lp-again">Enviar outra solicitação</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  </main>
+
+  <!-- SECTION: footer (rodapé Juris8) -->
+  <footer class="jf">
+    <div class="jf__glow" aria-hidden="true"></div>
+    <div class="lp-wrap">
+      <div class="jf__top">
+        <div class="jf__brand">
+          <a href="/" class="jf__logo" aria-label="Juris8, ir para a página inicial"><img src="/assets/brand/logo-juris8-light.png" alt="Juris 8" width="125" height="32"></a>
+          <p class="jf__tag">A mais completa IA jurídica do Brasil. Pré-elaboração de peças, pesquisa, análise de documentos e transcrição — desenvolvidas por advogados, para advogados.</p>
+          <div class="jf__seals">
+            <span><i data-lucide="lock" aria-hidden="true"></i>LGPD</span>
+            <span><i data-lucide="sparkles" aria-hidden="true"></i>IA jurídica</span>
+          </div>
+          <div class="jf__social">
+            <a href="https://www.instagram.com/juris8.ai" target="_blank" rel="noopener noreferrer" aria-label="Instagram da Juris8" data-track="social_click" data-track-ctx="instagram">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4.2"/><circle cx="17.4" cy="6.6" r=".9" fill="currentColor" stroke="none"/></svg>
+            </a>
+            <a href="https://wa.me/5547988061278?text=Ol%C3%A1%21%20Quero%20centralizar%20o%20DET%20de%20todas%20as%20empresas%20do%20meu%20grupo.%20Pode%20me%20apresentar%20o%20DET%20Monitor%20para%20grupos%3F" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp da Juris8" data-track="whatsapp_click" data-track-ctx="footer_icon">
+              <svg viewBox="0 0 32 32" fill="currentColor" aria-hidden="true"><path d="M16.01 3.2c-7.1 0-12.86 5.76-12.86 12.86 0 2.27.6 4.48 1.73 6.43L3.2 28.8l6.5-1.7a12.8 12.8 0 0 0 6.3 1.62h.01c7.1 0 12.86-5.76 12.86-12.86 0-3.44-1.34-6.67-3.77-9.1A12.78 12.78 0 0 0 16.01 3.2Zm0 23.5h-.01a10.6 10.6 0 0 1-5.4-1.48l-.39-.23-4.02 1.05 1.07-3.92-.25-.4a10.62 10.62 0 0 1 16.46-13.1 10.55 10.55 0 0 1 3.12 7.51c0 5.88-4.78 10.65-10.66 10.65Zm5.85-7.98c-.32-.16-1.9-.94-2.2-1.04-.3-.11-.5-.16-.72.16-.21.32-.82 1.03-1 1.25-.18.21-.37.24-.69.08-.32-.16-1.35-.5-2.58-1.59-.95-.85-1.6-1.9-1.78-2.22-.18-.32-.02-.49.14-.65.14-.14.32-.37.48-.56.16-.18.21-.32.32-.53.11-.21.05-.4-.03-.56-.08-.16-.72-1.74-.99-2.38-.26-.62-.52-.54-.72-.55l-.61-.01c-.21 0-.56.08-.85.4-.29.32-1.11 1.09-1.11 2.66 0 1.57 1.14 3.08 1.3 3.3.16.21 2.25 3.43 5.45 4.81.76.33 1.36.53 1.82.68.77.24 1.46.21 2.01.13.61-.09 1.9-.78 2.17-1.53.27-.74.27-1.38.19-1.51-.08-.13-.29-.21-.61-.37Z"/></svg>
+            </a>
+          </div>
+        </div>
+        <nav class="jf__links jf__links--4" aria-label="Rodapé">
+    <div class="jf__col">
+      <h2 class="jf__h">Soluções</h2>
+      <a href="/det">DET Monitor</a>
+      <a href="/det/det-monitor-grupos.html" aria-current="page">DET para grupos</a>
+      <a href="/det/empresas.html">DET para empresas</a>
+      <a href="/crm">CRM com IA</a>
+      <a href="/secretariajuridica">Secretaria jurídica</a>
+      <a href="/newsletter">Newsletter mensal</a>
+      <a href="/trabalhistaempresarial">Trabalhista empresarial</a>
+    </div>
+    <div class="jf__col">
+      <h2 class="jf__h">Plataforma</h2>
+      <a href="/agentejuridico">Agente Jurídico</a>
+      <a href="/agentejuridico#feature-redacao">Pré-elaboração de peças</a>
+      <a href="/agentejuridico#feature-jurisprudencia">Pesquisa de jurisprudência</a>
+      <a href="/agentejuridico#feature-analise">Análise de documentos</a>
+      <a href="/agentejuridico#feature-transcricao">Transcrição de audiências</a>
+    </div>
+    <div class="jf__col">
+      <h2 class="jf__h">Guia DET</h2>
+      <a href="/guia-det">Guia DET</a>
+      <a href="/guia-det#o-que-e">O que é o DET</a>
+      <a href="/guia-det#riscos">Riscos e prazos</a>
+      <a href="/guia-det#acesso">Quem pode acessar</a>
+    </div>
+    <div class="jf__col">
+      <h2 class="jf__h">Contato</h2>
+      <a href="https://wa.me/5547988061278?text=Ol%C3%A1%21%20Quero%20centralizar%20o%20DET%20de%20todas%20as%20empresas%20do%20meu%20grupo.%20Pode%20me%20apresentar%20o%20DET%20Monitor%20para%20grupos%3F" target="_blank" rel="noopener noreferrer" data-track="whatsapp_click" data-track-ctx="footer_link">WhatsApp</a>
+      <a href="https://www.instagram.com/juris8.ai" target="_blank" rel="noopener noreferrer" data-track="social_click" data-track-ctx="instagram">Instagram</a>
+      <a href="#faq">FAQ</a>
+      <a href="/#solucoes">Todas as soluções</a>
+      <a href="/#planos">Planos</a>
+    </div>
+        </nav>
+      </div>
+      <div class="jf__bottom">
+        <span>© 2026 Juris8 · Todos os direitos reservados.</span>
+        <span class="jf__made"><i aria-hidden="true"></i>Desenvolvido por advogados, para advogados</span>
+        <a href="#topo" class="jf__up">Voltar ao topo<i data-lucide="chevron-up" aria-hidden="true"></i></a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- WhatsApp flutuante -->
+  <a class="lp-wa" href="https://wa.me/5547988061278?text=Ol%C3%A1%21%20Quero%20centralizar%20o%20DET%20de%20todas%20as%20empresas%20do%20meu%20grupo.%20Pode%20me%20apresentar%20o%20DET%20Monitor%20para%20grupos%3F" target="_blank" rel="noopener noreferrer" aria-label="Fale com a Juris8 no WhatsApp" data-track="whatsapp_click" data-track-ctx="fab">
+    <span class="lp-wa__label">Fale com a Juris8</span>
+    <span class="lp-wa__btn"><span class="lp-wa__ring" aria-hidden="true"></span><svg viewBox="0 0 32 32" fill="currentColor" aria-hidden="true"><path d="M16.01 3.2c-7.1 0-12.86 5.76-12.86 12.86 0 2.27.6 4.48 1.73 6.43L3.2 28.8l6.5-1.7a12.8 12.8 0 0 0 6.3 1.62h.01c7.1 0 12.86-5.76 12.86-12.86 0-3.44-1.34-6.67-3.77-9.1A12.78 12.78 0 0 0 16.01 3.2Zm0 23.5h-.01a10.6 10.6 0 0 1-5.4-1.48l-.39-.23-4.02 1.05 1.07-3.92-.25-.4a10.62 10.62 0 0 1 16.46-13.1 10.55 10.55 0 0 1 3.12 7.51c0 5.88-4.78 10.65-10.66 10.65Zm5.85-7.98c-.32-.16-1.9-.94-2.2-1.04-.3-.11-.5-.16-.72.16-.21.32-.82 1.03-1 1.25-.18.21-.37.24-.69.08-.32-.16-1.35-.5-2.58-1.59-.95-.85-1.6-1.9-1.78-2.22-.18-.32-.02-.49.14-.65.14-.14.32-.37.48-.56.16-.18.21-.32.32-.53.11-.21.05-.4-.03-.56-.08-.16-.72-1.74-.99-2.38-.26-.62-.52-.54-.72-.55l-.61-.01c-.21 0-.56.08-.85.4-.29.32-1.11 1.09-1.11 2.66 0 1.57 1.14 3.08 1.3 3.3.16.21 2.25 3.43 5.45 4.81.76.33 1.36.53 1.82.68.77.24 1.46.21 2.01.13.61-.09 1.9-.78 2.17-1.53.27-.74.27-1.38.19-1.51-.08-.13-.29-.21-.61-.37Z"/></svg></span>
+  </a>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{}">
+/* Comportamentos comuns (header, formulário, FAQ, animações) vêm de /assets/site/j8-pages.js */
+class Component extends DCLogic {
+  componentDidMount() {
+    if (!window.J8) return;
+    this._j8 = window.J8.mount({
+      form: {"interest": "DET Monitor · grupos e holdings", "source": "lp_det_grupos", "segment": "det_grupos"}
+    });
+  }
+
+  componentDidUpdate() {
+    if (window.J8) window.J8.icons(0);
+  }
+
+  componentWillUnmount() {
+    if (this._j8) this._j8.destroy();
+  }
+
+  renderVals() { return {}; }
+}
+</script>
+</body>
+</html>

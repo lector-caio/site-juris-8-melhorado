@@ -60,13 +60,22 @@ module.exports = async function handler(req, res) {
     return;
   }
 
+  // Páginas de solução mandam os campos próprios (CNPJs, área, processos...) em `extras`;
+  // a home manda só `porte`.
+  const extras = Array.isArray(body.extras)
+    ? body.extras
+        .filter((x) => x && x.label && x.value)
+        .slice(0, 12)
+        .map((x) => [String(x.label).slice(0, 80), String(x.value).slice(0, 500)])
+    : [];
   const rows = [
     ['Nome', nome],
-    ['Escritório', empresa],
+    ['Escritório / empresa', empresa],
     ['E-mail', email],
     ['Telefone / WhatsApp', telefone],
-    ['Porte', field('porte') || '—'],
+    ...(extras.length ? extras : [['Porte', field('porte') || '—']]),
     ['Interesse', interesse || '—'],
+    ['Página', field('page') || '—'],
     ['Origem', origem || '—'],
   ];
   const html =
