@@ -1,0 +1,1185 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#7547EF">
+<link rel="icon" href="/assets/brand/juris8-favicon-32x32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="/assets/brand/juris8-apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="/design-system/tokens/fonts.css">
+<link rel="stylesheet" href="/design-system/tokens/colors.css">
+<link rel="stylesheet" href="/design-system/tokens/typography.css">
+<link rel="stylesheet" href="/design-system/tokens/spacing.css">
+<link rel="stylesheet" href="/design-system/tokens/effects.css">
+<link rel="stylesheet" href="/design-system/tokens/base.css">
+<link rel="stylesheet" href="/assets/site/j8-base.css">
+<link rel="stylesheet" href="/assets/site/j8-pages.css">
+<script src="/assets/site/j8-pages.js"></script>
+<script src="/support.js"></script>
+<script src="https://unpkg.com/lucide@latest"></script>
+<title>Júlia, sua secretaria jurídica com IA | Juris8</title>
+<meta name="description" content="A Júlia atende seus clientes 24 horas por dia pelo WhatsApp e e-mail, agenda reuniões e acompanha o relacionamento no tom do seu escritório.">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Juris8">
+<meta property="og:title" content="Júlia, sua secretaria jurídica com IA | Juris8">
+<meta property="og:description" content="Atendimento jurídico 24 horas, no tom do seu escritório. Conheça a Júlia por 7 dias grátis.">
+<meta property="og:image" content="/assets/media/hero-secretaria.jpg">
+<style>
+  :root { --j-purple:#7547EF; --j-deep:#190D45; --j-ink:#211C3D; --j-muted:#726D86; --j-line:#EAE7F2; --j-paper:#FBFAFF; --j-lilac:#F2EEFF; }
+  html { scroll-padding-top: 92px; }
+  .julia-page { color:var(--j-ink); }
+  .julia-page .lp-nav a { white-space:nowrap; }
+  .julia-hero { position:relative; }
+  .julia-hero .lp-hero__inner { align-items:center; }
+  .julia-hero .lp-hero__title em { color:#6A3AD8; }
+  .julia-hero .lp-hero__ctas { flex-direction:row; flex-wrap:wrap; align-items:center; }
+  .julia-hero__fine { display:flex; align-items:center; gap:8px; margin:13px 0 0; color:#6E6A8A; font-size:11px; }
+  .julia-hero__fine svg { width:14px; height:14px; }
+  .julia-demo { position:relative; max-width:470px; width:100%; border:1px solid rgba(255,255,255,.9); border-radius:22px; background:#fff; color:#27243D; box-shadow:0 30px 60px -26px rgba(36,16,90,.38); }
+  .julia-demo__window { overflow:hidden; border-radius:inherit; background:#F7F6FA; color:#27243D; }
+  .julia-demo__bar { display:flex; align-items:center; gap:11px; padding:14px 16px; background:#fff; border-bottom:1px solid #ECEAF2; }
+  .julia-avatar { display:grid; place-items:center; width:38px; height:38px; flex:none; border-radius:13px; color:white; background:linear-gradient(145deg,#A98AFF,#6740DE); font:800 13px var(--font-display); box-shadow:0 7px 16px #7547ef40; }
+  .julia-demo__name { display:grid; gap:3px; flex:1; }
+  .julia-demo__name b { font-size:13px; }
+  .julia-demo__name small { color:#89859B; font-size:10px; }
+  .julia-live { display:inline-flex; align-items:center; gap:6px; color:#1A9A62; font-size:10px; font-weight:800; }
+  .julia-live::before { content:""; width:7px; height:7px; border-radius:50%; background:#2FC27A; box-shadow:0 0 0 4px #2fc27a20; }
+  .julia-demo__messages { display:grid; gap:11px; padding:20px 16px 18px; }
+  .julia-message { max-width:88%; padding:11px 13px; border-radius:13px; background:#fff; box-shadow:0 3px 12px #211c3d0c; font-size:12px; line-height:1.55; }
+  .julia-message small { display:block; margin-top:5px; color:#A09BAB; font-size:9px; text-align:right; }
+  .julia-message--out { justify-self:end; background:#EDE7FF; border-bottom-right-radius:4px; }
+  .julia-message--in { border-bottom-left-radius:4px; }
+  .julia-demo__footer { display:flex; align-items:center; gap:8px; margin:0 14px 14px; padding:10px 13px; border:1px solid #E9E6F0; border-radius:12px; background:#fff; color:#9B97A8; font-size:10px; }
+  .julia-demo__footer svg { width:14px; height:14px; color:var(--j-purple); }
+  .julia-float { position:absolute; display:flex; align-items:center; gap:9px; padding:12px 15px; border:1px solid #fff; border-radius:14px; background:#fff; color:#30294A; box-shadow:0 12px 32px #1009332e; font-size:11px; font-weight:700; animation:jFloat 4s ease-in-out infinite; }
+  .julia-float svg { width:17px; height:17px; color:#7547EF; }
+  .julia-float--one { top:32px; right:-36px; }
+  .julia-float--two { bottom:30px; left:-34px; animation-delay:-1.5s; }
+  @keyframes jFloat { 0%,100% { transform:translateY(0) } 50% { transform:translateY(-7px) } }
+  .julia-section { padding:104px 0; }
+  .julia-section--soft { background:linear-gradient(180deg,#FBFAFF,#F5F2FC); }
+  .julia-section--dark { position:relative; overflow:hidden; color:white; background:radial-gradient(ellipse at 78% 12%,#41218B 0,transparent 35%),linear-gradient(145deg,#1A0E49,#10092D); }
+  .julia-section--dark::after { content:""; position:absolute; inset:0; opacity:.16; pointer-events:none; background-image:radial-gradient(#c5b2ff 1px,transparent 1px); background-size:24px 24px; mask-image:linear-gradient(90deg,transparent,black); }
+  .julia-section .lp-wrap { z-index:1; }
+  .julia-heading { max-width:800px; margin:0 auto 54px; text-align:center; }
+  .julia-heading .ey { margin:0 0 13px; color:#7547EF; font-size:12px; font-weight:800; letter-spacing:.14em; text-transform:uppercase; }
+  .julia-heading h2 { margin:0; color:#201944; font:800 clamp(32px,4vw,52px)/1.08 var(--font-display); letter-spacing:-.045em; text-wrap:balance; }
+  .julia-heading h2 span { color:#7547EF; }
+  .julia-heading p { max-width:660px; margin:17px auto 0; color:#716C83; font-size:16px; line-height:1.7; }
+  .julia-section--dark .julia-heading h2 { color:white; }
+  .julia-section--dark .julia-heading p { color:#C6BDE0; }
+  .julia-section--dark .julia-heading .ey { color:#BDA8FF; }
+  .julia-capabilities { display:grid; grid-template-columns:repeat(3,1fr); gap:15px; }
+  .julia-capability { min-height:204px; padding:25px 24px; border:1px solid #ECE9F4; border-radius:21px; background:#fff; box-shadow:0 15px 44px -40px #26145f80; transition:transform .3s,border-color .3s,box-shadow .3s; }
+  .julia-capability:hover { transform:translateY(-5px); border-color:#D2C5FF; box-shadow:0 20px 38px -30px #7547ef80; }
+  .julia-capability__icon { display:grid; place-items:center; width:44px; height:44px; margin-bottom:22px; border-radius:14px; color:#6840D7; background:#F0EBFF; }
+  .julia-capability__icon svg { width:20px; height:20px; }
+  .julia-capability h3 { margin:0 0 8px; color:#211A42; font:700 17px/1.3 var(--font-display); }
+  .julia-capability p { margin:0; color:#726D86; font-size:13px; line-height:1.6; }
+  .julia-flow { display:grid; grid-template-columns:minmax(240px,.72fr) minmax(0,1.28fr); gap:48px; align-items:start; }
+  .julia-flow__nav { display:grid; gap:9px; }
+  .julia-flow__tab { display:grid; grid-template-columns:40px 1fr 18px; gap:12px; align-items:center; width:100%; padding:13px 14px; border:1px solid transparent; border-radius:15px; background:transparent; text-align:left; color:#665F7A; transition:.2s; }
+  .julia-flow__tab:hover { background:#F8F6FD; }
+  .julia-flow__tab[aria-selected="true"] { border-color:#E6DFFF; background:#fff; color:#201944; box-shadow:0 10px 26px -20px #47249b77; }
+  .julia-flow__number { display:grid; place-items:center; width:38px; height:38px; border-radius:12px; background:#F0EBFF; color:#6740D8; font:800 14px var(--font-display); }
+  .julia-flow__tab[aria-selected="true"] .julia-flow__number { color:#fff; background:#7547EF; }
+  .julia-flow__tab b { display:block; font:700 14px var(--font-display); }
+  .julia-flow__tab small { display:block; margin-top:4px; color:#918CA0; font-size:11px; }
+  .julia-flow__tab > svg { width:16px; height:16px; color:#A7A0B6; }
+  .julia-flow__panel { display:none; animation:jPanel .35s ease both; }
+  .julia-flow__panel.is-active { display:block; }
+  @keyframes jPanel { from { opacity:0; transform:translateY(8px) } to { opacity:1; transform:none } }
+  .julia-flow__description { margin-bottom:22px; }
+  .julia-flow__description h3 { margin:0 0 8px; color:#201944; font:750 25px/1.2 var(--font-display); letter-spacing:-.03em; }
+  .julia-flow__description p { margin:0; color:#716C82; font-size:14px; line-height:1.7; }
+  .julia-flow__bullets { display:grid; gap:9px; margin:15px 0 22px; padding:0; list-style:none; }
+  .julia-flow__bullets li { display:flex; align-items:flex-start; gap:9px; color:#4D4764; font-size:12px; line-height:1.5; }
+  .julia-flow__bullets svg { width:15px; height:15px; flex:none; margin-top:1px; color:#7547EF; }
+  .julia-chat { overflow:hidden; border:1px solid #EAE7F1; border-radius:20px; background:#F7F6FA; box-shadow:0 20px 48px -32px #21134480; }
+  .julia-chat__head { display:flex; align-items:center; gap:9px; padding:12px 14px; border-bottom:1px solid #ECEAF2; background:#fff; }
+  .julia-chat__head .julia-avatar { width:31px; height:31px; border-radius:10px; font-size:10px; }
+  .julia-chat__head b { font-size:11px; }
+  .julia-chat__head small { display:block; margin-top:3px; color:#9691A4; font-size:9px; }
+  .julia-chat__head > span:last-child { margin-left:auto; color:#229A64; font-size:9px; font-weight:700; }
+  .julia-chat__body { display:grid; gap:9px; padding:15px; }
+  .julia-chat__bubble { max-width:88%; padding:10px 12px; border-radius:12px; background:#fff; color:#413B55; font-size:11px; line-height:1.55; box-shadow:0 3px 10px #2921450a; }
+  .julia-chat__bubble--reply { justify-self:end; background:#EDE7FF; border-bottom-right-radius:4px; }
+  .julia-chat__bubble--client { border-bottom-left-radius:4px; }
+  .julia-chat__bubble small { display:block; margin-top:4px; color:#9691A3; font-size:8px; text-align:right; }
+  .julia-approve { margin:1px 15px 15px; padding:11px 12px; border:1px solid #DED6F8; border-radius:12px; background:#F3EFFF; color:#4A348F; font-size:10px; line-height:1.5; }
+  .julia-approve b { display:flex; align-items:center; gap:6px; margin-bottom:4px; font-size:10px; }
+  .julia-approve svg { width:13px; height:13px; }
+  .julia-approve__actions { display:flex; gap:7px; margin-top:9px; }
+  .julia-approve__actions span { padding:5px 9px; border-radius:7px; background:#fff; font-weight:700; }
+  .julia-approve__actions span:last-child { background:#7547EF; color:#fff; }
+  .julia-inbox { display:grid; grid-template-columns:280px minmax(0,1fr); min-height:460px; overflow:hidden; border:1px solid #E8E4F0; border-radius:24px; background:#fff; box-shadow:0 35px 75px -50px #21134480; }
+  .julia-inbox__sidebar { padding:19px 13px; border-right:1px solid #EEEAF4; background:#FCFBFE; }
+  .julia-inbox__brand { display:flex; justify-content:space-between; align-items:center; padding:0 7px 18px; color:#211A42; font:750 13px var(--font-display); }
+  .julia-inbox__brand span { color:#8A849A; font:500 10px var(--font-sans); }
+  .julia-inbox__filters { display:flex; gap:4px; margin-bottom:12px; padding:4px; border-radius:10px; background:#F1EFF7; }
+  .julia-inbox__filter { flex:1; padding:7px 3px; border:0; border-radius:7px; background:transparent; color:#777187; font-size:9px; font-weight:700; }
+  .julia-inbox__filter[aria-pressed="true"] { background:#fff; color:#6039CF; box-shadow:0 2px 7px #1e16400e; }
+  .julia-inbox__search { display:flex; gap:7px; align-items:center; margin-bottom:10px; padding:9px; border:1px solid #EBE8F1; border-radius:9px; background:#fff; color:#A6A1B0; font-size:9px; }
+  .julia-inbox__search svg { width:13px; height:13px; }
+  .julia-inbox__list { display:grid; gap:4px; }
+  .julia-inbox__conversation { display:grid; grid-template-columns:34px 1fr auto; gap:9px; align-items:center; width:100%; padding:9px 8px; border:0; border-radius:11px; background:transparent; text-align:left; }
+  .julia-inbox__conversation[aria-selected="true"] { background:#F0EBFF; }
+  .julia-inbox__initials { display:grid; place-items:center; width:34px; height:34px; border-radius:12px; background:#E7E0FF; color:#6340CE; font-size:10px; font-weight:800; }
+  .julia-inbox__conversation b { display:block; overflow:hidden; color:#2A2446; font-size:10px; text-overflow:ellipsis; white-space:nowrap; }
+  .julia-inbox__conversation small { display:block; overflow:hidden; margin-top:4px; color:#888398; font-size:9px; text-overflow:ellipsis; white-space:nowrap; }
+  .julia-inbox__conversation time { align-self:start; color:#9A95A7; font-size:8px; }
+  .julia-inbox__thread { display:flex; min-width:0; flex-direction:column; }
+  .julia-inbox__thread-head { display:flex; align-items:center; gap:10px; padding:16px 19px; border-bottom:1px solid #EEEAF4; }
+  .julia-inbox__thread-head b { display:block; color:#282142; font-size:12px; }
+  .julia-inbox__thread-head small { display:block; margin-top:3px; color:#9390A1; font-size:9px; }
+  .julia-inbox__encrypted { display:flex; justify-content:center; gap:5px; padding:13px 12px 2px; color:#9D98A8; font-size:8px; }
+  .julia-inbox__encrypted svg { width:11px; height:11px; }
+  .julia-inbox__messages { display:grid; align-content:start; gap:12px; flex:1; padding:16px 19px; }
+  .julia-inbox__message { max-width:78%; padding:11px 13px; border-radius:12px; background:#F5F3F9; color:#4A445D; font-size:10px; line-height:1.6; }
+  .julia-inbox__message--out { justify-self:end; background:#EEE8FF; }
+  .julia-inbox__message small { display:block; margin-top:5px; color:#9892A7; font-size:8px; text-align:right; }
+  .julia-inbox__typing { margin:0 19px 14px; color:#8881A0; font-size:9px; }
+  .julia-inbox__typing i { display:inline-block; width:4px; height:4px; margin-right:2px; border-radius:50%; background:#8F70E9; animation:jDots 1s infinite alternate; }
+  .julia-inbox__typing i:nth-child(2) { animation-delay:.2s; } .julia-inbox__typing i:nth-child(3) { animation-delay:.4s; }
+  @keyframes jDots { to { opacity:.25; transform:translateY(-2px); } }
+  .julia-inbox__input { display:flex; align-items:center; justify-content:space-between; margin:0 14px 14px; padding:11px 13px; border:1px solid #E9E6F0; border-radius:10px; color:#A6A1B1; font-size:9px; }
+  .julia-inbox__input svg { width:14px; height:14px; color:#7547EF; }
+  .julia-risk-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:16px; }
+  .julia-risk { padding:25px; border:1px solid rgba(255,255,255,.13); border-radius:20px; background:rgba(255,255,255,.055); }
+  .julia-risk__icon { display:grid; place-items:center; width:42px; height:42px; margin-bottom:23px; border-radius:13px; background:#ffffff12; color:#C9B5FF; }
+  .julia-risk__icon svg { width:20px; height:20px; }
+  .julia-risk h3 { margin:0 0 9px; color:#fff; font:700 17px/1.3 var(--font-display); }
+  .julia-risk p { min-height:64px; margin:0 0 16px; color:#C4BBDD; font-size:12px; line-height:1.65; }
+  .julia-risk strong { color:#D8C8FF; font-size:11px; }
+  .julia-tone { display:grid; grid-template-columns:.8fr 1.2fr; gap:50px; align-items:center; }
+  .julia-tone__copy h2 { margin:0 0 17px; color:#211944; font:800 clamp(32px,4vw,50px)/1.08 var(--font-display); letter-spacing:-.045em; }
+  .julia-tone__copy h2 span { color:#7547EF; }
+  .julia-tone__copy p { margin:0 0 23px; color:#716C82; font-size:15px; line-height:1.75; }
+  .julia-tone__choices { display:grid; gap:9px; }
+  .julia-tone__button { display:flex; align-items:center; justify-content:space-between; width:100%; padding:12px 15px; border:1px solid #EAE7F2; border-radius:12px; background:#fff; color:#534D67; text-align:left; font-size:12px; font-weight:700; }
+  .julia-tone__button[aria-pressed="true"] { border-color:#BFAEFF; background:#F4F0FF; color:#6039CF; }
+  .julia-tone__button svg { width:15px; height:15px; opacity:0; }
+  .julia-tone__button[aria-pressed="true"] svg { opacity:1; }
+  .julia-tone__preview { padding:27px; border:1px solid #E9E5F1; border-radius:23px; background:#fff; box-shadow:0 25px 60px -45px #21134475; }
+  .julia-tone__preview-head { display:flex; align-items:center; gap:10px; margin-bottom:22px; }
+  .julia-tone__preview-head small { display:block; margin-top:3px; color:#938EA1; font-size:10px; }
+  .julia-tone__preview-head b { font-size:12px; }
+  .julia-tone__bubble { max-width:420px; margin-left:auto; padding:17px 19px; border-radius:16px 16px 4px 16px; background:#F0EBFF; color:#403858; font-size:14px; line-height:1.7; transition:opacity .18s,transform .18s; }
+  .julia-tone__bubble.is-changing { opacity:0; transform:translateY(5px); }
+  .julia-tone__caption { margin:15px 0 0; color:#9691A2; font-size:10px; text-align:right; }
+  .julia-train { display:grid; grid-template-columns:1fr 1fr; gap:36px; align-items:center; margin-top:32px; padding:31px; border:1px solid #E9E5F1; border-radius:23px; background:linear-gradient(135deg,#F4F0FF,#fff 70%); }
+  .julia-train h3 { margin:0 0 10px; color:#211944; font:750 22px var(--font-display); }
+  .julia-train p { margin:0; color:#716C82; font-size:13px; line-height:1.7; }
+  .julia-upload { display:grid; gap:10px; }
+  .julia-upload__drop { display:flex; gap:12px; align-items:center; padding:17px; border:1px dashed #B8A7F3; border-radius:15px; background:rgba(255,255,255,.78); cursor:pointer; }
+  .julia-upload__drop > svg { width:22px; height:22px; flex:none; color:#7547EF; }
+  .julia-upload__drop b { display:block; color:#332957; font-size:11px; }
+  .julia-upload__drop small { display:block; margin-top:4px; color:#898398; font-size:9px; }
+  .julia-upload__files { display:flex; flex-wrap:wrap; gap:7px; }
+  .julia-upload__files span { display:inline-flex; align-items:center; gap:6px; padding:7px 9px; border-radius:8px; background:#fff; color:#625A76; font-size:9px; box-shadow:0 3px 12px #2015440c; }
+  .julia-upload__files svg { width:12px; height:12px; color:#7547EF; }
+  .julia-upload__status { min-height:14px; margin:0; color:#6953B0; font-size:9px; }
+  .julia-test { display:grid; grid-template-columns:minmax(0,1fr) 330px; gap:32px; align-items:start; }
+  .julia-test__chat { overflow:hidden; border:1px solid rgba(255,255,255,.16); border-radius:24px; background:#FBFAFF; color:#211A42; box-shadow:0 30px 70px #08031e50; }
+  .julia-test__chat-head { display:flex; align-items:center; gap:11px; padding:16px 19px; border-bottom:1px solid #EBE8F1; background:#fff; }
+  .julia-test__chat-head .julia-avatar { width:39px; height:39px; }
+  .julia-test__chat-head b { display:block; font-size:12px; }
+  .julia-test__chat-head small { display:block; margin-top:4px; color:#8D879B; font-size:9px; }
+  .julia-test__chat-head .julia-live { margin-left:auto; }
+  .julia-test__messages { display:flex; min-height:280px; max-height:340px; flex-direction:column; gap:11px; overflow:auto; padding:19px; }
+  .julia-test__bubble { max-width:82%; padding:11px 13px; border-radius:13px; background:#fff; color:#4A435D; font-size:11px; line-height:1.6; box-shadow:0 3px 12px #2015420a; }
+  .julia-test__bubble--user { align-self:flex-end; background:#EDE7FF; border-bottom-right-radius:4px; }
+  .julia-test__bubble small { display:block; margin-top:4px; color:#9B96A7; font-size:8px; text-align:right; }
+  .julia-test__suggestions { display:flex; flex-wrap:wrap; gap:7px; padding:0 18px 13px; }
+  .julia-test__suggestion { padding:7px 10px; border:1px solid #DED5F9; border-radius:999px; background:#fff; color:#6543BF; font-size:9px; font-weight:700; }
+  .julia-test__suggestion:hover { background:#F2EEFF; }
+  .julia-test__form { display:flex; gap:8px; padding:12px 14px; border-top:1px solid #EBE8F1; background:#fff; }
+  .julia-test__form input { min-width:0; flex:1; padding:10px 12px; border:1px solid #E8E4EF; border-radius:10px; color:#292343; font:inherit; font-size:11px; }
+  .julia-test__form button { display:grid; place-items:center; width:38px; border:0; border-radius:10px; background:#7547EF; color:#fff; }
+  .julia-test__form button svg { width:16px; height:16px; }
+  .julia-test__disclaimer { margin:9px 15px 13px; color:#9791A3; font-size:8px; line-height:1.5; }
+  .julia-test__aside { display:grid; gap:12px; }
+  .julia-test__aside-card { padding:19px; border:1px solid rgba(255,255,255,.13); border-radius:17px; background:rgba(255,255,255,.06); }
+  .julia-test__aside-card svg { width:19px; height:19px; margin-bottom:13px; color:#C7B4FF; }
+  .julia-test__aside-card h3 { margin:0 0 6px; color:#fff; font:700 13px var(--font-display); }
+  .julia-test__aside-card p { margin:0; color:#C6BDDE; font-size:10px; line-height:1.65; }
+  .julia-test__aside .lp-cta { width:100%; min-height:52px; justify-content:space-between; padding:0 18px; font-size:13px; }
+  .julia-cta { padding:94px 0; background:#F7F5FC; }
+  .julia-cta__panel { display:grid; grid-template-columns:.9fr 1.1fr; gap:45px; align-items:center; padding:48px; border-radius:28px; background:linear-gradient(145deg,#1B104C,#10092D); box-shadow:0 35px 75px -52px #1b104c; }
+  .julia-cta__copy .ey { color:#C3AEFF; font-size:11px; font-weight:800; letter-spacing:.13em; text-transform:uppercase; }
+  .julia-cta__copy h2 { margin:12px 0 15px; color:#fff; font:800 clamp(29px,3.4vw,43px)/1.08 var(--font-display); letter-spacing:-.04em; }
+  .julia-cta__copy p { margin:0 0 19px; color:#D0C8E6; font-size:13px; line-height:1.7; }
+  .julia-cta__seals { display:grid; gap:9px; margin:0; padding:0; list-style:none; }
+  .julia-cta__seals li { display:flex; gap:8px; align-items:center; color:#E2DCF1; font-size:11px; }
+  .julia-cta__seals svg { width:14px; height:14px; color:#B99EFF; }
+  .julia-form-card { padding:27px; border-radius:21px; background:#fff; color:#211A42; }
+  .julia-form-card .ct-kicker { color:#7547EF; }
+  .julia-form-card .ct-card__t { margin:8px 0; font:750 22px var(--font-display); }
+  .julia-form-card .ct-card__d { margin:0 0 18px; color:#797389; font-size:11px; line-height:1.6; }
+  .julia-form-card .ct-form { display:grid; grid-template-columns:1fr 1fr; gap:12px; }
+  .julia-form-card .lp-field { min-width:0; }
+  .julia-form-card .lp-field label { font-size:11px; }
+  .julia-form-card .lp-field input { height:43px; border-radius:10px; font-size:12px; }
+  .julia-form-card .ct-check input { width:1px; height:1px; }
+  .julia-form-card .ct-full { grid-column:1/-1; }
+  .julia-form-card .ct-consent { margin:1px 0; }
+  .julia-form-card .ct-check { font-size:10px; line-height:1.5; }
+  .julia-form-card .lp-submit { min-height:49px; margin:0; font-size:13px; }
+  .julia-form-card .ct-note { margin:0; color:#8C8798; font-size:9px; }
+  .julia-footer { color:#D7D0E8; background:#10092D; }
+  .julia-footer__top { display:grid; grid-template-columns:1.3fr repeat(3,1fr); gap:35px; padding:55px 0 38px; }
+  .julia-footer__brand img { width:120px; height:auto; }
+  .julia-footer__brand p { max-width:350px; margin:16px 0; color:#AFA6C5; font-size:11px; line-height:1.7; }
+  .julia-footer__column h3 { margin:0 0 15px; color:#fff; font:700 12px var(--font-display); }
+  .julia-footer__column a { display:block; margin:10px 0; color:#BEB6D3; font-size:10px; transition:color .2s; }
+  .julia-footer__column a:hover { color:#C7B4FF; }
+  .julia-footer__bottom { display:flex; justify-content:space-between; gap:20px; padding:18px 0; border-top:1px solid #ffffff18; color:#9C93B3; font-size:9px; }
+  .julia-footer__bottom a { color:#C7B4FF; }
+  .julia-backtop { position:fixed; right:24px; bottom:24px; z-index:50; display:grid; place-items:center; width:43px; height:43px; border:1px solid #ffffff30; border-radius:14px; background:#26135F; color:#fff; box-shadow:0 12px 30px #11083855; }
+  .julia-backtop svg { width:18px; height:18px; }
+  @media (max-width:1050px) {
+    .julia-page .lp-nav { gap:14px; font-size:12px; }
+    .julia-hero__grid { grid-template-columns:minmax(0,1fr) minmax(320px,.8fr); gap:35px; }
+    .julia-proof__grid { grid-template-columns:repeat(4,1fr); }
+    .julia-inbox { grid-template-columns:235px minmax(0,1fr); }
+    .julia-cta__panel { gap:26px; padding:34px; }
+  }
+  @media (max-width:800px) {
+    .julia-hero .lp-hero__inner { max-width:none; padding:0 28px; grid-template-columns:minmax(0,1fr); gap:38px; }
+    .julia-hero.lp-hero--sub .lp-hero__title { max-width:none; }
+    .julia-hero .lp-hero__lead { max-width:560px; }
+    .julia-hero .lp-hero__visual { position:static; width:100%; max-width:440px; }
+    .julia-hero .lp-hero__scale { transform:none; }
+    .julia-demo { max-width:440px; }
+    .julia-capabilities { grid-template-columns:repeat(2,1fr); }
+    .julia-flow { grid-template-columns:1fr; gap:28px; }
+    .julia-flow__nav { grid-template-columns:repeat(5,minmax(130px,1fr)); overflow-x:auto; padding-bottom:6px; }
+    .julia-flow__tab { grid-template-columns:34px 1fr; min-width:130px; }
+    .julia-flow__number { width:32px; height:32px; }
+    .julia-flow__tab small,.julia-flow__tab > svg { display:none; }
+    .julia-risk-grid { grid-template-columns:1fr; }
+    .julia-risk p { min-height:0; }
+    .julia-tone { grid-template-columns:1fr; gap:28px; }
+    .julia-train { grid-template-columns:1fr; gap:22px; }
+    .julia-test { grid-template-columns:1fr; }
+    .julia-test__aside { grid-template-columns:repeat(2,1fr); }
+    .julia-test__aside .lp-cta { grid-column:1/-1; }
+    .julia-cta__panel { grid-template-columns:1fr; }
+    .julia-footer__top { grid-template-columns:repeat(2,1fr); }
+    .julia-footer__brand { grid-column:1/-1; }
+  }
+  @media (max-width:560px) {
+    .julia-hero .lp-hero__inner { padding:0 20px; }
+    .julia-float--one { right:-8px; top:10px; }
+    .julia-float--two { left:-6px; bottom:10px; }
+    .julia-demo { padding:10px; }
+    .julia-section { padding:72px 0; }
+    .julia-heading { margin-bottom:36px; }
+    .julia-capabilities { grid-template-columns:1fr; }
+    .julia-capability { min-height:0; padding:21px; }
+    .julia-capability__icon { margin-bottom:14px; }
+    .julia-flow__nav { grid-template-columns:repeat(5,122px); }
+    .julia-flow__tab { padding:10px 9px; gap:8px; min-width:122px; }
+    .julia-flow__tab b { font-size:11px; }
+    .julia-flow__description h3 { font-size:22px; }
+    .julia-inbox { display:block; }
+    .julia-inbox__sidebar { padding:14px 10px 10px; border-right:0; border-bottom:1px solid #EEEAF4; }
+    .julia-inbox__list { display:flex; overflow-x:auto; }
+    .julia-inbox__conversation { flex:none; width:145px; }
+    .julia-inbox__thread { min-height:360px; }
+    .julia-inbox__thread-head { padding:13px; }
+    .julia-inbox__messages { padding:14px; }
+    .julia-inbox__message { max-width:90%; }
+    .julia-tone__preview { padding:19px; }
+    .julia-tone__bubble { font-size:12px; }
+    .julia-train { padding:21px; }
+    .julia-test__aside { grid-template-columns:1fr 1fr; }
+    .julia-test__aside-card { padding:14px; }
+    .julia-cta { padding:65px 0; }
+    .julia-cta__panel { padding:23px 18px; border-radius:22px; }
+    .julia-form-card { padding:20px 15px; }
+    .julia-form-card .ct-form { grid-template-columns:1fr; }
+    .julia-form-card .ct-full { grid-column:auto; }
+    .julia-footer__top { gap:22px 18px; }
+    .julia-footer__bottom { flex-direction:column; gap:9px; }
+  }
+  @media (prefers-reduced-motion:reduce) {
+    *,*::before,*::after { scroll-behavior:auto!important; animation-duration:.01ms!important; animation-iteration-count:1!important; transition-duration:.01ms!important; }
+  }
+  .julia-page > main:not(.julia-reference) > section:not(#formulario),
+  .julia-page > footer,
+  .julia-page > .lp-wa { display:none; }
+  .julia-reference { display:block; color:#241b45; }
+  .julia-reference * { box-sizing:border-box; }
+  .julia-reference .lp-wrap { width:min(1120px,100%); max-width:none; padding:0 28px; }
+  .julia-page .lp-header-wrap { padding:12px 24px 0; }
+  .julia-page .lp-header { max-width:1120px; min-height:48px; padding:7px 10px 7px 18px; border:0; border-radius:0; background:rgba(255,255,255,.94); box-shadow:none; }
+  .julia-page .lp-header__logo img { height:25px; }
+  .julia-page .lp-nav { position:static; gap:30px; margin:0 auto; padding:0; border:0; border-radius:0; background:transparent; color:#77738c; font-size:12px; font-weight:500; }
+  .julia-page .lp-nav a { color:#625d76; }
+  .julia-page .lp-nav a { padding:0; border-radius:0; }
+  .julia-page .lp-nav a.is-active,.julia-page .lp-nav a.is-active:hover { color:#625d76; background:transparent; }
+  .julia-page .lp-nav__ind { display:none!important; }
+  .julia-page .lp-header__cta { gap:0; padding:9px 22px; border:0; background:#6233ce; color:#fff; font-size:11px; }
+  .julia-page .lp-header__cta:hover { color:#fff; background:#5127b8; }
+  .julia-page .lp-header__cta-tile,.julia-page .lp-cta-short { display:none; }
+  .julia-page .lp-cta-long { display:inline; }
+  .julia-reference section { position:relative; }
+  .julia-reference .ref-hero { min-height:580px; display:flex; align-items:center; overflow:hidden; padding:94px 0 48px; background:#f8f7fa; }
+  .ref-hero__photo { position:absolute; inset:0; width:100%; height:100%; object-fit:cover; object-position:left center; transform:translateX(40px); }
+  .ref-hero::after { position:absolute; inset:0; content:""; background:linear-gradient(90deg,rgba(255,255,255,.24) 0%,rgba(255,255,255,.12) 38%,transparent 55%); }
+  .ref-hero .lp-wrap { z-index:1; }
+  .ref-hero__copy { width:min(540px,52%); }
+  .ref-eyebrow { display:inline-flex; align-items:center; gap:5px; margin:0 0 22px; padding:5px 10px; border-radius:99px; background:#f0eaff; color:#6941c7; font-size:10px; font-weight:800; letter-spacing:.07em; text-transform:uppercase; }
+  .ref-eyebrow svg { width:12px; height:12px; }
+  .ref-hero h1 { max-width:540px; margin:0; color:#251246; font:800 clamp(36px,3.25vw,42px)/1.08 var(--font-display); letter-spacing:-.045em; }
+  .ref-hero__copy > p:not(.ref-eyebrow) { max-width:430px; margin:18px 0 22px; color:#565269; font-size:15px; line-height:1.65; }
+  .ref-actions { display:flex; flex-wrap:wrap; align-items:center; gap:12px; }
+  .ref-button { display:inline-flex; align-items:center; justify-content:center; gap:10px; min-height:43px; padding:0 19px; border:1px solid #6336ce; border-radius:99px; background:#6336ce; color:white; font-size:11px; font-weight:700; box-shadow:0 8px 20px #6031cc26; }
+  .ref-button:hover { color:white; background:#5127b8; }
+  .ref-button svg { width:14px; height:14px; }
+  .ref-button--light { background:white; color:#6034c7; box-shadow:none; }
+  .ref-button--light:hover { background:#f6f1ff; color:#4e26b3; }
+  .ref-proof { display:flex; flex-wrap:wrap; gap:13px; margin-top:35px; color:#79758a; font-size:9px; }
+  .ref-proof span { display:flex; align-items:center; gap:4px; }
+  .ref-proof svg { width:11px; height:11px; color:#7852d5; }
+  .ref-chat-float { position:absolute; z-index:2; top:27%; right:max(calc((100% - 1080px)/2 + 6px),5%); width:326px; padding:14px; border:1px solid #e9e6f2; border-radius:13px; background:#fff; box-shadow:0 15px 36px #22133d2b; color:#39334f; }
+  .ref-chat-head { display:flex; align-items:center; gap:9px; padding-bottom:11px; border-bottom:1px solid #f0edf5; }
+  .ref-avatar { display:grid; place-items:center; width:29px; height:29px; flex:none; border-radius:9px; background:#6639d2; color:#fff; font-size:11px; font-weight:800; }
+  .ref-chat-head b,.ref-chat-head small { display:block; }
+  .ref-chat-head b { font-size:11px; }
+  .ref-chat-head small { margin-top:2px; color:#8e899d; font-size:8px; }
+  .ref-online { margin-left:auto; color:#33a56d; font-size:8px; }
+  .ref-chat-content { padding:12px 3px 5px; font-size:10px; line-height:1.55; }
+  .ref-chat-content p { margin:0 0 12px; padding:9px 10px; border-radius:9px; background:#f7f6fa; }
+  .ref-chat-choice { display:block; padding:8px 9px; border-top:1px solid #f0edf5; color:#514970; font-size:9px; }
+  .ref-section { padding:64px 0; }
+  .ref-section--soft { background:linear-gradient(120deg,#fbfaff,#f5f2fc); }
+  .ref-heading { max-width:700px; margin:0 auto 38px; text-align:center; }
+  .ref-heading .ref-eyebrow { margin-bottom:13px; font-size:9px; }
+  .ref-heading h2,.ref-copy h2 { margin:0; color:#241747; font:800 clamp(28px,3vw,40px)/1.1 var(--font-display); letter-spacing:-.04em; }
+  .ref-heading h2 span,.ref-copy h2 span { color:#7041d6; }
+  .ref-heading > p:last-child { max-width:560px; margin:12px auto 0; color:#716b83; font-size:13px; line-height:1.6; }
+  .ref-inbox-layout { display:grid; grid-template-columns:260px 1fr; gap:42px; align-items:center; }
+  .ref-feature-list { display:grid; gap:21px; }
+  .ref-feature { display:grid; grid-template-columns:36px 1fr; gap:12px; align-items:start; }
+  .ref-feature__icon { display:grid; place-items:center; width:34px; height:34px; border-radius:10px; background:#eee8ff; color:#6f43d0; }
+  .ref-feature__icon svg { width:17px; height:17px; }
+  .ref-feature b { display:block; margin:1px 0 4px; color:#332a50; font-size:12px; }
+  .ref-feature p { margin:0; color:#7e788d; font-size:10px; line-height:1.5; }
+  .ref-app { overflow:hidden; border:1px solid #e9e5f1; border-radius:14px; background:#fff; box-shadow:0 16px 35px #2c1b5714; }
+  .ref-app__sidebar { float:left; width:27%; min-height:336px; padding:14px 12px; border-right:1px solid #edeaf3; background:#fcfbfe; }
+  .ref-app__brand { display:flex; align-items:center; gap:7px; padding:0 3px 15px; color:#31284e; font-size:11px; font-weight:800; }
+  .ref-app__brand .ref-avatar { width:22px; height:22px; border-radius:7px; font-size:9px; }
+  .ref-app__menu { display:grid; gap:7px; }
+  .ref-app__menu span { display:flex; align-items:center; gap:8px; padding:8px 7px; border-radius:7px; color:#6d6782; font-size:9px; }
+  .ref-app__menu span:first-child { background:#f0ebff; color:#5f38c0; }
+  .ref-app__menu svg { width:12px; height:12px; }
+  .ref-app__main { margin-left:27%; padding:16px; }
+  .ref-app__title { margin:0 0 10px; color:#352b50; font-size:11px; font-weight:700; }
+  .ref-app__tabs { display:flex; gap:17px; padding-bottom:9px; border-bottom:1px solid #efedf4; color:#817b90; font-size:8px; }
+  .ref-app__tabs b { padding:4px 10px; border-radius:99px; background:#eee8ff; color:#6035c3; }
+  .ref-contact { display:grid; grid-template-columns:27px 1fr 32px 13px; gap:8px; align-items:center; min-height:58px; border-bottom:1px solid #f0edf5; }
+  .ref-contact__face { display:grid; place-items:center; width:28px; height:28px; border-radius:50%; background:#d4e8e3; color:#405c56; font-size:8px; font-weight:800; overflow:hidden; flex:none; }
+  .ref-contact__face img { width:100%; height:100%; object-fit:cover; border-radius:50%; display:block; }
+  .ref-contact b,.ref-contact small { display:block; }
+  .ref-contact b { color:#39334b; font-size:9px; }
+  .ref-contact small { overflow:hidden; margin-top:3px; color:#8c8799; font-size:8px; text-overflow:ellipsis; white-space:nowrap; }
+  .ref-contact time { color:#908b9d; font-size:7px; }
+  .ref-contact > svg { width:12px; height:12px; color:#28a76d; }
+  .ref-section--messages { display:flex; min-height:410px; align-items:center; padding:47px 0 52px; background:#fff; }
+  .ref-message-layout { display:grid; grid-template-columns:.82fr 1.18fr; gap:50px; align-items:center; }
+  .ref-copy .ref-eyebrow { margin-bottom:12px; }
+  .ref-copy h2 { font-size:32px; }
+  .ref-copy > p:not(.ref-eyebrow) { margin:13px 0 0; color:#716b83; font-size:12px; line-height:1.65; }
+  .ref-bubbles { display:grid; grid-template-columns:1fr 1fr; gap:15px; }
+  .ref-bubble-card { overflow:hidden; border:1px solid #eae7f1; border-radius:12px; background:#fff; box-shadow:0 12px 25px #21154712; }
+  .ref-bubble-card__head { display:flex; align-items:center; gap:8px; padding:11px 13px; border-bottom:1px solid #efedf4; color:#42395b; font-size:10px; font-weight:700; }
+  .ref-bubble-card__head svg { width:15px; height:15px; color:#6c3dcc; }
+  .ref-bubble-card--wa .ref-bubble-card__head svg { color:#35a96c; }
+  .ref-bubble-card__body { min-height:182px; padding:12px; color:#6d687d; font-size:9px; line-height:1.55; }
+  .ref-mail-subject { margin-bottom:11px; color:#413953; font-size:8px; font-weight:700; }
+  .ref-bubble { margin-bottom:8px; padding:9px; border-radius:8px; background:#f4f2f8; }
+  .ref-bubble--green { margin-left:14px; background:#e3f7e7; }
+  .ref-darkband { padding:55px 0; background:linear-gradient(110deg,#211345,#180d3c); color:white; }
+  .ref-dark-layout { display:grid; grid-template-columns:.92fr 1.08fr; gap:68px; align-items:center; }
+  .ref-cover { padding:16px 18px; border-radius:10px; background:#fff; color:#30284b; box-shadow:0 15px 35px #09051b55; }
+  .ref-cover h3 { display:flex; align-items:center; gap:9px; margin:0 0 7px; padding-bottom:10px; border-bottom:1px solid #eeeaf4; font-size:12px; }
+  .ref-cover h3 svg { width:16px; height:16px; color:#7044d4; }
+  .ref-cover__row { display:flex; align-items:center; gap:9px; padding:10px 2px; border-bottom:1px solid #f0edf4; color:#524c66; font-size:10px; }
+  .ref-cover__row svg { width:14px; height:14px; color:#31a66d; }
+  .ref-cover__row small { margin-left:auto; color:#8d879a; font-size:7px; }
+  .ref-dark-copy .ref-eyebrow { background:#483178; color:#d6c7ff; }
+  .ref-dark-copy h2 { max-width:510px; color:#fff; font-size:32px; }
+  .ref-dark-copy > p:not(.ref-eyebrow) { max-width:510px; color:#d2cbe2; font-size:12px; line-height:1.7; }
+  .ref-stats { display:grid; grid-template-columns:repeat(3,1fr); gap:18px; margin-top:28px; }
+  .ref-stat svg { width:21px; height:21px; margin-bottom:9px; color:#ac8bff; }
+  .ref-stat span { display:block; color:#ded7ef; font-size:9px; line-height:1.5; }
+  .ref-personal { padding:53px 0; background:#faf9fd; }
+  .ref-personal-layout { display:grid; grid-template-columns:.8fr 1.2fr; gap:48px; align-items:center; }
+  .ref-personal .ref-feature-list { gap:14px; margin-top:20px; }
+  .ref-settings { overflow:hidden; border:1px solid #e9e5f1; border-radius:12px; background:white; box-shadow:0 14px 36px #25164d17; }
+  .ref-settings__top { padding:15px; border-bottom:1px solid #efedf4; color:#413852; font-size:10px; font-weight:700; }
+  .ref-settings__tabs { display:flex; gap:21px; padding:10px 15px; border-bottom:1px solid #efedf4; color:#868095; font-size:8px; }
+  .ref-settings__tabs b { color:#6339c7; }
+  .ref-settings__body { display:grid; grid-template-columns:1fr 1fr; gap:16px; padding:18px; }
+  .ref-settings__body h4 { margin:0 0 10px; color:#524b65; font-size:9px; }
+  .ref-settings__badge { display:flex; align-items:center; gap:9px; padding:11px; border:1px solid #eeeaf4; border-radius:8px; color:#554d69; font-size:8px; }
+  .ref-settings__badge .ref-avatar { width:27px; height:27px; }
+  .ref-colors { display:flex; gap:10px; margin-top:11px; }
+  .ref-colors i { width:18px; height:18px; border-radius:6px; background:#6837ce; }
+  .ref-colors i:nth-child(2) { background:#d3c4fb; } .ref-colors i:nth-child(3) { background:#eee8ff; }
+  .ref-preview { padding:11px; border:1px solid #eeeaf4; border-radius:9px; background:#fbfaff; color:#625b75; font-size:8px; line-height:1.55; }
+  .ref-preview strong { display:flex; gap:5px; align-items:center; margin-bottom:9px; color:#443a60; }
+  .ref-preview .ref-avatar { width:19px; height:19px; border-radius:6px; font-size:7px; }
+  .ref-demo-band { padding:26px 0; background:#211345; color:white; }
+  .ref-demo-layout { display:grid; grid-template-columns:1fr 1fr; gap:65px; align-items:center; max-width:960px; }
+  .ref-demo-band h2 { margin:0; color:white; font:800 28px/1.1 var(--font-display); letter-spacing:-.03em; }
+  .ref-demo-band p { max-width:390px; margin:10px 0 14px; color:#d1c9e4; font-size:11px; line-height:1.6; }
+  .ref-demo-band .ref-button { min-height:37px; padding:0 16px; background:#fff; color:#5d35bf; }
+  .ref-live-chat { overflow:hidden; border-radius:12px; background:#fff; color:#3e3653; box-shadow:0 14px 30px #08041d66; }
+  .ref-live-chat .ref-chat-head { padding:10px 12px; }
+  .ref-live-chat .ref-chat-content { min-height:100px; padding:13px; }
+  .ref-live-chat .ref-chat-content p { max-width:90%; }
+  .ref-chat-input { padding:10px 13px; border-top:1px solid #efedf4; color:#9993a6; font-size:8px; }
+  .ref-bottom-cta { display:flex; min-height:180px; align-items:center; padding:24px 0; background:#f2effb; text-align:center; }
+  .ref-bottom-cta h2 { display:flex; align-items:center; justify-content:center; gap:9px; margin:0; color:#281c4b; font:800 25px var(--font-display); }
+  .ref-bottom-cta h2 svg { width:23px; height:23px; color:#6738ca; }
+  .ref-bottom-cta p { margin:6px 0 12px; color:#756f86; font-size:10px; }
+  .ref-bottom-cta .ref-button { min-height:36px; padding:0 17px; }
+  .julia-page > footer.jf { display:block; }
+  .jf { position:relative; overflow:hidden; padding:72px 0 28px; background:#1E0C45; color:#A99BD0; }
+  .jf__glow { position:absolute; inset:0; pointer-events:none; background:radial-gradient(40% 60% at 0% 0%,rgba(139,92,246,.22),transparent 70%),radial-gradient(35% 50% at 100% 100%,rgba(117,71,239,.16),transparent 70%); }
+  .jf__top { display:grid; grid-template-columns:minmax(0,1.3fr) minmax(0,2fr); gap:64px; padding-bottom:48px; border-bottom:1px solid rgba(255,255,255,.08); }
+  .jf__logo { display:inline-block; margin-bottom:20px; }
+  .jf__logo img { display:block; width:auto; height:32px; }
+  .jf__tag { max-width:380px; margin:0 0 20px; color:#B8AAD9; font-size:15px; line-height:1.65; }
+  .jf__seals { display:flex; flex-wrap:wrap; gap:8px; margin-bottom:22px; }
+  .jf__seals span { display:inline-flex; align-items:center; gap:6px; padding:5px 11px; border:1px solid rgba(255,255,255,.1); border-radius:999px; background:rgba(255,255,255,.06); color:#E3DAFA; font-size:12px; font-weight:700; }
+  .jf__seals svg { width:13px; height:13px; color:#A98BFF; }
+  .jf__social { display:flex; gap:10px; }
+  .jf__social a { display:flex; width:40px; height:40px; align-items:center; justify-content:center; border:1px solid rgba(255,255,255,.1); border-radius:12px; background:rgba(255,255,255,.06); color:#E3DAFA; transition:background .25s,color .25s,transform .25s,border-color .25s; }
+  .jf__social a svg { width:18px; height:18px; }
+  .jf__social a:hover { transform:translateY(-3px); border-color:#7547EF; background:#7547EF; color:#fff; }
+  .jf__links { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:32px; }
+  .jf__h { margin:0 0 16px; color:#fff; font-family:var(--font-sans); font-size:13px; font-weight:800; letter-spacing:.08em; text-transform:uppercase; }
+  .jf__col { display:flex; flex-direction:column; align-items:flex-start; gap:11px; }
+  .jf__col a { position:relative; color:#B8AAD9; font-size:14.5px; transition:color .2s; }
+  .jf__col a::after { position:absolute; right:0; bottom:-3px; left:0; height:1.5px; transform:scaleX(0); transform-origin:left; border-radius:2px; background:#A98BFF; content:""; transition:transform .3s var(--ease-out); }
+  .jf__col a:hover { color:#fff; }
+  .jf__col a:hover::after { transform:scaleX(1); }
+  .jf__bottom { display:flex; flex-wrap:wrap; align-items:center; justify-content:space-between; gap:16px; padding-top:24px; color:#8E80B8; font-size:13px; }
+  .jf__made { display:inline-flex; align-items:center; gap:8px; }
+  .jf__made i { width:7px; height:7px; border-radius:50%; background:#22C55E; box-shadow:0 0 0 4px rgba(34,197,94,.15); }
+  .jf__up { display:inline-flex; align-items:center; gap:6px; padding:7px 12px; border:1px solid rgba(255,255,255,.12); border-radius:999px; color:#E3DAFA; font-weight:700; transition:background .25s,border-color .25s; }
+  .jf__up svg { width:14px; height:14px; transition:transform .3s var(--ease-out); }
+  .jf__up:hover { border-color:rgba(255,255,255,.25); background:rgba(255,255,255,.08); color:#fff; }
+  .jf__up:hover svg { transform:translateY(-2px); }
+  .jf a:focus-visible { outline:2.5px solid #C9B5FF; outline-offset:3px; }
+  .julia-page > main:not(.julia-reference) > section#formulario { display:none; }
+  .julia-page > main:not(.julia-reference) > section#formulario:target { position:fixed; inset:0; z-index:1000; display:grid; place-items:center; overflow:auto; padding:28px; background:#130b31d9; }
+  #formulario:target .lp-wrap { width:min(760px,100%); max-width:none; padding:0; }
+  #formulario:target .julia-cta__panel { position:relative; display:block; max-height:calc(100vh - 56px); overflow:auto; padding:26px; }
+  #formulario:target .julia-cta__copy { display:none; }
+  #formulario:target .julia-form-card { max-width:540px; margin:auto; }
+  .julia-form-close { position:absolute; top:12px; right:16px; z-index:2; display:grid; place-items:center; width:32px; height:32px; border-radius:50%; background:#eee9fa; color:#392563; font-size:22px; }
+  @media (max-width:800px) {
+    .julia-page .lp-nav { gap:14px; font-size:10px; }
+    .julia-reference .ref-hero { min-height:560px; padding-top:100px; }
+    .ref-hero__copy { width:min(470px,58%); }
+    .ref-chat-float { right:4%; width:270px; }
+    .ref-inbox-layout { grid-template-columns:210px 1fr; gap:20px; }
+    .ref-app__sidebar { min-height:300px; }
+    .ref-message-layout,.ref-dark-layout,.ref-personal-layout { gap:28px; }
+    .jf__top { grid-template-columns:minmax(0,1fr); gap:40px; }
+  }
+  @media (max-width:600px) {
+    .julia-page .lp-header-wrap { padding:8px 10px 0; }
+    .julia-page .lp-header { min-height:43px; padding-left:12px; gap:8px; }
+    .julia-page .lp-header__logo img { height:21px; }
+    .julia-page .lp-nav { gap:10px; font-size:8px; }
+    .julia-page .lp-nav a:nth-of-type(n+3) { display:none; }
+    .julia-page .lp-header__cta { padding:8px 12px; font-size:9px; }
+    .julia-reference .lp-wrap { padding:0 20px; }
+    .julia-reference .ref-hero { min-height:920px; align-items:flex-start; padding:105px 0 30px; }
+    .ref-hero__photo { object-position:62% center; transform:none; }
+    .ref-hero::after { background:linear-gradient(180deg,rgba(255,255,255,.98) 0%,rgba(255,255,255,.94) 44%,rgba(255,255,255,.15) 73%); }
+    .ref-hero__copy { width:100%; }
+    .ref-hero h1 { max-width:420px; font-size:39px; }
+    .ref-break { display:none; }
+    .ref-hero__copy > p:not(.ref-eyebrow) { max-width:390px; font-size:13px; }
+    .ref-chat-float { top:auto; right:6%; bottom:24px; width:min(290px,88%); }
+    .ref-proof { margin-top:20px; font-size:8px; }
+    .ref-section { padding:48px 0; }
+    .ref-section--messages { display:block; min-height:0; }
+    .ref-heading { margin-bottom:26px; }
+    .ref-heading h2,.ref-copy h2 { font-size:29px; }
+    .ref-heading > p:last-child { font-size:11px; }
+    .ref-inbox-layout,.ref-message-layout,.ref-dark-layout,.ref-personal-layout,.ref-demo-layout { grid-template-columns:1fr; gap:24px; }
+    .ref-feature-list { grid-template-columns:1fr 1fr; gap:15px 10px; }
+    .ref-feature { grid-template-columns:31px 1fr; gap:8px; }
+    .ref-feature__icon { width:30px; height:30px; }
+    .ref-feature b { font-size:10px; }
+    .ref-feature p { font-size:8px; }
+    .ref-app__sidebar { min-height:280px; width:31%; }
+    .ref-app__main { margin-left:31%; padding:12px 9px; }
+    .ref-contact { grid-template-columns:23px 1fr 24px; gap:5px; }
+    .ref-contact > svg { display:none; }
+    .ref-bubbles { gap:8px; }
+    .ref-bubble-card__body { min-height:170px; padding:8px; font-size:8px; }
+    .ref-darkband { padding:44px 0; }
+    .ref-dark-copy h2 { font-size:29px; }
+    .ref-stats { gap:8px; margin-top:22px; }
+    .ref-stat span { font-size:8px; }
+    .ref-personal { padding:44px 0; }
+    .ref-personal .ref-feature-list { grid-template-columns:1fr; }
+    .ref-settings__body { padding:12px 9px; gap:8px; }
+    .ref-settings__tabs { gap:13px; }
+    .ref-demo-band { padding:38px 0; }
+    .ref-demo-layout { gap:18px; }
+    .ref-bottom-cta h2 { font-size:20px; }
+    .ref-bottom-cta { min-height:0; }
+    .ref-footer { min-height:0; }
+    .jf { padding:56px 0 24px; }
+    .jf__links { grid-template-columns:repeat(2,minmax(0,1fr)); gap:28px 20px; }
+    .jf__bottom { flex-direction:column; align-items:flex-start; gap:12px; }
+  }
+</style>
+</head>
+<body>
+<x-dc>
+<helmet>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebPage","name":"Júlia, sua secretaria jurídica com IA | Juris8","description":"Atendimento jurídico 24 horas, no tom do seu escritório.","inLanguage":"pt-BR","isPartOf":{"@type":"WebSite","name":"Juris8","url":"https://juris8.com"},"publisher":{"@type":"Organization","name":"Juris8","logo":"https://juris8.com/assets/brand/logo-juris8.png"}}
+</script>
+</helmet>
+<div id="topo" class="julia-page">
+  <div class="lp-header-wrap">
+    <header class="lp-header" id="lp-header">
+      <a href="/" class="lp-header__logo" aria-label="Juris8, página inicial"><img src="/assets/brand/logo-juris8.png" alt="Juris8" width="113" height="29"></a>
+      <nav class="lp-nav" aria-label="Navegação da página">
+        <span class="lp-nav__ind" aria-hidden="true"></span>
+        <a href="#ref-unified">Soluções</a>
+        <a href="#ref-messages-title">Funcionalidades</a>
+        <a href="#ref-personal-title">Sobre</a>
+        <a href="#ref-demo-title">Recursos</a>
+      </nav>
+      <a href="#formulario" class="lp-header__cta"><span class="lp-cta-long">Solicitar demonstração</span><span class="lp-cta-short">Conhecer</span><span class="lp-header__cta-tile" aria-hidden="true"><i data-lucide="arrow-up-right"></i></span></a>
+    </header>
+  </div>
+
+  <main class="julia-reference">
+    <section class="ref-hero" id="ref-inicio" aria-labelledby="ref-title">
+      <img class="ref-hero__photo" src="/assets/media/hero-secretaria.webp" alt="" fetchpriority="high">
+      <div class="lp-wrap">
+        <div class="ref-hero__copy">
+          <p class="ref-eyebrow">Júlia · Secretária virtual com IA</p>
+          <h1 id="ref-title">A Júlia atende cada<br class="ref-break"> cliente do seu escritório.<br class="ref-break"> 24 horas por dia.</h1>
+          <p>Mais agilidade, organização e eficiência no atendimento do seu escritório. A Júlia entende o contexto, responde com a sua linguagem e cuida do que realmente importa.</p>
+          <div class="ref-actions">
+            <a class="ref-button" href="#formulario">Solicitar demonstração <i data-lucide="arrow-right"></i></a>
+            <a class="ref-button ref-button--light" href="#ref-unified">Ver como funciona <i data-lucide="play"></i></a>
+          </div>
+          <div class="ref-proof"><span><i data-lucide="check"></i>Atendimento em múltiplos canais</span><span><i data-lucide="check"></i>Personalização completa</span><span><i data-lucide="check"></i>Integração com seu fluxo</span></div>
+        </div>
+      </div>
+      <aside class="ref-chat-float" aria-label="Prévia do atendimento da Júlia">
+        <div class="ref-chat-head"><span class="ref-avatar">J</span><span><b>Júlia</b><small>Assistente virtual</small></span><span class="ref-online">● online</span></div>
+        <div class="ref-chat-content">
+          <p>Olá! Sou a Júlia, assistente virtual do escritório. Como posso te ajudar hoje?</p>
+          <span class="ref-chat-choice">◇ Quero falar com um advogado</span>
+          <span class="ref-chat-choice">◇ Tirar uma dúvida</span>
+          <span class="ref-chat-choice">◇ Agendar um atendimento</span>
+        </div>
+      </aside>
+    </section>
+
+    <section class="ref-section ref-section--soft" id="ref-unified" aria-labelledby="ref-inbox-title">
+      <div class="lp-wrap">
+        <header class="ref-heading">
+          <p class="ref-eyebrow">Captação e atendimento</p>
+          <h2 id="ref-inbox-title">Toda a sua demanda em um só lugar.<br><span>Do primeiro contato ao fechamento.</span></h2>
+          <p>A Júlia recebe, qualifica e direciona seus leads automaticamente, via formulário, WhatsApp, e-mail e chat do site.</p>
+        </header>
+        <div class="ref-inbox-layout">
+          <div class="ref-feature-list">
+            <div class="ref-feature"><span class="ref-feature__icon"><i data-lucide="clipboard-list"></i></span><div><b>Formulários do site</b><p>Leads que chegam direto para o seu fluxo.</p></div></div>
+            <div class="ref-feature"><span class="ref-feature__icon"><i data-lucide="message-circle"></i></span><div><b>WhatsApp</b><p>Atendimento rápido e humanizado.</p></div></div>
+            <div class="ref-feature"><span class="ref-feature__icon"><i data-lucide="mail"></i></span><div><b>E-mail</b><p>Respostas automáticas e personalizadas.</p></div></div>
+            <div class="ref-feature"><span class="ref-feature__icon"><i data-lucide="messages-square"></i></span><div><b>Chat do site</b><p>Conversas em tempo real com a sua marca.</p></div></div>
+          </div>
+          <div class="ref-app" aria-label="Prévia da caixa unificada do Juris8">
+            <aside class="ref-app__sidebar">
+              <div class="ref-app__brand"><span class="ref-avatar">J</span>Juris8</div>
+              <div class="ref-app__menu">
+                <span><i data-lucide="messages-square"></i>Conversas</span>
+                <span><i data-lucide="users"></i>Leads</span>
+                <span><i data-lucide="contact"></i>Clientes</span>
+                <span><i data-lucide="settings"></i>Configurações</span>
+              </div>
+            </aside>
+            <div class="ref-app__main">
+              <p class="ref-app__title">Novos contatos</p>
+              <div class="ref-app__tabs"><b>Todos</b><span>WhatsApp</span><span>E-mail</span><span>Site</span></div>
+              <div class="ref-contact"><span class="ref-contact__face"><img src="/assets/media/mariana-silva.jpg" alt="Mariana Silva"></span><span><b>Mariana Silva</b><small>Quero saber sobre o processo...</small></span><time>09:42</time><i data-lucide="message-circle"></i></div>
+              <div class="ref-contact"><span class="ref-contact__face"><img src="/assets/media/carlos-mendes.jpg" alt="Carlos Mendes"></span><span><b>Carlos Mendes</b><small>Pode me passar mais informações?</small></span><time>09:28</time><i data-lucide="mail"></i></div>
+              <div class="ref-contact"><span class="ref-contact__face"><img src="/assets/media/ana-souza.jpg" alt="Ana Souza"></span><span><b>Ana Souza</b><small>Gostaria de agendar um atendimento.</small></span><time>08:54</time><i data-lucide="message-circle"></i></div>
+              <div class="ref-contact"><span class="ref-contact__face"><img src="/assets/media/rafael-costa.jpg" alt="Rafael Costa"></span><span><b>Rafael Costa</b><small>Tenho uma dúvida sobre o contrato.</small></span><time>08:20</time><i data-lucide="message-circle"></i></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="ref-section ref-section--messages" aria-labelledby="ref-messages-title">
+      <div class="lp-wrap ref-message-layout">
+        <div class="ref-copy">
+          <p class="ref-eyebrow">E-mail e WhatsApp</p>
+          <h2 id="ref-messages-title">Respostas rápidas, precisas e no seu tom de voz.</h2>
+          <p>A Júlia entende o contexto da conversa, usa as informações do seu escritório e responde de forma clara, profissional e personalizada, sempre alinhada com a sua linguagem.</p>
+        </div>
+        <div class="ref-bubbles">
+          <article class="ref-bubble-card">
+            <div class="ref-bubble-card__head"><i data-lucide="mail"></i>E-mail</div>
+            <div class="ref-bubble-card__body"><div class="ref-mail-subject">Re: Consulta sobre processo</div><div class="ref-bubble">Olá, tudo bem?<br><br>O seu processo já está em andamento. Nossa equipe está acompanhando todos os detalhes e, assim que houver novidades, você será informado.</div><small>Equipe Jurídica · 09:24</small></div>
+          </article>
+          <article class="ref-bubble-card ref-bubble-card--wa">
+            <div class="ref-bubble-card__head"><i data-lucide="message-circle"></i>WhatsApp</div>
+            <div class="ref-bubble-card__body"><div class="ref-bubble">Olá! Sou a Júlia, assistente virtual do escritório. Como posso te ajudar hoje?</div><div class="ref-bubble ref-bubble--green">Queria saber sobre o andamento do meu processo.</div><div class="ref-bubble">Claro! Vou verificar aqui para você e te retorno em instantes.</div></div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="ref-darkband" aria-labelledby="ref-dark-title">
+      <div class="lp-wrap ref-dark-layout">
+        <div class="ref-cover" aria-label="Cobertura de atendimento">
+          <h3><i data-lucide="square-check"></i>Cobertura de atendimento</h3>
+          <div class="ref-cover__row"><i data-lucide="check-circle-2"></i>Dúvidas frequentes <small>⌄</small></div>
+          <div class="ref-cover__row"><i data-lucide="check-circle-2"></i>Informações sobre processos <small>⌄</small></div>
+          <div class="ref-cover__row"><i data-lucide="check-circle-2"></i>Agendamento de atendimentos <small>⌄</small></div>
+          <div class="ref-cover__row"><i data-lucide="check-circle-2"></i>Triagem de novos clientes <small>⌄</small></div>
+          <div class="ref-cover__row"><i data-lucide="circle-help"></i>Casos complexos <small>Direciona para um advogado</small></div>
+        </div>
+        <div class="ref-dark-copy">
+          <p class="ref-eyebrow">Sem interrupções</p>
+          <h2 id="ref-dark-title">Atendimento completo, sem perder nenhuma demanda.</h2>
+          <p>A Júlia resolve o que é possível com IA e direciona o que exige análise humana, garantindo um atendimento contínuo, preciso e seguro.</p>
+          <div class="ref-stats">
+            <div class="ref-stat"><i data-lucide="zap"></i><span>Disponível<br>24 horas por dia</span></div>
+            <div class="ref-stat"><i data-lucide="shield-check"></i><span>Reduz o tempo<br>de resposta</span></div>
+            <div class="ref-stat"><i data-lucide="user-round"></i><span>Mais satisfação<br>para seus clientes</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="ref-personal" aria-labelledby="ref-personal-title">
+      <div class="lp-wrap ref-personal-layout">
+        <div class="ref-copy">
+          <p class="ref-eyebrow">Personalização</p>
+          <h2 id="ref-personal-title">Com a cara do seu escritório.</h2>
+          <p>A Júlia aprende com o seu conteúdo, as suas informações e mantém a identidade do seu escritório em cada conversa. Tudo configurável de forma simples.</p>
+          <div class="ref-feature-list">
+            <div class="ref-feature"><span class="ref-feature__icon"><i data-lucide="clipboard-check"></i></span><div><b>Conhecimento do seu escritório</b><p>Documentos, áreas de atuação e regras</p></div></div>
+            <div class="ref-feature"><span class="ref-feature__icon"><i data-lucide="feather"></i></span><div><b>Tom de voz personalizado</b><p>Formal, técnico ou no seu estilo</p></div></div>
+            <div class="ref-feature"><span class="ref-feature__icon"><i data-lucide="palette"></i></span><div><b>Identidade visual</b><p>Logo, cores e assinatura</p></div></div>
+          </div>
+        </div>
+        <div class="ref-settings" aria-label="Configurações da identidade visual da Júlia">
+          <div class="ref-settings__top">Personalização da Júlia</div>
+          <div class="ref-settings__tabs"><span>Geral</span><span>Conhecimento</span><span>Estilo</span><b>Identidade</b></div>
+          <div class="ref-settings__body">
+            <div><h4>Identidade visual</h4><div class="ref-settings__badge"><span class="ref-avatar">J</span><span><b>Seu escritório</b><br>Advocacia e Consultoria</span></div><h4 style="margin-top:14px">Cor principal</h4><div class="ref-colors"><i></i><i></i><i></i></div></div>
+            <div><div class="ref-preview"><strong><span class="ref-avatar">J</span> Júlia · online</strong>Olá! Sou a Júlia, assistente virtual do escritório. Como posso te ajudar hoje?<br><br><b>Seu escritório</b><br>Advocacia e Consultoria</div></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="ref-demo-band" aria-labelledby="ref-demo-title">
+      <div class="lp-wrap ref-demo-layout">
+        <div>
+          <p class="ref-eyebrow">Experimente</p>
+          <h2 id="ref-demo-title">Veja a Júlia em ação.</h2>
+          <p>Faça uma simulação e descubra como é simples oferecer um atendimento moderno e eficiente para os seus clientes.</p>
+          <a class="ref-button" href="#formulario">Solicitar demonstração <i data-lucide="arrow-right"></i></a>
+        </div>
+        <div class="ref-live-chat">
+          <div class="ref-chat-head"><span class="ref-avatar">J</span><span><b>Júlia</b><small>Assistente virtual</small></span><span class="ref-online">● online</span></div>
+          <div class="ref-chat-content" id="ref-chat-messages"><p>Olá! Sou a Júlia, assistente virtual do escritório. Como posso te ajudar hoje?</p></div>
+          <form class="ref-chat-input" id="ref-chat-form"><label class="sr-only" for="ref-chat-input">Digite uma mensagem para a Júlia</label><input id="ref-chat-input" type="text" maxlength="300" autocomplete="off" placeholder="Digite sua mensagem..." style="width:calc(100% - 34px);border:0;outline:0;font:inherit"><button type="submit" aria-label="Enviar mensagem" style="border:0;background:#6233ce;color:#fff;border-radius:6px;padding:5px 7px"><i data-lucide="send" style="width:12px;height:12px"></i></button></form>
+        </div>
+      </div>
+    </section>
+
+    <section class="ref-bottom-cta" aria-label="Solicite uma demonstração">
+      <div class="lp-wrap">
+        <h2><i data-lucide="sparkles"></i>Leve a Júlia para o seu escritório.</h2>
+        <p>Mais tempo para o que realmente importa: seus clientes e seus casos.</p>
+        <a class="ref-button" href="#formulario">Solicitar demonstração <i data-lucide="arrow-right"></i></a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="jf">
+    <div class="jf__glow" aria-hidden="true"></div>
+    <div class="lp-wrap">
+      <div class="jf__top">
+        <div class="jf__brand">
+          <a href="#ref-inicio" class="jf__logo" aria-label="Juris8, voltar ao topo"><img src="/assets/brand/logo-juris8-light.png" alt="Juris 8" width="125" height="32"></a>
+          <p class="jf__tag">A mais completa IA jurídica do Brasil. Pré-elaboração de peças, pesquisa, análise de documentos e transcrição — desenvolvidas por advogados, para advogados.</p>
+          <div class="jf__seals">
+            <span><i data-lucide="lock" aria-hidden="true"></i>LGPD</span>
+            <span><i data-lucide="sparkles" aria-hidden="true"></i>IA jurídica</span>
+          </div>
+          <div class="jf__social">
+            <a href="https://www.instagram.com/juris8.ai" target="_blank" rel="noopener noreferrer" aria-label="Instagram da Juris8" data-track="social_click" data-track-ctx="instagram">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4.2"/><circle cx="17.4" cy="6.6" r=".9" fill="currentColor" stroke="none"/></svg>
+            </a>
+            <a href="https://wa.me/5547988061278?text=Ol%C3%A1!%20Vim%20pelo%20site%20e%20quero%20conhecer%20o%20Juris8%2C%20a%20IA%20jur%C3%ADdica.%20Pode%20me%20apresentar%20a%20plataforma%3F" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp da Juris8" data-track="whatsapp_click" data-track-ctx="footer_icon">
+              <svg viewBox="0 0 32 32" fill="currentColor" aria-hidden="true"><path d="M16.01 3.2c-7.1 0-12.86 5.76-12.86 12.86 0 2.27.6 4.48 1.73 6.43L3.2 28.8l6.5-1.7a12.8 12.8 0 0 0 6.3 1.62h.01c7.1 0 12.86-5.76 12.86-12.86 0-3.44-1.34-6.67-3.77-9.1A12.78 12.78 0 0 0 16.01 3.2Zm0 23.5h-.01a10.6 10.6 0 0 1-5.4-1.48l-.39-.23-4.02 1.05 1.07-3.92-.25-.4a10.62 10.62 0 0 1 16.46-13.1 10.55 10.55 0 0 1 3.12 7.51c0 5.88-4.78 10.65-10.66 10.65Zm5.85-7.98c-.32-.16-1.9-.94-2.2-1.04-.3-.11-.5-.16-.72.16-.21.32-.82 1.03-1 1.25-.18.21-.37.24-.69.08-.32-.16-1.35-.5-2.58-1.59-.95-.85-1.6-1.9-1.78-2.22-.18-.32-.02-.49.14-.65.14-.14.32-.37.48-.56.16-.18.21-.32.32-.53.11-.21.05-.4-.03-.56-.08-.16-.72-1.74-.99-2.38-.26-.62-.52-.54-.72-.55l-.61-.01c-.21 0-.56.08-.85.4-.29.32-1.11 1.09-1.11 2.66 0 1.57 1.14 3.08 1.3 3.3.16.21 2.25 3.43 5.45 4.81.76.33 1.36.53 1.82.68.77.24 1.46.21 2.01.13.61-.09 1.9-.78 2.17-1.53.27-.74.27-1.38.19-1.51-.08-.13-.29-.21-.61-.37Z"/></svg>
+            </a>
+          </div>
+        </div>
+        <nav class="jf__links" aria-label="Rodapé">
+          <div class="jf__col">
+            <h2 class="jf__h">Soluções</h2>
+            <a href="https://juris8.ai/DET/">DET Monitor</a>
+            <a href="https://juris8.ai/crm/">CRM com IA</a>
+            <a href="https://juris8.ai/secretariajuridica/" aria-current="page">Secretaria jurídica</a>
+            <a href="https://juris8.ai/newsletter/">Newsletter mensal</a>
+            <a href="https://juris8.ai/trabalhistaempresarial/">Trabalhista empresarial</a>
+          </div>
+          <div class="jf__col">
+            <h2 class="jf__h">Plataforma</h2>
+            <a href="/#redacao">Pré-elaboração de peças</a>
+            <a href="/#jurisprudencia">Pesquisa de jurisprudência</a>
+            <a href="/#revisao-contratual">Análise de documentos</a>
+            <a href="/#transcricao">Transcrição de audiências</a>
+            <a href="https://juris8.ai/crm/">CRM com IA</a>
+            <a href="https://juris8.ai/secretariajuridica/">Secretaria jurídica</a>
+          </div>
+          <div class="jf__col">
+            <h2 class="jf__h">Contato</h2>
+            <a href="https://wa.me/5547988061278?text=Ol%C3%A1!%20Vim%20pelo%20site%20e%20quero%20conhecer%20o%20Juris8%2C%20a%20IA%20jur%C3%ADdica.%20Pode%20me%20apresentar%20a%20plataforma%3F" target="_blank" rel="noopener noreferrer" data-track="whatsapp_click" data-track-ctx="footer_link">WhatsApp</a>
+            <a href="https://www.instagram.com/juris8.ai" target="_blank" rel="noopener noreferrer" data-track="social_click" data-track-ctx="instagram">Instagram</a>
+            <a href="/#faq">FAQ</a>
+            <a href="/#solucoes">Soluções</a>
+          </div>
+        </nav>
+      </div>
+      <div class="jf__bottom">
+        <span>© 2026 Juris8 · Todos os direitos reservados.</span>
+        <span class="jf__made"><i aria-hidden="true"></i>Desenvolvido por advogados, para advogados</span>
+        <a href="#ref-inicio" class="jf__up">Voltar ao topo<i data-lucide="chevron-up" aria-hidden="true"></i></a>
+      </div>
+    </div>
+  </footer>
+
+  <main>
+    <section class="lp-hero lp-hero--sub julia-hero" id="inicio" aria-label="Apresentação da Júlia">
+      <div class="lp-hero__media" aria-hidden="true">
+        <picture>
+          <source srcset="/assets/media/hero-secretaria.webp" type="image/webp">
+          <img class="lp-hero__photo" src="/assets/media/hero-secretaria.jpg" alt="" width="2200" height="910" fetchpriority="high">
+        </picture>
+      </div>
+      <div class="lp-hero__inner">
+        <div data-reveal>
+          <p class="lp-hero__eyebrow"><i data-lucide="sparkles" aria-hidden="true"></i>Secretaria jurídica com IA · Juris8</p>
+          <h1 class="lp-hero__title lp-hero__title--md" id="julia-title">A Júlia atende cada cliente do seu escritório. <em>24 horas por dia.</em></h1>
+          <p class="lp-hero__lead">Ela responde na hora pelo WhatsApp e e-mail, agenda reuniões, mantém o cliente informado sobre o processo e mede a satisfação — sempre no seu tom de voz. Você só entra quando importa.</p>
+          <div class="lp-hero__ctas lp-hero__ctas--row">
+            <a href="#formulario" class="lp-cta" data-track="hero_cta_click" data-track-ctx="julia_trial"><span class="lp-cta__sheen" aria-hidden="true"></span><span class="lp-cta__label">Conhecer a Júlia · 7 dias grátis</span><span class="lp-cta__icon" aria-hidden="true"><i data-lucide="arrow-right"></i></span></a>
+            <a href="#testar" class="lp-btn-ghost"><i data-lucide="message-circle"></i>Testar a Júlia</a>
+          </div>
+          <ul class="lp-hero__trust">
+            <li><i data-lucide="check" aria-hidden="true"></i>Sem cartão de crédito</li>
+            <li><i data-lucide="check" aria-hidden="true"></i>Configuração em até 24h</li>
+          </ul>
+          <p class="julia-hero__fine"><i data-lucide="shield-check" aria-hidden="true"></i>WhatsApp API Oficial Meta · Conforme OAB · LGPD</p>
+        </div>
+        <div class="lp-hero__visual" data-reveal data-reveal-delay="120">
+          <div class="lp-hero__scale">
+            <div class="julia-demo" role="img" aria-label="Prévia da Júlia respondendo a uma cliente pelo WhatsApp fora do horário comercial">
+              <div class="julia-demo__window">
+                <div class="julia-demo__bar"><span class="julia-avatar">JÚ</span><span class="julia-demo__name"><b>Júlia · Escritório</b><small>Atendimento inteligente</small></span><span class="julia-live">online agora</span></div>
+                <div class="julia-demo__messages">
+                  <div class="julia-message julia-message--out">Oi, ainda dá tempo de entregar um documento que esqueci? Fiquei preocupada 😟<small>23:18</small></div>
+                  <div class="julia-message julia-message--in"><b>Júlia · resposta em 12s</b><br>Oi, Carla! Fica tranquila 🙂 Anotei aqui e já deixei sinalizado para a equipe logo cedo. Assim que abrirmos, alguém te confirma o melhor caminho.<small>23:18</small></div>
+                  <div class="julia-message julia-message--out">Ufa, muito obrigada!<small>23:19</small></div>
+                </div>
+                <div class="julia-demo__footer"><i data-lucide="lock-keyhole"></i>Mensagens protegidas · WhatsApp conectado</div>
+              </div>
+              <div class="julia-float julia-float--one"><i data-lucide="calendar-check"></i>Reunião agendada</div>
+              <div class="julia-float julia-float--two"><i data-lucide="zap"></i>Resposta em segundos</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="julia-section" id="como-trabalha" aria-labelledby="flow-title">
+      <div class="lp-wrap">
+        <header class="julia-heading">
+          <p class="ey">O relacionamento, bem cuidado</p>
+          <h2 id="flow-title">Tudo o que uma ótima secretária faria. <span>Sem nunca sair do plantão.</span></h2>
+          <p>Da primeira mensagem ao acompanhamento do processo, a Júlia conduz o relacionamento com o cliente — e te chama só quando precisa de você.</p>
+        </header>
+        <div class="julia-flow">
+          <div class="julia-flow__nav" role="tablist" aria-label="Etapas de atendimento da Júlia">
+            <button class="julia-flow__tab" type="button" role="tab" id="flow-tab-1" aria-controls="flow-panel-1" aria-selected="true"><span class="julia-flow__number">1</span><span><b>Primeiro contato</b><small>Entende e agenda</small></span><i data-lucide="chevron-right"></i></button>
+            <button class="julia-flow__tab" type="button" role="tab" id="flow-tab-2" aria-controls="flow-panel-2" aria-selected="false" tabindex="-1"><span class="julia-flow__number">2</span><span><b>Confirmação</b><small>Lembrete inteligente</small></span><i data-lucide="chevron-right"></i></button>
+            <button class="julia-flow__tab" type="button" role="tab" id="flow-tab-3" aria-controls="flow-panel-3" aria-selected="false" tabindex="-1"><span class="julia-flow__number">3</span><span><b>Honorários</b><small>Cobrança sem desgaste</small></span><i data-lucide="chevron-right"></i></button>
+            <button class="julia-flow__tab" type="button" role="tab" id="flow-tab-4" aria-controls="flow-panel-4" aria-selected="false" tabindex="-1"><span class="julia-flow__number">4</span><span><b>Atualização</b><small>Com aprovação do advogado</small></span><i data-lucide="chevron-right"></i></button>
+            <button class="julia-flow__tab" type="button" role="tab" id="flow-tab-5" aria-controls="flow-panel-5" aria-selected="false" tabindex="-1"><span class="julia-flow__number">5</span><span><b>Satisfação</b><small>Escuta que vira melhoria</small></span><i data-lucide="chevron-right"></i></button>
+          </div>
+          <div class="julia-flow__content">
+            <article class="julia-flow__panel is-active" id="flow-panel-1" role="tabpanel" aria-labelledby="flow-tab-1">
+              <div class="julia-flow__description"><h3>Primeiro contato</h3><p>Conhece o cliente e já oferece horários. A Júlia reconhece o contato cadastrado, entende o pedido, consulta a agenda do advogado e responde com opções pelo Meet.</p></div>
+              <ul class="julia-flow__bullets"><li><i data-lucide="check"></i>Reconhece o cliente pelo número de WhatsApp</li><li><i data-lucide="check"></i>Consulta a agenda do advogado em tempo real</li><li><i data-lucide="check"></i>Oferece opções de horário para o cliente escolher</li></ul>
+              <div class="julia-chat"><div class="julia-chat__head"><span class="julia-avatar">HE</span><span><b>Henrique · cliente</b><small>WhatsApp · conversa segura</small></span><span>online</span></div><div class="julia-chat__body"><div class="julia-chat__bubble julia-chat__bubble--client">Oi! Preciso marcar uma conversa com o advogado essa semana.<small>10:12</small></div><div class="julia-chat__bubble julia-chat__bubble--reply">Claro! Consultei a agenda — tenho estes horários pelo Meet:<br><b>Ter · 10h &nbsp; Qua · 14h &nbsp; Qui · 16h30</b><small>10:12</small></div><div class="julia-chat__bubble julia-chat__bubble--client">Qua às 14h está ótimo!<small>10:13</small></div><div class="julia-chat__bubble julia-chat__bubble--reply">Reservado! 📅 Já te aviso com o link e um lembrete antes da reunião.<small>10:13</small></div></div></div>
+            </article>
+            <article class="julia-flow__panel" id="flow-panel-2" role="tabpanel" aria-labelledby="flow-tab-2" hidden>
+              <div class="julia-flow__description"><h3>Confirmação</h3><p>Confirma a reunião 24 horas antes. O lembrete automático já leva o link da chamada ou o endereço do escritório — sem revisão manual da agenda.</p></div>
+              <ul class="julia-flow__bullets"><li><i data-lucide="check"></i>Lembrete automático 24 horas antes</li><li><i data-lucide="check"></i>Envia o link do Meet ou o endereço do escritório</li><li><i data-lucide="check"></i>Ajuda a reduzir faltas e reagendamentos de última hora</li></ul>
+              <div class="julia-chat"><div class="julia-chat__head"><span class="julia-avatar">HE</span><span><b>Henrique · cliente</b><small>WhatsApp · conversa segura</small></span><span>online</span></div><div class="julia-chat__body"><div class="julia-chat__bubble julia-chat__bubble--reply">Henrique, lembrando da nossa reunião amanhã às 14h pelo Meet.<br>Link: meet.google.com/abc-defg-hij<small>09:00</small></div><div class="julia-chat__bubble julia-chat__bubble--client">Combinado, obrigado pelo lembrete!<small>09:02</small></div></div></div>
+            </article>
+            <article class="julia-flow__panel" id="flow-panel-3" role="tabpanel" aria-labelledby="flow-tab-3" hidden>
+              <div class="julia-flow__description"><h3>Honorários</h3><p>A Júlia lembra o cliente sobre parcelas e vencimentos de honorários — sem soar como uma cobrança automática de boleto.</p></div>
+              <ul class="julia-flow__bullets"><li><i data-lucide="check"></i>Lembretes de vencimento automáticos</li><li><i data-lucide="check"></i>Já envia a chave Pix junto do lembrete</li><li><i data-lucide="check"></i>Reduz atraso de pagamento sem desgaste</li></ul>
+              <div class="julia-chat"><div class="julia-chat__head"><span class="julia-avatar">HE</span><span><b>Henrique · cliente</b><small>WhatsApp · conversa segura</small></span><span>online</span></div><div class="julia-chat__body"><div class="julia-chat__bubble julia-chat__bubble--reply">Henrique, lembrando do pagamento da parcela #2, que vence sexta-feira. Chave Pix: contato@escritorio.com.br<small>08:30</small></div><div class="julia-chat__bubble julia-chat__bubble--client">Beleza, já vou fazer o Pix. Obrigado!<small>08:35</small></div></div></div>
+            </article>
+            <article class="julia-flow__panel" id="flow-panel-4" role="tabpanel" aria-labelledby="flow-tab-4" hidden>
+              <div class="julia-flow__description"><h3>Atualização processual</h3><p>Quando o cliente pergunta, a Júlia responde com o andamento real. Se o processo se movimenta, ela prepara uma mensagem para o advogado aprovar antes do envio.</p></div>
+              <ul class="julia-flow__bullets"><li><i data-lucide="check"></i>Reativa: responde quando o cliente pergunta</li><li><i data-lucide="check"></i>Proativa: identifica a movimentação sozinha</li><li><i data-lucide="check"></i>O advogado sempre aprova antes do envio proativo</li></ul>
+              <div class="julia-chat"><div class="julia-chat__head"><span class="julia-avatar">DR</span><span><b>Júlia → Dr. Pedro</b><small>Aprovação pendente · Proativa</small></span><span>revisão</span></div><div class="julia-chat__body"><div class="julia-chat__bubble julia-chat__bubble--reply">Dr., houve movimentação no processo do Henrique. Preparei este aviso para ele:<br><br>“Oi, Henrique! Passando para avisar que houve uma nova movimentação no seu processo. Qualquer dúvida, estou por aqui 🙂”<small>11:24</small></div></div><div class="julia-approve"><b><i data-lucide="shield-check"></i>Você revisa antes de enviar</b>Mensagem pronta para sua aprovação.<div class="julia-approve__actions"><span>Editar</span><span>Aprovar e enviar</span></div></div></div>
+            </article>
+            <article class="julia-flow__panel" id="flow-panel-5" role="tabpanel" aria-labelledby="flow-tab-5" hidden>
+              <div class="julia-flow__description"><h3>Satisfação</h3><p>Após reuniões importantes — ou a cada 90 dias — a Júlia pergunta o quanto o cliente recomendaria o escritório e organiza os retornos no painel.</p></div>
+              <ul class="julia-flow__bullets"><li><i data-lucide="check"></i>Pesquisa de satisfação automática (NPS)</li><li><i data-lucide="check"></i>Ajuda a identificar clientes satisfeitos e insatisfeitos</li><li><i data-lucide="check"></i>Sinaliza para você os casos sensíveis</li></ul>
+              <div class="julia-chat"><div class="julia-chat__head"><span class="julia-avatar">HE</span><span><b>Henrique · cliente</b><small>WhatsApp · conversa segura</small></span><span>online</span></div><div class="julia-chat__body"><div class="julia-chat__bubble julia-chat__bubble--reply">Henrique, foi um prazer te atender hoje! 💜<br>De 0 a 10, qual a chance de você indicar nosso escritório para um amigo?<small>17:40</small></div><div class="julia-chat__bubble julia-chat__bubble--client">10! Atendimento impecável 👏<small>17:41</small></div></div></div>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="julia-section julia-section--soft" id="caixa-unificada" aria-labelledby="inbox-title">
+      <div class="lp-wrap">
+        <header class="julia-heading"><p class="ey">Tudo conectado</p><h2 id="inbox-title">E-mail e WhatsApp, <span>no mesmo lugar.</span></h2><p>A Júlia reúne todas as conversas — não importa por onde o cliente chegou. Você acompanha o que ela respondeu e assume quando quiser.</p></header>
+        <div class="julia-inbox" aria-label="Demonstração da caixa unificada da Júlia">
+          <aside class="julia-inbox__sidebar">
+            <div class="julia-inbox__brand">Caixa unificada · Júlia <span>4 ativas</span></div>
+            <div class="julia-inbox__filters" role="group" aria-label="Filtrar conversas">
+              <button class="julia-inbox__filter" type="button" data-inbox-filter="todas" aria-pressed="true">Todas · 4</button>
+              <button class="julia-inbox__filter" type="button" data-inbox-filter="whatsapp" aria-pressed="false">WhatsApp · 2</button>
+              <button class="julia-inbox__filter" type="button" data-inbox-filter="email" aria-pressed="false">E-mail · 2</button>
+            </div>
+            <div class="julia-inbox__search"><i data-lucide="search"></i>Buscar conversas, clientes, e-mails…</div>
+            <div class="julia-inbox__list" role="listbox" aria-label="Conversas">
+              <button class="julia-inbox__conversation" type="button" role="option" data-channel="whatsapp" data-name="Carla Menezes" data-contact="WhatsApp · online · +55 11 98421-3308" data-text="Oi, ainda dá tempo de entregar um documento que esqueci? Fiquei preocupada 😟|Oi, Carla! Fica tranquila 🙂 Anotei aqui e já deixei sinalizado para a equipe logo cedo. Assim que abrirmos, alguém te confirma o melhor caminho.|Ufa, muito obrigada!" aria-selected="true"><span class="julia-inbox__initials">CM</span><span><b>Carla Menezes</b><small>Ufa, muito obrigada!</small></span><time>23:18</time></button>
+              <button class="julia-inbox__conversation" type="button" role="option" data-channel="email" data-name="Rafael Lima" data-contact="E-mail · atendimento concluído" data-text="Olá, gostaria de saber se receberam os documentos que enviei.|Oi, Rafael! Recebemos sim. Já registrei o envio e sinalizei para a equipe conferir os anexos no próximo horário de atendimento.|Show, obrigado pela atenção!" aria-selected="false"><span class="julia-inbox__initials">RL</span><span><b>Rafael Lima</b><small>Show, obrigado pela atenção!</small></span><time>09:06</time></button>
+              <button class="julia-inbox__conversation" type="button" role="option" data-channel="whatsapp" data-name="Sofia Andrade" data-contact="WhatsApp · NPS recebido" data-text="Júlia|Sofia, foi um prazer te atender hoje! De 0 a 10, qual a chance de indicar nosso escritório?|10! Atendimento impecável 👏" aria-selected="false"><span class="julia-inbox__initials">SA</span><span><b>Sofia Andrade</b><small>10! Atendimento impecável 👏</small></span><time>15:31</time></button>
+              <button class="julia-inbox__conversation" type="button" role="option" data-channel="email" data-name="Pedro Tavares" data-contact="E-mail · nova conversa" data-text="Olá, gostaria de marcar uma primeira conversa para entender como vocês podem me ajudar.|Oi, Pedro! Será um prazer ajudar. Para encontrar um horário, você prefere conversar por vídeo ou presencialmente?|Vídeo, por favor." aria-selected="false"><span class="julia-inbox__initials">PT</span><span><b>Pedro Tavares</b><small>Gostaria de marcar uma primeira conversa…</small></span><time>ontem</time></button>
+            </div>
+          </aside>
+          <div class="julia-inbox__thread" aria-live="polite">
+            <div class="julia-inbox__thread-head"><span class="julia-inbox__initials" id="inbox-avatar">CM</span><span><b id="inbox-name">Carla Menezes</b><small id="inbox-contact">WhatsApp · online · +55 11 98421-3308</small></span></div>
+            <div class="julia-inbox__encrypted"><i data-lucide="lock-keyhole"></i>Mensagens protegidas · Hoje</div>
+            <div class="julia-inbox__messages" id="inbox-messages">
+              <div class="julia-inbox__message">Oi, ainda dá tempo de entregar um documento que esqueci? Fiquei preocupada 😟<small>23:18</small></div>
+              <div class="julia-inbox__message julia-inbox__message--out"><b>Júlia · resposta em 12s</b><br>Oi, Carla! Fica tranquila 🙂 Anotei aqui e já deixei sinalizado para a equipe logo cedo. Assim que abrirmos, alguém te confirma o melhor caminho.<small>23:18</small></div>
+              <div class="julia-inbox__message">Ufa, muito obrigada!<small>23:19</small></div>
+            </div>
+            <div class="julia-inbox__typing">Júlia está digitando <i></i><i></i><i></i></div>
+            <div class="julia-inbox__input">Digite uma mensagem…<i data-lucide="send"></i></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="julia-section julia-section--dark" aria-labelledby="risk-title">
+      <div class="lp-wrap">
+        <header class="julia-heading"><p class="ey">Atendimento sem espera</p><h2 id="risk-title">O cliente que não é respondido <span>não espera.</span></h2><p>O atendimento jurídico acontece fora do horário comercial — e cada mensagem sem resposta é um cliente em risco.</p></header>
+        <div class="julia-risk-grid">
+          <article class="julia-risk"><span class="julia-risk__icon"><i data-lucide="moon-star"></i></span><h3>A demanda chega fora do expediente</h3><p>Boa parte das mensagens chega à noite e nos fins de semana — justamente quando o escritório está fechado.</p><strong>A Júlia atende 24h, todos os dias</strong></article>
+          <article class="julia-risk"><span class="julia-risk__icon"><i data-lucide="hourglass"></i></span><h3>Resposta lenta esfria o lead</h3><p>Quanto mais tempo o cliente espera, menor a chance de fechar. A primeira resposta mantém o interesse vivo.</p><strong>Resposta em segundos, sempre</strong></article>
+          <article class="julia-risk"><span class="julia-risk__icon"><i data-lucide="messages-square"></i></span><h3>Conversas espalhadas se perdem</h3><p>WhatsApp aqui, e-mail ali, anotações em outro lugar. Sem contexto, atendimento e oportunidades se perdem.</p><strong>Tudo numa caixa de entrada só</strong></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="julia-section" id="no-seu-tom" aria-labelledby="tone-title">
+      <div class="lp-wrap">
+        <div class="julia-tone">
+          <div class="julia-tone__copy">
+            <p class="julia-heading ey" style="margin:0 0 12px;text-align:left">A identidade do seu escritório</p>
+            <h2 id="tone-title">Ela fala como o seu escritório <span>fala.</span></h2>
+            <p>Escolha o tom e deixe a Júlia aprender com os seus próprios atendimentos. Ela soa como uma extensão da sua equipe — nunca como um robô.</p>
+            <div class="julia-tone__choices" role="group" aria-label="Escolha o tom de voz">
+              <button class="julia-tone__button" type="button" data-tone="formal" aria-pressed="false"><span>Formal · Tradicional</span><i data-lucide="check"></i></button>
+              <button class="julia-tone__button" type="button" data-tone="proximo" aria-pressed="true"><span>Próximo · Selecionado</span><i data-lucide="check"></i></button>
+              <button class="julia-tone__button" type="button" data-tone="objetivo" aria-pressed="false"><span>Objetivo · Direto</span><i data-lucide="check"></i></button>
+            </div>
+          </div>
+          <div class="julia-tone__preview" aria-live="polite">
+            <div class="julia-tone__preview-head"><span class="julia-avatar">JÚ</span><span><b>Júlia · Escritório</b><small>Prévia do tom de voz</small></span><span class="julia-live">online</span></div>
+            <div class="julia-tone__bubble" id="tone-message">Oi, Carla! Fica tranquila 🙂 Já anotei aqui e logo cedo a equipe te dá o melhor caminho.</div>
+            <p class="julia-tone__caption" id="tone-caption">Próximo · acolhedor e profissional</p>
+          </div>
+        </div>
+        <div class="julia-train">
+          <div><h3>Ensine a Júlia com o seu histórico de WhatsApp e e-mail</h3><p>Suba seu histórico de conversas e modelos de atendimento. A Júlia aprende com a sua forma real de escrever e ajusta o tom dela ao seu, mantendo a identidade do escritório.</p></div>
+          <div class="julia-upload">
+            <label class="julia-upload__drop" for="julia-files"><i data-lucide="cloud-upload"></i><span><b>Escolha arquivos para uma prévia</b><small>TXT, EML, DOCX ou PST · demonstração visual</small></span></label>
+            <input id="julia-files" type="file" accept=".txt,.eml,.docx,.pst" multiple hidden>
+            <div class="julia-upload__files" id="julia-upload-files" aria-live="polite"><span><i data-lucide="file-text"></i>historico-whatsapp.txt</span><span><i data-lucide="file-text"></i>historico-emails.pst</span><span><i data-lucide="file-text"></i>modelos-atendimento.docx</span></div>
+            <p class="julia-upload__status" id="julia-upload-status">Os arquivos não são enviados nem processados nesta demonstração.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="julia-section julia-section--dark" id="testar" aria-labelledby="test-title">
+      <div class="lp-wrap">
+        <header class="julia-heading"><p class="ey">Experimente agora</p><h2 id="test-title">Converse com a Júlia <span>como se fosse um cliente.</span></h2><p>Mande uma mensagem como um cliente mandaria. Veja uma demonstração de como ela acolhe, organiza e propõe o próximo passo.</p></header>
+        <div class="julia-test">
+          <div class="julia-test__chat">
+            <div class="julia-test__chat-head"><span class="julia-avatar">JÚ</span><span><b>Júlia · Escritório</b><small>Assistente virtual de demonstração</small></span><span class="julia-live">online agora</span></div>
+            <div class="julia-test__messages" id="test-messages" role="log" aria-live="polite" aria-relevant="additions">
+              <div class="julia-test__bubble">Oi! 👋 Eu sou a Júlia, secretária do escritório. Antes de começarmos, como posso te chamar?<small>agora</small></div>
+            </div>
+            <div class="julia-test__suggestions" aria-label="Sugestões para começar">
+              <button class="julia-test__suggestion" type="button">Quero falar com o advogado</button>
+              <button class="julia-test__suggestion" type="button">Como está meu processo?</button>
+              <button class="julia-test__suggestion" type="button">Quanto custa?</button>
+              <button class="julia-test__suggestion" type="button">Vocês atendem família?</button>
+            </div>
+            <form class="julia-test__form" id="julia-chat-form"><label class="sr-only" for="julia-chat-input">Escreva uma mensagem para a demonstração da Júlia</label><input id="julia-chat-input" type="text" placeholder="Escreva uma mensagem…" maxlength="300" autocomplete="off"><button type="submit" aria-label="Enviar mensagem"><i data-lucide="send"></i></button></form>
+            <p class="julia-test__disclaimer">Esta é uma demonstração interativa com respostas ilustrativas. Não envia mensagens nem substitui orientação jurídica.</p>
+          </div>
+          <aside class="julia-test__aside">
+            <div class="julia-test__aside-card"><i data-lucide="sparkles"></i><h3>Atendimento que acolhe</h3><p>Respostas no tom do seu escritório, com contexto e próximo passo claro.</p></div>
+            <div class="julia-test__aside-card"><i data-lucide="shield-check"></i><h3>Você no controle</h3><p>Atualizações processuais proativas ficam para sua aprovação antes do envio.</p></div>
+            <a href="#formulario" class="lp-cta"><span class="lp-cta__label">Quero conhecer a Júlia</span><span class="lp-cta__icon"><i data-lucide="arrow-right"></i></span></a>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <section class="julia-cta" id="formulario" aria-labelledby="cta-title">
+      <a class="julia-form-close" href="#ref-inicio" aria-label="Fechar formulário">×</a>
+      <div class="lp-wrap">
+        <div class="julia-cta__panel">
+          <div class="julia-cta__copy">
+            <span class="ey">Seu escritório sempre presente</span>
+            <h2 id="cta-title">Coloque a Júlia para atender o seu escritório.</h2>
+            <p>Em até 24 horas, um especialista do Juris8 configura a Júlia com o tom do seu escritório e os seus fluxos de atendimento.</p>
+            <ul class="julia-cta__seals"><li><i data-lucide="check"></i>Configuração no tom de voz do seu escritório</li><li><i data-lucide="check"></i>Conexão com WhatsApp e e-mail numa caixa só</li><li><i data-lucide="check"></i>7 dias grátis — sem cartão de crédito</li></ul>
+          </div>
+          <div class="julia-form-card">
+            <div id="lp-form-view">
+              <span class="ct-kicker">Conhecer a Júlia</span>
+              <h3 class="ct-card__t">Comece seu teste grátis</h3>
+              <p class="ct-card__d">Preencha seus dados e um especialista entra em contato para ativar seu teste de 7 dias.</p>
+              <form class="ct-form" id="lp-form" novalidate>
+                <div class="lp-field" id="f-nome"><label for="c-nome">Nome completo</label><input type="text" id="c-nome" name="nome" required autocomplete="name" placeholder="Seu nome" aria-describedby="e-nome"><span class="lp-field__error" id="e-nome">Informe seu nome.</span></div>
+                <div class="lp-field" id="f-email"><label for="c-email">E-mail</label><input type="email" id="c-email" name="email" required autocomplete="email" placeholder="voce@escritorio.com.br" aria-describedby="e-email"><span class="lp-field__error" id="e-email">Informe um e-mail válido.</span></div>
+                <div class="lp-field ct-full" id="f-empresa"><label for="c-empresa">Escritório de advocacia</label><input type="text" id="c-empresa" name="empresa" required autocomplete="organization" placeholder="Nome do escritório" aria-describedby="e-empresa"><span class="lp-field__error" id="e-empresa">Informe o nome do escritório.</span></div>
+                <div class="lp-field ct-full" id="f-tel"><label for="c-tel">Contato (WhatsApp)</label><input type="tel" id="c-tel" name="telefone" required autocomplete="tel" inputmode="tel" placeholder="(11) 90000-0000" aria-describedby="e-tel"><span class="lp-field__error" id="e-tel">Informe um telefone com DDD.</span></div>
+                <div class="lp-field ct-full ct-consent" id="f-consent"><label class="ct-check" for="c-consent"><input type="checkbox" id="c-consent" name="consent" required aria-describedby="e-consent"><span class="ct-box" aria-hidden="true"><i data-lucide="check"></i></span><span>Aceito ser contatado pelo Juris8 sobre este teste.</span></label><span class="lp-field__error" id="e-consent">Marque para podermos entrar em contato.</span></div>
+                <input class="lp-hp" type="text" name="website" tabindex="-1" autocomplete="off" aria-hidden="true">
+                <button type="submit" class="lp-submit ct-full" id="lp-submit"><span id="lp-submit-label">Quero conhecer a Júlia</span><i data-lucide="arrow-right"></i></button>
+                <div class="lp-alert ct-full" id="lp-alert" role="alert">Não foi possível enviar agora. Seus dados continuam preenchidos: tente novamente em instantes.</div>
+                <p class="ct-note ct-full"><i data-lucide="shield-check"></i>LGPD · Conforme OAB · Dados tratados com segurança.</p>
+              </form>
+            </div>
+            <div class="ct-success" id="lp-success" role="region" aria-live="polite" aria-label="Solicitação enviada"><div class="ct-success__ic"><i data-lucide="check"></i></div><h3 id="lp-success-title" tabindex="-1">Obrigado!</h3><p>Sua solicitação foi enviada. Um especialista entrará em contato para ativar seu teste da Júlia.</p><button type="button" class="ct-again" id="lp-again">Enviar outra solicitação</button></div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="julia-footer">
+    <div class="lp-wrap">
+      <div class="julia-footer__top">
+        <div class="julia-footer__brand"><a href="/" aria-label="Juris8, página inicial"><img src="/assets/brand/logo-juris8-light.png" alt="Juris8"></a><p>A mais completa IA jurídica do Brasil. Desenvolvida por advogados, para advogados.</p><span class="chip chip--dark"><i data-lucide="lock"></i> LGPD · IA jurídica</span></div>
+        <nav class="julia-footer__column" aria-label="Soluções"><h3>Soluções</h3><a href="/det">DET Monitor</a><a href="/crm">CRM com IA</a><a href="/secretariajuridica" aria-current="page">Secretaria jurídica</a><a href="/trabalhistaempresarial">Trabalhista empresarial</a></nav>
+        <nav class="julia-footer__column" aria-label="Plataforma"><h3>Plataforma</h3><a href="/agentejuridico">Pré-elaboração de peças</a><a href="/agentejuridico">Pesquisa de jurisprudência</a><a href="/agentejuridico">Análise de documentos</a><a href="/agentejuridico">Transcrição de audiências</a></nav>
+        <nav class="julia-footer__column" aria-label="Contato"><h3>Contato</h3><a href="https://wa.me/5547988061278" target="_blank" rel="noopener noreferrer">WhatsApp</a><a href="https://www.instagram.com/juris8.ai" target="_blank" rel="noopener noreferrer">Instagram</a><a href="#testar">Testar a Júlia</a><a href="#formulario">Fale com um especialista</a></nav>
+      </div>
+      <div class="julia-footer__bottom"><span>© 2026 Juris8 · Todos os direitos reservados.</span><span>Desenvolvido por advogados, para advogados</span><a href="#topo">Voltar ao topo ↑</a></div>
+    </div>
+  </footer>
+  <a href="https://wa.me/5547988061278" target="_blank" rel="noopener noreferrer" class="lp-wa" aria-label="Fale com um especialista pelo WhatsApp"><span class="lp-wa__label">Dúvidas sobre a Júlia? · Iniciar conversa</span><span class="lp-wa__btn"><span class="lp-wa__ring" aria-hidden="true"></span><i data-lucide="message-circle"></i></span></a>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{}">
+class Component extends DCLogic {
+  componentDidMount() {
+    if (!window.J8) return;
+    this._j8 = window.J8.mount({
+      form: { interest: "Secretaria Jurídica Júlia · teste grátis", source: "lp_secretaria_julia", segment: "secretaria_juridica" },
+      extra: (api) => {
+        const tabs = api.$$(".julia-flow__tab");
+        const panels = api.$$(".julia-flow__panel");
+        const selectTab = (tab) => {
+          tabs.forEach((item) => {
+            const selected = item === tab;
+            item.setAttribute("aria-selected", selected ? "true" : "false");
+            item.tabIndex = selected ? 0 : -1;
+          });
+          panels.forEach((panel) => {
+            const active = panel.id === tab.getAttribute("aria-controls");
+            panel.classList.toggle("is-active", active);
+            panel.hidden = !active;
+          });
+        };
+        tabs.forEach((tab, index) => {
+          api.on(tab, "click", () => selectTab(tab));
+          api.on(tab, "keydown", (event) => {
+            if (event.key !== "ArrowDown" && event.key !== "ArrowUp" && event.key !== "ArrowRight" && event.key !== "ArrowLeft") return;
+            event.preventDefault();
+            const direction = event.key === "ArrowDown" || event.key === "ArrowRight" ? 1 : -1;
+            const next = tabs[(index + direction + tabs.length) % tabs.length];
+            selectTab(next);
+            next.focus();
+          });
+        });
+
+        const toneMessages = {
+          formal: ["Prezada Carla, registramos a sua solicitação. Retornaremos com o encaminhamento no início do expediente.", "Formal · tradicional e institucional"],
+          proximo: ["Oi, Carla! Fica tranquila 🙂 Já anotei aqui e logo cedo a equipe te dá o melhor caminho.", "Próximo · acolhedor e profissional"],
+          objetivo: ["Olá, Carla. Solicitação registrada. Retorno com a orientação amanhã pela manhã.", "Objetivo · direto e claro"]
+        };
+        const toneMessage = document.getElementById("tone-message");
+        const toneCaption = document.getElementById("tone-caption");
+        api.$$("[data-tone]").forEach((button) => api.on(button, "click", () => {
+          api.$$("[data-tone]").forEach((item) => item.setAttribute("aria-pressed", item === button ? "true" : "false"));
+          toneMessage.classList.add("is-changing");
+          api.later(() => {
+            const [message, caption] = toneMessages[button.dataset.tone];
+            toneMessage.textContent = message;
+            toneCaption.textContent = caption;
+            toneMessage.classList.remove("is-changing");
+          }, 160);
+        }));
+
+        const filters = api.$$("[data-inbox-filter]");
+        const conversations = api.$$(".julia-inbox__conversation");
+        filters.forEach((filter) => api.on(filter, "click", () => {
+          filters.forEach((item) => item.setAttribute("aria-pressed", item === filter ? "true" : "false"));
+          conversations.forEach((item) => { item.hidden = filter.dataset.inboxFilter !== "todas" && item.dataset.channel !== filter.dataset.inboxFilter; });
+          const first = conversations.find((item) => !item.hidden);
+          if (first) first.click();
+        }));
+        conversations.forEach((conversation) => api.on(conversation, "click", () => {
+          conversations.forEach((item) => item.setAttribute("aria-selected", item === conversation ? "true" : "false"));
+          document.getElementById("inbox-avatar").textContent = conversation.querySelector(".julia-inbox__initials").textContent;
+          document.getElementById("inbox-name").textContent = conversation.dataset.name;
+          document.getElementById("inbox-contact").textContent = conversation.dataset.contact;
+          const messageList = document.getElementById("inbox-messages");
+          messageList.replaceChildren();
+          conversation.dataset.text.split("|").forEach((text, index) => {
+            const bubble = document.createElement("div");
+            bubble.className = "julia-inbox__message" + (index % 2 === 1 ? " julia-inbox__message--out" : "");
+            bubble.textContent = text;
+            const time = document.createElement("small");
+            time.textContent = index === 0 ? "Hoje · 23:18" : "Hoje · 23:19";
+            bubble.appendChild(time);
+            messageList.appendChild(bubble);
+          });
+        }));
+
+        const fileInput = document.getElementById("julia-files");
+        api.on(fileInput, "change", () => {
+          const status = document.getElementById("julia-upload-status");
+          const list = document.getElementById("julia-upload-files");
+          list.replaceChildren();
+          Array.from(fileInput.files || []).forEach((file) => {
+            const item = document.createElement("span");
+            const icon = document.createElement("i");
+            icon.setAttribute("data-lucide", "file-text");
+            item.append(icon, document.createTextNode(file.name));
+            list.appendChild(item);
+          });
+          status.textContent = fileInput.files.length ? fileInput.files.length + " arquivo(s) selecionado(s). Nenhum arquivo foi enviado." : "Nenhum arquivo selecionado.";
+          api.icons(0);
+        });
+
+        const chatForm = document.getElementById("julia-chat-form");
+        const chatInput = document.getElementById("julia-chat-input");
+        const chatMessages = document.getElementById("test-messages");
+        const addBubble = (text, user) => {
+          const bubble = document.createElement("div");
+          bubble.className = "julia-test__bubble" + (user ? " julia-test__bubble--user" : "");
+          bubble.textContent = text;
+          const time = document.createElement("small");
+          time.textContent = "agora";
+          bubble.appendChild(time);
+          chatMessages.appendChild(bubble);
+          chatMessages.scrollTop = chatMessages.scrollHeight;
+        };
+        const respond = (message) => {
+          const text = message.toLocaleLowerCase("pt-BR");
+          let response = "Entendi! 🙂 Vou organizar sua mensagem e encaminhar para a equipe do escritório. Para te ajudar melhor, pode me dizer seu nome e qual o melhor horário para retornarmos?";
+          if (/processo|andamento|decis[aã]o/.test(text)) response = "Posso ajudar com isso. Para proteger seus dados, vou localizar seu cadastro e encaminhar sua dúvida para a equipe responsável pelo processo. Como posso te chamar?";
+          else if (/quanto custa|pre[cç]o|valor|honor[aá]rio/.test(text)) response = "Os valores dependem do tipo de atendimento e da análise do caso. Posso pedir para a equipe conversar com você e explicar as opções. Qual seu nome?";
+          else if (/fam[ií]lia|div[oó]rcio|guarda|pensa[oã]o/.test(text)) response = "O escritório pode te orientar sobre questões de família. Vou registrar seu interesse e pedir para a equipe retornar. Prefere atendimento por vídeo ou presencial?";
+          else if (/falar com|advogado|reuni[aã]o|conversar/.test(text)) response = "Claro! Posso organizar uma conversa com o advogado. Você prefere atendimento por vídeo ou presencial? Se quiser, me diga também os dias e horários que funcionam melhor.";
+          else if (/oi|ol[aá]|bom dia|boa tarde|boa noite/.test(text)) response = "Olá! Que bom falar com você 😊 Como posso te chamar e de que forma o escritório pode ajudar?";
+          api.later(() => addBubble(response, false), 500);
+        };
+        api.on(chatForm, "submit", (event) => {
+          event.preventDefault();
+          const value = chatInput.value.trim();
+          if (!value) { chatInput.focus(); return; }
+          addBubble(value, true);
+          chatInput.value = "";
+          respond(value);
+        });
+        api.$$(".julia-test__suggestion").forEach((button) => api.on(button, "click", () => {
+          chatInput.value = button.textContent;
+          chatForm.requestSubmit();
+          chatInput.focus();
+        }));
+
+        const refChatForm = document.getElementById("ref-chat-form");
+        const refChatInput = document.getElementById("ref-chat-input");
+        const refChatMessages = document.getElementById("ref-chat-messages");
+        api.on(refChatForm, "submit", (event) => {
+          event.preventDefault();
+          const value = refChatInput.value.trim();
+          if (!value) { refChatInput.focus(); return; }
+          const userMessage = document.createElement("p");
+          userMessage.className = "ref-bubble--green";
+          userMessage.textContent = value;
+          refChatMessages.appendChild(userMessage);
+          refChatInput.value = "";
+          api.later(() => {
+            const reply = document.createElement("p");
+            reply.textContent = "Claro! Vou organizar sua solicitação e encaminhar para a equipe do escritório. Como posso te chamar?";
+            refChatMessages.appendChild(reply);
+          }, 500);
+        });
+      }
+    });
+  }
+
+  componentDidUpdate() {
+    if (window.J8) window.J8.icons(0);
+  }
+
+  componentWillUnmount() {
+    if (this._j8) this._j8.destroy();
+  }
+
+  renderVals() { return {}; }
+}
+</script>
+</body>
+</html>
