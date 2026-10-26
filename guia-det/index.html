@@ -93,7 +93,7 @@
         "name": "Toda empresa precisa se cadastrar, mesmo sem funcionário registrado hoje?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Na prática, sim. O DET alcança qualquer empregador que tenha, ou já tenha tido, funcionário registrado — o que inclui grandes empresas, pequenas, MEI, empregador doméstico e ONGs. Não ter funcionário hoje não apaga a caixa postal nem impede que uma comunicação seja publicada nela."
+          "text": "Na prática, sim. O DET alcança qualquer empregador que tenha, ou já tenha tido, funcionário registrado, o que inclui grandes empresas, pequenas, MEI, empregador doméstico e ONGs. Não ter funcionário hoje não apaga a caixa postal nem impede que uma comunicação seja publicada nela."
         }
       },
       {
@@ -101,7 +101,7 @@
         "name": "O que é “ciência tácita” e por que ela é perigosa?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Se ninguém abre a comunicação, a lei considera a empresa notificada depois de 15 dias corridos da publicação — é a ciência tácita. O prazo de defesa passa a correr do mesmo jeito, sem que ninguém tenha lido nada. É por isso que o risco maior não é a multa em si, e sim descobrir tarde demais que ela estava a caminho."
+          "text": "Se ninguém abre a comunicação, a lei considera a empresa notificada depois de 15 dias corridos da publicação: é a ciência tácita. O prazo de defesa passa a correr do mesmo jeito, sem que ninguém tenha lido nada. É por isso que o risco maior não é a multa em si, e sim descobrir tarde demais que ela estava a caminho."
         }
       },
       {
@@ -109,7 +109,7 @@
         "name": "Quem pode acessar o DET pela empresa?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "O próprio empregador, pela conta gov.br (nível Bronze, Prata ou Ouro), ou um procurador autorizado pelo Sistema de Procuração Eletrônica — um escritório de advocacia ou uma contabilidade, por exemplo. A procuração não exige compartilhar login nem senha, e permite que um mesmo escritório acompanhe o DET de vários clientes."
+          "text": "O próprio empregador, pela conta gov.br (nível Bronze, Prata ou Ouro), ou um procurador autorizado pelo Sistema de Procuração Eletrônica (um escritório de advocacia ou uma contabilidade, por exemplo). A procuração não exige compartilhar login nem senha, e permite que um mesmo escritório acompanhe o DET de vários clientes."
         }
       },
       {
@@ -117,7 +117,7 @@
         "name": "O que acontece se a empresa perder um prazo no DET?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Ela perde a chance de se defender ou de responder dentro daquele processo específico e fica sujeita a multa administrativa por descumprimento, prevista no art. 630 da CLT. O valor varia conforme a infração — mas o prejuízo maior costuma ser a defesa que deixou de ser apresentada."
+          "text": "Ela perde a chance de se defender ou de responder dentro daquele processo específico e fica sujeita a multa administrativa por descumprimento, prevista no art. 630 da CLT. O valor varia conforme a infração, mas o prejuízo maior costuma ser a defesa que deixou de ser apresentada."
         }
       },
       {
@@ -125,7 +125,7 @@
         "name": "Preciso entrar no DET todos os dias?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "O manual do governo recomenda checar a cada 7 dias, o que dá folga dentro dos 15 dias da ciência tácita. Na prática, quase ninguém mantém essa rotina manualmente — por isso o monitoramento automático existe: alguém confere por você e avisa assim que uma comunicação aparece."
+          "text": "O manual do governo recomenda checar a cada 7 dias, o que dá folga dentro dos 15 dias da ciência tácita. Na prática, quase ninguém mantém essa rotina manualmente. Por isso o monitoramento automático existe: alguém confere por você e avisa assim que uma comunicação aparece."
         }
       }
     ]
@@ -171,10 +171,22 @@
 @media (max-width: 640px) {
   .tl15 { padding: 26px 20px 24px; }
 }
+
+  /* Atalho "Ir para o conteúdo": fica fora da tela até receber o foco do teclado */
+  .lp-skip {
+    position: fixed; top: 10px; left: 12px; z-index: 200;
+    padding: 15px 20px; border-radius: 999px; background: #170B45; color: #fff;
+    font: 700 14px/1 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif; text-decoration: none;
+    transform: translateY(-160%); transition: transform .2s;
+  }
+  .lp-skip:focus { transform: none; outline: 2.5px solid #8B5CF6; outline-offset: 3px; }
+  main:focus { outline: none; }
+  
 </style>
 </helmet>
 
 <div id="topo">
+  <a class="lp-skip" href="#conteudo">Ir para o conteúdo</a>
 
   <!-- SECTION: header -->
   <div class="lp-header-wrap">
@@ -198,7 +210,7 @@
     </header>
   </div>
 
-  <main>
+  <main id="conteudo" tabindex="-1">
 
   <!-- SECTION: hero -->
   <section class="lp-hero lp-hero--sub" id="inicio" aria-label="Guia DET">
@@ -220,7 +232,7 @@
             <span class="lp-cta__icon" aria-hidden="true"><i data-lucide="arrow-right"></i></span>
           </a>
         </div>
-        <p class="lp-hero__note"><b>Em 15 dias sem leitura</b>, a empresa é considerada notificada — tenha alguém aberto ou não.</p>
+        <p class="lp-hero__note"><b>Em 15 dias sem leitura</b>, a empresa é considerada notificada, tenha alguém aberto ou não.</p>
       </div>
 
       <div class="lp-hero__visual" data-reveal="">
@@ -233,9 +245,9 @@
           </div>
           <div class="hc__body" aria-hidden="true">
             <div class="hc__cap">Nova notificação · não lida <b>hoje</b></div>
-            <div class="hc-row hc-row--hot hc-a" style="--d: .55s"><span class="hc-row__ic hc-row__ic--r"><i data-lucide="mail-warning"></i></span><span class="hc-row__t"><b>Solicitação de documentos — Construtech Ltda</b><small>15 dias sem leitura → ciência tácita</small></span><span class="hc-row__s"><span class="chip chip--urg">não lida</span></span></div>
-            <div class="hc-row hc-a" style="--d: .75s"><span class="hc-row__ic"><i data-lucide="mail-open"></i></span><span class="hc-row__t"><b>Intimação — Metalúrgica Vale S.A.</b><small>Auditoria-Fiscal do Trabalho</small></span><span class="hc-row__s"><span class="chip">lida</span></span></div>
-            <div class="hc-row hc-a" style="--d: .95s"><span class="hc-row__ic"><i data-lucide="mail-open"></i></span><span class="hc-row__t"><b>Auto de infração — Transportes Lima</b><small>Auditoria-Fiscal do Trabalho</small></span><span class="hc-row__s"><span class="chip">lida</span></span></div>
+            <div class="hc-row hc-row--hot hc-a" style="--d: .55s"><span class="hc-row__ic hc-row__ic--r"><i data-lucide="mail-warning"></i></span><span class="hc-row__t"><b>Solicitação de documentos · Construtech Ltda</b><small>15 dias sem leitura → ciência tácita</small></span><span class="hc-row__s"><span class="chip chip--urg">não lida</span></span></div>
+            <div class="hc-row hc-a" style="--d: .75s"><span class="hc-row__ic"><i data-lucide="mail-open"></i></span><span class="hc-row__t"><b>Notificação · Metalúrgica Vale S.A.</b><small>Auditoria-Fiscal do Trabalho</small></span><span class="hc-row__s"><span class="chip">lida</span></span></div>
+            <div class="hc-row hc-a" style="--d: .95s"><span class="hc-row__ic"><i data-lucide="mail-open"></i></span><span class="hc-row__t"><b>Auto de infração · Transportes Lima</b><small>Auditoria-Fiscal do Trabalho</small></span><span class="hc-row__s"><span class="chip">lida</span></span></div>
           </div>
           <div class="hc__foot" aria-hidden="true"><span>Nenhum aviso chega por e-mail ou WhatsApp</span></div>
           <span class="hc-toast hc-toast--br" style="--d: 2.4s" aria-hidden="true"><span class="hc-toast__ic" style="background: #FEECEC; color: #B42318"><i data-lucide="timer"></i></span><span>Ciência tácita em 15 dias<small>O prazo corre mesmo sem leitura</small></span></span>
@@ -250,14 +262,14 @@
     <div class="lp-wrap">
       <div class="lp-pain__head">
         <h2 class="lp-pain__title lp-words" id="oq-title">O DET trocou a carta registrada e o Diário Oficial por <span class="lp-accent">uma notificação digital.</span></h2>
-        <p class="lp-pain__lead" data-reveal=""><b>E ela vale legalmente, lida ou não.</b> Criado pelo Ministério do Trabalho e Emprego e gerido pela Secretaria de Inspeção do Trabalho, o DET formaliza o art. 628-A da CLT: a comunicação eletrônica entre a Auditoria-Fiscal do Trabalho e o empregador. Hoje é por ali que chegam intimações, autos de infração, pedidos de documentos e decisões — tudo o que antes vinha em papel.</p>
+        <p class="lp-pain__lead" data-reveal=""><b>E ela vale legalmente, lida ou não.</b> Criado pelo Ministério do Trabalho e Emprego e gerido pela Secretaria de Inspeção do Trabalho, o DET formaliza o art. 628-A da CLT: a comunicação eletrônica entre a Auditoria-Fiscal do Trabalho e o empregador. Hoje é por ali que chegam intimações, autos de infração, pedidos de documentos e decisões: tudo o que antes vinha em papel. Na Justiça, o canal equivalente é o Domicílio Judicial Eletrônico, por onde chegam as citações.</p>
       </div>
       <div class="fg">
         <article class="fc" data-reveal="" data-reveal-delay="0"><span class="fc__ic" aria-hidden="true"><i data-lucide="landmark"></i></span><span class="fc__k">Quem criou</span><h3>Ministério do Trabalho e Emprego.</h3><p>Sistema oficial, desenvolvido pelo Serpro e regulamentado pelo Decreto nº 10.854/2021.</p></article>
         <article class="fc" data-reveal="" data-reveal-delay="90"><span class="fc__ic" aria-hidden="true"><i data-lucide="mail"></i></span><span class="fc__k">Pra que serve</span><h3>Substituir a carta e o Diário Oficial.</h3><p>Intimações, autos de infração, solicitações de documentos, decisões e comunicações de empréstimo consignado: tudo digital, com validade legal.</p></article>
         <article class="fc" data-reveal="" data-reveal-delay="180"><span class="fc__ic" aria-hidden="true"><i data-lucide="building-2"></i></span><span class="fc__k">Quem precisa ter</span><h3>Praticamente todo CNPJ.</h3><p>Qualquer empregador que tenha, ou já tenha tido, funcionário registrado.</p></article>
       </div>
-      <p class="fg__note" data-reveal=""><i data-lucide="external-link" aria-hidden="true"></i><span>Fonte oficial: <a class="lk" href="https://www.gov.br/trabalho-e-emprego/pt-br/servicos/empregador/domicilio-eletronico-trabalhista-det/conheca-o-det/conheca-o-det/" target="_blank" rel="noopener noreferrer" data-track="external_click" data-track-ctx="gov_det">Conheça o DET — Ministério do Trabalho e Emprego</a>.</span></p>
+      <p class="fg__note" data-reveal=""><i data-lucide="external-link" aria-hidden="true"></i><span>Fonte oficial: <a class="lk" href="https://www.gov.br/trabalho-e-emprego/pt-br/servicos/empregador/domicilio-eletronico-trabalhista-det/conheca-o-det/conheca-o-det/" target="_blank" rel="noopener noreferrer" data-track="external_click" data-track-ctx="gov_det">Conheça o DET (Ministério do Trabalho e Emprego)</a>.</span></p>
     </div>
   </section>
 
@@ -293,7 +305,7 @@
       <div class="tl15" data-reveal="" aria-labelledby="tl15-title">
         <div class="tl15__head">
           <h3 id="tl15-title">Ciência real x ciência tácita</h3>
-          <p>Se alguém entra no DET e lê a comunicação, a ciência é real — o prazo conta a partir daquele acesso. Se ninguém entra, a lei considera ciência tácita depois de 15 dias corridos da publicação. O prazo passa a correr do mesmo jeito — só que a favor do governo, não da empresa.</p>
+          <p>Se alguém entra no DET e lê a comunicação, a ciência é real: o prazo conta a partir daquele acesso. Se ninguém entra, a lei considera ciência tácita depois de 15 dias corridos da publicação. O prazo passa a correr do mesmo jeito, só que a favor do governo, não da empresa.</p>
         </div>
         <div class="tl15__track" aria-hidden="true">
           <span class="tl15__fill"></span>
@@ -312,7 +324,7 @@
       <div class="sh" data-reveal="">
         <span class="ey">Quem é obrigado</span>
         <h2 class="sh__title" id="ob-title">Praticamente toda empresa do Brasil <span class="lp-accent">já precisa ter um DET ativo.</span></h2>
-        <p class="sh__lead">A adesão foi implantada por etapas, seguindo os grupos do eSocial — primeiro grandes e médias empresas, depois as demais. Hoje o alcance já é quase total.</p>
+        <p class="sh__lead">A adesão foi implantada por etapas, seguindo os grupos do eSocial: primeiro grandes e médias empresas, depois as demais. Hoje o alcance já é quase total.</p>
       </div>
       <ul class="pills" data-reveal="">
         <li><i data-lucide="check" aria-hidden="true"></i>Grandes empresas</li>
@@ -330,7 +342,7 @@
     <div class="lp-wrap">
       <div class="lp-pain__head">
         <h2 class="lp-pain__title lp-words" id="rk-title">O risco não é a multa. <span class="lp-accent">É não saber que ela está a caminho.</span></h2>
-        <p class="lp-pain__lead" data-reveal="">O próprio manual do governo recomenda checar o DET a cada 7 dias. Na prática, quase nenhuma empresa faz isso sozinha — e é aí que mora o problema.</p>
+        <p class="lp-pain__lead" data-reveal="">O próprio manual do governo recomenda checar o DET a cada 7 dias. Na prática, quase nenhuma empresa faz isso sozinha, e é aí que mora o problema.</p>
       </div>
       <div class="fg fg--4">
         <article class="fc" data-reveal="" data-reveal-delay="0"><span class="fc__ic" aria-hidden="true"><i data-lucide="timer"></i></span><h3>O prazo corre mesmo sem leitura</h3><p>A ciência tácita não espera ninguém abrir a caixa.</p></article>
@@ -341,7 +353,7 @@
       <div class="qt" data-reveal="" style="margin-top: 40px">
         <span class="qt__mark" aria-hidden="true"><i data-lucide="quote"></i></span>
         <blockquote>“O advogado que chega primeiro não apaga incêndio. <span>Ele evita que o incêndio comece.</span>”</blockquote>
-        <p>Enquanto ninguém confere o DET dos seus clientes, o prazo já pode estar correndo. Monitore isso pra eles — e transforme uma obrigação que ninguém lembra em receita recorrente todo mês.</p>
+        <p>Enquanto ninguém confere o DET e o Domicílio Judicial Eletrônico dos seus clientes, o prazo já pode estar correndo. Monitore isso pra eles e transforme uma obrigação que ninguém lembra em receita recorrente todo mês.</p>
         <a href="/det" class="lp-cta" data-track="section_cta_click" data-track-ctx="guia_det_riscos">
           <span class="lp-cta__sheen" aria-hidden="true"></span>
           <span class="lp-cta__label">Quero vender monitoramento de DET aos meus clientes</span>
@@ -361,7 +373,7 @@
       </div>
       <div class="fg fg--2">
         <article class="fc" data-reveal="" data-reveal-delay="0"><span class="fc__ic" aria-hidden="true"><i data-lucide="user-check"></i></span><h3>Pela conta gov.br do empregador</h3><p>O acesso normal é feito com a conta gov.br da própria empresa, em nível Bronze, Prata ou Ouro.</p></article>
-        <article class="fc" data-reveal="" data-reveal-delay="100"><span class="fc__ic" aria-hidden="true"><i data-lucide="file-signature"></i></span><h3>Por procuração eletrônica</h3><p>A empresa também pode autorizar um procurador — como um escritório de advocacia — pelo Sistema de Procuração Eletrônica, sem dividir login ou senha com ninguém.</p><p>É esse mecanismo que permite a um único escritório monitorar o DET de vários clientes ao mesmo tempo, cada um com a sua própria procuração.</p></article>
+        <article class="fc" data-reveal="" data-reveal-delay="100"><span class="fc__ic" aria-hidden="true"><i data-lucide="file-signature"></i></span><h3>Por procuração eletrônica</h3><p>A empresa também pode autorizar um procurador (como um escritório de advocacia) pelo Sistema de Procuração Eletrônica, sem dividir login ou senha com ninguém.</p><p>É esse mecanismo que permite a um único escritório monitorar o DET de vários clientes ao mesmo tempo, cada um com a sua própria procuração.</p></article>
       </div>
     </div>
   </section>
@@ -381,23 +393,23 @@
         </div>
         <div class="fq-item">
           <h3 class="fq-q"><button type="button" class="fq-btn" id="fq-b2" aria-expanded="false" aria-controls="fq-p2"><span class="fq-n" aria-hidden="true">02</span><span class="fq-t">Toda empresa precisa se cadastrar, mesmo sem funcionário registrado hoje?</span><span class="fq-ic" aria-hidden="true"><i data-lucide="plus"></i></span></button></h3>
-          <div class="fq-panel" id="fq-p2" role="region" aria-labelledby="fq-b2"><div class="fq-inner"><p>Na prática, sim. O DET alcança qualquer empregador que tenha, ou já tenha tido, funcionário registrado — o que inclui grandes empresas, pequenas, MEI, empregador doméstico e ONGs. Não ter funcionário hoje não apaga a caixa postal nem impede que uma comunicação seja publicada nela.</p></div></div>
+          <div class="fq-panel" id="fq-p2" role="region" aria-labelledby="fq-b2"><div class="fq-inner"><p>Na prática, sim. O DET alcança qualquer empregador que tenha, ou já tenha tido, funcionário registrado, o que inclui grandes empresas, pequenas, MEI, empregador doméstico e ONGs. Não ter funcionário hoje não apaga a caixa postal nem impede que uma comunicação seja publicada nela.</p></div></div>
         </div>
         <div class="fq-item">
           <h3 class="fq-q"><button type="button" class="fq-btn" id="fq-b3" aria-expanded="false" aria-controls="fq-p3"><span class="fq-n" aria-hidden="true">03</span><span class="fq-t">O que é “ciência tácita” e por que ela é perigosa?</span><span class="fq-ic" aria-hidden="true"><i data-lucide="plus"></i></span></button></h3>
-          <div class="fq-panel" id="fq-p3" role="region" aria-labelledby="fq-b3"><div class="fq-inner"><p>Se ninguém abre a comunicação, a lei considera a empresa notificada depois de 15 dias corridos da publicação — é a ciência tácita. O prazo de defesa passa a correr do mesmo jeito, sem que ninguém tenha lido nada. É por isso que o risco maior não é a multa em si, e sim descobrir tarde demais que ela estava a caminho.</p></div></div>
+          <div class="fq-panel" id="fq-p3" role="region" aria-labelledby="fq-b3"><div class="fq-inner"><p>Se ninguém abre a comunicação, a lei considera a empresa notificada depois de 15 dias corridos da publicação: é a ciência tácita. O prazo de defesa passa a correr do mesmo jeito, sem que ninguém tenha lido nada. É por isso que o risco maior não é a multa em si, e sim descobrir tarde demais que ela estava a caminho.</p></div></div>
         </div>
         <div class="fq-item">
           <h3 class="fq-q"><button type="button" class="fq-btn" id="fq-b4" aria-expanded="false" aria-controls="fq-p4"><span class="fq-n" aria-hidden="true">04</span><span class="fq-t">Quem pode acessar o DET pela empresa?</span><span class="fq-ic" aria-hidden="true"><i data-lucide="plus"></i></span></button></h3>
-          <div class="fq-panel" id="fq-p4" role="region" aria-labelledby="fq-b4"><div class="fq-inner"><p>O próprio empregador, pela conta gov.br (nível Bronze, Prata ou Ouro), ou um procurador autorizado pelo Sistema de Procuração Eletrônica — um escritório de advocacia ou uma contabilidade, por exemplo. A procuração não exige compartilhar login nem senha, e permite que um mesmo escritório acompanhe o DET de vários clientes.</p></div></div>
+          <div class="fq-panel" id="fq-p4" role="region" aria-labelledby="fq-b4"><div class="fq-inner"><p>O próprio empregador, pela conta gov.br (nível Bronze, Prata ou Ouro), ou um procurador autorizado pelo Sistema de Procuração Eletrônica (um escritório de advocacia ou uma contabilidade, por exemplo). A procuração não exige compartilhar login nem senha, e permite que um mesmo escritório acompanhe o DET de vários clientes.</p></div></div>
         </div>
         <div class="fq-item">
           <h3 class="fq-q"><button type="button" class="fq-btn" id="fq-b5" aria-expanded="false" aria-controls="fq-p5"><span class="fq-n" aria-hidden="true">05</span><span class="fq-t">O que acontece se a empresa perder um prazo no DET?</span><span class="fq-ic" aria-hidden="true"><i data-lucide="plus"></i></span></button></h3>
-          <div class="fq-panel" id="fq-p5" role="region" aria-labelledby="fq-b5"><div class="fq-inner"><p>Ela perde a chance de se defender ou de responder dentro daquele processo específico e fica sujeita a multa administrativa por descumprimento, prevista no art. 630 da CLT. O valor varia conforme a infração — mas o prejuízo maior costuma ser a defesa que deixou de ser apresentada.</p></div></div>
+          <div class="fq-panel" id="fq-p5" role="region" aria-labelledby="fq-b5"><div class="fq-inner"><p>Ela perde a chance de se defender ou de responder dentro daquele processo específico e fica sujeita a multa administrativa por descumprimento, prevista no art. 630 da CLT. O valor varia conforme a infração, mas o prejuízo maior costuma ser a defesa que deixou de ser apresentada.</p></div></div>
         </div>
         <div class="fq-item">
           <h3 class="fq-q"><button type="button" class="fq-btn" id="fq-b6" aria-expanded="false" aria-controls="fq-p6"><span class="fq-n" aria-hidden="true">06</span><span class="fq-t">Preciso entrar no DET todos os dias?</span><span class="fq-ic" aria-hidden="true"><i data-lucide="plus"></i></span></button></h3>
-          <div class="fq-panel" id="fq-p6" role="region" aria-labelledby="fq-b6"><div class="fq-inner"><p>O manual do governo recomenda checar a cada 7 dias, o que dá folga dentro dos 15 dias da ciência tácita. Na prática, quase ninguém mantém essa rotina manualmente — por isso o monitoramento automático existe: alguém confere por você e avisa assim que uma comunicação aparece.</p></div></div>
+          <div class="fq-panel" id="fq-p6" role="region" aria-labelledby="fq-b6"><div class="fq-inner"><p>O manual do governo recomenda checar a cada 7 dias, o que dá folga dentro dos 15 dias da ciência tácita. Na prática, quase ninguém mantém essa rotina manualmente. Por isso o monitoramento automático existe: alguém confere por você e avisa assim que uma comunicação aparece.</p></div></div>
         </div>
       </div>
     </div>
@@ -440,7 +452,7 @@
       <div class="jf__top">
         <div class="jf__brand">
           <a href="/" class="jf__logo" aria-label="Juris8, ir para a página inicial"><img src="/assets/brand/logo-juris8-light.png" alt="Juris 8" width="125" height="32"></a>
-          <p class="jf__tag">A mais completa IA jurídica do Brasil. Pré-elaboração de peças, pesquisa, análise de documentos e transcrição — desenvolvidas por advogados, para advogados.</p>
+          <p class="jf__tag">IA jurídica desenvolvida por advogados, para advogados: pesquisa de jurisprudência, análise de documentos, transcrição e apoio à elaboração de peças.</p>
           <div class="jf__seals">
             <span><i data-lucide="lock" aria-hidden="true"></i>LGPD</span>
             <span><i data-lucide="sparkles" aria-hidden="true"></i>IA jurídica</span>
@@ -457,28 +469,28 @@
         <nav class="jf__links jf__links--4" aria-label="Rodapé">
     <div class="jf__col">
       <h2 class="jf__h">Soluções</h2>
-      <a href="/det">DET Monitor</a>
-      <a href="/det/det-monitor-grupos.html">DET para grupos</a>
-      <a href="/det/empresas.html">DET para empresas</a>
-      <a href="/crm">CRM com IA</a>
+      <a href="/det">DET Monitor para escritórios</a>
+      <a href="/det/det-monitor-grupos.html">DET Monitor para grupos</a>
+      <a href="/crm">CRM com IA jurídica</a>
       <a href="/secretariajuridica">Secretaria jurídica</a>
-      <a href="/newsletter">Newsletter mensal</a>
       <a href="/trabalhistaempresarial">Trabalhista empresarial</a>
+      <a href="https://wa.me/5547988061278?text=Ol%C3%A1!%20Quero%20conhecer%20a%20Newsletter%20mensal%20com%20IA%20do%20Juris8." target="_blank" rel="noopener noreferrer">Newsletter mensal com IA</a>
+      <a href="/agentejuridico">Agente Jurídico</a>
     </div>
     <div class="jf__col">
       <h2 class="jf__h">Plataforma</h2>
-      <a href="/agentejuridico">Agente Jurídico</a>
-      <a href="/agentejuridico#feature-redacao">Pré-elaboração de peças</a>
-      <a href="/agentejuridico#feature-jurisprudencia">Pesquisa de jurisprudência</a>
-      <a href="/agentejuridico#feature-analise">Análise de documentos</a>
-      <a href="/agentejuridico#feature-transcricao">Transcrição de audiências</a>
+      <a href="/#redacao">Pré-elaboração de peças</a>
+      <a href="/#jurisprudencia">Pesquisa de jurisprudência</a>
+      <a href="/#revisao-contratual">Análise de documentos</a>
+      <a href="/#transcricao">Transcrição de audiências</a>
     </div>
     <div class="jf__col">
-      <h2 class="jf__h">Guia DET</h2>
+      <h2 class="jf__h">Sobre o DET</h2>
       <a href="/guia-det" aria-current="page">Guia DET</a>
       <a href="/guia-det#o-que-e">O que é o DET</a>
       <a href="/guia-det#riscos">Riscos e prazos</a>
       <a href="/guia-det#acesso">Quem pode acessar</a>
+      <a href="/det/empresas.html">DET para empresas</a>
     </div>
     <div class="jf__col">
       <h2 class="jf__h">Contato</h2>

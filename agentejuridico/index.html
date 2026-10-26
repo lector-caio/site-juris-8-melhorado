@@ -1,0 +1,1269 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#7547EF">
+<title>Agente jurídico com IA | Juris8</title>
+<meta name="description" content="Redija, pesquise, analise e transcreva com uma IA feita para a rotina jurídica. Rascunhos de peças, jurisprudência validada, análise de documentos e transcrição de audiências, sempre para a sua revisão.">
+<link rel="icon" href="/assets/brand/juris8-favicon-32x32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="/assets/brand/juris8-apple-touch-icon.png">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Juris8">
+<meta property="og:title" content="Agente jurídico com IA | Juris8">
+<meta property="og:description" content="Você entra com o contexto. O Juris8 estrutura o caminho. Você revisa, ajusta e decide.">
+<meta property="og:image" content="/assets/media/agente/hero.webp">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebPage","name":"Agente jurídico com IA | Juris8","description":"Redação assistida, pesquisa de jurisprudência validada, análise de documentos e transcrição de audiências.","inLanguage":"pt-BR","isPartOf":{"@type":"WebSite","name":"Juris8","url":"https://juris8.com"},"publisher":{"@type":"Organization","name":"Juris8","logo":"https://juris8.com/assets/brand/logo-juris8.png"}}
+</script>
+<link rel="stylesheet" href="/assets/site/j8-header.css">
+<style>
+/* ============================================================
+   JURIS8 · AGENTE JURÍDICO
+   Conceito: você entra com o contexto, o agente prepara, você decide.
+   A assinatura é o agente trabalhando à vista: cada etapa aparece,
+   e a peça só chega quando está pronta para a sua revisão.
+   Base visual da home (barra e WhatsApp em /assets/site/j8-header.css).
+   ============================================================ */
+:root {
+  --noite: #2E135B;
+  --roxo: linear-gradient(170deg, #36196A 0%, #321663 55%, #2E135B 100%);
+  --grad: linear-gradient(90deg, #7547EF, #8B5CF6);
+  --grad-hover: linear-gradient(90deg, #6334D8, #7547EF);
+  --destaque: #6A3AD8;
+  --violeta: #7547EF;
+  --violeta-forte: #5B2FD9;
+  --lavanda: #CDBDFF;
+  --lavanda-2: #ECE6FF;
+  --nevoa: #F3F0FD;
+  --papel: #F9F8FD;
+  --tinta: #170B45;
+  --texto: #5B5776;
+  --sutil: #6F6A86;
+  --linha: #EEEBF6;
+  --verde: #197D44;
+  --verde-bg: #E7F6EE;
+  --ambar: #A15C07;
+  --ambar-bg: #FEF3E2;
+  --vermelho: #B4232A;
+  --vermelho-bg: #FDECEC;
+  --fd: 'Sora', 'Plus Jakarta Sans', system-ui, sans-serif;
+  --fb: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+  --k: calc(min(100vw, 1919px) / 553);
+  --ease: cubic-bezier(.22, 1, .36, 1);
+  --sombra: 0 40px 90px -48px rgba(30, 14, 92, .5), 0 2px 6px -2px rgba(30, 14, 92, .08);
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+html { scroll-behavior: smooth; scroll-padding-top: 100px; -webkit-text-size-adjust: 100%; }
+body { margin: 0; background: var(--papel); color: var(--texto); font: 400 16px/1.6 var(--fb); -webkit-font-smoothing: antialiased; text-rendering: optimizeLegibility; overflow-x: hidden; }
+img { display: block; max-width: 100%; }
+a { color: inherit; text-decoration: none; }
+button, input, select, textarea { font: inherit; color: inherit; }
+button { padding: 0; border: 0; background: none; cursor: pointer; }
+h1, h2, h3, h4, p { margin: 0; }
+ul, ol { margin: 0; padding: 0; list-style: none; }
+svg.lucide { width: 18px; height: 18px; flex: none; }
+:focus-visible { outline: 2.5px solid var(--violeta); outline-offset: 3px; border-radius: 8px; }
+.ag-dark :focus-visible { outline-color: var(--lavanda); }
+.sr-only { position: absolute; width: 1px; height: 1px; margin: -1px; padding: 0; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0; }
+.ag-wrap { width: 100%; max-width: 1240px; margin: 0 auto; padding: 0 28px; }
+.num { font-variant-numeric: tabular-nums; }
+
+/* ---------- Botões ---------- */
+.ag-btn { display: inline-flex; align-items: center; justify-content: center; gap: 10px; height: 54px; padding: 0 26px; border-radius: 999px; font: 600 15.5px/1 var(--fb); white-space: nowrap; transition: transform .25s var(--ease), background-color .25s, box-shadow .25s, border-color .25s, color .25s; }
+.ag-btn svg.lucide { width: 18px; height: 18px; transition: transform .25s var(--ease); }
+.ag-btn:hover svg.lucide { transform: translateX(3px); }
+.ag-btn:active { transform: translateY(1px) scale(.99); }
+.ag-btn--primary { background: var(--grad); color: #fff; box-shadow: inset 0 1px 0 rgba(255,255,255,.22), 0 16px 34px -12px rgba(117,71,239,.8); }
+.ag-btn--primary:hover { background: var(--grad-hover); transform: translateY(-1px); }
+.ag-btn--line { border: 1.5px solid var(--linha); background: #fff; color: var(--tinta); }
+.ag-btn--line:hover { border-color: var(--lavanda); background: var(--nevoa); }
+.ag-btn--line:hover svg.lucide { transform: none; }
+.ag-btn--wa svg { width: 18px; height: 18px; color: #16A34A; }
+
+/* ---------- Seções ---------- */
+.ag-section { position: relative; padding: clamp(96px, 11vw, 148px) 0; }
+.ag-head { display: grid; grid-template-columns: minmax(0, 1.1fr) minmax(0, .9fr); gap: 22px 72px; align-items: end; margin-bottom: clamp(44px, 5vw, 64px); }
+.ag-h2 { color: var(--tinta); font: 800 clamp(34px, 4.2vw, 56px)/1.05 var(--fd); letter-spacing: -.04em; text-wrap: balance; }
+.ag-head p, .ag-lede { max-width: 520px; color: var(--texto); font-size: 17.5px; line-height: 1.7; }
+.ag-dark { background: var(--roxo); color: rgba(255,255,255,.72); }
+.ag-dark .ag-h2 { color: #fff; }
+.ag-dark .ag-head p, .ag-dark .ag-lede { color: rgba(255,255,255,.7); }
+.ag-soft { background: linear-gradient(180deg, var(--papel) 0%, var(--nevoa) 14%, var(--nevoa) 86%, var(--papel) 100%); }
+/* Palavras que acendem ao rolar (mesmo efeito da home; o JS está em j8-pages.js) */
+.lp-words .w { white-space: nowrap; }
+.lp-words .lp-accent { color: var(--destaque); }
+.lp-words.js-words .w { color: rgba(23,11,69,.14); transition: color .45s var(--ease); }
+.lp-words.js-words .w.is-lit { color: var(--tinta); }
+.lp-words.js-words .w.is-accent.is-lit { color: var(--destaque); }
+.lp-words--lt .lp-accent { color: #A98BFF; }
+.lp-words.lp-words--lt.js-words .w { color: rgba(255,255,255,.14); }
+.lp-words.lp-words--lt.js-words .w.is-lit { color: #fff; }
+.lp-words.lp-words--lt.js-words .w.is-accent.is-lit { color: #8C5CFA; }
+
+/* Peças de interface reutilizadas nas demonstrações */
+.ag-ui { overflow: hidden; border: 1px solid var(--linha); border-radius: 24px; background: #fff; box-shadow: var(--sombra); }
+.ag-ui__bar { display: flex; align-items: center; gap: 10px; padding: 14px 18px; border-bottom: 1px solid var(--linha); background: #FCFBFF; color: var(--tinta); font: 700 14px var(--fd); }
+.ag-ui__bar > svg.lucide { width: 28px; height: 28px; padding: 6px; border-radius: 9px; background: var(--grad); color: #fff; }
+.ag-ui__bar small { margin-left: auto; color: var(--sutil); font: 600 12.5px var(--fb); }
+.ag-mark { display: grid; place-items: center; width: 30px; height: 30px; flex: none; border-radius: 10px; background: var(--grad); color: #fff; font: 800 12px var(--fd); }
+.ag-pill { display: inline-flex; align-items: center; gap: 6px; padding: 4px 10px; border-radius: 999px; font-size: 12px; font-weight: 700; white-space: nowrap; }
+.ag-pill svg.lucide { width: 13px; height: 13px; }
+.ag-pill--ok { background: var(--verde-bg); color: #11713B; }
+.ag-pill--warn { background: var(--ambar-bg); color: var(--ambar); }
+.ag-pill--risk { background: var(--vermelho-bg); color: var(--vermelho); }
+.ag-pill--violet { background: var(--lavanda-2); color: var(--violeta-forte); }
+.ag-pill--muted { background: #F1EEF8; color: var(--sutil); }
+.ag-tag { display: inline-flex; padding: 3px 9px; border-radius: 8px; background: #F4F2FA; color: var(--texto); font-size: 12px; font-weight: 600; }
+.ag-file { display: inline-flex; align-items: center; gap: 7px; padding: 6px 10px; border: 1px solid var(--linha); border-radius: 10px; background: #fff; color: var(--tinta); font-size: 12.5px; font-weight: 600; }
+.ag-file svg.lucide { width: 14px; height: 14px; color: #C62F35; }
+.ag-file--doc svg.lucide { color: #1D4ED8; }
+
+/* ---------- Hero (formato da home: texto no branco, foto à direita, cartão flutuante) ---------- */
+.ag-hero { position: relative; isolation: isolate; display: flex; align-items: center; min-height: min(calc(320 * var(--k)), 100svh); padding: calc(60px + 18 * var(--k)) 0 calc(22 * var(--k)); overflow: hidden; background: var(--papel); }
+.ag-hero__media { position: absolute; top: 0; right: 0; bottom: 0; left: calc((100vw - 553 * var(--k)) / 2 + 272 * var(--k)); z-index: -1; pointer-events: none; }
+.ag-hero__media img { width: 100%; height: 100%; object-fit: cover; object-position: 50% center; }
+.ag-hero__media::after { content: ""; position: absolute; inset: 0 0 0 -2px; background: linear-gradient(90deg, var(--papel) 0%, rgba(249,248,253,.88) 3%, rgba(249,248,253,.6) 6.5%, rgba(249,248,253,.28) 10%, rgba(249,248,253,.08) 13%, rgba(249,248,253,0) 16%), linear-gradient(0deg, rgba(249,248,253,.6) 0%, rgba(249,248,253,0) 22%); }
+.ag-hero__grid { display: grid; grid-template-columns: calc(200 * var(--k)) minmax(0, 1fr); align-items: center; width: 100%; max-width: calc(553 * var(--k)); margin: 0 auto; padding: 0 calc(30 * var(--k)) 0 calc(66.7 * var(--k)); }
+.ag-hero h1 { color: var(--tinta); font: 800 clamp(32px, calc(15.6 * var(--k)), 56px)/1.03 var(--fd); letter-spacing: -.04em; text-wrap: pretty; }
+.ag-hero h1 em { color: var(--destaque); font-style: normal; }
+.ag-hero__lead { margin-top: 22px; color: var(--texto); font-size: clamp(14.5px, calc(5.7 * var(--k)), 19px); line-height: 1.62; }
+.ag-hero__ctas { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 28px; }
+.ag-motto { display: grid; gap: 2px; margin-top: 30px; padding-left: 16px; border-left: 3px solid var(--violeta); color: var(--tinta); font: 600 clamp(14.5px, calc(5.6 * var(--k)), 18px)/1.45 var(--fd); }
+.ag-motto span:last-child { color: var(--destaque); }
+.ag-trust { display: grid; gap: 8px; margin-top: 22px; color: var(--sutil); font-size: 14px; }
+.ag-trust li { display: flex; align-items: center; gap: 9px; }
+.ag-trust svg.lucide { width: 16px; height: 16px; color: var(--verde); }
+.ag-hero__visual { justify-self: end; }
+.ag-rise { animation: ag-rise 1s var(--ease) both; }
+.ag-rise--2 { animation-delay: .1s; } .ag-rise--3 { animation-delay: .2s; } .ag-rise--4 { animation-delay: .32s; }
+
+/* Cartão do agente */
+.ag-agent { position: relative; width: 420px; overflow: hidden; border: 1px solid var(--linha); border-radius: 24px; background: #fff; box-shadow: 0 44px 90px -36px rgba(36,16,90,.45), 0 2px 6px -2px rgba(36,16,90,.08); animation: ag-rise 1.1s .3s var(--ease) both; }
+.ag-agent__bar { display: flex; align-items: center; gap: 10px; padding: 11px 14px; border-bottom: 1px solid var(--linha); background: #FCFBFF; }
+.ag-agent__bar > span:nth-child(2) { display: flex; align-items: baseline; gap: 7px; min-width: 0; }
+.ag-agent__bar b { color: var(--tinta); font: 700 14px var(--fd); }
+.ag-agent__bar small { overflow: hidden; color: var(--sutil); font-size: 12.5px; white-space: nowrap; text-overflow: ellipsis; }
+.ag-agent__bar .ag-pill { margin-left: auto; transition: background-color .4s, color .4s; }
+.ag-agent__body { display: grid; gap: 10px; padding: 12px 14px 14px; background: radial-gradient(rgba(117,71,239,.05) 1px, transparent 1.4px) 0 0 / 18px 18px, #fff; }
+.ag-who { display: flex; align-items: center; gap: 8px; margin-bottom: 6px; color: var(--sutil); font-size: 12px; }
+.ag-who b { color: var(--tinta); font-size: 12.5px; }
+.ag-who i { display: grid; place-items: center; width: 22px; height: 22px; border-radius: 50%; background: #E4DCFF; color: var(--violeta-forte); font: 800 12px var(--fd); font-style: normal; }
+.ag-who .ag-mark { width: 22px; height: 22px; border-radius: 7px; font-size: 12px; }
+.ag-ask { padding: 10px 12px; border-radius: 15px; border-top-left-radius: 5px; background: var(--nevoa); color: var(--tinta); font-size: 13px; line-height: 1.5; }
+.ag-ask__files { display: flex; flex-wrap: wrap; gap: 5px; margin-top: 8px; }
+.ag-ask__files .ag-file { padding: 4px 8px; font-size: 12px; }
+.ag-steps { display: grid; gap: 5px; }
+.ag-step { display: grid; grid-template-columns: 22px minmax(0, 1fr) auto; gap: 9px; align-items: center; padding: 5px 9px; border-radius: 13px; background: #FAF9FE; opacity: .45; transition: opacity .4s, background-color .4s; }
+.ag-step.is-run, .ag-step.is-done { opacity: 1; }
+.ag-step.is-run { background: var(--lavanda-2); }
+.ag-step__ic { display: grid; place-items: center; width: 22px; height: 22px; border-radius: 50%; background: #EDEAF5; color: var(--sutil); }
+.ag-step__ic svg.lucide { width: 12px; height: 12px; }
+.ag-step.is-run .ag-step__ic { background: #fff; color: var(--violeta); }
+.ag-step.is-run .ag-step__ic svg.lucide { animation: ag-spin 1s linear infinite; }
+.ag-step.is-done .ag-step__ic { background: var(--verde); color: #fff; }
+.ag-step b { display: block; color: var(--tinta); font-size: 12.5px; font-weight: 700; line-height: 1.3; }
+.ag-step small { display: block; color: var(--sutil); font-size: 12px; }
+.ag-step .ag-tag { font-size: 12px; }
+.ag-doc { display: grid; grid-template-columns: 34px minmax(0, 1fr) auto; gap: 10px; align-items: center; padding: 9px 11px; border: 1px solid var(--linha); border-radius: 15px; background: #fff; }
+.ag-doc__ic { display: grid; place-items: center; width: 34px; height: 34px; border-radius: 11px; background: #E6EEFE; color: #1D4ED8; }
+.ag-doc__ic svg.lucide { width: 20px; height: 20px; }
+.ag-doc b { display: block; overflow: hidden; color: var(--tinta); font-size: 13px; white-space: nowrap; text-overflow: ellipsis; }
+.ag-doc__bar { height: 5px; margin-top: 7px; overflow: hidden; border-radius: 99px; background: #EEEAF7; }
+.ag-doc__bar i { display: block; width: 0; height: 100%; border-radius: inherit; background: var(--grad); transition: width 1.6s var(--ease); }
+.ag-doc__st { color: var(--violeta-forte); font-size: 12px; font-weight: 700; font-variant-numeric: tabular-nums; }
+.ag-ready { padding: 11px 12px; border-radius: 16px; background: var(--verde-bg); opacity: 0; transform: translateY(8px); transition: opacity .5s var(--ease), transform .5s var(--ease); }
+.ag-ready.is-in { opacity: 1; transform: none; }
+.ag-ready b { display: flex; align-items: center; gap: 8px; color: #0E5E31; font: 700 14px var(--fd); }
+.ag-ready b svg.lucide { width: 17px; height: 17px; }
+.ag-ready p { margin-top: 3px; color: #2E6B47; font-size: 12.5px; line-height: 1.45; }
+.ag-ready__row { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 8px; }
+.ag-ready__row span { display: inline-flex; align-items: center; gap: 6px; padding: 6px 10px; border-radius: 10px; background: #fff; color: var(--tinta); font-size: 12.5px; font-weight: 700; }
+.ag-ready__row span:first-child { background: var(--grad); color: #fff; }
+.ag-ready__row svg.lucide { width: 14px; height: 14px; }
+.ag-compose { display: grid; gap: 7px; padding: 10px 14px 12px; border-top: 1px solid var(--linha); background: #FCFBFF; }
+.ag-compose__in { display: flex; align-items: center; gap: 10px; padding: 9px 9px 9px 14px; border: 1px solid var(--linha); border-radius: 14px; background: #fff; color: #706987; font-size: 13px; }
+.ag-compose__in span { flex: 1; }
+.ag-compose__in i { display: grid; place-items: center; width: 30px; height: 30px; border-radius: 10px; background: var(--grad); color: #fff; }
+.ag-compose__in svg.lucide { width: 15px; height: 15px; }
+.ag-compose__hint { color: var(--sutil); font-size: 12px; }
+.ag-tpls { display: flex; gap: 6px; overflow: hidden; -webkit-mask-image: linear-gradient(90deg, #000 85%, transparent); mask-image: linear-gradient(90deg, #000 85%, transparent); }
+.ag-tpls span { flex: none; }
+.ag-tpls span { display: inline-flex; align-items: center; gap: 5px; padding: 5px 9px; border: 1px solid #E4DEF5; border-radius: 999px; background: #fff; color: var(--violeta-forte); font-size: 12px; font-weight: 700; }
+.ag-tpls svg.lucide { width: 12px; height: 12px; }
+
+/* ---------- Faixa ---------- */
+.ag-band { padding: 30px 0; background: var(--roxo); }
+.ag-band ul { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 16px 28px; }
+.ag-band li { display: flex; align-items: center; gap: 11px; color: rgba(255,255,255,.86); font-size: 14.5px; font-weight: 600; }
+.ag-band svg.lucide { width: 19px; height: 19px; color: var(--lavanda); }
+
+/* ---------- Dores ---------- */
+.ag-pains { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; }
+.ag-pain { padding: 26px; border-radius: 24px; background: #fff; box-shadow: inset 0 0 0 1px var(--linha); transition: box-shadow .3s, transform .3s var(--ease); }
+.ag-pain:hover { box-shadow: inset 0 0 0 1px var(--lavanda), 0 24px 40px -30px rgba(60,30,160,.5); transform: translateY(-2px); }
+.ag-pain__ic { display: grid; place-items: center; width: 48px; height: 48px; border-radius: 15px; background: var(--lavanda-2); color: var(--violeta-forte); }
+.ag-pain__ic svg.lucide { width: 22px; height: 22px; }
+.ag-pain h3 { margin-top: 18px; color: var(--tinta); font: 700 19px/1.3 var(--fd); letter-spacing: -.02em; }
+.ag-pain p { margin-top: 8px; font-size: 15px; line-height: 1.6; }
+
+/* ---------- Quatro frentes ---------- */
+.ag-tabs { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 8px; padding: 6px; border-radius: 22px; background: #fff; box-shadow: inset 0 0 0 1px var(--linha); }
+.ag-tab { display: flex; align-items: center; gap: 12px; padding: 14px 16px; border-radius: 17px; color: var(--texto); text-align: left; transition: background-color .25s, color .25s, box-shadow .25s; }
+.ag-tab:hover { background: var(--nevoa); }
+.ag-tab__ic { display: grid; place-items: center; width: 40px; height: 40px; flex: none; border-radius: 13px; background: var(--lavanda-2); color: var(--violeta-forte); transition: background-color .25s, color .25s; }
+.ag-tab__ic svg.lucide { width: 19px; height: 19px; }
+.ag-tab small { display: block; color: var(--sutil); font: 600 12px var(--fd); }
+.ag-tab b { display: block; color: var(--tinta); font: 700 16px var(--fd); }
+.ag-tab[aria-selected="true"] { background: var(--roxo); box-shadow: 0 18px 34px -20px rgba(46,19,91,.8); }
+.ag-tab[aria-selected="true"] .ag-tab__ic { background: rgba(255,255,255,.14); color: #fff; }
+.ag-tab[aria-selected="true"] b { color: #fff; }
+.ag-tab[aria-selected="true"] small { color: var(--lavanda); }
+.ag-front { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: clamp(28px, 4vw, 56px); align-items: center; margin-top: 18px; padding: clamp(28px, 4vw, 48px); border-radius: 30px; background: #fff; box-shadow: inset 0 0 0 1px var(--linha); }
+.ag-front[hidden] { display: none; }
+.ag-front { animation: ag-pop .45s var(--ease) both; }
+.ag-front h3 { color: var(--tinta); font: 800 clamp(26px, 2.6vw, 36px)/1.12 var(--fd); letter-spacing: -.035em; }
+.ag-front > div > p { margin-top: 14px; font-size: 16.5px; line-height: 1.7; }
+.ag-example { position: relative; padding: 26px 26px 24px; border-radius: 22px; background: var(--nevoa); }
+.ag-example__k { display: inline-flex; align-items: center; gap: 7px; padding: 4px 11px; border-radius: 999px; background: #fff; color: var(--violeta-forte); font-size: 12.5px; font-weight: 700; }
+.ag-example__k svg.lucide { width: 14px; height: 14px; }
+.ag-example p { margin-top: 14px; color: var(--tinta); font: 600 17px/1.55 var(--fd); letter-spacing: -.01em; }
+
+/* ---------- Aprofundamentos ---------- */
+.ag-deep { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: clamp(36px, 5vw, 80px); align-items: center; }
+.ag-deep + .ag-deep { margin-top: clamp(96px, 10vw, 140px); }
+.ag-deep--flip > :first-child { order: 2; }
+.ag-deep h2 { color: var(--tinta); font: 800 clamp(30px, 3.4vw, 46px)/1.08 var(--fd); letter-spacing: -.04em; text-wrap: balance; }
+.ag-deep > div:first-child > p:not(.ag-proof) { margin-top: 16px; font-size: 17px; line-height: 1.7; }
+.ag-points { display: grid; gap: 14px; margin-top: 26px; }
+.ag-points li { display: grid; grid-template-columns: 22px minmax(0, 1fr); gap: 12px; font-size: 15.5px; line-height: 1.6; }
+.ag-points svg.lucide { width: 20px; height: 20px; margin-top: 2px; color: var(--violeta); }
+.ag-points b { color: var(--tinta); }
+.ag-proof { display: inline-flex; align-items: center; gap: 9px; margin-top: 26px; padding: 10px 16px; border-radius: 999px; background: var(--verde-bg); color: #0E5E31; font-size: 14.5px; font-weight: 700; }
+.ag-proof svg.lucide { width: 18px; height: 18px; color: var(--verde); }
+/* pesquisa */
+.ag-query { display: flex; align-items: center; gap: 10px; margin: 16px 18px 0; padding: 12px 14px; border: 1px solid var(--linha); border-radius: 14px; background: #FCFBFF; color: var(--tinta); font-size: 14px; font-weight: 600; }
+.ag-query svg.lucide { color: var(--violeta); }
+.ag-courts { display: flex; flex-wrap: wrap; gap: 6px; padding: 12px 18px 4px; }
+.ag-courts button { padding: 6px 12px; border: 1px solid var(--linha); border-radius: 999px; background: #fff; color: var(--texto); font-size: 12.5px; font-weight: 700; transition: background-color .2s, color .2s, border-color .2s; }
+.ag-courts button[aria-pressed="true"] { border-color: var(--tinta); background: var(--tinta); color: #fff; }
+.ag-results { display: grid; gap: 10px; padding: 12px 18px 16px; }
+.ag-result { padding: 16px; border: 1px solid var(--linha); border-radius: 16px; transition: opacity .3s, border-color .3s; }
+.ag-result[hidden] { display: none; }
+.ag-result__top { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; }
+.ag-result__top b { color: var(--tinta); font-size: 13.5px; }
+.ag-result__top time { color: var(--sutil); font-size: 12.5px; }
+.ag-result__top .ag-pill:first-of-type { margin-left: auto; }
+.ag-court { padding: 3px 8px; border-radius: 7px; background: var(--tinta); color: #fff; font: 700 12px var(--fd); }
+.ag-result blockquote { margin: 11px 0 0; color: var(--texto); font-size: 13.5px; line-height: 1.6; font-style: italic; }
+.ag-result__tags { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 11px; }
+.ag-rel { display: inline-flex; align-items: center; gap: 6px; color: var(--sutil); font-size: 12px; }
+.ag-rel b { color: var(--violeta-forte); }
+.ag-ui__foot { padding: 12px 18px; border-top: 1px solid var(--linha); background: #FCFBFF; color: var(--sutil); font-size: 12.5px; }
+.ag-empty { padding: 22px; border: 1px dashed var(--linha); border-radius: 16px; color: var(--sutil); font-size: 13.5px; text-align: center; }
+/* redação: fluxo + notas */
+.ag-flow { display: grid; gap: 4px; padding: 16px 18px 6px; }
+.ag-flow li { display: grid; grid-template-columns: 26px minmax(0, 1fr); gap: 11px; padding: 8px 0; }
+.ag-flow__ic { display: grid; place-items: center; width: 26px; height: 26px; border-radius: 50%; background: var(--verde); color: #fff; }
+.ag-flow__ic svg.lucide { width: 14px; height: 14px; }
+.ag-flow li.is-run .ag-flow__ic { background: var(--lavanda-2); color: var(--violeta); }
+.ag-flow li.is-run .ag-flow__ic svg.lucide { animation: ag-spin 1s linear infinite; }
+.ag-flow b { display: block; color: var(--tinta); font-size: 13.5px; }
+.ag-flow small { display: block; color: var(--sutil); font-size: 12.5px; }
+.ag-scores { margin: 4px 18px 0; padding: 16px; border-radius: 16px; background: var(--nevoa); }
+.ag-scores__h { display: flex; align-items: center; justify-content: space-between; color: var(--tinta); font: 700 13.5px var(--fd); }
+.ag-score { display: grid; grid-template-columns: minmax(0, 1fr) 120px 34px; gap: 10px; align-items: center; margin-top: 10px; font-size: 13px; }
+.ag-score span { color: var(--texto); }
+.ag-score i { height: 7px; overflow: hidden; border-radius: 99px; background: #E2DCF3; }
+.ag-score i::after { content: ""; display: block; width: 0; height: 100%; border-radius: inherit; background: var(--grad); transition: width 1.2s var(--ease); }
+.ag-scores.is-in .ag-score i::after { width: var(--v); }
+.ag-score b { color: var(--tinta); font: 700 13px var(--fd); text-align: right; font-variant-numeric: tabular-nums; }
+.ag-tip { display: flex; gap: 10px; margin: 12px 18px 18px; padding: 12px 14px; border-radius: 14px; background: var(--ambar-bg); color: #6B3D04; font-size: 13px; line-height: 1.55; }
+.ag-tip svg.lucide { width: 17px; height: 17px; margin-top: 1px; color: var(--ambar); }
+/* análise contratual */
+.ag-skills { display: flex; flex-wrap: wrap; gap: 7px; padding: 14px 18px 4px; }
+.ag-skills button { display: inline-flex; align-items: center; gap: 7px; padding: 7px 12px; border: 1px solid var(--linha); border-radius: 999px; background: #fff; color: var(--texto); font-size: 12.5px; font-weight: 700; transition: background-color .2s, color .2s, border-color .2s; }
+.ag-skills button i { min-width: 18px; padding: 0 5px; border-radius: 999px; background: var(--vermelho-bg); color: var(--vermelho); font-size: 12px; font-style: normal; text-align: center; }
+.ag-skills button[aria-pressed="true"] { border-color: var(--violeta); background: var(--lavanda-2); color: var(--violeta-forte); }
+.ag-count { display: flex; align-items: center; gap: 12px; padding: 12px 18px 0; color: var(--sutil); font-size: 12.5px; }
+.ag-count i { flex: 1; height: 6px; overflow: hidden; border-radius: 99px; background: #EEEAF7; }
+.ag-count i::after { content: ""; display: block; width: 90.4%; height: 100%; background: var(--grad); }
+.ag-count b { color: var(--tinta); font-variant-numeric: tabular-nums; }
+.ag-clauses { display: grid; gap: 8px; padding: 12px 18px 18px; }
+.ag-clause { display: grid; grid-template-columns: 30px minmax(0, 1fr); gap: 11px; padding: 12px; border: 1px solid var(--linha); border-radius: 14px; transition: opacity .3s, border-color .3s, background-color .3s; }
+.ag-clause.is-dim { opacity: .3; }
+.ag-clause.is-hit { border-color: var(--lavanda); background: #FBFAFF; }
+.ag-clause__ic { display: grid; place-items: center; width: 30px; height: 30px; border-radius: 10px; }
+.ag-clause__ic svg.lucide { width: 16px; height: 16px; }
+.ag-clause--ok .ag-clause__ic { background: var(--verde-bg); color: var(--verde); }
+.ag-clause--warn .ag-clause__ic { background: var(--ambar-bg); color: var(--ambar); }
+.ag-clause--risk .ag-clause__ic { background: var(--vermelho-bg); color: var(--vermelho); }
+.ag-clause b { display: block; color: var(--tinta); font-size: 13.5px; }
+.ag-clause small { display: block; margin-top: 2px; font-size: 12.5px; line-height: 1.45; }
+.ag-clause--risk small { color: var(--vermelho); }
+.ag-clause--warn small { color: var(--ambar); }
+.ag-clause--ok small { color: var(--sutil); }
+/* transcrição */
+.ag-trans__meta { display: flex; align-items: center; gap: 10px; padding: 14px 18px 0; }
+.ag-trans__meta small { color: var(--sutil); font-size: 12.5px; }
+.ag-wave { display: flex; align-items: center; gap: 2px; height: 26px; margin: 12px 18px 0; }
+.ag-wave i { flex: 1; border-radius: 2px; background: #DCD3F7; }
+.ag-wave i.is-mark { background: var(--violeta); }
+.ag-lines { display: grid; gap: 8px; padding: 12px 18px 0; }
+.ag-line { padding: 10px 12px; border-radius: 13px; background: #FAF9FE; transition: background-color .35s, box-shadow .35s; }
+.ag-line.is-hl { background: #FFF7E8; box-shadow: inset 0 0 0 1.5px #F5C26B; }
+.ag-line b { display: flex; align-items: center; gap: 8px; color: var(--tinta); font-size: 12.5px; }
+.ag-line b span { padding: 1px 7px; border-radius: 6px; font-size: 12px; }
+.ag-spk--juiz { background: #E6EEFE; color: #1D4ED8; }
+.ag-spk--rec { background: var(--ambar-bg); color: var(--ambar); }
+.ag-spk--pre { background: #DDF5F1; color: #0F766E; }
+.ag-line p { margin-top: 4px; color: var(--texto); font-size: 13px; line-height: 1.55; }
+.ag-keys { margin: 12px 18px 18px; padding: 14px; border-radius: 16px; background: var(--nevoa); }
+.ag-keys h4 { display: flex; align-items: center; gap: 8px; color: var(--tinta); font: 700 13.5px var(--fd); }
+.ag-keys h4 svg.lucide { width: 16px; height: 16px; color: var(--violeta); }
+.ag-keys ul { display: grid; gap: 7px; margin-top: 10px; }
+.ag-keys li { display: flex; gap: 9px; color: var(--tinta); font-size: 13px; line-height: 1.5; }
+.ag-keys li svg.lucide { width: 15px; height: 15px; margin-top: 2px; color: var(--violeta); }
+.ag-keys button { display: flex; gap: 9px; color: var(--violeta-forte); font-size: 13px; font-weight: 700; line-height: 1.5; text-align: left; text-decoration: underline; text-underline-offset: 3px; }
+.ag-keys button svg.lucide { width: 15px; height: 15px; margin-top: 2px; }
+
+/* ---------- DJE ---------- */
+.ag-dje { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: clamp(36px, 5vw, 80px); align-items: center; }
+.ag-dje .ag-h2 { font-size: clamp(32px, 3.6vw, 50px); }
+.ag-checks { display: grid; gap: 12px; margin-top: 26px; }
+.ag-checks li { display: flex; align-items: center; gap: 12px; color: rgba(255,255,255,.88); font-size: 16px; }
+.ag-checks svg.lucide { width: 28px; height: 28px; padding: 6px; border-radius: 50%; background: rgba(205,189,255,.14); color: var(--lavanda); }
+.ag-dje .ag-btn { margin-top: 32px; background: #fff; color: var(--tinta); box-shadow: 0 18px 36px -18px rgba(0,0,0,.5); }
+.ag-dje .ag-btn:hover { background: var(--nevoa); }
+.ag-pubs { display: grid; gap: 10px; padding: 14px 18px 18px; }
+.ag-pub { padding: 14px; border: 1px solid var(--linha); border-radius: 15px; }
+.ag-pub__top { display: flex; align-items: center; justify-content: space-between; gap: 10px; }
+.ag-pub__top b { color: var(--tinta); font-size: 13px; font-variant-numeric: tabular-nums; }
+.ag-pub__top time { color: var(--sutil); font-size: 12px; white-space: nowrap; }
+.ag-pub p { margin-top: 6px; color: var(--texto); font-size: 13.5px; line-height: 1.5; }
+.ag-pub .ag-pill { margin-top: 10px; }
+
+/* ---------- Fluxo único ---------- */
+.ag-case { display: inline-flex; align-items: center; gap: 9px; margin-bottom: 28px; padding: 8px 15px 8px 9px; border: 1px solid var(--linha); border-radius: 999px; background: #fff; color: var(--tinta); font-size: 14px; font-weight: 600; }
+.ag-case svg.lucide { width: 26px; height: 26px; padding: 5px; border-radius: 50%; background: var(--grad); color: #fff; }
+.ag-chain { position: relative; display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 14px; }
+.ag-chain::before { content: ""; position: absolute; top: 31px; left: 8%; right: 8%; height: 2px; background: repeating-linear-gradient(90deg, var(--lavanda) 0 10px, transparent 10px 18px); }
+.ag-link { position: relative; display: flex; flex-direction: column; padding: 18px; border-radius: 22px; background: #fff; box-shadow: inset 0 0 0 1px var(--linha), 0 24px 40px -34px rgba(60,30,160,.6); }
+.ag-link__n { display: grid; place-items: center; width: 28px; height: 28px; margin-bottom: 12px; border-radius: 50%; background: var(--grad); color: #fff; font: 700 13px var(--fd); }
+.ag-link small { color: var(--violeta-forte); font: 700 12px var(--fd); }
+.ag-link h3 { margin-top: 2px; color: var(--tinta); font: 700 15px/1.3 var(--fd); }
+.ag-link .ag-pill { align-self: flex-start; margin-top: 12px; }
+.ag-link ul { display: grid; gap: 6px; margin-top: 12px; padding-top: 12px; border-top: 1px dashed var(--linha); }
+.ag-link li { display: flex; gap: 7px; color: var(--texto); font-size: 12.5px; line-height: 1.45; }
+.ag-link li svg.lucide { width: 14px; height: 14px; margin-top: 2px; color: var(--violeta); }
+.ag-link li.is-risk svg.lucide { color: var(--vermelho); }
+.ag-link li.is-ok svg.lucide { color: var(--verde); }
+
+/* ---------- Comparação ---------- */
+.ag-cmp-wrap { overflow-x: auto; }
+.ag-cmp { width: 100%; min-width: 720px; border-collapse: separate; border-spacing: 0; }
+.ag-cmp th { padding: 16px 18px; color: var(--sutil); font: 700 15px var(--fd); text-align: center; }
+.ag-cmp th:first-child { text-align: left; }
+.ag-cmp th:nth-child(2) { border-radius: 22px 22px 0 0; background: var(--roxo); color: #fff; }
+.ag-cmp td { padding: 15px 18px; border-top: 1px solid var(--linha); font-size: 15px; text-align: center; vertical-align: middle; }
+.ag-cmp td:first-child { color: var(--tinta); font-weight: 600; text-align: left; }
+.ag-cmp td:nth-child(2) { border-top-color: rgba(255,255,255,.1); background: #33176A; color: #fff; font-weight: 700; }
+.ag-cmp tr:last-child td:nth-child(2) { border-radius: 0 0 22px 22px; }
+.ag-cmp td svg.lucide { width: 22px; height: 22px; vertical-align: middle; }
+.ag-yes { color: #6EE7A0; }
+.ag-no { color: #C37075; }
+.ag-part { display: inline-flex; padding: 3px 10px; border-radius: 999px; background: var(--ambar-bg); color: var(--ambar); font-size: 12.5px; font-weight: 700; }
+.ag-dash { color: var(--sutil); font-size: 14px; }
+
+/* ---------- Antes e depois ---------- */
+.ag-ba { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 20px; }
+.ag-ba > div { padding: clamp(28px, 3.4vw, 44px); border-radius: 30px; }
+.ag-ba__k { display: inline-flex; align-items: center; gap: 7px; padding: 4px 11px; border-radius: 999px; font-size: 13px; font-weight: 700; }
+.ag-ba h3 { margin-top: 16px; font: 700 clamp(22px, 2.2vw, 28px)/1.2 var(--fd); letter-spacing: -.025em; }
+.ag-ba ul { display: grid; gap: 12px; margin-top: 22px; }
+.ag-ba li { display: flex; gap: 12px; font-size: 16px; line-height: 1.5; }
+.ag-ba li svg.lucide { width: 20px; height: 20px; margin-top: 1px; }
+.ag-ba__sem { background: #EFEDF5; color: var(--sutil); }
+.ag-ba__sem .ag-ba__k { background: #fff; color: var(--sutil); }
+.ag-ba__sem h3 { color: #71698D; }
+.ag-ba__sem li svg.lucide { color: #8B81A8; }
+.ag-ba__com { background: var(--roxo); color: rgba(255,255,255,.88); box-shadow: 0 40px 80px -40px rgba(46,19,91,.7); }
+.ag-ba__com .ag-ba__k { background: rgba(255,255,255,.12); color: var(--lavanda); }
+.ag-ba__com h3 { color: #fff; }
+.ag-ba__com li svg.lucide { color: #6EE7A0; }
+
+/* ---------- Três passos ---------- */
+.ag-3 { position: relative; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 18px; }
+.ag-3::before { content: ""; position: absolute; top: 44px; left: 16%; right: 16%; height: 2px; background: linear-gradient(90deg, var(--lavanda), var(--violeta), var(--lavanda)); }
+.ag-3 li { position: relative; padding: 0 clamp(8px, 1.6vw, 24px); text-align: center; }
+.ag-3__n { position: relative; display: grid; place-items: center; width: 88px; height: 88px; margin: 0 auto; border-radius: 50%; background: #fff; color: var(--tinta); font: 800 34px var(--fd); box-shadow: inset 0 0 0 1.5px var(--lavanda), 0 20px 40px -24px rgba(117,71,239,.7); }
+.ag-3 li:nth-child(2) .ag-3__n { background: var(--grad); color: #fff; box-shadow: 0 20px 40px -18px rgba(117,71,239,.9); }
+.ag-3 small { display: block; margin-top: 20px; color: var(--violeta-forte); font: 700 13.5px var(--fd); }
+.ag-3 h3 { margin-top: 4px; color: var(--tinta); font: 700 21px/1.3 var(--fd); letter-spacing: -.02em; }
+.ag-3 p { max-width: 340px; margin: 10px auto 0; font-size: 15.5px; line-height: 1.65; }
+
+/* ---------- FAQ ---------- */
+.ag-faq { display: grid; grid-template-columns: minmax(0, .8fr) minmax(0, 1.2fr); gap: clamp(32px, 6vw, 96px); align-items: start; }
+.ag-faq__side .ag-lede { margin-top: 20px; }
+.ag-qs { border-top: 1px solid var(--linha); }
+.ag-q { border-bottom: 1px solid var(--linha); }
+.ag-q__btn { display: grid; grid-template-columns: minmax(0, 1fr) 32px; gap: 18px; align-items: center; width: 100%; padding: 22px 0; color: var(--tinta); font: 600 clamp(17px, 1.6vw, 19px)/1.4 var(--fd); text-align: left; }
+.ag-q__btn span:last-child { display: grid; place-items: center; width: 32px; height: 32px; border-radius: 50%; background: var(--nevoa); color: var(--violeta-forte); transition: transform .35s var(--ease), background-color .25s, color .25s; }
+.ag-q__btn[aria-expanded="true"] span:last-child { background: var(--violeta); color: #fff; transform: rotate(45deg); }
+.ag-q__body { display: grid; grid-template-rows: 0fr; transition: grid-template-rows .4s var(--ease); }
+.ag-q__body > div { min-height: 0; overflow: hidden; }
+.ag-q.is-open .ag-q__body { grid-template-rows: 1fr; }
+.ag-q__body p { max-width: 660px; padding: 0 50px 24px 0; font-size: 16px; line-height: 1.7; }
+
+/* ---------- Contato ---------- */
+.ag-contato { overflow: hidden; background: radial-gradient(55% 70% at 100% 0%, rgba(139,92,246,.32) 0%, transparent 65%), radial-gradient(40% 50% at 0% 100%, rgba(117,71,239,.2) 0%, transparent 70%), var(--roxo); }
+.ag-contato__grid { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 560px); gap: clamp(40px, 6vw, 96px); align-items: start; }
+.ag-contato .ag-lede + .ag-lede { margin-top: 14px; }
+.ag-contato .ag-h2 { margin-bottom: 22px; }
+.ag-seals { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 30px; }
+.ag-seals li { display: inline-flex; align-items: center; gap: 8px; padding: 8px 14px; border: 1px solid rgba(255,255,255,.14); border-radius: 999px; color: rgba(255,255,255,.88); font-size: 14px; font-weight: 700; }
+.ag-seals svg.lucide { width: 16px; height: 16px; color: #6EE7A0; }
+.ag-form-card { padding: 34px; border-radius: 30px; background: #fff; color: var(--texto); box-shadow: 0 50px 100px -40px rgba(0,0,0,.7); }
+.ag-form-card__k { color: var(--violeta-forte); font: 700 13px var(--fd); }
+.ag-form-card h3 { margin-top: 6px; color: var(--tinta); font: 700 26px/1.2 var(--fd); letter-spacing: -.03em; }
+.ag-form-card > div > p { margin-top: 8px; font-size: 15px; line-height: 1.6; }
+.ag-form { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-top: 24px; }
+.ag-form .ct-full { grid-column: 1 / -1; }
+.lp-field > label:not(.ct-check) { display: block; margin-bottom: 7px; color: var(--tinta); font-size: 14px; font-weight: 700; }
+.lp-field > label i { color: var(--sutil); font-style: normal; font-weight: 500; }
+.ag-input { width: 100%; height: 50px; padding: 0 16px; border: 1px solid var(--linha); border-radius: 14px; background: var(--papel); color: var(--tinta); font-size: 15.5px; transition: border-color .2s, box-shadow .2s, background-color .2s; }
+.ag-input::placeholder { color: #706989; }
+.ag-input:hover { border-color: #D3CBEA; }
+.ag-input:focus { border-color: var(--violeta); background: #fff; outline: none; box-shadow: 0 0 0 4px rgba(117,71,239,.14); }
+select.ag-input { appearance: none; -webkit-appearance: none; padding-right: 42px; background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='18' height='18' viewBox='0 0 24 24' fill='none' stroke='%236E6884' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E"); background-repeat: no-repeat; background-position: right 14px center; cursor: pointer; }
+select.ag-input:invalid { color: #706989; }
+textarea.ag-input { height: 96px; padding: 13px 16px; line-height: 1.5; resize: vertical; }
+.lp-field__error { display: none; margin-top: 6px; color: #C62F35; font-size: 13px; font-weight: 600; }
+.lp-field.is-error .ag-input { border-color: #E5484D; background: #FFF7F7; }
+.lp-field.is-error .lp-field__error { display: block; }
+.lp-field .ct-check { display: flex; align-items: flex-start; gap: 10px; margin: 0; color: var(--texto); font-size: 14px; font-weight: 500; line-height: 1.5; cursor: pointer; }
+.ct-check input { position: absolute; width: 1px; height: 1px; opacity: 0; }
+.ct-box { display: grid; place-items: center; width: 22px; height: 22px; flex: none; margin-top: 1px; border: 1.5px solid #CFC7E6; border-radius: 7px; background: #fff; color: transparent; transition: background-color .2s, border-color .2s, color .2s; }
+.ct-box svg.lucide { width: 14px; height: 14px; stroke-width: 3; }
+.ct-check input:checked + .ct-box { border-color: var(--violeta); background: var(--violeta); color: #fff; }
+.ct-check input:focus-visible + .ct-box { outline: 2.5px solid var(--violeta); outline-offset: 2px; }
+.lp-field.is-error .ct-box { border-color: #E5484D; }
+.lp-hp { position: absolute; left: -9999px; width: 1px; height: 1px; opacity: 0; }
+.lp-submit { display: flex; align-items: center; justify-content: center; gap: 10px; height: 56px; border-radius: 999px; background: var(--grad); color: #fff; font-size: 16px; font-weight: 700; box-shadow: 0 16px 34px -16px rgba(117,71,239,.95); transition: background .2s; }
+.lp-submit:hover { background: var(--grad-hover); }
+.lp-submit:disabled { opacity: .75; cursor: progress; }
+.lp-submit svg.lucide { width: 18px; height: 18px; }
+.lp-spinner { width: 18px; height: 18px; border: 2.5px solid rgba(255,255,255,.4); border-top-color: #fff; border-radius: 50%; animation: ag-spin .8s linear infinite; }
+.lp-alert { display: none; padding: 12px 14px; border-radius: 12px; background: #FDECEC; color: #A3262B; font-size: 14px; font-weight: 600; }
+.lp-alert.is-visible { display: block; }
+.ag-note { display: flex; align-items: center; justify-content: center; gap: 8px; color: var(--sutil); font-size: 13px; text-align: center; }
+.ag-note svg.lucide { width: 15px; height: 15px; color: var(--verde); }
+.ct-success { display: none; padding: 20px 0; text-align: center; }
+.ct-success.is-visible { display: block; animation: ag-pop .5s var(--ease) both; }
+.ct-success__ic { display: grid; place-items: center; width: 64px; height: 64px; margin: 0 auto 18px; border-radius: 50%; background: #E3F6EA; color: var(--verde); }
+.ct-success__ic svg.lucide { width: 30px; height: 30px; stroke-width: 2.6; }
+.ct-success h3 { outline: none; }
+.ct-success p { margin-top: 10px; font-size: 15.5px; line-height: 1.6; }
+.ct-again { margin-top: 18px; color: var(--violeta-forte); font-size: 14.5px; font-weight: 700; text-decoration: underline; text-underline-offset: 3px; }
+
+/* ---------- Rodapé ---------- */
+.jf { position: relative; overflow: hidden; padding: 72px 0 28px; background: #1E0C45; color: #A99BD0; }
+.jf__glow { position: absolute; inset: 0; pointer-events: none; background: radial-gradient(40% 60% at 0% 0%, rgba(139,92,246,.18), transparent 70%), radial-gradient(35% 50% at 100% 100%, rgba(117,71,239,.14), transparent 70%); }
+.jf .ag-wrap { position: relative; }
+.jf__top { display: grid; grid-template-columns: minmax(0, 1.3fr) minmax(0, 2fr); gap: 64px; padding-bottom: 48px; border-bottom: 1px solid rgba(255,255,255,.08); }
+.jf__logo { display: inline-block; margin-bottom: 20px; }
+.jf__logo img { width: auto; height: 32px; }
+.jf__tag { max-width: 380px; margin: 0 0 20px; color: #B8AAD9; font-size: 15px; line-height: 1.65; }
+.jf__seals { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 22px; }
+.jf__seals span { display: inline-flex; align-items: center; gap: 6px; padding: 5px 11px; border: 1px solid rgba(255,255,255,.1); border-radius: 999px; background: rgba(255,255,255,.06); color: #E3DAFA; font-size: 12px; font-weight: 700; }
+.jf__seals svg.lucide { width: 13px; height: 13px; color: #A98BFF; }
+.jf__social { display: flex; gap: 10px; }
+.jf__social a { display: flex; align-items: center; justify-content: center; width: 40px; height: 40px; border: 1px solid rgba(255,255,255,.1); border-radius: 12px; background: rgba(255,255,255,.06); color: #E3DAFA; transition: background-color .25s, color .25s, transform .25s, border-color .25s; }
+.jf__social a svg { width: 18px; height: 18px; }
+.jf__social a:hover { border-color: var(--violeta); background: var(--violeta); color: #fff; transform: translateY(-3px); }
+.jf__links { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 32px; }
+.jf__h { margin: 0 0 16px; color: #fff; font: 700 15px var(--fd); }
+.jf__col { display: flex; flex-direction: column; align-items: flex-start; gap: 11px; }
+.jf__col a { position: relative; color: #B8AAD9; font-size: 14.5px; transition: color .2s; }
+.jf__col a::after { content: ""; position: absolute; right: 0; bottom: -3px; left: 0; height: 1.5px; border-radius: 2px; background: #A98BFF; transform: scaleX(0); transform-origin: left; transition: transform .3s var(--ease); }
+.jf__col a:hover { color: #fff; }
+.jf__col a:hover::after { transform: scaleX(1); }
+.jf__bottom { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 16px; padding-top: 24px; color: #8E80B8; font-size: 13px; }
+.jf__made { display: inline-flex; align-items: center; gap: 8px; }
+.jf__made i { width: 7px; height: 7px; border-radius: 50%; background: #22C55E; box-shadow: 0 0 0 4px rgba(34,197,94,.15); }
+.jf__up { display: inline-flex; align-items: center; gap: 6px; padding: 7px 12px; border: 1px solid rgba(255,255,255,.12); border-radius: 999px; color: #E3DAFA; font-weight: 700; transition: background-color .25s, border-color .25s; }
+.jf__up svg.lucide { width: 14px; height: 14px; }
+.jf__up:hover { border-color: rgba(255,255,255,.25); background: rgba(255,255,255,.08); color: #fff; }
+.jf a:focus-visible { outline: 2.5px solid #C9B5FF; outline-offset: 3px; }
+
+/* ---------- Animações ---------- */
+@keyframes ag-rise { from { opacity: 0; transform: translateY(22px); } to { opacity: 1; transform: none; } }
+@keyframes ag-pop { from { opacity: 0; transform: translateY(8px) scale(.98); } to { opacity: 1; transform: none; } }
+@keyframes ag-spin { to { transform: rotate(360deg); } }
+
+/* ---------- Responsivo ---------- */
+@media (max-width: 1100px) {
+  .ag-band ul { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .ag-chain { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .ag-chain::before { display: none; }
+  .ag-tabs { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media (max-width: 1100px) {
+  .ag-hero { min-height: 0; padding: 104px 0 64px; }
+  .ag-hero__media { left: 0; }
+  .ag-hero__media::after { background: linear-gradient(180deg, rgba(249,248,253,.94) 0%, rgba(249,248,253,.88) 60%, rgba(249,248,253,.96) 100%); }
+  .ag-hero__grid { grid-template-columns: minmax(0, 1fr); gap: 44px; max-width: none; padding: 0 28px; }
+  .ag-hero__visual { justify-self: start; }
+}
+@media (max-width: 900px) {
+  .ag-wrap { padding: 0 24px; }
+  .ag-head { grid-template-columns: minmax(0, 1fr); align-items: start; }
+  .ag-pains { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .ag-front { grid-template-columns: minmax(0, 1fr); }
+  .ag-deep, .ag-dje { grid-template-columns: minmax(0, 1fr); }
+  .ag-deep--flip > :first-child { order: 0; }
+  .ag-ba { grid-template-columns: minmax(0, 1fr); }
+  .ag-3 { grid-template-columns: minmax(0, 1fr); gap: 36px; }
+  .ag-3::before { display: none; }
+  .ag-faq { grid-template-columns: minmax(0, 1fr); }
+  .ag-contato__grid { grid-template-columns: minmax(0, 1fr); }
+  .jf__top { grid-template-columns: 1fr; gap: 40px; }
+}
+@media (max-width: 600px) {
+  .ag-wrap { padding: 0 16px; }
+  .ag-hero__grid { padding: 0 16px; }
+  .ag-hero h1 { font-size: clamp(30px, 8.6vw, 38px); }
+  .ag-hero__ctas .ag-btn { flex: 1 1 100%; }
+  .ag-section { padding: 88px 0; }
+  .ag-h2 { font-size: clamp(30px, 8.4vw, 40px); }
+  .ag-head p, .ag-lede { font-size: 16.5px; }
+  .ag-band ul { grid-template-columns: minmax(0, 1fr); gap: 12px; }
+  .ag-pains { grid-template-columns: minmax(0, 1fr); }
+  .ag-tabs { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); }
+  .ag-tab { flex-direction: column; align-items: flex-start; gap: 8px; padding: 12px; }
+  .ag-front { padding: 22px 18px; border-radius: 24px; }
+  .ag-chain { grid-template-columns: minmax(0, 1fr); }
+  .ag-score { grid-template-columns: minmax(0, 1fr) 80px 30px; }
+  .ag-form-card { padding: 24px 18px; border-radius: 24px; }
+  .ag-form { grid-template-columns: 1fr; }
+  .ag-q__body p { padding-right: 0; }
+  .jf__links { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 28px 20px; }
+  .jf__bottom { flex-direction: column; align-items: flex-start; gap: 12px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; }
+}
+
+/* Área de toque mínima de 44px sem mudar o desenho: o pseudo-elemento amplia só a região clicável */
+.ag-courts button, .ag-skills button, #ag-jump, .jf__logo, .jf__up { position: relative; }
+.ag-courts button::before, .ag-skills button::before, #ag-jump::before, .jf__logo::before, .jf__up::before, .jf__col a::before {
+  content: ""; position: absolute; left: 50%; top: 50%;
+  width: max(100%, 44px); height: max(100%, 44px); transform: translate(-50%, -50%);
+}
+.jf__social a { width: 44px; height: 44px; }
+</style>
+</head>
+<body>
+<a class="lp-skip" href="#topo">Ir para o conteúdo</a>
+
+<div class="lp-header-wrap">
+  <header class="lp-header" id="lp-header">
+    <a href="/" class="lp-header__logo" aria-label="Juris8, página inicial"><img src="/assets/brand/logo-juris8.png" alt="Juris8" width="113" height="29"></a>
+    <nav class="lp-nav" aria-label="Navegação da página">
+      <span class="lp-nav__ind" aria-hidden="true"></span>
+      <a href="#funcionalidades">Funcionalidades</a>
+      <a href="#antes-depois">Antes e depois</a>
+      <a href="#como-funciona">Como funciona</a>
+      <a href="#faq">FAQ</a>
+    </nav>
+    <a href="#contato" class="lp-header__cta" data-track="header_cta_click" data-track-ctx="agente_teste">
+      <span class="lp-cta-long">Testar gratuitamente por 7 dias</span>
+      <span class="lp-cta-short">Testar grátis</span>
+      <span class="lp-header__cta-tile" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7"/><path d="M8 7h9v9"/></svg></span>
+    </a>
+  </header>
+</div>
+
+<main id="topo" tabindex="-1">
+
+  <!-- ============ HERO ============ -->
+  <section class="ag-hero" aria-labelledby="ag-title">
+    <div class="ag-hero__media" aria-hidden="true">
+      <img src="/assets/media/agente/hero.webp" srcset="/assets/media/agente/hero-900.webp 900w, /assets/media/agente/hero.webp 1672w" sizes="(max-width: 960px) 100vw, 64vw" alt="" width="1672" height="941" fetchpriority="high">
+    </div>
+    <div class="ag-hero__grid">
+      <div>
+        <h1 id="ag-title" class="ag-rise">Redija, pesquise, analise e transcreva <em>com uma IA feita para a rotina jurídica.</em></h1>
+        <p class="ag-hero__lead ag-rise ag-rise--2">O Juris8 ajuda advogados a reduzir tarefas manuais no dia a dia: cria rascunhos de peças e contratos, organiza documentos, apoia a pesquisa de fundamentos e transforma audiências em registros úteis, sempre para a sua revisão.</p>
+        <div class="ag-hero__ctas ag-rise ag-rise--3">
+          <a href="#contato" class="ag-btn ag-btn--primary" data-track="hero_cta_click" data-track-ctx="agente_ativar">Ativar meu agente (14 dias grátis) <i data-lucide="arrow-right"></i></a>
+          <a href="https://wa.me/5547988061278?text=Ol%C3%A1!%20Quero%20conhecer%20o%20Agente%20Jur%C3%ADdico%20do%20Juris8." target="_blank" rel="noopener noreferrer" class="ag-btn ag-btn--line ag-btn--wa" data-track="whatsapp_click" data-track-ctx="hero_especialista"><svg viewBox="0 0 32 32" fill="currentColor" aria-hidden="true"><path d="M16.01 3.2c-7.1 0-12.86 5.76-12.86 12.86 0 2.27.6 4.48 1.73 6.43L3.2 28.8l6.5-1.7a12.8 12.8 0 0 0 6.3 1.62h.01c7.1 0 12.86-5.76 12.86-12.86 0-3.44-1.34-6.67-3.77-9.1A12.78 12.78 0 0 0 16.01 3.2Zm0 23.5h-.01a10.6 10.6 0 0 1-5.4-1.48l-.39-.23-4.02 1.05 1.07-3.92-.25-.4a10.62 10.62 0 0 1 16.46-13.1 10.55 10.55 0 0 1 3.12 7.51c0 5.88-4.78 10.65-10.66 10.65Zm5.85-7.98c-.32-.16-1.9-.94-2.2-1.04-.3-.11-.5-.16-.72.16-.21.32-.82 1.03-1 1.25-.18.21-.37.24-.69.08-.32-.16-1.35-.5-2.58-1.59-.95-.85-1.6-1.9-1.78-2.22-.18-.32-.02-.49.14-.65.14-.14.32-.37.48-.56.16-.18.21-.32.32-.53.11-.21.05-.4-.03-.56-.08-.16-.72-1.74-.99-2.38-.26-.62-.52-.54-.72-.55l-.61-.01c-.21 0-.56.08-.85.4-.29.32-1.11 1.09-1.11 2.66 0 1.57 1.14 3.08 1.3 3.3.16.21 2.25 3.43 5.45 4.81.76.33 1.36.53 1.82.68.77.24 1.46.21 2.01.13.61-.09 1.9-.78 2.17-1.53.27-.74.27-1.38.19-1.51-.08-.13-.29-.21-.61-.37Z"/></svg>Falar com especialista</a>
+        </div>
+        <p class="ag-motto ag-rise ag-rise--4"><span>Você entra com o contexto. O Juris8 estrutura o caminho.</span><span>Você revisa, ajusta e decide.</span></p>
+        <ul class="ag-trust ag-rise ag-rise--4">
+          <li><i data-lucide="shield-check"></i>Você mantém a revisão, a estratégia e a decisão final</li>
+          <li><i data-lucide="database-zap"></i>Seus documentos não treinam IAs de terceiros</li>
+          <li><i data-lucide="lock-keyhole"></i>Dados criptografados em trânsito e em repouso</li>
+        </ul>
+      </div>
+
+      <div class="ag-hero__visual">
+        <div class="ag-agent" id="ag-agent" role="img" aria-label="Demonstração: o agente do Juris8 lê os documentos do caso, consulta a CLT e a jurisprudência do TST, estrutura a contestação trabalhista e entrega um rascunho pronto para a revisão do advogado.">
+          <div class="ag-agent__bar">
+            <span class="ag-mark">J8</span>
+            <span><b>Juris8</b><small>Contestação trabalhista</small></span>
+            <span class="ag-pill ag-pill--violet" id="ag-status"><i data-lucide="loader"></i><span>Trabalhando</span></span>
+          </div>
+          <div class="ag-agent__body">
+            <div>
+              <div class="ag-who"><i>EU</i><b>Você</b>agora</div>
+              <div class="ag-ask">Preciso de uma contestação trabalhista sobre horas extras. Seguem os documentos do caso.
+                <div class="ag-ask__files"><span class="ag-file"><i data-lucide="file-text"></i>peticao-inicial.pdf</span><span class="ag-file"><i data-lucide="file-text"></i>cartao-ponto.pdf</span><span class="ag-file ag-file--doc"><i data-lucide="file-type"></i>contrato.docx</span></div>
+              </div>
+            </div>
+            <div>
+              <div class="ag-who"><span class="ag-mark">J8</span><b>Juris8</b>IA jurídica · agora</div>
+              <ul class="ag-steps" id="ag-steps">
+                <li class="ag-step"><span class="ag-step__ic"><i data-lucide="loader"></i></span><span><b>Lendo documentos do caso</b><small>3 arquivos · PDF, Word</small></span><span class="ag-tag">contexto</span></li>
+                <li class="ag-step"><span class="ag-step__ic"><i data-lucide="loader"></i></span><span><b>Consultando legislação</b><small>CLT · arts. 58 e 59</small></span><span class="ag-tag">pesquisa</span></li>
+                <li class="ag-step"><span class="ag-step__ic"><i data-lucide="loader"></i></span><span><b>Verificando entendimento</b><small>jurisprudência do TST</small></span><span class="ag-tag">pesquisa</span></li>
+                <li class="ag-step"><span class="ag-step__ic"><i data-lucide="loader"></i></span><span><b>Estruturando a peça</b><small>preliminares · mérito · pedidos</small></span><span class="ag-tag">redação</span></li>
+              </ul>
+            </div>
+            <div class="ag-doc">
+              <span class="ag-doc__ic"><i data-lucide="file-pen-line"></i></span>
+              <span><b>Contestacao_horas-extras.docx</b><span class="ag-doc__bar"><i id="ag-doc-bar"></i></span></span>
+              <span class="ag-doc__st" id="ag-doc-st">aguardando</span>
+            </div>
+            <div class="ag-ready" id="ag-ready">
+              <b><i data-lucide="circle-check"></i>Rascunho pronto para a sua revisão</b>
+              <p>Você ajusta, complementa e decide: a autoria é sempre sua.</p>
+              <div class="ag-ready__row"><span><i data-lucide="pen-line"></i>Abrir p/ revisão</span><span><i data-lucide="copy"></i>Copiar</span><span><i data-lucide="download"></i>Exportar .docx</span></div>
+            </div>
+          </div>
+          <div class="ag-compose">
+            <div class="ag-compose__in"><i data-lucide="paperclip" style="color:#706987;width:16px;height:16px"></i><span>Comece descrevendo a peça que você precisa</span><i><i data-lucide="arrow-up"></i></i></div>
+            <span class="ag-compose__hint">O Juris8 prepara um rascunho para a sua revisão</span>
+            <div class="ag-tpls"><span><i data-lucide="file-text"></i>Contestação Trabalhista</span><span><i data-lucide="file-text"></i>Recurso Ordinário</span><span><i data-lucide="file-text"></i>Recurso de Revista</span><span><i data-lucide="file-text"></i>Contrato de Trabalho</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ FAIXA ============ -->
+  <section class="ag-band" aria-label="O que o Juris8 oferece">
+    <div class="ag-wrap">
+      <ul>
+        <li><i data-lucide="pen-line"></i>Redação assistida de peças e contratos</li>
+        <li><i data-lucide="search-check"></i>Apoio à pesquisa de fundamentos</li>
+        <li><i data-lucide="file-search"></i>Análise de documentos</li>
+        <li><i data-lucide="audio-lines"></i>Transcrição de reuniões e audiências</li>
+        <li><i data-lucide="user-check"></i>Revisão sempre humana</li>
+        <li><i data-lucide="lock-keyhole"></i>LGPD · dados criptografados</li>
+        <li><i data-lucide="files"></i>Aceita PDF e Word</li>
+        <li><i data-lucide="scale"></i>Desenvolvido por advogados</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ============ DORES ============ -->
+  <section class="ag-section" aria-labelledby="dor-title">
+    <div class="ag-wrap">
+      <header class="ag-head">
+        <h2 class="ag-h2 lp-words" id="dor-title">Boa parte do tempo jurídico <span class="lp-accent">vai embora antes da estratégia.</span></h2>
+        <p>Organizar documentos, buscar fundamentos, começar minutas, revisar informações e transformar reuniões em encaminhamentos. Trabalho necessário, mas que consome as horas que deveriam ir para a estratégia e o cliente.</p>
+      </header>
+      <div class="ag-pains">
+        <article class="ag-pain"><span class="ag-pain__ic"><i data-lucide="file"></i></span><h3>A tela em branco</h3><p>Começar peças e contratos do zero, repetindo estruturas que você já escreveu dezenas de vezes.</p></article>
+        <article class="ag-pain"><span class="ag-pain__ic"><i data-lucide="hourglass"></i></span><h3>Horas em pesquisa</h3><p>Procurar fundamentos e precedentes manualmente, abrindo abas e comparando textos longos.</p></article>
+        <article class="ag-pain"><span class="ag-pain__ic"><i data-lucide="file-stack"></i></span><h3>PDFs intermináveis</h3><p>Revisar contratos, decisões e laudos extensos linha por linha, com risco de perder o que importa.</p></article>
+        <article class="ag-pain"><span class="ag-pain__ic"><i data-lucide="mic-off"></i></span><h3>Audiência sem registro</h3><p>Sair da audiência com anotações soltas e perder pontos relevantes do que foi discutido.</p></article>
+        <article class="ag-pain"><span class="ag-pain__ic"><i data-lucide="shuffle"></i></span><h3>Tarefas dispersas</h3><p>Transformar reuniões em encaminhamentos e manter o padrão de escrita em meio ao volume do dia a dia.</p></article>
+        <article class="ag-pain"><span class="ag-pain__ic"><i data-lucide="gauge"></i></span><h3>Velocidade x controle</h3><p>Ganhar tempo nas tarefas repetitivas sem abrir mão do critério técnico e da decisão final.</p></article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ QUATRO FRENTES ============ -->
+  <section class="ag-section ag-soft" id="funcionalidades" aria-labelledby="frentes-title" style="padding-top:0">
+    <div class="ag-wrap">
+      <header class="ag-head">
+        <h2 class="ag-h2 lp-words" id="frentes-title">Da primeira minuta à organização da audiência, <span class="lp-accent">o Juris8 antecipa o trabalho operacional.</span></h2>
+        <p>Quatro frentes para reduzir tarefas manuais. Em todas, o Juris8 prepara o material e você revisa, ajusta e decide.</p>
+      </header>
+      <div class="ag-tabs" role="tablist" aria-label="As quatro frentes do Juris8">
+        <button class="ag-tab" type="button" role="tab" id="fr-tab-1" aria-controls="fr-1" aria-selected="true"><span class="ag-tab__ic"><i data-lucide="pen-line"></i></span><span><small>01</small><b>Redação</b></span></button>
+        <button class="ag-tab" type="button" role="tab" id="fr-tab-2" aria-controls="fr-2" aria-selected="false" tabindex="-1"><span class="ag-tab__ic"><i data-lucide="search-check"></i></span><span><small>02</small><b>Pesquisa</b></span></button>
+        <button class="ag-tab" type="button" role="tab" id="fr-tab-3" aria-controls="fr-3" aria-selected="false" tabindex="-1"><span class="ag-tab__ic"><i data-lucide="file-search"></i></span><span><small>03</small><b>Análise</b></span></button>
+        <button class="ag-tab" type="button" role="tab" id="fr-tab-4" aria-controls="fr-4" aria-selected="false" tabindex="-1"><span class="ag-tab__ic"><i data-lucide="audio-lines"></i></span><span><small>04</small><b>Transcrição</b></span></button>
+      </div>
+      <div class="ag-front" id="fr-1" role="tabpanel" aria-labelledby="fr-tab-1">
+        <div><h3>Saia da tela em branco</h3><p>O Juris8 pré-elabora peças, contratos e documentos jurídicos com base no contexto que você enviar, para que você revise e refine. Com o uso, ele passa a refletir melhor o seu estilo de escrita.</p></div>
+        <div class="ag-example"><span class="ag-example__k"><i data-lucide="lightbulb"></i>Exemplo</span><p>Você descreve o caso e anexa os documentos. O Juris8 devolve uma minuta estruturada (preliminares, mérito e pedidos) pronta para a sua revisão.</p></div>
+      </div>
+      <div class="ag-front" id="fr-2" role="tabpanel" aria-labelledby="fr-tab-2" hidden>
+        <div><h3>Fundamentos com mais contexto</h3><p>O Juris8 apoia a pesquisa jurídica e ajuda a organizar precedentes e argumentos relevantes para o seu caso, respeitando os seus critérios, para você reduzir o tempo de busca e focar na estratégia.</p></div>
+        <div class="ag-example"><span class="ag-example__k"><i data-lucide="lightbulb"></i>Exemplo</span><p>A partir da tese em análise, o Juris8 organiza fundamentos e pontos de apoio em um material revisável, mantendo você no controle da seleção.</p></div>
+      </div>
+      <div class="ag-front" id="fr-3" role="tabpanel" aria-labelledby="fr-tab-3" hidden>
+        <div><h3>Documentos longos, sem perder o detalhe</h3><p>O Juris8 analisa documentos complexos e ajuda a identificar pontos críticos, inconsistências, riscos e dados relevantes que merecem atenção em contratos, decisões judiciais, laudos e outros arquivos.</p></div>
+        <div class="ag-example"><span class="ag-example__k"><i data-lucide="lightbulb"></i>Exemplo</span><p>Você envia um contrato extenso e recebe um resumo dos pontos sensíveis e das cláusulas que pedem revisão. Você decide o que fazer com cada um.</p></div>
+      </div>
+      <div class="ag-front" id="fr-4" role="tabpanel" aria-labelledby="fr-tab-4" hidden>
+        <div><h3>Reuniões e audiências viram registro útil</h3><p>O Juris8 transcreve áudio em texto e organiza o que foi discutido em um resumo estruturado, com pontos relevantes e tarefas posteriores, para você acompanhar sem depender de anotações soltas.</p></div>
+        <div class="ag-example"><span class="ag-example__k"><i data-lucide="lightbulb"></i>Exemplo</span><p>Ao final de uma reunião, você recebe a transcrição, um resumo por tópicos e a lista de encaminhamentos para revisar e distribuir.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ APROFUNDAMENTOS ============ -->
+  <section class="ag-section" aria-label="Como cada agente trabalha">
+    <div class="ag-wrap">
+
+      <!-- Pesquisa -->
+      <div class="ag-deep" id="pesquisa">
+        <div>
+          <h2 class="lp-words">Jurisprudência do TST e dos principais TRTs, <span class="lp-accent">com link para o inteiro teor.</span></h2>
+          <p>O Juris8 busca precedentes nos tribunais da base e mostra, em cada resultado, o link para o inteiro teor e a data de atualização da base, para você conferir a fonte antes de usar.</p>
+          <ul class="ag-points">
+            <li><i data-lucide="landmark"></i><span><b>Tribunais cobertos:</b> TST e TRT-12, com a data de atualização da base informada na busca.</span></li>
+            <li><i data-lucide="shield-check"></i><span><b>Mecanismo anti-alucinação:</b> toda jurisprudência retornada é validada contra a base real antes de ser exibida; o sistema rejeita automaticamente qualquer correspondência não verificável.</span></li>
+            <li><i data-lucide="git-compare"></i><span><b>Correspondências difíceis:</b> o Juris8 encontra precedentes análogos e casos de menor repercussão que escapam das buscas tradicionais por palavras-chave.</span></li>
+            <li><i data-lucide="target"></i><span><b>Contexto relevante:</b> cada resultado mostra por que o caso é aplicável ao seu pedido: não apenas a ementa, mas o argumento central e sua aderência ao pedido.</span></li>
+          </ul>
+          <p class="ag-proof"><i data-lucide="badge-check"></i>Cada resultado com link para o inteiro teor</p>
+        </div>
+        <div class="ag-ui">
+          <div class="ag-ui__bar"><i data-lucide="search-check"></i>Juris8 · Pesquisa de Jurisprudência</div>
+          <div class="ag-query"><i data-lucide="search"></i>Ônus da prova de horas extras e cartão de ponto</div>
+          <div class="ag-courts" role="group" aria-label="Filtrar por tribunal">
+            <button type="button" data-court="todos" aria-pressed="true">Todos</button>
+            <button type="button" data-court="TST" aria-pressed="false">TST</button>
+            <button type="button" data-court="TRT12" aria-pressed="false">TRT-12</button>
+          </div>
+          <div class="ag-results" id="ag-results">
+            <article class="ag-result" data-court="TST">
+              <div class="ag-result__top"><span class="ag-court">TST</span><b>Súmula 338, item III</b><time>Res. 129/2005</time><span class="ag-pill ag-pill--ok"><i data-lucide="badge-check"></i>Validado</span></div>
+              <blockquote>“Os cartões de ponto que demonstram horários de entrada e saída uniformes são inválidos como meio de prova, invertendo-se o ônus da prova, relativo às horas extras, que passa a ser do empregador, prevalecendo a jornada da inicial se dele não se desincumbir.”</blockquote>
+              <div class="ag-result__tags"><span class="ag-rel">Relevância <b>Muito alta</b></span><span class="ag-tag">cartão de ponto uniforme</span><span class="ag-tag">ônus da prova</span><span class="ag-tag">horas extras</span></div>
+            </article>
+            <article class="ag-result" data-court="TST">
+              <div class="ag-result__top"><span class="ag-court">TST</span><b>Súmula 338, item I</b><time>Res. 129/2005</time><span class="ag-pill ag-pill--ok"><i data-lucide="badge-check"></i>Validado</span></div>
+              <blockquote>“A não-apresentação injustificada dos controles de frequência gera presunção relativa de veracidade da jornada de trabalho, a qual pode ser elidida por prova em contrário.”</blockquote>
+              <div class="ag-result__tags"><span class="ag-rel">Relevância <b>Alta</b></span><span class="ag-tag">controle de jornada</span><span class="ag-tag">presunção relativa</span><span class="ag-tag">ônus da prova</span></div>
+            </article>
+            <p class="ag-empty" id="ag-empty" hidden>Nenhum resultado validado deste tribunal nesta busca. O Juris8 não exibe correspondências que não consegue verificar.</p>
+          </div>
+          <div class="ag-ui__foot">Cobertura atual: TST e TRT-12 · data de atualização da base exibida na busca</div>
+        </div>
+      </div>
+
+      <!-- Redação -->
+      <div class="ag-deep ag-deep--flip" id="redacao">
+        <div>
+          <h2 class="lp-words">Redação assistida, <span class="lp-accent">com o advogado no comando.</span></h2>
+          <p>O Juris8 organiza o trabalho em etapas (leitura da demanda, pesquisa, estruturação e revisão por critérios) e entrega uma base de texto com os subsídios para a sua análise. O advogado decide, redige e assina.</p>
+          <ul class="ag-points">
+            <li><i data-lucide="list-ordered"></i><span><b>Fluxo de agente em 6 etapas:</b> da leitura da demanda à revisão por critérios de qualidade; você vê cada passo e pode intervir a qualquer momento.</span></li>
+            <li><i data-lucide="clipboard-check"></i><span><b>Revisão por critérios:</b> a peça recebe notas em fundamentação, precisão dos precedentes, clareza, coerência e adequação formal, com sugestões específicas de melhoria.</span></li>
+            <li><i data-lucide="feather"></i><span><b>Aprende seu estilo:</b> vocabulário, estrutura de pedidos, estilo de citação e preferências argumentativas; quanto mais você usa, mais preciso fica.</span></li>
+            <li><i data-lucide="shield-check"></i><span><b>Anti-alucinação:</b> todos os precedentes citados na peça são os mesmos validados na pesquisa; o sistema bloqueia citações não validadas.</span></li>
+          </ul>
+          <p class="ag-proof"><i data-lucide="lock"></i>Precedentes citados são bloqueados se não validados</p>
+        </div>
+        <div class="ag-ui">
+          <div class="ag-ui__bar"><i data-lucide="pen-line"></i>Juris8 · Redação: contestação trabalhista<small>Fluxo do agente</small></div>
+          <ol class="ag-flow">
+            <li><span class="ag-flow__ic"><i data-lucide="check"></i></span><span><b>Leitura e análise da demanda</b><small>Partes, pedidos, causa de pedir e fatos identificados</small></span></li>
+            <li><span class="ag-flow__ic"><i data-lucide="check"></i></span><span><b>Identificação de teses e precedentes</b><small>4 precedentes validados do TST e do TRT-12 selecionados</small></span></li>
+            <li><span class="ag-flow__ic"><i data-lucide="check"></i></span><span><b>Estruturação da peça</b><small>Preliminar, mérito e pedidos no seu formato</small></span></li>
+            <li><span class="ag-flow__ic"><i data-lucide="check"></i></span><span><b>Base de texto seção por seção</b><small>No estilo e vocabulário do advogado, para revisão</small></span></li>
+            <li class="is-run"><span class="ag-flow__ic"><i data-lucide="loader"></i></span><span><b>Revisão interna por critérios</b><small>Verificando coerência, precisão e fundamentação...</small></span></li>
+            <li><span class="ag-flow__ic" style="background:#EDEAF5;color:var(--sutil)"><i data-lucide="flag"></i></span><span><b>Pronto para revisão do advogado</b><small>Score geral e sugestões de melhoria</small></span></li>
+          </ol>
+          <div class="ag-scores" id="ag-scores">
+            <div class="ag-scores__h"><span>Revisão por critérios de qualidade</span><i data-lucide="sparkles" style="width:16px;height:16px;color:var(--violeta)"></i></div>
+            <div class="ag-score"><span>Fundamentação jurídica</span><i style="--v:92%"></i><b>9.2</b></div>
+            <div class="ag-score"><span>Precisão dos precedentes</span><i style="--v:96%"></i><b>9.6</b></div>
+            <div class="ag-score"><span>Clareza argumentativa</span><i style="--v:89%"></i><b>8.9</b></div>
+            <div class="ag-score"><span>Coerência interna</span><i style="--v:94%"></i><b>9.4</b></div>
+            <div class="ag-score"><span>Adequação formal (CLT)</span><i style="--v:88%"></i><b>8.8</b></div>
+          </div>
+          <p class="ag-tip"><i data-lucide="lightbulb"></i><span><b>Sugestão · Adequação formal:</b> o pedido de condenação em honorários (§3°, art. 791-A CLT) não menciona o percentual mínimo de 5%. Recomenda-se especificar o intervalo de 5% a 15%.</span></p>
+        </div>
+      </div>
+
+      <!-- Análise -->
+      <div class="ag-deep" id="analise">
+        <div>
+          <h2 class="lp-words">Revisão contratual com <span class="lp-accent">guidelines do seu escritório.</span></h2>
+          <p>Configure “skills” de revisão com os critérios que importam para o seu cliente ou área, e o Juris8 aplica essas guidelines cláusula por cláusula, com rastreabilidade total do que foi avaliado e por quê.</p>
+          <ul class="ag-points">
+            <li><i data-lucide="sliders-horizontal"></i><span><b>Skills personalizáveis:</b> crie guidelines de revisão para responsabilidade civil, cláusulas de NDA, rescisão e multa, compliance regulatório; o sistema aplica os critérios consistentemente.</span></li>
+            <li><i data-lucide="scan-search"></i><span><b>Rastreabilidade completa:</b> cada cláusula revisada mostra o critério aplicado, o resultado e a justificativa, auditável a qualquer momento.</span></li>
+            <li><i data-lucide="layers"></i><span><b>Escala sem erro humano:</b> dezenas de cláusulas revisadas com os mesmos critérios, sem fadiga; impossível de replicar manualmente com a mesma consistência.</span></li>
+            <li><i data-lucide="files"></i><span><b>Documentos suportados:</b> contratos, decisões judiciais, laudos periciais, registros imobiliários; qualquer PDF ou Word.</span></li>
+          </ul>
+          <p class="ag-proof"><i data-lucide="scan-eye"></i>Critérios aplicados de forma auditável e rastreável</p>
+        </div>
+        <div class="ag-ui">
+          <div class="ag-ui__bar"><i data-lucide="file-search"></i>Juris8 · Análise de Documento</div>
+          <div class="ag-skills" role="group" aria-label="Skills ativas: toque para filtrar as cláusulas">
+            <button type="button" data-skill="resp" aria-pressed="false">Responsabilidade civil <i>2</i></button>
+            <button type="button" data-skill="nda" aria-pressed="false">Cláusulas de NDA <i>4</i></button>
+            <button type="button" data-skill="resc" aria-pressed="false">Rescisão e multa</button>
+            <button type="button" data-skill="lgpd" aria-pressed="false">Conformidade LGPD</button>
+          </div>
+          <div class="ag-count"><span>Cláusulas revisadas</span><i></i><b>47 / 52</b></div>
+          <div class="ag-clauses" id="ag-clauses">
+            <div class="ag-clause ag-clause--ok" data-skills="geral"><span class="ag-clause__ic"><i data-lucide="check"></i></span><span><b>Cláusula 2.1 · Objeto do contrato</b><small>Sem observações, conforme escopo acordado</small></span></div>
+            <div class="ag-clause ag-clause--risk" data-skills="resp"><span class="ag-clause__ic"><i data-lucide="triangle-alert"></i></span><span><b>Cláusula 4.3 · Responsabilidade</b><small>Risco identificado: responsabilidade ilimitada por danos indiretos</small></span></div>
+            <div class="ag-clause ag-clause--warn" data-skills="resc"><span class="ag-clause__ic"><i data-lucide="circle-alert"></i></span><span><b>Cláusula 7.1 · Caso fortuito</b><small>Atenção: exclusão não cobre atos de terceiros</small></span></div>
+            <div class="ag-clause ag-clause--ok" data-skills="nda lgpd"><span class="ag-clause__ic"><i data-lucide="check"></i></span><span><b>Cláusula 9.2 · Confidencialidade (NDA)</b><small>Prazo e escopo conforme padrão do escritório</small></span></div>
+            <div class="ag-clause ag-clause--risk" data-skills="resp"><span class="ag-clause__ic"><i data-lucide="triangle-alert"></i></span><span><b>Cláusula 8.0 · Indenização</b><small>Risco identificado: ausência de teto de indenização</small></span></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Transcrição -->
+      <div class="ag-deep ag-deep--flip" id="transcricao">
+        <div>
+          <h2 class="lp-words">Do áudio da audiência <span class="lp-accent">à análise jurídica completa.</span></h2>
+          <p>Envie o áudio gravado da audiência e o Juris8 entrega uma transcrição segmentada por locutor, com os trechos estratégicos marcados, um resumo estruturado e as tarefas que precisam ser tomadas, tudo em minutos.</p>
+          <ul class="ag-points">
+            <li><i data-lucide="users"></i><span><b>Transcrição por locutor:</b> identifica e diferencia falantes (juiz, reclamante, preposto, perito) e formata a transcrição por participante.</span></li>
+            <li><i data-lucide="bookmark"></i><span><b>Marcação de trechos críticos:</b> identifica afirmações relevantes para a tese e marca com timestamp, para localizar o momento exato de cada depoimento.</span></li>
+            <li><i data-lucide="list-checks"></i><span><b>Análise e resumo estruturado:</b> pontos-chave, contradições identificadas e lista de tarefas gerada automaticamente com os próximos passos processuais.</span></li>
+            <li><i data-lucide="file-audio"></i><span><b>Formatos aceitos:</b> MP3, MP4, WAV e qualquer gravação de celular, computador ou sistema de audiência do tribunal, sem hardware adicional.</span></li>
+          </ul>
+          <p class="ag-proof"><i data-lucide="sparkles"></i>Muito além de notas: análise jurídica completa da audiência</p>
+        </div>
+        <div class="ag-ui">
+          <div class="ag-ui__bar"><i data-lucide="audio-lines"></i>Juris8 · Transcrição de Audiência</div>
+          <div class="ag-trans__meta"><span class="ag-pill ag-pill--ok"><i data-lucide="check"></i>Transcrição concluída</span><small>39:14 min · 3 participantes</small></div>
+          <div class="ag-wave" id="ag-wave" aria-hidden="true"></div>
+          <div class="ag-lines">
+            <div class="ag-line"><b><span class="ag-spk--juiz">Juiz</span></b><p>O reclamante pode esclarecer em que consistia a jornada habitual na empresa?</p></div>
+            <div class="ag-line" id="ag-critico"><b><span class="ag-spk--rec">Reclamante</span><span style="margin-left:auto;background:#FFF1D6;color:#8A5200">00:12:44</span></b><p>Trabalhava das 7h às 20h todos os dias, com apenas 30 minutos de intervalo. Nunca tive horas extras pagas. O gerente dizia que estava no banco de horas, mas nunca vi saldo.</p></div>
+            <div class="ag-line"><b><span class="ag-spk--pre">Preposto</span></b><p>A empresa contesta. Os cartões de ponto registravam saída às 18h e os registros eram assinados pelo próprio reclamante.</p></div>
+          </div>
+          <div class="ag-keys">
+            <h4><i data-lucide="sparkles"></i>Análise gerada · pontos-chave</h4>
+            <ul>
+              <li><i data-lucide="git-compare"></i>Reclamante alega jornada 7h–20h sem pagamento: contradição com cartão de ponto</li>
+              <li><i data-lucide="list-todo"></i>Banco de horas: existência contestada; solicitar extratos (tarefa gerada)</li>
+              <li><button type="button" id="ag-jump"><i data-lucide="bookmark"></i>Trecho crítico 00:12:44, depoimento sobre jornada</button></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ DJE ============ -->
+  <section class="ag-section ag-dark" id="dje" aria-labelledby="dje-title">
+    <div class="ag-wrap ag-dje">
+      <div>
+        <h2 class="ag-h2 lp-words lp-words--lt" id="dje-title">Nunca perca um prazo <span class="lp-accent">por falta de monitoramento.</span></h2>
+        <p class="ag-lede" style="margin-top:20px">O Juris8 DJE monitora automaticamente todas as suas publicações nos Diários de Justiça Eletrônicos e te notifica a cada nova publicação, com resumo do conteúdo e identificação automática de prazos.</p>
+        <ul class="ag-checks">
+          <li><i data-lucide="radar"></i>Monitoramento contínuo de publicações no DJE</li>
+          <li><i data-lucide="bell-ring"></i>Alertas instantâneos com resumo gerado por IA</li>
+          <li><i data-lucide="calendar-clock"></i>Identificação automática de prazos processuais</li>
+          <li><i data-lucide="folders"></i>Centralização de todos os processos monitorados</li>
+        </ul>
+        <a href="#contato" class="ag-btn" data-track="cta_click" data-track-ctx="agente_dje">Conhecer o Juris8 DJE <i data-lucide="arrow-right"></i></a>
+      </div>
+      <div class="ag-ui">
+        <div class="ag-ui__bar"><i data-lucide="newspaper"></i>Publicações hoje<small><span class="ag-pill ag-pill--violet">3 novas</span></small></div>
+        <div class="ag-pubs">
+          <div class="ag-pub"><div class="ag-pub__top"><b>Proc. 0012847-58.2024.5.04.0001</b><time>há 12 min</time></div><p>Intimação para apresentação de razões finais (TRT 4ª Região)</p><span class="ag-pill ag-pill--risk"><i data-lucide="calendar-clock"></i>Prazo: 8 dias úteis</span></div>
+          <div class="ag-pub"><div class="ag-pub__top"><b>Proc. 0034512-97.2023.8.26.0100</b><time>há 1h</time></div><p>Despacho de juntada de documentos (TJSP, 15ª Vara Cível)</p><span class="ag-pill ag-pill--muted"><i data-lucide="file-text"></i>Despacho</span></div>
+          <div class="ag-pub"><div class="ag-pub__top"><b>Proc. 1009234-14.2022.8.26.0100</b><time>há 3h</time></div><p>Sentença de procedência parcial (TJSP, 3ª Vara Cível)</p><span class="ag-pill ag-pill--violet"><i data-lucide="gavel"></i>Sentença</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ FLUXO ÚNICO ============ -->
+  <section class="ag-section" aria-labelledby="unico-title">
+    <div class="ag-wrap">
+      <header class="ag-head">
+        <h2 class="ag-h2 lp-words" id="unico-title">Todos os agentes. <span class="lp-accent">Um único fluxo.</span></h2>
+        <p>Do alerta de publicação até a ata da audiência: veja como o Juris8 atua em cada etapa de um mesmo processo.</p>
+      </header>
+      <p class="ag-case"><i data-lucide="briefcase-business"></i>Caso: Reclamação Trabalhista, horas extras e CTPS, TRT 12ª Região</p>
+      <ol class="ag-chain">
+        <li class="ag-link"><span class="ag-link__n">1</span><small>DJE</small><h3>Monitoramento automático de publicações</h3><span class="ag-pill ag-pill--risk"><i data-lucide="calendar-clock"></i>Prazo detectado</span><ul><li><i data-lucide="hash"></i>Proc. 0018432-69.2024.5.12.0001 (TRT-12)</li><li><i data-lucide="mail-open"></i>Intimação para contestação</li><li class="is-risk"><i data-lucide="clock-3"></i>Prazo: 8 dias úteis</li></ul></li>
+        <li class="ag-link"><span class="ag-link__n">2</span><small>Documentos</small><h3>Análise da CTPS e cartão de ponto</h3><span class="ag-pill ag-pill--warn"><i data-lucide="triangle-alert"></i>2 riscos encontrados</span><ul><li class="is-risk"><i data-lucide="x"></i>Cláus. jornada: ausente</li><li class="is-risk"><i data-lucide="x"></i>Registro CTPS: inconsistente</li><li class="is-ok"><i data-lucide="check"></i>Horas banco: OK</li></ul></li>
+        <li class="ag-link"><span class="ag-link__n">3</span><small>Jurisprudência</small><h3>Busca validada no TST e no TRT-12</h3><span class="ag-pill ag-pill--ok"><i data-lucide="badge-check"></i>4 precedentes válidos</span><ul><li><i data-lucide="scale"></i>TST, Súm. 338, I: ônus da prova</li><li><i data-lucide="scale"></i>TST, Súm. 338, III: cartão de ponto</li><li class="is-ok"><i data-lucide="link"></i>Todos com link verificado</li></ul></li>
+        <li class="ag-link"><span class="ag-link__n">4</span><small>Redação</small><h3>Base da contestação para o advogado</h3><span class="ag-pill ag-pill--ok"><i data-lucide="circle-check"></i>Revisão concluída</span><ul><li><i data-lucide="gauge"></i>Fundamentação: 9.2</li><li><i data-lucide="gauge"></i>Precisão: 9.5</li><li><i data-lucide="gauge"></i>Clareza: 8.9</li></ul></li>
+        <li class="ag-link"><span class="ag-link__n">5</span><small>Transcrição</small><h3>Audiência transcrita e estruturada</h3><span class="ag-pill ag-pill--violet"><i data-lucide="sparkles"></i>Resumo gerado</span><ul><li><i data-lucide="list-checks"></i>3 pontos-chave identificados</li><li><i data-lucide="list-todo"></i>2 tarefas geradas</li><li><i data-lucide="bookmark"></i>Depoimento: trecho de 12:34 marcado</li></ul></li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- ============ COMPARAÇÃO ============ -->
+  <section class="ag-section ag-soft" aria-labelledby="cmp-title" style="padding-top:0">
+    <div class="ag-wrap">
+      <header class="ag-head">
+        <h2 class="ag-h2 lp-words" id="cmp-title">Feito para o direito brasileiro. <span class="lp-accent">Não um ChatGPT genérico.</span></h2>
+        <p>O que diferencia uma IA construída para o direito de um modelo de linguagem genérico.</p>
+      </header>
+      <div class="ag-cmp-wrap">
+        <table class="ag-cmp">
+          <thead><tr><th scope="col">Critério</th><th scope="col">Juris8</th><th scope="col">ChatGPT / Genérico</th><th scope="col">Processo Manual</th></tr></thead>
+          <tbody>
+            <tr><td>Jurisprudência real do TST e do TRT-12</td><td><i data-lucide="circle-check" class="ag-yes" aria-label="Sim"></i></td><td><i data-lucide="circle-x" class="ag-no" aria-label="Não"></i></td><td><span class="ag-part">Parcial</span></td></tr>
+            <tr><td>Aprende seu estilo de escrita</td><td><i data-lucide="circle-check" class="ag-yes" aria-label="Sim"></i></td><td><i data-lucide="circle-x" class="ag-no" aria-label="Não"></i></td><td><span class="ag-dash">Não se aplica</span></td></tr>
+            <tr><td>Dados não usados para treinar IA de terceiros</td><td><i data-lucide="circle-check" class="ag-yes" aria-label="Sim"></i></td><td><i data-lucide="circle-x" class="ag-no" aria-label="Não"></i></td><td><i data-lucide="circle-check" class="ag-yes" aria-label="Sim"></i></td></tr>
+            <tr><td>Transcrição e análise de audiências</td><td><i data-lucide="circle-check" class="ag-yes" aria-label="Sim"></i></td><td><i data-lucide="circle-x" class="ag-no" aria-label="Não"></i></td><td><i data-lucide="circle-x" class="ag-no" aria-label="Não"></i></td></tr>
+            <tr><td>Análise de PDF e Word jurídicos</td><td><i data-lucide="circle-check" class="ag-yes" aria-label="Sim"></i></td><td><span class="ag-part">Parcial</span></td><td><i data-lucide="circle-x" class="ag-no" aria-label="Não"></i></td></tr>
+            <tr><td>Monitoramento de publicações no DJE</td><td><i data-lucide="circle-check" class="ag-yes" aria-label="Sim"></i></td><td><i data-lucide="circle-x" class="ag-no" aria-label="Não"></i></td><td><span class="ag-part">Manual</span></td></tr>
+            <tr><td>Desenvolvido por advogados brasileiros</td><td><i data-lucide="circle-check" class="ag-yes" aria-label="Sim"></i></td><td><i data-lucide="circle-x" class="ag-no" aria-label="Não"></i></td><td><span class="ag-dash">Não se aplica</span></td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ ANTES E DEPOIS ============ -->
+  <section class="ag-section" id="antes-depois" aria-labelledby="ad-title">
+    <div class="ag-wrap">
+      <header class="ag-head">
+        <h2 class="ag-h2 lp-words" id="ad-title">A mesma rotina, <span class="lp-accent">com muito menos trabalho manual.</span></h2>
+        <p>O Juris8 não muda a sua forma de advogar. Ele antecipa o trabalho operacional para você chegar mais rápido na parte que exige o seu critério.</p>
+      </header>
+      <div class="ag-ba">
+        <div class="ag-ba__sem">
+          <span class="ag-ba__k"><i data-lucide="hourglass" style="width:15px;height:15px"></i>Sem o Juris8</span>
+          <h3>O tempo escorre antes da estratégia</h3>
+          <ul>
+            <li><i data-lucide="minus"></i>Começar peças e contratos do zero</li>
+            <li><i data-lucide="minus"></i>Buscar fundamentos manualmente, abrindo várias fontes</li>
+            <li><i data-lucide="minus"></i>Revisar PDFs extensos linha por linha</li>
+            <li><i data-lucide="minus"></i>Sair da audiência com anotações soltas</li>
+            <li><i data-lucide="minus"></i>Repetir tarefas operacionais o dia inteiro</li>
+          </ul>
+        </div>
+        <div class="ag-ba__com">
+          <span class="ag-ba__k"><i data-lucide="sparkles" style="width:15px;height:15px"></i>Com o Juris8</span>
+          <h3>O operacional já vem adiantado para revisão</h3>
+          <ul>
+            <li><i data-lucide="circle-check"></i>Rascunhos iniciais de peças e contratos em minutos</li>
+            <li><i data-lucide="circle-check"></i>Pesquisa de fundamentos melhor estruturada</li>
+            <li><i data-lucide="circle-check"></i>Documentos longos resumidos nos pontos críticos</li>
+            <li><i data-lucide="circle-check"></i>Audiências transformadas em registros úteis</li>
+            <li><i data-lucide="circle-check"></i>Mais tempo para estratégia e atendimento ao cliente</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ TRÊS PASSOS ============ -->
+  <section class="ag-section ag-soft" id="como-funciona" aria-labelledby="passos-title" style="padding-top:0">
+    <div class="ag-wrap">
+      <header class="ag-head">
+        <h2 class="ag-h2 lp-words" id="passos-title">Três passos. <span class="lp-accent">Você nunca sai do controle.</span></h2>
+        <p>Um fluxo assistido, não uma decisão automática. A autoria e a responsabilidade continuam com o advogado.</p>
+      </header>
+      <ol class="ag-3">
+        <li><span class="ag-3__n">1</span><small>Você entra</small><h3>Envie o contexto</h3><p>Peça, contrato, decisão, áudio, documento ou demanda. Você diz o que precisa e anexa o material do caso.</p></li>
+        <li><span class="ag-3__n">2</span><small>O Juris8 prepara</small><h3>Ele organiza o trabalho inicial</h3><p>Estrutura as informações, sugere caminhos e prepara materiais revisáveis: rascunhos, resumos e pontos de atenção.</p></li>
+        <li><span class="ag-3__n">3</span><small>Você decide</small><h3>Você revisa e decide</h3><p>A estratégia, a autoria e a responsabilidade continuam com você. O Juris8 dá os toques iniciais; você dá os finais.</p></li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- ============ FAQ ============ -->
+  <section class="ag-section" id="faq" aria-labelledby="faq-title">
+    <div class="ag-wrap ag-faq">
+      <div class="ag-faq__side">
+        <h2 class="ag-h2 lp-words" id="faq-title">Dúvidas frequentes <span class="lp-accent">antes de começar.</span></h2>
+        <p class="ag-lede">Respostas diretas sobre controle, segurança e o que o Juris8 faz, e o que ele não faz.</p>
+      </div>
+      <ul class="ag-qs">
+        <li class="ag-q"><button class="ag-q__btn" type="button" aria-expanded="false" aria-controls="q1"><span>O Juris8 substitui o advogado?</span><span aria-hidden="true"><i data-lucide="plus"></i></span></button><div class="ag-q__body" id="q1" role="region"><div><p>Não. O Juris8 prepara o trabalho inicial (rascunhos, pesquisas, resumos e pontos de atenção), e você revisa, ajusta e decide. A estratégia, a autoria e a responsabilidade continuam com o advogado.</p></div></div></li>
+        <li class="ag-q"><button class="ag-q__btn" type="button" aria-expanded="false" aria-controls="q2"><span>Meus documentos são usados para treinar IAs?</span><span aria-hidden="true"><i data-lucide="plus"></i></span></button><div class="ag-q__body" id="q2" role="region"><div><p>Não. Seus documentos não treinam IAs de terceiros, e os dados são criptografados em trânsito e em repouso, com tratamento conforme a LGPD.</p></div></div></li>
+        <li class="ag-q"><button class="ag-q__btn" type="button" aria-expanded="false" aria-controls="q3"><span>A IA pode inventar jurisprudência?</span><span aria-hidden="true"><i data-lucide="plus"></i></span></button><div class="ag-q__body" id="q3" role="region"><div><p>O Juris8 só retorna jurisprudência que existe e pode ser verificada: cada resultado é validado contra a base real antes de ser exibido e vem com o link de origem. Na redação, o sistema bloqueia citações que não foram validadas na pesquisa.</p></div></div></li>
+        <li class="ag-q"><button class="ag-q__btn" type="button" aria-expanded="false" aria-controls="q4"><span>Que tipo de arquivo posso enviar?</span><span aria-hidden="true"><i data-lucide="plus"></i></span></button><div class="ag-q__body" id="q4" role="region"><div><p>Documentos em PDF e Word (contratos, decisões judiciais, laudos, registros) e áudios em MP3, MP4 ou WAV, de celular, computador ou sistema de audiência do tribunal.</p></div></div></li>
+        <li class="ag-q"><button class="ag-q__btn" type="button" aria-expanded="false" aria-controls="q5"><span>O Juris8 escreve no meu estilo?</span><span aria-hidden="true"><i data-lucide="plus"></i></span></button><div class="ag-q__body" id="q5" role="region"><div><p>Sim, com o uso. Ele aprende vocabulário, estrutura de pedidos, estilo de citação e preferências argumentativas: quanto mais você usa, mais o rascunho se aproxima da sua forma de escrever.</p></div></div></li>
+        <li class="ag-q"><button class="ag-q__btn" type="button" aria-expanded="false" aria-controls="q6"><span>Quais tribunais a pesquisa cobre?</span><span aria-hidden="true"><i data-lucide="plus"></i></span></button><div class="ag-q__body" id="q6" role="region"><div><p>Hoje, TST e TRT-12. Cada resultado traz o link para o inteiro teor, e a data de atualização da base aparece na busca.</p></div></div></li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ============ CONTATO ============ -->
+  <section class="ag-section ag-dark ag-contato" id="contato" aria-labelledby="contato-title">
+    <div class="ag-wrap ag-contato__grid">
+      <div>
+        <h2 class="ag-h2 lp-words lp-words--lt" id="contato-title">Pronto para acelerar a prática jurídica <span class="lp-accent">com a IA Juris8.</span></h2>
+        <p class="ag-lede">Peças, jurisprudência, análise de documentos, transcrição e soluções que conversam entre si, do DET e do Domicílio Judicial Eletrônico ao WhatsApp.</p>
+        <p class="ag-lede">Devolva o tempo do escritório ao que só o advogado pode fazer: estratégia, cliente e decisão.</p>
+        <ul class="ag-seals">
+          <li><i data-lucide="presentation"></i>Demonstração gratuita</li>
+          <li><i data-lucide="handshake"></i>Sem compromisso</li>
+          <li><i data-lucide="messages-square"></i>Suporte em português</li>
+        </ul>
+      </div>
+
+      <div class="ag-form-card">
+        <div id="lp-form-view">
+          <p class="ag-form-card__k">Contato comercial</p>
+          <h3>Falar com um especialista</h3>
+          <p>Preencha os dados abaixo. Nossa equipe entrará em contato para apresentar o Juris8 e entender o momento do seu escritório.</p>
+          <form class="ag-form" id="lp-form" novalidate>
+            <div class="lp-field" id="f-nome"><label for="c-nome">Nome completo</label><input class="ag-input" type="text" id="c-nome" name="nome" required autocomplete="name" placeholder="Seu nome" aria-describedby="e-nome"><span class="lp-field__error" id="e-nome">Informe seu nome.</span></div>
+            <div class="lp-field" id="f-email"><label for="c-email">E-mail profissional</label><input class="ag-input" type="email" id="c-email" name="email" required autocomplete="email" placeholder="voce@escritorio.com.br" aria-describedby="e-email"><span class="lp-field__error" id="e-email">Informe um e-mail válido.</span></div>
+            <div class="lp-field" id="f-tel"><label for="c-tel">Telefone / WhatsApp</label><input class="ag-input" type="tel" id="c-tel" name="telefone" required autocomplete="tel" inputmode="tel" placeholder="(11) 99999-0000" aria-describedby="e-tel"><span class="lp-field__error" id="e-tel">Informe um telefone com DDD.</span></div>
+            <div class="lp-field" id="f-empresa"><label for="c-empresa">Nome do escritório</label><input class="ag-input" type="text" id="c-empresa" name="empresa" required autocomplete="organization" placeholder="Escritório de Advocacia" aria-describedby="e-empresa"><span class="lp-field__error" id="e-empresa">Informe o nome do escritório.</span></div>
+            <div class="lp-field ct-full" id="f-porte"><label for="c-porte">Qual o porte do seu escritório?</label>
+              <select class="ag-input" id="c-porte" name="porte" required aria-describedby="e-porte">
+                <option value="" selected disabled>Selecione...</option>
+                <option>1 a 5 advogados</option>
+                <option>6 a 15 advogados</option>
+                <option>16 a 30 advogados</option>
+                <option>31 a 50 advogados</option>
+                <option>Mais de 50 advogados</option>
+              </select>
+              <span class="lp-field__error" id="e-porte">Selecione o porte do escritório.</span></div>
+            <div class="lp-field ct-full" id="f-msg"><label for="c-msg">Mensagem <i>(opcional)</i></label><textarea class="ag-input" id="c-msg" name="mensagem" rows="3" placeholder="Conte um pouco sobre o escritório ou o que gostaria de saber..."></textarea></div>
+            <div class="lp-field ct-full" id="f-consent"><label class="ct-check" for="c-consent"><input type="checkbox" id="c-consent" name="consent" required aria-describedby="e-consent"><span class="ct-box" aria-hidden="true"><i data-lucide="check"></i></span><span>Concordo em receber contato comercial e que meus dados sejam tratados conforme a LGPD.</span></label><span class="lp-field__error" id="e-consent">Marque para podermos entrar em contato.</span></div>
+            <input class="lp-hp" type="text" name="website" tabindex="-1" autocomplete="off" aria-hidden="true">
+            <button type="submit" class="lp-submit ct-full" id="lp-submit"><span id="lp-submit-label">Enviar solicitação</span><i data-lucide="arrow-right"></i></button>
+            <div class="lp-alert ct-full" id="lp-alert" role="alert">Não foi possível enviar agora. Seus dados continuam preenchidos: tente novamente em instantes.</div>
+            <p class="ag-note ct-full"><i data-lucide="shield-check"></i>Seus dados são tratados com confidencialidade e não serão compartilhados.</p>
+          </form>
+        </div>
+        <div class="ct-success" id="lp-success" role="region" aria-live="polite" aria-label="Solicitação enviada">
+          <div class="ct-success__ic"><i data-lucide="check"></i></div>
+          <h3 id="lp-success-title" tabindex="-1">Solicitação enviada</h3>
+          <p>Nossa equipe entrará em contato para apresentar o Juris8 e entender o momento do seu escritório.</p>
+          <button type="button" class="ct-again" id="lp-again">Enviar outra solicitação</button>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="jf">
+  <div class="jf__glow" aria-hidden="true"></div>
+  <div class="ag-wrap">
+    <div class="jf__top">
+      <div class="jf__brand">
+        <a href="#topo" class="jf__logo" aria-label="Juris8, voltar ao topo"><img src="/assets/brand/logo-juris8-light.png" alt="Juris8" width="125" height="32"></a>
+        <p class="jf__tag">IA jurídica desenvolvida por advogados, para advogados: pesquisa de jurisprudência, análise de documentos, transcrição e apoio à elaboração de peças.</p>
+        <div class="jf__seals"><span><i data-lucide="lock" aria-hidden="true"></i>LGPD</span><span><i data-lucide="sparkles" aria-hidden="true"></i>IA jurídica</span></div>
+        <div class="jf__social">
+          <a href="https://www.instagram.com/juris8.ai" target="_blank" rel="noopener noreferrer" aria-label="Instagram da Juris8" data-track="social_click" data-track-ctx="instagram">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4.2"/><circle cx="17.4" cy="6.6" r=".9" fill="currentColor" stroke="none"/></svg>
+          </a>
+          <a href="https://wa.me/5547988061278?text=Ol%C3%A1!%20Quero%20conhecer%20o%20Agente%20Jur%C3%ADdico%20do%20Juris8." target="_blank" rel="noopener noreferrer" aria-label="WhatsApp da Juris8" data-track="whatsapp_click" data-track-ctx="footer_icon">
+            <svg viewBox="0 0 32 32" fill="currentColor" aria-hidden="true"><path d="M16.01 3.2c-7.1 0-12.86 5.76-12.86 12.86 0 2.27.6 4.48 1.73 6.43L3.2 28.8l6.5-1.7a12.8 12.8 0 0 0 6.3 1.62h.01c7.1 0 12.86-5.76 12.86-12.86 0-3.44-1.34-6.67-3.77-9.1A12.78 12.78 0 0 0 16.01 3.2Zm0 23.5h-.01a10.6 10.6 0 0 1-5.4-1.48l-.39-.23-4.02 1.05 1.07-3.92-.25-.4a10.62 10.62 0 0 1 16.46-13.1 10.55 10.55 0 0 1 3.12 7.51c0 5.88-4.78 10.65-10.66 10.65Zm5.85-7.98c-.32-.16-1.9-.94-2.2-1.04-.3-.11-.5-.16-.72.16-.21.32-.82 1.03-1 1.25-.18.21-.37.24-.69.08-.32-.16-1.35-.5-2.58-1.59-.95-.85-1.6-1.9-1.78-2.22-.18-.32-.02-.49.14-.65.14-.14.32-.37.48-.56.16-.18.21-.32.32-.53.11-.21.05-.4-.03-.56-.08-.16-.72-1.74-.99-2.38-.26-.62-.52-.54-.72-.55l-.61-.01c-.21 0-.56.08-.85.4-.29.32-1.11 1.09-1.11 2.66 0 1.57 1.14 3.08 1.3 3.3.16.21 2.25 3.43 5.45 4.81.76.33 1.36.53 1.82.68.77.24 1.46.21 2.01.13.61-.09 1.9-.78 2.17-1.53.27-.74.27-1.38.19-1.51-.08-.13-.29-.21-.61-.37Z"/></svg>
+          </a>
+        </div>
+      </div>
+      <nav class="jf__links" aria-label="Rodapé">
+        <div class="jf__col">
+          <h2 class="jf__h">Soluções</h2>
+          <a href="/det">DET Monitor para escritórios</a>
+          <a href="/det/det-monitor-grupos.html">DET Monitor para grupos</a>
+          <a href="/crm">CRM com IA jurídica</a>
+          <a href="/secretariajuridica">Secretaria jurídica</a>
+          <a href="/trabalhistaempresarial">Trabalhista empresarial</a>
+          <a href="https://wa.me/5547988061278?text=Ol%C3%A1!%20Quero%20conhecer%20a%20Newsletter%20mensal%20com%20IA%20do%20Juris8." target="_blank" rel="noopener noreferrer">Newsletter mensal com IA</a>
+          <a href="/agentejuridico" aria-current="page">Agente Jurídico</a>
+        </div>
+        <div class="jf__col">
+          <h2 class="jf__h">Plataforma</h2>
+          <a href="/#redacao">Pré-elaboração de peças</a>
+          <a href="/#jurisprudencia">Pesquisa de jurisprudência</a>
+          <a href="/#revisao-contratual">Análise de documentos</a>
+          <a href="/#transcricao">Transcrição de audiências</a>
+        </div>
+        <div class="jf__col">
+          <h2 class="jf__h">Contato</h2>
+          <a href="https://wa.me/5547988061278?text=Ol%C3%A1!%20Quero%20conhecer%20o%20Agente%20Jur%C3%ADdico%20do%20Juris8." target="_blank" rel="noopener noreferrer" data-track="whatsapp_click" data-track-ctx="footer_link">WhatsApp</a>
+          <a href="https://www.instagram.com/juris8.ai" target="_blank" rel="noopener noreferrer" data-track="social_click" data-track-ctx="instagram">Instagram</a>
+          <a href="#faq">FAQ</a>
+          <a href="/#solucoes">Soluções</a>
+        </div>
+      </nav>
+    </div>
+    <div class="jf__bottom">
+      <span>© 2026 Juris8. Todos os direitos reservados.</span>
+      <span class="jf__made"><i aria-hidden="true"></i>Desenvolvido por advogados, para advogados</span>
+      <a href="#topo" class="jf__up">Voltar ao topo<i data-lucide="chevron-up" aria-hidden="true"></i></a>
+    </div>
+  </div>
+</footer>
+
+<a class="lp-wa" id="lp-wa" href="https://wa.me/5547988061278?text=Ol%C3%A1!%20Tenho%20d%C3%BAvidas%20sobre%20o%20Agente%20Jur%C3%ADdico%20do%20Juris8." target="_blank" rel="noopener noreferrer" aria-label="Dúvidas sobre o Agente Jurídico? Fale com um especialista pelo WhatsApp" data-track="whatsapp_click" data-track-ctx="fab">
+  <span class="lp-wa__label">Dúvidas sobre o Agente Jurídico?</span>
+  <span class="lp-wa__btn"><span class="lp-wa__ring" aria-hidden="true"></span><svg viewBox="0 0 32 32" fill="currentColor" aria-hidden="true"><path d="M16.01 3.2c-7.1 0-12.86 5.76-12.86 12.86 0 2.27.6 4.48 1.73 6.43L3.2 28.8l6.5-1.7a12.8 12.8 0 0 0 6.3 1.62h.01c7.1 0 12.86-5.76 12.86-12.86 0-3.44-1.34-6.67-3.77-9.1A12.78 12.78 0 0 0 16.01 3.2Zm0 23.5h-.01a10.6 10.6 0 0 1-5.4-1.48l-.39-.23-4.02 1.05 1.07-3.92-.25-.4a10.62 10.62 0 0 1 16.46-13.1 10.55 10.55 0 0 1 3.12 7.51c0 5.88-4.78 10.65-10.66 10.65Zm5.85-7.98c-.32-.16-1.9-.94-2.2-1.04-.3-.11-.5-.16-.72.16-.21.32-.82 1.03-1 1.25-.18.21-.37.24-.69.08-.32-.16-1.35-.5-2.58-1.59-.95-.85-1.6-1.9-1.78-2.22-.18-.32-.02-.49.14-.65.14-.14.32-.37.48-.56.16-.18.21-.32.32-.53.11-.21.05-.4-.03-.56-.08-.16-.72-1.74-.99-2.38-.26-.62-.52-.54-.72-.55l-.61-.01c-.21 0-.56.08-.85.4-.29.32-1.11 1.09-1.11 2.66 0 1.57 1.14 3.08 1.3 3.3.16.21 2.25 3.43 5.45 4.81.76.33 1.36.53 1.82.68.77.24 1.46.21 2.01.13.61-.09 1.9-.78 2.17-1.53.27-.74.27-1.38.19-1.51-.08-.13-.29-.21-.61-.37Z"/></svg></span>
+</a>
+
+<script src="https://unpkg.com/lucide@0.469.0/dist/umd/lucide.min.js"></script>
+<script src="/assets/site/j8-pages.js"></script>
+<script>
+(function () {
+  'use strict';
+  var $ = function (s, r) { return (r || document).querySelector(s); };
+  var $$ = function (s, r) { return Array.prototype.slice.call((r || document).querySelectorAll(s)); };
+  var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var icons = function () { if (window.lucide && window.lucide.createIcons) window.lucide.createIcons(); };
+  var whenSeen = function (node, fn, threshold) {
+    if (!node) return;
+    if (!('IntersectionObserver' in window)) { fn(); return; }
+    var io = new IntersectionObserver(function (e) { if (e[0].isIntersecting) { fn(); io.disconnect(); } }, { threshold: threshold || 0.4 });
+    io.observe(node);
+  };
+  var setIcon = function (holder, name) { holder.innerHTML = ''; var i = document.createElement('i'); i.setAttribute('data-lucide', name); holder.appendChild(i); icons(); };
+
+  /* ---------- WhatsApp flutuante: sai da frente do formulário ---------- */
+  var wa = $('#lp-wa');
+  if ('IntersectionObserver' in window) {
+    var waIO = new IntersectionObserver(function (e) { wa.classList.toggle('is-away', e[0].isIntersecting); });
+    waIO.observe($('.ag-form-card'));
+  }
+
+  /* ---------- Hero: enquadra a foto para o rosto ficar no vão entre o texto e o cartão ---------- */
+  var heroMedia = $('.ag-hero__media'), heroImg = $('.ag-hero__media img'), heroCard = $('.ag-hero__visual');
+  var FACE_X = 0.37, RATIO = 1672 / 941;
+  var agentCard = $('#ag-agent');
+  function scaleCard() {
+    var vw = window.innerWidth, k = Math.min(vw, 1919) / 553, z;
+    if (vw <= 1100) z = Math.min(1, (heroCard.parentNode.clientWidth - (vw <= 600 ? 32 : 56)) / 420);
+    else z = Math.min(1, Math.max(.8, 165 * k / 420));
+    agentCard.style.zoom = z.toFixed(3);
+  }
+  function frameHero() {
+    scaleCard();
+    if (window.innerWidth <= 1100) { heroImg.style.objectPosition = ''; return; }
+    var m = heroMedia.getBoundingClientRect(), c = heroCard.getBoundingClientRect();
+    if (!m.width || !m.height) return;
+    var iw = Math.max(m.width, m.height * RATIO);
+    var target = m.left + Math.max(120, (c.left - m.left) * 0.5);
+    var p = (m.left + FACE_X * iw - target) / (iw - m.width);
+    heroImg.style.objectPosition = (Math.min(1, Math.max(0, p)) * 100).toFixed(1) + '% center';
+  }
+  frameHero();
+  if ('ResizeObserver' in window) new ResizeObserver(frameHero).observe(heroMedia); else window.addEventListener('resize', frameHero);
+
+  /* ---------- Hero: o agente trabalha à vista, uma vez ---------- */
+  var steps = $$('#ag-steps .ag-step');
+  var status = $('#ag-status'), docBar = $('#ag-doc-bar'), docSt = $('#ag-doc-st'), ready = $('#ag-ready');
+  function finishStep(s) { s.classList.remove('is-run'); s.classList.add('is-done'); setIcon($('.ag-step__ic', s), 'check'); }
+  function runStep(s) { s.classList.add('is-run'); setIcon($('.ag-step__ic', s), 'loader'); }
+  function done() {
+    status.className = 'ag-pill ag-pill--ok';
+    status.innerHTML = '<i data-lucide="circle-check"></i><span>Pronto</span>';
+    docSt.textContent = 'pág. 1';
+    ready.classList.add('is-in');
+    icons();
+  }
+  if (reduce) {
+    steps.forEach(finishStep); docBar.style.width = '100%'; done();
+  } else {
+    var t = 900;
+    steps.forEach(function (s, i) {
+      setTimeout(function () { runStep(s); }, t + i * 1100);
+      setTimeout(function () { finishStep(s); }, t + i * 1100 + 950);
+    });
+    var tDoc = t + steps.length * 1100;
+    setTimeout(function () { docSt.textContent = 'redigindo…'; docBar.style.width = '72%'; }, tDoc - 300);
+    setTimeout(function () { docSt.textContent = 'salvando…'; docBar.style.width = '100%'; }, tDoc + 1300);
+    setTimeout(done, tDoc + 2200);
+  }
+
+  /* ---------- Quatro frentes (abas) ---------- */
+  var tabs = $$('.ag-tab');
+  tabs.forEach(function (tab, i) {
+    var select = function (focus) {
+      tabs.forEach(function (t) {
+        var on = t === tab;
+        t.setAttribute('aria-selected', on ? 'true' : 'false');
+        t.tabIndex = on ? 0 : -1;
+        document.getElementById(t.getAttribute('aria-controls')).hidden = !on;
+      });
+      if (focus) tab.focus();
+    };
+    tab.addEventListener('click', function () { select(false); });
+    tab.addEventListener('keydown', function (e) {
+      if (e.key !== 'ArrowRight' && e.key !== 'ArrowLeft') return;
+      e.preventDefault();
+      var next = tabs[(i + (e.key === 'ArrowRight' ? 1 : -1) + tabs.length) % tabs.length];
+      next.click(); next.focus();
+    });
+  });
+
+  /* ---------- Pesquisa: filtro por tribunal ---------- */
+  var courtBtns = $$('.ag-courts button'), results = $$('.ag-result'), empty = $('#ag-empty');
+  courtBtns.forEach(function (b) {
+    b.addEventListener('click', function () {
+      var c = b.dataset.court, n = 0;
+      courtBtns.forEach(function (x) { x.setAttribute('aria-pressed', x === b ? 'true' : 'false'); });
+      results.forEach(function (r) { var show = c === 'todos' || r.dataset.court === c; r.hidden = !show; if (show) n++; });
+      empty.hidden = n > 0;
+    });
+  });
+
+  /* ---------- Redação: notas preenchem ao aparecer ---------- */
+  whenSeen($('#ag-scores'), function () { $('#ag-scores').classList.add('is-in'); });
+
+  /* ---------- Análise: skills filtram as cláusulas ---------- */
+  var skillBtns = $$('.ag-skills button'), clauses = $$('.ag-clause');
+  skillBtns.forEach(function (b) {
+    b.addEventListener('click', function () {
+      var on = b.getAttribute('aria-pressed') !== 'true';
+      skillBtns.forEach(function (x) { x.setAttribute('aria-pressed', x === b && on ? 'true' : 'false'); });
+      clauses.forEach(function (c) {
+        var hit = on && c.dataset.skills.split(' ').indexOf(b.dataset.skill) > -1;
+        c.classList.toggle('is-hit', hit);
+        c.classList.toggle('is-dim', on && !hit);
+      });
+    });
+  });
+
+  /* ---------- Transcrição: onda de áudio e trecho crítico ---------- */
+  var wave = $('#ag-wave');
+  for (var w = 0; w < 64; w++) {
+    var bar = document.createElement('i');
+    var h = 18 + Math.round(70 * Math.abs(Math.sin(w * 0.55) * Math.cos(w * 0.21)));
+    bar.style.height = h + '%';
+    if (w >= 19 && w <= 23) bar.className = 'is-mark';
+    wave.appendChild(bar);
+  }
+  var critico = $('#ag-critico');
+  $('#ag-jump').addEventListener('click', function () {
+    critico.classList.remove('is-hl'); void critico.offsetWidth; critico.classList.add('is-hl');
+    critico.scrollIntoView({ behavior: reduce ? 'auto' : 'smooth', block: 'center' });
+  });
+
+  /* ---------- FAQ ---------- */
+  $$('.ag-q').forEach(function (q, i, all) {
+    var btn = $('.ag-q__btn', q);
+    btn.addEventListener('click', function () {
+      var open = !q.classList.contains('is-open');
+      all.forEach(function (o) { o.classList.remove('is-open'); $('.ag-q__btn', o).setAttribute('aria-expanded', 'false'); });
+      q.classList.toggle('is-open', open);
+      btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+    });
+  });
+
+  /* ---------- Formulário e barra (comportamento compartilhado do site) ---------- */
+  if (window.J8) {
+    window.J8.mount({ form: { interest: 'Agente Jurídico · demonstração', source: 'lp_agente_juridico', segment: 'agente_juridico' } });
+  }
+  icons();
+})();
+</script>
+</body>
+</html>

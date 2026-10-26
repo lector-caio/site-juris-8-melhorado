@@ -46,7 +46,7 @@
   --sutil: #6F6A86;
   --linha: #EEEBF6;
   --sol: #FFC46B;
-  --verde: #1F9D55;
+  --verde: #197D44;
   --wa: #25D366;
   --fd: 'Sora', 'Plus Jakarta Sans', system-ui, sans-serif;
   --fb: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
@@ -126,9 +126,9 @@ svg.lucide { width: 18px; height: 18px; flex: none; }
 .jl-thread { position: relative; display: flex; flex: 1; flex-direction: column; gap: 9px; min-height: 0; padding: 16px 13px; overflow-y: auto; scrollbar-width: none; background: radial-gradient(rgba(117,71,239,.07) 1px, transparent 1.4px) 0 0 / 18px 18px, #F1EEF9; }
 .jl-thread::-webkit-scrollbar { display: none; }
 .jl-thread > :first-child { margin-top: auto; }
-.jl-daytag { align-self: center; margin-bottom: 4px; padding: 4px 11px; border-radius: 8px; background: rgba(255,255,255,.86); color: var(--sutil); font-size: 11.5px; font-weight: 600; }
+.jl-daytag { align-self: center; margin-bottom: 4px; padding: 4px 11px; border-radius: 8px; background: rgba(255,255,255,.86); color: var(--sutil); font-size: 12px; font-weight: 600; }
 .jl-msg { max-width: 86%; padding: 9px 12px 7px; border-radius: 17px; color: var(--tinta); font-size: 14px; line-height: 1.5; box-shadow: 0 1px 1.5px rgba(26,19,56,.07); overflow-wrap: anywhere; }
-.jl-msg small { display: block; margin-top: 2px; color: var(--sutil); font-size: 11px; text-align: right; font-variant-numeric: tabular-nums; }
+.jl-msg small { display: block; margin-top: 2px; color: var(--sutil); font-size: 12px; text-align: right; font-variant-numeric: tabular-nums; }
 .jl-msg--julia { align-self: flex-start; border-bottom-left-radius: 5px; background: #fff; }
 .jl-msg--cliente { align-self: flex-end; border-bottom-right-radius: 5px; background: var(--marca-suave); }
 .jl-msg__by { display: flex; align-items: center; gap: 6px; margin-bottom: 3px; color: var(--violeta-forte); font: 600 12px var(--fd); }
@@ -137,7 +137,7 @@ svg.lucide { width: 18px; height: 18px; flex: none; }
 .jl-typing { display: inline-flex; align-self: flex-start; gap: 4px; padding: 13px 14px; border-radius: 17px; border-bottom-left-radius: 5px; background: #fff; }
 .jl-typing i { width: 6px; height: 6px; border-radius: 50%; background: var(--violeta); animation: jl-dot .9s infinite alternate var(--ease); }
 .jl-typing i:nth-child(2) { animation-delay: .15s; } .jl-typing i:nth-child(3) { animation-delay: .3s; }
-.jl-composer { display: flex; align-items: center; gap: 10px; margin: 0 10px 14px; padding: 6px 6px 6px 16px; border-radius: 999px; background: #fff; color: #9C97AE; font-size: 14px; box-shadow: 0 1px 2px rgba(26,19,56,.06); }
+.jl-composer { display: flex; align-items: center; gap: 10px; margin: 0 10px 14px; padding: 6px 6px 6px 16px; border-radius: 999px; background: #fff; color: #706987; font-size: 14px; box-shadow: 0 1px 2px rgba(26,19,56,.06); }
 .jl-composer span { flex: 1; }
 .jl-composer i, .jl-composer > svg { display: grid; place-items: center; width: 34px; height: 34px; border-radius: 50%; background: var(--violeta); color: #fff; padding: 8px; }
 .jl-toast { position: absolute; top: 150px; left: -76px; z-index: 4; display: flex; align-items: center; gap: 12px; width: 268px; padding: 13px 16px 13px 13px; border-radius: 20px; background: rgba(255,255,255,.97); color: var(--tinta); box-shadow: 0 30px 60px -24px rgba(0,0,0,.6); opacity: 0; transform: translateY(14px) scale(.96); transition: opacity .6s var(--ease), transform .6s var(--ease); }
@@ -214,7 +214,7 @@ svg.lucide { width: 18px; height: 18px; flex: none; }
 .jl-mark { position: absolute; top: 0; display: flex; flex-direction: column; align-items: center; gap: 5px; transform: translateX(-50%); color: var(--sutil); font: 600 12.5px var(--fd); font-variant-numeric: tabular-nums; transition: color .2s; }
 .jl-mark::after { content: ""; width: 7px; height: 7px; border-radius: 50%; background: currentColor; box-shadow: 0 0 0 3px var(--papel); }
 .jl-mark:hover, .jl-mark[aria-pressed="true"] { color: var(--violeta-forte); }
-.jl-dial__hours { display: flex; justify-content: space-between; margin-top: 44px; padding: 0 2px; color: #9D97B3; font: 500 12px var(--fd); font-variant-numeric: tabular-nums; }
+.jl-dial__hours { display: flex; justify-content: space-between; margin-top: 44px; padding: 0 2px; color: #70688E; font: 500 12px var(--fd); font-variant-numeric: tabular-nums; }
 .jl-dial__hint { display: flex; align-items: center; justify-content: center; gap: 8px; margin-top: 18px; color: var(--sutil); font-size: 14px; }
 .jl-dial__hint svg.lucide { width: 16px; height: 16px; color: var(--violeta); }
 
@@ -247,7 +247,7 @@ svg.lucide { width: 18px; height: 18px; flex: none; }
 .jl-inbox__top { display: flex; align-items: center; justify-content: space-between; padding: 20px 20px 12px; }
 .jl-inbox__top b { color: var(--tinta); font: 600 16px var(--fd); }
 .jl-inbox__top span { color: var(--sutil); font-size: 13px; }
-.jl-inbox__search { display: flex; align-items: center; gap: 8px; margin: 0 14px 10px; padding: 10px 12px; border: 1px solid var(--linha); border-radius: 12px; background: #fff; color: #A29DB4; font-size: 13.5px; }
+.jl-inbox__search { display: flex; align-items: center; gap: 8px; margin: 0 14px 10px; padding: 10px 12px; border: 1px solid var(--linha); border-radius: 12px; background: #fff; color: #706989; font-size: 13.5px; }
 .jl-inbox__search svg.lucide { width: 16px; height: 16px; }
 .jl-inbox__list { flex: 1; min-height: 0; margin: 0; padding: 4px 8px 12px; overflow-y: auto; list-style: none; scrollbar-width: thin; }
 .jl-convo { display: grid; grid-template-columns: 42px minmax(0, 1fr) auto; gap: 11px; align-items: center; width: 100%; padding: 10px 10px; border-radius: 14px; text-align: left; transition: background-color .2s; }
@@ -264,7 +264,7 @@ svg.lucide { width: 18px; height: 18px; flex: none; }
 .jl-face__ch--form { background: #0EA5A4; }
 .jl-convo b { display: block; overflow: hidden; color: var(--tinta); font-size: 14.5px; font-weight: 700; white-space: nowrap; text-overflow: ellipsis; }
 .jl-convo small { display: block; overflow: hidden; margin-top: 2px; color: var(--sutil); font-size: 13px; white-space: nowrap; text-overflow: ellipsis; }
-.jl-convo time { align-self: start; margin-top: 3px; color: #9D97B3; font-size: 12px; font-variant-numeric: tabular-nums; }
+.jl-convo time { align-self: start; margin-top: 3px; color: #70688E; font-size: 12px; font-variant-numeric: tabular-nums; }
 .jl-inbox__main { display: flex; flex-direction: column; min-width: 0; min-height: 0; }
 .jl-inbox__head { display: flex; align-items: center; gap: 12px; padding: 16px 22px; border-bottom: 1px solid var(--linha); }
 .jl-inbox__head .jl-face { width: 44px; height: 44px; }
@@ -280,7 +280,7 @@ svg.lucide { width: 18px; height: 18px; flex: none; }
 .jl-inbox__msgs .jl-msg--sys { align-self: center; max-width: 90%; padding: 6px 12px; border-radius: 10px; background: #FFF6E3; color: #7A4B00; box-shadow: none; font-size: 12.5px; font-weight: 600; text-align: center; }
 .jl-inbox__foot { display: flex; align-items: center; gap: 12px; padding: 14px 18px; border-top: 1px solid var(--linha); }
 .jl-inbox__status { display: flex; flex: 1; align-items: center; gap: 9px; min-width: 0; color: var(--texto); font-size: 13.5px; }
-.jl-inbox__status .jl-avatar { width: 26px; height: 26px; font-size: 11px; }
+.jl-inbox__status .jl-avatar { width: 26px; height: 26px; font-size: 12px; }
 .jl-take { display: inline-flex; align-items: center; gap: 8px; height: 40px; padding: 0 16px; border: 1px solid var(--linha); border-radius: 999px; background: #fff; color: var(--tinta); font-size: 14px; font-weight: 700; white-space: nowrap; transition: background-color .2s, border-color .2s, color .2s; }
 .jl-take:hover { border-color: var(--lavanda); background: var(--nevoa); }
 .jl-take svg.lucide { width: 16px; height: 16px; }
@@ -298,7 +298,7 @@ svg.lucide { width: 18px; height: 18px; flex: none; }
 .jl-step__btn[aria-expanded="true"] .jl-step__n { border-color: var(--violeta); background: var(--violeta); color: #fff; }
 .jl-step__t b { display: block; color: var(--tinta); font: 600 clamp(19px, 1.8vw, 23px)/1.25 var(--fd); letter-spacing: -.02em; }
 .jl-step__t small { display: block; margin-top: 3px; color: var(--sutil); font-size: 14.5px; }
-.jl-step__btn > svg.lucide { width: 22px; height: 22px; color: #A29DB4; transition: transform .35s var(--ease); }
+.jl-step__btn > svg.lucide { width: 22px; height: 22px; color: #706989; transition: transform .35s var(--ease); }
 .jl-step__btn[aria-expanded="true"] > svg.lucide { transform: rotate(180deg); color: var(--violeta); }
 .jl-step__body { display: grid; grid-template-rows: 0fr; transition: grid-template-rows .45s var(--ease); }
 .jl-step__body > div { min-height: 0; overflow: hidden; }
@@ -325,7 +325,7 @@ svg.lucide { width: 18px; height: 18px; flex: none; }
 .jl-approve.is-done b { color: #11713B; }
 .jl-approve.is-done b svg.lucide { color: #11713B; }
 .jl-nps { display: flex; gap: 4px; align-self: stretch; margin-top: 2px; }
-.jl-nps span { flex: 1; padding: 6px 0; border-radius: 8px; background: #fff; color: var(--sutil); font: 600 11.5px var(--fd); text-align: center; }
+.jl-nps span { flex: 1; padding: 6px 0; border-radius: 8px; background: #fff; color: var(--sutil); font: 600 12px var(--fd); text-align: center; }
 .jl-nps span.is-hit { background: var(--verde); color: #fff; }
 
 /* ---------- 4. Controle (escuro) ---------- */
@@ -374,7 +374,7 @@ svg.lucide { width: 18px; height: 18px; flex: none; }
 .jl-controls { display: flex; flex-direction: column; gap: 26px; padding: 30px; border: 1px solid var(--linha); border-radius: 28px; background: #fff; }
 .jl-field-l { display: block; margin-bottom: 10px; color: var(--tinta); font: 600 14.5px var(--fd); }
 .jl-input { width: 100%; height: 50px; padding: 0 16px; border: 1px solid var(--linha); border-radius: 14px; background: var(--papel); color: var(--tinta); font-size: 15.5px; transition: border-color .2s, box-shadow .2s, background-color .2s; }
-.jl-input::placeholder { color: #A29DB4; }
+.jl-input::placeholder { color: #706989; }
 .jl-input:hover { border-color: #D3CBEA; }
 .jl-input:focus { border-color: var(--violeta); background: #fff; outline: none; box-shadow: 0 0 0 4px rgba(117,71,239,.14); }
 .jl-seg { display: grid; grid-auto-columns: 1fr; grid-auto-flow: column; gap: 4px; padding: 4px; border-radius: 15px; background: var(--nevoa); }
@@ -644,9 +644,18 @@ svg.lucide { width: 18px; height: 18px; flex: none; }
   html { scroll-behavior: auto; }
   *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; }
 }
+
+/* Área de toque mínima de 44px sem mudar o desenho: o pseudo-elemento amplia só a região clicável */
+.jl-take, .jl-quick button, .jf__logo, .jf__up { position: relative; }
+.jl-take::before, .jl-quick button::before, .jf__logo::before, .jf__up::before, .jl-mark::before, .jf__col a::before {
+  content: ""; position: absolute; left: 50%; top: 50%;
+  width: max(100%, 44px); height: max(100%, 44px); transform: translate(-50%, -50%);
+}
+.jf__social a { width: 44px; height: 44px; }
 </style>
 </head>
 <body>
+<a class="lp-skip" href="#topo">Ir para o conteúdo</a>
 
 <div class="lp-header-wrap">
   <header class="lp-header" id="lp-header">
@@ -667,7 +676,7 @@ svg.lucide { width: 18px; height: 18px; flex: none; }
   </header>
 </div>
 
-<main id="topo">
+<main id="topo" tabindex="-1">
 
   <!-- ============ HERO ============ -->
   <section class="jl-hero" aria-labelledby="jl-title">
@@ -1083,7 +1092,7 @@ svg.lucide { width: 18px; height: 18px; flex: none; }
     <div class="jf__top">
       <div class="jf__brand">
         <a href="#topo" class="jf__logo" aria-label="Juris8, voltar ao topo"><img src="/assets/brand/logo-juris8-light.png" alt="Juris8" width="125" height="32"></a>
-        <p class="jf__tag">A mais completa IA jurídica do Brasil. Pré-elaboração de peças, pesquisa, análise de documentos e transcrição, desenvolvidas por advogados, para advogados.</p>
+        <p class="jf__tag">IA jurídica desenvolvida por advogados, para advogados: pesquisa de jurisprudência, análise de documentos, transcrição e apoio à elaboração de peças.</p>
         <div class="jf__seals">
           <span><i data-lucide="lock" aria-hidden="true"></i>LGPD</span>
           <span><i data-lucide="sparkles" aria-hidden="true"></i>IA jurídica</span>
@@ -1100,11 +1109,13 @@ svg.lucide { width: 18px; height: 18px; flex: none; }
       <nav class="jf__links" aria-label="Rodapé">
         <div class="jf__col">
           <h2 class="jf__h">Soluções</h2>
-          <a href="/det">DET Monitor</a>
-          <a href="/crm">CRM com IA</a>
+          <a href="/det">DET Monitor para escritórios</a>
+          <a href="/det/det-monitor-grupos.html">DET Monitor para grupos</a>
+          <a href="/crm">CRM com IA jurídica</a>
           <a href="/secretariajuridica" aria-current="page">Secretaria jurídica</a>
-          <a href="/newsletter">Newsletter mensal</a>
           <a href="/trabalhistaempresarial">Trabalhista empresarial</a>
+          <a href="/newsletter">Newsletter mensal</a>
+          <a href="/agentejuridico">Agente Jurídico</a>
         </div>
         <div class="jf__col">
           <h2 class="jf__h">Plataforma</h2>
@@ -1112,7 +1123,6 @@ svg.lucide { width: 18px; height: 18px; flex: none; }
           <a href="/#jurisprudencia">Pesquisa de jurisprudência</a>
           <a href="/#revisao-contratual">Análise de documentos</a>
           <a href="/#transcricao">Transcrição de audiências</a>
-          <a href="/crm">CRM com IA</a>
         </div>
         <div class="jf__col">
           <h2 class="jf__h">Contato</h2>

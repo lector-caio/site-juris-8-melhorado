@@ -746,3 +746,14 @@
   .ph .bb, .ph .ph__day, .tp__panel .sx-a { opacity: 1; animation: none !important; }
   .kb__card--move, .vs__arrow { animation: none; }
 }
+
+/* Área de toque mínima de 44px sem mudar o desenho: o pseudo-elemento amplia só a região clicável */
+.scr__tab, .stp__link, .jf__logo, .jf__up { position: relative; }
+.scr__tab::before, .stp__link::before, .jf__logo::before, .jf__up::before, .jf__col a::before {
+  content: ""; position: absolute; left: 50%; top: 50%;
+  width: max(100%, 44px); height: max(100%, 44px); transform: translate(-50%, -50%);
+}
+.jf__social a { width: 44px; height: 44px; }
+
+/* Controle deslizante: 44px de área de toque, trilho continua com 8px */
+.calc__range { height: 44px; margin: -18px 0; background: linear-gradient(90deg, #7547EF 0 var(--p), #ECEAF4 var(--p) 100%) center / 100% 8px no-repeat; }

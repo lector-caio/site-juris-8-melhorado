@@ -44,7 +44,7 @@
   --texto: #5B5776;
   --sutil: #6F6A86;
   --linha: #EEEBF6;
-  --verde: #1F9D55;
+  --verde: #197D44;
   --wa: #25D366;
   --fd: 'Sora', 'Plus Jakarta Sans', system-ui, sans-serif;
   --fb: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
@@ -164,7 +164,7 @@ svg.lucide { width: 18px; height: 18px; flex: none; }
 .tb-row__money .tb-stage { margin-left: auto; }
 .tb-row__money b { color: var(--tinta); font-family: var(--fd); font-weight: 600; font-variant-numeric: tabular-nums; }
 .tb-money { color: var(--tinta); font: 600 14px var(--fd); font-variant-numeric: tabular-nums; }
-.tb-stage { display: inline-flex; align-items: center; gap: 6px; padding: 4px 9px; border-radius: 999px; font-size: 11.5px; font-weight: 700; white-space: nowrap; transition: background-color .5s, color .5s; }
+.tb-stage { display: inline-flex; align-items: center; gap: 6px; padding: 4px 9px; border-radius: 999px; font-size: 12px; font-weight: 700; white-space: nowrap; transition: background-color .5s, color .5s; }
 .tb-stage svg.lucide { width: 13px; height: 13px; }
 .tb-stage--ok { background: #E7F6EE; color: #11713B; }
 .tb-stage--wait { background: #FEF3E2; color: #A15C07; }
@@ -177,7 +177,7 @@ svg.lucide { width: 18px; height: 18px; flex: none; }
 .tb-row.is-open .tb-row__body { grid-template-rows: 1fr; }
 .tb-peds { margin: 0 14px 14px; padding: 12px 14px 4px; border-radius: 16px; background: #F6F4FD; color: var(--texto); }
 .tb-peds__h { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 6px; margin-bottom: 4px; color: var(--tinta); font: 700 13px var(--fd); }
-.tb-peds__h span { color: var(--sutil); font: 600 11.5px var(--fb); }
+.tb-peds__h span { color: var(--sutil); font: 600 12px var(--fb); }
 .tb-ped { display: grid; grid-template-columns: minmax(0, 1fr) auto auto; gap: 6px 10px; align-items: center; padding: 10px 0; border-top: 1px solid #E8E4F3; font-size: 13px; }
 .tb-ped b { color: var(--tinta); font-weight: 700; }
 .tb-ped .tb-money { font-size: 13px; text-align: right; }
@@ -384,11 +384,11 @@ svg.lucide { width: 18px; height: 18px; flex: none; }
 .lp-field > label:not(.ct-check) { display: block; margin-bottom: 7px; color: var(--tinta); font-size: 14px; font-weight: 700; }
 .lp-field > label i { color: var(--sutil); font-style: normal; font-weight: 500; }
 .tb-input { width: 100%; height: 50px; padding: 0 16px; border: 1px solid var(--linha); border-radius: 14px; background: var(--papel); color: var(--tinta); font-size: 15.5px; transition: border-color .2s, box-shadow .2s, background-color .2s; }
-.tb-input::placeholder { color: #A29DB4; }
+.tb-input::placeholder { color: #706989; }
 .tb-input:hover { border-color: #D3CBEA; }
 .tb-input:focus { border-color: var(--violeta); background: #fff; outline: none; box-shadow: 0 0 0 4px rgba(117,71,239,.14); }
 select.tb-input { appearance: none; -webkit-appearance: none; padding-right: 42px; background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='18' height='18' viewBox='0 0 24 24' fill='none' stroke='%236E6884' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E"); background-repeat: no-repeat; background-position: right 14px center; cursor: pointer; }
-select.tb-input:invalid { color: #A29DB4; }
+select.tb-input:invalid { color: #706989; }
 textarea.tb-input { height: 96px; padding: 13px 16px; line-height: 1.5; resize: vertical; }
 .lp-field__error { display: none; margin-top: 6px; color: #C62F35; font-size: 13px; font-weight: 600; }
 .lp-field.is-error .tb-input { border-color: #E5484D; background: #FFF7F7; }
@@ -523,9 +523,18 @@ textarea.tb-input { height: 96px; padding: 13px 16px; line-height: 1.5; resize: 
   html { scroll-behavior: auto; }
   *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; }
 }
+
+/* Área de toque mínima de 44px sem mudar o desenho: o pseudo-elemento amplia só a região clicável */
+.tb-chip, .jf__logo, .jf__up { position: relative; }
+.tb-chip::before, .jf__logo::before, .jf__up::before, .jf__col a::before {
+  content: ""; position: absolute; left: 50%; top: 50%;
+  width: max(100%, 44px); height: max(100%, 44px); transform: translate(-50%, -50%);
+}
+.jf__social a { width: 44px; height: 44px; }
 </style>
 </head>
 <body>
+<a class="lp-skip" href="#topo">Ir para o conteúdo</a>
 
 <div class="lp-header-wrap">
   <header class="lp-header lp-header--long" id="lp-header">
@@ -547,7 +556,7 @@ textarea.tb-input { height: 96px; padding: 13px 16px; line-height: 1.5; resize: 
   </header>
 </div>
 
-<main id="topo">
+<main id="topo" tabindex="-1">
 
   <!-- ============ HERO ============ -->
   <section class="tb-hero" aria-labelledby="tb-title">

@@ -1,0 +1,1218 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#7547EF">
+<title>Newsletter Jurídica com IA · 5 minutos por mês | Juris8</title>
+<meta name="description" content="A IA pesquisa novidades jurídicas relevantes para os seus clientes e escreve no seu tom. Você revisa e dispara — sempre como responsável editorial, em 5 minutos por mês.">
+<link rel="icon" href="/assets/brand/juris8-favicon-32x32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="/assets/brand/juris8-apple-touch-icon.png">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Juris8">
+<meta property="og:title" content="Newsletter Jurídica com IA · 5 minutos por mês | Juris8">
+<meta property="og:description" content="A IA pesquisa, escreve e formata. Você revisa e dispara em 5 minutos. Conforme OAB · LGPD.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebPage","name":"Newsletter Jurídica com IA | Juris8","description":"Sua newsletter mensal pronta para revisar em 5 minutos. A IA pesquisa novidades jurídicas e escreve no seu tom.","inLanguage":"pt-BR","isPartOf":{"@type":"WebSite","name":"Juris8","url":"https://juris8.com"},"publisher":{"@type":"Organization","name":"Juris8","logo":"https://juris8.com/assets/brand/logo-juris8.png"}}
+</script>
+<link rel="stylesheet" href="/assets/site/j8-header.css">
+<style>
+/* ============================================================
+   JURIS8 NEWSLETTER · IA ESCREVE, VOCÊ APROVA
+   Conceito: o advogado aparece só no passo 3 — revisar.
+   A IA cuida do resto. Visual compartilhado com /crm e /secretariajuridica.
+   ============================================================ */
+:root {
+  --noite: #2E135B;
+  --roxo: linear-gradient(170deg, #36196A 0%, #321663 55%, #2E135B 100%);
+  --grad: linear-gradient(90deg, #7547EF, #8B5CF6);
+  --grad-hover: linear-gradient(90deg, #6334D8, #7547EF);
+  --destaque: #6A3AD8;
+  --noite-2: #1C1150;
+  --violeta: #7547EF;
+  --violeta-forte: #5B2FD9;
+  --lavanda: #CDBDFF;
+  --lavanda-2: #ECE6FF;
+  --nevoa: #F3F0FD;
+  --papel: #F9F8FD;
+  --tinta: #170B45;
+  --texto: #5B5776;
+  --sutil: #6F6A86;
+  --linha: #EEEBF6;
+  --verde: #197D44;
+  --wa: #25D366;
+  --fd: 'Sora', 'Plus Jakarta Sans', system-ui, sans-serif;
+  --fb: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+  --k: calc(min(100vw, 1919px) / 553);
+  --ease: cubic-bezier(.22, 1, .36, 1);
+  --sombra: 0 40px 90px -48px rgba(30, 14, 92, .5), 0 2px 6px -2px rgba(30, 14, 92, .08);
+  /* áreas do direito */
+  --a-trab: #B45309; --a-trab-bg: #FEF3E2;
+  --a-fam:  #BE185D; --a-fam-bg:  #FCE7F1;
+  --a-civ:  #1D4ED8; --a-civ-bg:  #E3ECFE;
+  --a-emp:  #0F766E; --a-emp-bg:  #DDF5F1;
+  --a-trib: #7C3AED; --a-trib-bg: #EDE9FE;
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+html { scroll-behavior: smooth; scroll-padding-top: 100px; -webkit-text-size-adjust: 100%; }
+body { margin: 0; background: var(--papel); color: var(--texto); font: 400 16px/1.6 var(--fb); -webkit-font-smoothing: antialiased; text-rendering: optimizeLegibility; overflow-x: hidden; }
+img { display: block; max-width: 100%; }
+a { color: inherit; text-decoration: none; }
+button, input, select, textarea { font: inherit; color: inherit; }
+button { padding: 0; border: 0; background: none; cursor: pointer; }
+h1, h2, h3, h4, p { margin: 0; }
+svg.lucide { width: 18px; height: 18px; flex: none; }
+:focus-visible { outline: 2.5px solid var(--violeta); outline-offset: 3px; border-radius: 8px; }
+.nl-dark :focus-visible { outline-color: var(--lavanda); }
+.sr-only { position: absolute; width: 1px; height: 1px; margin: -1px; padding: 0; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0; }
+.nl-wrap { width: 100%; max-width: 1240px; margin: 0 auto; padding: 0 28px; }
+
+/* ---------- Botões ---------- */
+.nl-btn { display: inline-flex; align-items: center; justify-content: center; gap: 10px; height: 54px; padding: 0 26px; border-radius: 999px; font: 600 15.5px/1 var(--fb); white-space: nowrap; transition: transform .25s var(--ease), background-color .25s, box-shadow .25s, border-color .25s, color .25s; }
+.nl-btn svg.lucide { width: 18px; height: 18px; transition: transform .25s var(--ease); }
+.nl-btn:hover svg.lucide { transform: translateX(3px); }
+.nl-btn:active { transform: translateY(1px) scale(.99); }
+.nl-btn--primary { background: var(--grad); color: #fff; box-shadow: inset 0 1px 0 rgba(255,255,255,.22), 0 14px 32px -14px rgba(117,71,239,.9); }
+.nl-btn--primary:hover { background: var(--grad-hover); }
+.nl-btn--line { border: 1.5px solid var(--linha); background: #fff; color: var(--tinta); }
+.nl-btn--line:hover { border-color: var(--lavanda); background: var(--nevoa); }
+.nl-btn--line:hover svg.lucide { transform: none; }
+.nl-btn--lg { height: 60px; padding: 0 32px; font-size: 17px; }
+
+/* ---------- Seções ---------- */
+.nl-section { position: relative; padding: clamp(96px, 11vw, 148px) 0; }
+.nl-head { display: grid; grid-template-columns: minmax(0, 1.1fr) minmax(0, .9fr); gap: 22px 72px; align-items: end; margin-bottom: clamp(44px, 5vw, 64px); }
+.nl-h2 { color: var(--tinta); font: 800 clamp(34px, 4.3vw, 58px)/1.05 var(--fd); letter-spacing: -.042em; text-wrap: balance; }
+.nl-head p, .nl-lede { max-width: 520px; color: var(--texto); font-size: 17.5px; line-height: 1.7; }
+.nl-dark { background: var(--roxo); color: rgba(255,255,255,.72); }
+.nl-dark .nl-h2 { color: #fff; }
+.nl-dark .nl-head p, .nl-dark .nl-lede { color: rgba(255,255,255,.68); }
+
+/* Etiquetas de área do direito */
+.nl-area { display: inline-flex; align-items: center; gap: 5px; padding: 3px 9px; border-radius: 999px; font-size: 12px; font-weight: 700; white-space: nowrap; }
+.nl-area--trab { background: var(--a-trab-bg); color: var(--a-trab); }
+.nl-area--fam  { background: var(--a-fam-bg);  color: var(--a-fam); }
+.nl-area--civ  { background: var(--a-civ-bg);  color: var(--a-civ); }
+.nl-area--emp  { background: var(--a-emp-bg);  color: var(--a-emp); }
+.nl-area--trib { background: var(--a-trib-bg); color: var(--a-trib); }
+
+/* ---------- Hero ---------- */
+.nl-hero { position: relative; isolation: isolate; padding: 132px 0 96px; background: var(--papel); overflow: hidden; }
+.nl-hero::before { content: ""; position: absolute; inset: 0; z-index: -1; background:
+  radial-gradient(50% 60% at 88% 0%, rgba(117,71,239,.16) 0%, transparent 70%),
+  radial-gradient(40% 50% at 0% 30%, rgba(117,71,239,.07) 0%, transparent 70%),
+  linear-gradient(rgba(117,71,239,.05) 1px, transparent 1px) 0 0 / 100% 56px,
+  linear-gradient(90deg, rgba(117,71,239,.05) 1px, transparent 1px) 0 0 / 56px 100%;
+  mask-image: linear-gradient(180deg, #000 0%, #000 55%, transparent 100%); -webkit-mask-image: linear-gradient(180deg, #000 0%, #000 55%, transparent 100%); }
+.nl-hero__in { width: 100%; max-width: calc(553 * var(--k)); margin: 0 auto; padding: 0 calc(66.7 * var(--k)); }
+.nl-hero__top { display: grid; grid-template-columns: minmax(0, 1.25fr) minmax(0, .75fr); gap: 32px 64px; align-items: end; }
+.nl-hero h1 { color: var(--tinta); font: 800 clamp(42px, 5.6vw, 74px)/1.01 var(--fd); letter-spacing: -.05em; text-wrap: balance; }
+.nl-hero h1 .b { color: var(--destaque); }
+.nl-hero__lead { color: var(--texto); font-size: 17.5px; line-height: 1.66; margin-top: 20px; max-width: 560px; }
+.nl-hero__ctas { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 28px; }
+.nl-trust { display: flex; flex-wrap: wrap; gap: 8px 22px; margin: 22px 0 0; padding: 0; list-style: none; color: var(--sutil); font-size: 14px; }
+.nl-trust li { display: flex; align-items: center; gap: 7px; }
+.nl-trust svg.lucide { width: 16px; height: 16px; color: var(--violeta); }
+.nl-rise { animation: nl-rise 1s var(--ease) both; }
+.nl-rise--2 { animation-delay: .08s; } .nl-rise--3 { animation-delay: .18s; } .nl-rise--4 { animation-delay: .3s; }
+
+/* Faixa de credenciais rolante */
+.nl-ticker-wrap { position: relative; margin-top: 64px; overflow: hidden; border: 1px solid var(--linha); border-radius: 20px; background: #fff; box-shadow: var(--sombra); }
+.nl-ticker-wrap::before, .nl-ticker-wrap::after { content: ""; position: absolute; top: 0; bottom: 0; z-index: 2; width: 80px; }
+.nl-ticker-wrap::before { left: 0; background: linear-gradient(90deg, #fff, transparent); }
+.nl-ticker-wrap::after  { right: 0; background: linear-gradient(270deg, #fff, transparent); }
+.nl-ticker { display: flex; gap: 0; padding: 18px 0; animation: nl-tick 30s linear infinite; }
+.nl-ticker:hover { animation-play-state: paused; }
+.nl-tick-item { display: flex; align-items: center; gap: 8px; padding: 0 28px; border-right: 1px solid var(--linha); color: var(--sutil); font-size: 14px; font-weight: 700; white-space: nowrap; }
+.nl-tick-item svg.lucide { width: 15px; height: 15px; color: var(--verde); flex-shrink: 0; }
+
+/* ---------- Faixa de garantias ---------- */
+.nl-band { padding: 34px 0; background: var(--roxo); }
+.nl-band ul { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 18px 28px; margin: 0; padding: 0; list-style: none; }
+.nl-band li { display: flex; align-items: center; gap: 11px; color: rgba(255,255,255,.84); font-size: 14.5px; font-weight: 600; }
+.nl-band svg.lucide { width: 19px; height: 19px; color: var(--lavanda); }
+
+/* ---------- Steps: 4 passos ---------- */
+.nl-steps-intro { text-align: center; margin-bottom: clamp(48px, 5.5vw, 72px); }
+.nl-steps-intro p { max-width: 580px; margin: 16px auto 0; font-size: 17.5px; line-height: 1.7; }
+
+.nl-stepper { display: grid; gap: 0; }
+.nl-step { display: grid; grid-template-columns: 80px minmax(0, 1fr) minmax(0, 1fr); gap: 0 clamp(32px, 4vw, 64px); align-items: start; padding: clamp(36px, 4vw, 56px) 0; border-top: 1px solid var(--linha); position: relative; }
+.nl-step__num { position: sticky; top: 120px; display: grid; place-items: center; width: 64px; height: 64px; border-radius: 22px; background: var(--lavanda-2); color: var(--violeta-forte); font: 700 22px/1 var(--fd); transition: background-color .3s, color .3s; }
+.nl-step:hover .nl-step__num { background: var(--violeta); color: #fff; }
+.nl-step__body { padding-top: 4px; }
+.nl-step__kicker { display: inline-flex; align-items: center; gap: 6px; margin-bottom: 10px; padding: 4px 11px; border-radius: 999px; background: var(--lavanda-2); color: var(--violeta-forte); font-size: 13px; font-weight: 700; }
+.nl-step h3 { color: var(--tinta); font: 700 clamp(26px, 2.6vw, 36px)/1.1 var(--fd); letter-spacing: -.035em; }
+.nl-step__desc { margin-top: 16px; color: var(--texto); font-size: 17px; line-height: 1.7; }
+.nl-step__feats { display: grid; gap: 10px; margin: 24px 0 0; padding: 0; list-style: none; }
+.nl-step__feats li { display: flex; align-items: flex-start; gap: 10px; color: var(--texto); font-size: 15.5px; line-height: 1.55; }
+.nl-step__feats svg.lucide { width: 18px; height: 18px; margin-top: 2px; color: var(--violeta); flex-shrink: 0; }
+.nl-step__freq { display: inline-flex; align-items: center; gap: 7px; margin-top: 20px; padding: 6px 14px; border-radius: 999px; background: #E3F6EA; color: #11713B; font-size: 13.5px; font-weight: 700; }
+
+/* Maquetes dos passos */
+.nl-step__visual { position: sticky; top: 120px; }
+.nl-mock { border-radius: 22px; background: #fff; box-shadow: var(--sombra), 0 0 0 1px rgba(26,19,56,.05); overflow: hidden; }
+.nl-mock__bar { display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: 14px 18px; background: #FCFBFF; border-bottom: 1px solid var(--linha); }
+.nl-mock__title { display: flex; align-items: center; gap: 8px; color: var(--tinta); font: 600 14px var(--fd); }
+.nl-mock__title svg.lucide { color: var(--violeta); }
+.nl-mock__body { padding: 18px; }
+
+/* Mock passo 1: configuração */
+.nl-setup-form { display: grid; gap: 12px; }
+.nl-setup-row { display: grid; grid-template-columns: 110px minmax(0, 1fr); gap: 0; align-items: center; padding: 10px 14px; border-radius: 14px; background: var(--nevoa); }
+.nl-setup-row label { color: var(--sutil); font-size: 13px; font-weight: 700; }
+.nl-setup-chips { display: flex; flex-wrap: wrap; gap: 6px; }
+.nl-setup-chip { padding: 4px 10px; border: 1px solid var(--linha); border-radius: 999px; background: #fff; color: var(--texto); font-size: 12.5px; font-weight: 600; cursor: pointer; transition: border-color .2s, background-color .2s, color .2s; }
+.nl-setup-chip.is-on { border-color: var(--violeta); background: var(--violeta); color: #fff; }
+.nl-tone-bar { display: flex; align-items: center; gap: 8px; font-size: 13px; }
+.nl-tone-bar span { color: var(--sutil); font-weight: 600; }
+.nl-tone-bar i { flex: 1; height: 6px; border-radius: 99px; background: linear-gradient(90deg, var(--violeta) 0%, var(--lavanda) 100%); position: relative; }
+.nl-tone-bar i::after { content: ""; position: absolute; left: 18%; top: -3px; width: 12px; height: 12px; border-radius: 50%; background: var(--violeta); border: 2px solid #fff; box-shadow: 0 1px 4px rgba(0,0,0,.2); }
+.nl-profile { margin-top: 12px; padding: 12px 14px; border-radius: 14px; border: 1px dashed var(--linha); }
+.nl-profile small { display: block; color: var(--sutil); font-size: 12px; font-weight: 700; margin-bottom: 8px; }
+.nl-profile-row { display: flex; justify-content: space-between; font-size: 13.5px; padding: 3px 0; border-bottom: 1px solid var(--linha); }
+.nl-profile-row:last-child { border-bottom: 0; }
+.nl-profile-row b { color: var(--tinta); font-weight: 700; }
+.nl-drop-zone { margin-top: 10px; display: flex; align-items: center; justify-content: center; gap: 8px; padding: 12px; border: 1.5px dashed var(--linha); border-radius: 14px; color: var(--sutil); font-size: 13px; }
+.nl-drop-zone svg.lucide { color: var(--violeta); }
+
+/* Mock passo 2: pesquisa IA */
+.nl-research { display: grid; gap: 8px; }
+.nl-research__hd { display: flex; align-items: center; justify-content: space-between; gap: 8px; padding: 10px 14px; border-radius: 14px; background: var(--lavanda-2); }
+.nl-research__hd span { display: flex; align-items: center; gap: 7px; color: var(--violeta-forte); font: 700 14px var(--fd); }
+.nl-research__hd span svg.lucide { width: 16px; height: 16px; }
+.nl-timer { display: flex; align-items: center; gap: 5px; padding: 3px 9px; border-radius: 999px; background: var(--violeta); color: #fff; font: 700 13px/1 var(--fd); font-variant-numeric: tabular-nums; }
+.nl-timer svg.lucide { width: 13px; height: 13px; }
+.nl-source { display: grid; grid-template-columns: 40px minmax(0, 1fr) auto; gap: 10px; align-items: center; padding: 10px 12px; border: 1px solid var(--linha); border-radius: 14px; background: #fff; }
+.nl-source__ic { display: grid; place-items: center; width: 40px; height: 40px; border-radius: 12px; background: var(--lavanda-2); color: var(--violeta-forte); font: 700 12px var(--fd); }
+.nl-source b { display: block; color: var(--tinta); font: 700 13.5px var(--fd); }
+.nl-source small { color: var(--sutil); font-size: 12px; }
+.nl-source__status { display: flex; align-items: center; gap: 5px; padding: 3px 8px; border-radius: 999px; font-size: 11.5px; font-weight: 700; white-space: nowrap; }
+.nl-source__status--ok { background: #E3F6EA; color: #11713B; }
+.nl-source__status--run { background: var(--lavanda-2); color: var(--violeta-forte); }
+.nl-draft-badge { display: flex; align-items: center; gap: 9px; margin-top: 4px; padding: 10px 14px; border-radius: 14px; background: #E3F6EA; color: #11713B; font: 700 14px var(--fd); }
+.nl-draft-badge svg.lucide { width: 16px; height: 16px; }
+
+/* Mock passo 3: revisão */
+.nl-editor { display: grid; gap: 0; }
+.nl-editor__hd { display: flex; align-items: center; gap: 10px; padding: 12px 16px; border-bottom: 1px solid var(--linha); }
+.nl-editor__hd svg.lucide { color: var(--violeta); }
+.nl-editor__meta { flex: 1; }
+.nl-editor__meta b { display: block; color: var(--tinta); font: 700 14px var(--fd); }
+.nl-editor__meta small { color: var(--sutil); font-size: 12.5px; }
+.nl-section-card { padding: 12px 16px; border-bottom: 1px solid var(--linha); }
+.nl-section-card:last-child { border-bottom: 0; }
+.nl-section-card__hd { display: flex; align-items: center; justify-content: space-between; gap: 10px; margin-bottom: 8px; }
+.nl-section-card__hd span { color: var(--tinta); font: 600 13.5px var(--fd); }
+.nl-approved { display: flex; align-items: center; gap: 5px; padding: 3px 8px; border-radius: 999px; background: #E3F6EA; color: #11713B; font-size: 12px; font-weight: 700; }
+.nl-approved svg.lucide { width: 13px; height: 13px; }
+.nl-section-card p { color: var(--texto); font-size: 13.5px; line-height: 1.6; }
+.nl-section-card__foot { display: flex; gap: 8px; margin-top: 10px; }
+.nl-action-btn { display: flex; align-items: center; gap: 5px; padding: 5px 11px; border: 1px solid var(--linha); border-radius: 999px; background: #fff; color: var(--tinta); font-size: 12.5px; font-weight: 700; transition: border-color .2s, background-color .2s; cursor: pointer; }
+.nl-action-btn:hover { border-color: var(--lavanda); background: var(--nevoa); }
+.nl-action-btn--ok { border-color: var(--violeta); background: var(--lavanda-2); color: var(--violeta-forte); }
+
+/* Mock passo 4: envio */
+.nl-dispatch { display: grid; gap: 10px; }
+.nl-channels { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px; }
+.nl-channel { display: flex; align-items: center; gap: 8px; padding: 10px 12px; border: 1.5px solid var(--linha); border-radius: 14px; background: #fff; font: 600 14px var(--fd); color: var(--tinta); }
+.nl-channel svg.lucide { width: 16px; height: 16px; color: var(--violeta); }
+.nl-channel.is-on { border-color: var(--violeta); background: var(--lavanda-2); color: var(--violeta-forte); }
+.nl-schedule { display: flex; align-items: center; justify-content: space-between; gap: 8px; padding: 10px 14px; border-radius: 14px; background: var(--nevoa); font-size: 14px; }
+.nl-schedule span { color: var(--tinta); font-weight: 700; }
+.nl-schedule em { display: flex; align-items: center; gap: 5px; padding: 3px 9px; border-radius: 999px; background: #E3F6EA; color: #11713B; font: 700 12.5px var(--fd); font-style: normal; }
+.nl-send-btn { display: flex; align-items: center; justify-content: center; gap: 8px; padding: 12px; border-radius: 14px; background: var(--grad); color: #fff; font: 700 15px var(--fd); cursor: pointer; }
+.nl-metrics { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 8px; }
+.nl-metric { padding: 10px; border: 1px solid var(--linha); border-radius: 14px; text-align: center; background: #fff; }
+.nl-metric dt { color: var(--sutil); font-size: 12px; font-weight: 700; }
+.nl-metric dd { color: var(--tinta); font: 700 20px/1 var(--fd); margin: 4px 0 0; font-variant-numeric: tabular-nums; }
+
+/* ---------- Conteúdo: o que a IA monta ---------- */
+.nl-content-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 18px; }
+.nl-content-card { padding: 24px; border-radius: 22px; border: 1px solid var(--linha); background: #fff; transition: box-shadow .3s var(--ease), border-color .3s; }
+.nl-content-card:hover { border-color: var(--lavanda); box-shadow: 0 20px 48px -30px rgba(117,71,239,.45); }
+.nl-content-card__ic { display: grid; place-items: center; width: 48px; height: 48px; border-radius: 16px; background: var(--lavanda-2); color: var(--violeta-forte); margin-bottom: 16px; }
+.nl-content-card__ic svg.lucide { width: 22px; height: 22px; }
+.nl-content-card h3 { color: var(--tinta); font: 700 18px/1.3 var(--fd); letter-spacing: -.02em; margin-bottom: 8px; }
+.nl-content-card p { font-size: 15px; line-height: 1.65; }
+.nl-content-card__ex { display: flex; align-items: flex-start; gap: 8px; margin-top: 14px; padding: 10px 12px; border-radius: 12px; background: var(--nevoa); }
+.nl-content-card__ex svg.lucide { width: 15px; height: 15px; margin-top: 2px; color: var(--violeta); flex-shrink: 0; }
+.nl-content-card__ex span { font-size: 13.5px; line-height: 1.55; color: var(--texto); }
+
+/* ---------- Canais ---------- */
+.nl-channels-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 20px; }
+.nl-channel-card { padding: 28px; border-radius: 24px; border: 1px solid var(--linha); background: #fff; transition: box-shadow .3s var(--ease), border-color .3s; }
+.nl-channel-card:hover { border-color: var(--lavanda); box-shadow: 0 24px 56px -32px rgba(117,71,239,.5); }
+.nl-channel-card__hd { display: flex; align-items: center; gap: 14px; margin-bottom: 14px; }
+.nl-channel-card__ic { display: grid; place-items: center; width: 52px; height: 52px; border-radius: 18px; flex-shrink: 0; }
+.nl-channel-card__ic--email { background: #E3ECFE; color: #1D4ED8; }
+.nl-channel-card__ic--wa { background: #DCFCE7; color: #15803D; }
+.nl-channel-card__ic--pdf { background: #FDECEC; color: #B91C1C; }
+.nl-channel-card__ic--li { background: #DBEAFE; color: #1E40AF; }
+.nl-channel-card__ic svg.lucide { width: 24px; height: 24px; }
+.nl-channel-card h3 { color: var(--tinta); font: 700 19px/1.2 var(--fd); letter-spacing: -.02em; }
+.nl-channel-card p { color: var(--texto); font-size: 15.5px; line-height: 1.65; }
+.nl-channel-card__badge { display: inline-flex; align-items: center; gap: 6px; margin-top: 14px; padding: 5px 12px; border-radius: 999px; background: var(--nevoa); color: var(--violeta-forte); font-size: 13px; font-weight: 700; }
+.nl-channel-card__badge svg.lucide { width: 14px; height: 14px; }
+
+/* ---------- FAQ ---------- */
+.nl-faq { display: grid; grid-template-columns: minmax(0, .8fr) minmax(0, 1.2fr); gap: clamp(32px, 6vw, 96px); align-items: start; }
+.nl-faq__side p { margin-top: 20px; font-size: 16.5px; line-height: 1.7; }
+.nl-faq__side a { color: var(--violeta-forte); font-weight: 700; text-decoration: underline; text-underline-offset: 3px; }
+.nl-qs { margin: 0; padding: 0; list-style: none; border-top: 1px solid var(--linha); }
+.nl-q { border-bottom: 1px solid var(--linha); }
+.nl-q__btn { display: grid; grid-template-columns: minmax(0, 1fr) 32px; gap: 18px; align-items: center; width: 100%; padding: 22px 0; color: var(--tinta); font: 600 clamp(17px, 1.6vw, 19px)/1.4 var(--fd); text-align: left; }
+.nl-q__btn span:last-child { display: grid; place-items: center; width: 32px; height: 32px; border-radius: 50%; background: var(--nevoa); color: var(--violeta-forte); transition: transform .35s var(--ease), background-color .25s, color .25s; }
+.nl-q__btn[aria-expanded="true"] span:last-child { background: var(--violeta); color: #fff; transform: rotate(45deg); }
+.nl-q__body { display: grid; grid-template-rows: 0fr; transition: grid-template-rows .4s var(--ease); }
+.nl-q__body > div { min-height: 0; overflow: hidden; }
+.nl-q.is-open .nl-q__body { grid-template-rows: 1fr; }
+.nl-q__body p { max-width: 640px; padding: 0 50px 24px 0; font-size: 16px; line-height: 1.7; }
+
+/* ---------- CTA Final ---------- */
+.nl-cta { overflow: hidden; background: radial-gradient(55% 70% at 100% 0%, rgba(117,71,239,.32) 0%, transparent 65%), radial-gradient(40% 50% at 0% 100%, rgba(117,71,239,.2) 0%, transparent 70%), var(--roxo); }
+.nl-cta__grid { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 560px); gap: clamp(40px, 6vw, 96px); align-items: start; }
+.nl-cta .nl-h2 { font-size: clamp(36px, 4.4vw, 58px); }
+.nl-cta .nl-lede { margin-top: 22px; }
+.nl-checklist { display: grid; gap: 14px; margin: 34px 0 0; padding: 0; list-style: none; }
+.nl-checklist li { display: flex; align-items: center; gap: 12px; color: rgba(255,255,255,.86); font-size: 16px; }
+.nl-checklist svg.lucide { width: 28px; height: 28px; padding: 6px; border-radius: 50%; background: rgba(205,189,255,.14); color: var(--lavanda); }
+.nl-seals { display: flex; flex-wrap: wrap; gap: 10px; margin: 34px 0 0; padding: 0; list-style: none; }
+.nl-seals li { display: inline-flex; align-items: center; gap: 7px; padding: 7px 13px; border: 1px solid rgba(255,255,255,.12); border-radius: 999px; color: rgba(255,255,255,.82); font-size: 13.5px; font-weight: 700; }
+.nl-seals svg.lucide { width: 15px; height: 15px; color: var(--lavanda); }
+.nl-form-card { padding: 34px; border-radius: 30px; background: #fff; color: var(--texto); box-shadow: 0 50px 100px -40px rgba(0,0,0,.7); }
+.nl-form-card h3 { color: var(--tinta); font: 600 26px/1.2 var(--fd); letter-spacing: -.03em; }
+.nl-form-card > div > p { margin-top: 8px; font-size: 15px; line-height: 1.6; }
+.nl-form { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-top: 24px; }
+.nl-form .ct-full { grid-column: 1 / -1; }
+.lp-field > label:not(.ct-check) { display: block; margin-bottom: 7px; color: var(--tinta); font-size: 14px; font-weight: 700; }
+.lp-field > label i { color: var(--sutil); font-style: normal; font-weight: 500; }
+.nl-input { width: 100%; height: 50px; padding: 0 16px; border: 1px solid var(--linha); border-radius: 14px; background: var(--papel); color: var(--tinta); font-size: 15.5px; transition: border-color .2s, box-shadow .2s, background-color .2s; }
+.nl-input::placeholder { color: #706989; }
+.nl-input:hover { border-color: #D3CBEA; }
+.nl-input:focus { border-color: var(--violeta); background: #fff; outline: none; box-shadow: 0 0 0 4px rgba(117,71,239,.14); }
+textarea.nl-input { height: 96px; padding: 13px 16px; line-height: 1.5; resize: vertical; }
+.lp-field__error { display: none; margin-top: 6px; color: #C62F35; font-size: 13px; font-weight: 600; }
+.lp-field.is-error .nl-input { border-color: #E5484D; background: #FFF7F7; }
+.lp-field.is-error .lp-field__error { display: block; }
+.lp-field .ct-check { display: flex; align-items: flex-start; gap: 10px; margin: 0; color: var(--texto); font-size: 14px; font-weight: 500; line-height: 1.5; cursor: pointer; }
+.ct-check input { position: absolute; width: 1px; height: 1px; opacity: 0; }
+.ct-box { display: grid; place-items: center; width: 22px; height: 22px; flex: none; margin-top: 1px; border: 1.5px solid #CFC7E6; border-radius: 7px; background: #fff; color: transparent; transition: background-color .2s, border-color .2s, color .2s; }
+.ct-box svg.lucide { width: 14px; height: 14px; stroke-width: 3; }
+.ct-check input:checked + .ct-box { border-color: var(--violeta); background: var(--violeta); color: #fff; }
+.ct-check input:focus-visible + .ct-box { outline: 2.5px solid var(--violeta); outline-offset: 2px; }
+.lp-field.is-error .ct-box { border-color: #E5484D; }
+.lp-hp { position: absolute; left: -9999px; width: 1px; height: 1px; opacity: 0; }
+.lp-submit { display: flex; align-items: center; justify-content: center; gap: 10px; height: 56px; border-radius: 999px; background: var(--grad); color: #fff; font-size: 16px; font-weight: 700; box-shadow: 0 16px 34px -16px rgba(117,71,239,.95); transition: background-color .2s; cursor: pointer; }
+.lp-submit:hover { background: var(--grad-hover); }
+.lp-submit:disabled { opacity: .75; cursor: progress; }
+.lp-submit svg.lucide { width: 18px; height: 18px; }
+.lp-spinner { width: 18px; height: 18px; border: 2.5px solid rgba(255,255,255,.4); border-top-color: #fff; border-radius: 50%; animation: nl-spin .8s linear infinite; }
+.lp-alert { display: none; padding: 12px 14px; border-radius: 12px; background: #FDECEC; color: #A3262B; font-size: 14px; font-weight: 600; }
+.lp-alert.is-visible { display: block; }
+.ct-success { display: none; padding: 20px 0; text-align: center; }
+.ct-success.is-visible { display: block; animation: nl-pop .5s var(--ease) both; }
+.ct-success__ic { display: grid; place-items: center; width: 64px; height: 64px; margin: 0 auto 18px; border-radius: 50%; background: #E3F6EA; color: var(--verde); }
+.ct-success__ic svg.lucide { width: 30px; height: 30px; stroke-width: 2.6; }
+.ct-success h3 { outline: none; color: var(--tinta); font: 700 26px var(--fd); }
+.ct-success p { margin-top: 10px; font-size: 15.5px; line-height: 1.6; }
+.ct-again { margin-top: 18px; color: var(--violeta-forte); font-size: 14.5px; font-weight: 700; text-decoration: underline; text-underline-offset: 3px; cursor: pointer; }
+
+/* ---------- Rodapé ---------- */
+.jf { position: relative; overflow: hidden; padding: 72px 0 28px; background: #1E0C45; color: #A99BD0; }
+.jf__glow { position: absolute; inset: 0; pointer-events: none; background: radial-gradient(40% 60% at 0% 0%, rgba(139,92,246,.18), transparent 70%), radial-gradient(35% 50% at 100% 100%, rgba(117,71,239,.14), transparent 70%); }
+.jf .nl-wrap { position: relative; }
+.jf__top { display: grid; grid-template-columns: minmax(0, 1.3fr) minmax(0, 2fr); gap: 64px; padding-bottom: 48px; border-bottom: 1px solid rgba(255,255,255,.08); }
+.jf__logo { display: inline-block; margin-bottom: 20px; }
+.jf__logo img { width: auto; height: 32px; }
+.jf__tag { max-width: 380px; margin: 0 0 20px; color: #B8AAD9; font-size: 15px; line-height: 1.65; }
+.jf__seals { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 22px; }
+.jf__seals span { display: inline-flex; align-items: center; gap: 6px; padding: 5px 11px; border: 1px solid rgba(255,255,255,.1); border-radius: 999px; background: rgba(255,255,255,.06); color: #E3DAFA; font-size: 12px; font-weight: 700; }
+.jf__seals svg.lucide { width: 13px; height: 13px; color: #A98BFF; }
+.jf__social { display: flex; gap: 10px; }
+.jf__social a { display: flex; align-items: center; justify-content: center; width: 40px; height: 40px; border: 1px solid rgba(255,255,255,.1); border-radius: 12px; background: rgba(255,255,255,.06); color: #E3DAFA; transition: background-color .25s, color .25s, transform .25s, border-color .25s; }
+.jf__social a svg { width: 18px; height: 18px; }
+.jf__social a:hover { border-color: var(--violeta); background: var(--violeta); color: #fff; transform: translateY(-3px); }
+.jf__links { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 32px; }
+.jf__h { margin: 0 0 16px; color: #fff; font: 700 15px var(--fd); }
+.jf__col { display: flex; flex-direction: column; align-items: flex-start; gap: 11px; }
+.jf__col a { position: relative; color: #B8AAD9; font-size: 14.5px; transition: color .2s; }
+.jf__col a::after { content: ""; position: absolute; right: 0; bottom: -3px; left: 0; height: 1.5px; border-radius: 2px; background: #A98BFF; transform: scaleX(0); transform-origin: left; transition: transform .3s var(--ease); }
+.jf__col a:hover { color: #fff; }
+.jf__col a:hover::after { transform: scaleX(1); }
+.jf__bottom { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 16px; padding-top: 24px; color: #8E80B8; font-size: 13px; }
+.jf__made { display: inline-flex; align-items: center; gap: 8px; }
+.jf__made i { width: 7px; height: 7px; border-radius: 50%; background: #22C55E; box-shadow: 0 0 0 4px rgba(34,197,94,.15); }
+.jf__up { display: inline-flex; align-items: center; gap: 6px; padding: 7px 12px; border: 1px solid rgba(255,255,255,.12); border-radius: 999px; color: #E3DAFA; font-weight: 700; transition: background-color .25s, border-color .25s; }
+.jf__up svg.lucide { width: 14px; height: 14px; }
+.jf__up:hover { border-color: rgba(255,255,255,.25); background: rgba(255,255,255,.08); color: #fff; }
+.jf a:focus-visible { outline: 2.5px solid #C9B5FF; outline-offset: 3px; }
+
+/* ---------- Animações ---------- */
+@keyframes nl-rise { from { opacity: 0; transform: translateY(22px); } to { opacity: 1; transform: none; } }
+@keyframes nl-pop  { from { opacity: 0; transform: translateY(8px) scale(.98); } to { opacity: 1; transform: none; } }
+@keyframes nl-spin { to { transform: rotate(360deg); } }
+@keyframes nl-tick { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+@keyframes nl-blink { 0%, 100% { opacity: 1; } 50% { opacity: .3; } }
+.nl-cursor { display: inline-block; width: 2px; height: 1em; background: var(--violeta); border-radius: 1px; margin-left: 2px; animation: nl-blink 1s infinite; vertical-align: text-bottom; }
+
+/* ---------- WhatsApp flutuante ---------- */
+.lp-wa { position: fixed; bottom: 24px; right: 24px; z-index: 900; display: flex; align-items: center; gap: 10px; text-decoration: none; transition: transform .35s var(--ease); }
+.lp-wa.is-away { transform: translateX(calc(100% + 36px)); }
+.lp-wa__label { padding: 8px 16px; border-radius: 999px; background: var(--tinta); color: #fff; font: 600 14px var(--fb); white-space: nowrap; box-shadow: 0 8px 20px -8px rgba(0,0,0,.4); opacity: 0; transform: translateX(10px); transition: opacity .3s, transform .3s var(--ease); pointer-events: none; }
+.lp-wa:hover .lp-wa__label { opacity: 1; transform: none; }
+.lp-wa__btn { position: relative; display: flex; align-items: center; justify-content: center; width: 56px; height: 56px; border-radius: 50%; background: #25D366; color: #fff; box-shadow: 0 8px 24px -8px rgba(37,211,102,.7); }
+.lp-wa__ring { position: absolute; inset: 0; border-radius: 50%; background: #25D366; animation: cr-ping 2.8s var(--ease) infinite; opacity: 0; }
+@keyframes cr-ping { 0% { transform: scale(.9); opacity: .5; } 80%, 100% { transform: scale(1.8); opacity: 0; } }
+
+/* ---------- Responsivo ---------- */
+@media (max-width: 1100px) {
+  .nl-hero__top { grid-template-columns: minmax(0, 1fr); }
+  .nl-band ul { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .nl-content-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .nl-step { grid-template-columns: 64px minmax(0, 1fr); }
+  .nl-step__visual { grid-column: 2; grid-row: 2; position: static; }
+  .nl-step__body { grid-column: 2; }
+}
+@media (max-width: 900px) {
+  .nl-wrap { padding: 0 24px; }
+  .nl-hero__in { padding: 0 28px; }
+  .nl-hero { padding: 120px 0 72px; }
+  .nl-head { grid-template-columns: minmax(0, 1fr); }
+  .nl-channels-grid { grid-template-columns: minmax(0, 1fr); }
+  .nl-faq { grid-template-columns: minmax(0, 1fr); }
+  .nl-cta__grid { grid-template-columns: minmax(0, 1fr); }
+  .jf__top { grid-template-columns: 1fr; gap: 40px; }
+  .nl-step { grid-template-columns: minmax(0, 1fr); gap: 20px; }
+  .nl-step__num { position: static; }
+  .nl-step__visual { grid-column: 1; }
+}
+@media (max-width: 600px) {
+  .nl-wrap { padding: 0 16px; }
+  .nl-hero__in { padding: 0 16px; }
+  .nl-hero h1 { font-size: clamp(36px, 10.4vw, 46px); }
+  .nl-hero__lead { font-size: 16.5px; }
+  .nl-hero__ctas .nl-btn { flex: 1 1 100%; white-space: normal; text-align: center; }
+  .nl-band ul { grid-template-columns: minmax(0, 1fr); gap: 14px; }
+  .nl-section { padding: 80px 0; }
+  .nl-h2 { font-size: clamp(30px, 8.4vw, 40px); }
+  .nl-content-grid { grid-template-columns: minmax(0, 1fr); }
+  .nl-form { grid-template-columns: 1fr; }
+  .nl-form-card { padding: 24px 18px; border-radius: 24px; }
+  .nl-q__body p { padding-right: 0; }
+  .jf__links { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 28px 20px; }
+  .jf__bottom { flex-direction: column; align-items: flex-start; gap: 12px; }
+  .nl-channels { grid-template-columns: minmax(0, 1fr); }
+}
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; }
+}
+
+/* Área de toque mínima */
+.jf__up, .jf__logo { position: relative; }
+.jf__up::before, .jf__logo::before { content: ""; position: absolute; left: 50%; top: 50%; width: max(100%, 44px); height: max(100%, 44px); transform: translate(-50%,-50%); }
+.jf__social a { width: 44px; height: 44px; }
+</style>
+</head>
+<body>
+<a class="lp-skip" href="#topo" style="position:absolute;left:-9999px;top:6px;z-index:9999;padding:8px 16px;background:var(--violeta);color:#fff;border-radius:8px;font-weight:700;transition:left .2s">Ir para o conteúdo</a>
+
+<div class="lp-header-wrap">
+  <header class="lp-header" id="lp-header">
+    <a href="/" class="lp-header__logo" aria-label="Juris8, página inicial"><img src="/assets/brand/logo-juris8.png" alt="Juris8" width="113" height="29"></a>
+    <nav class="lp-nav" aria-label="Navegação da página">
+      <span class="lp-nav__ind" aria-hidden="true"></span>
+      <a href="#como-funciona">Como funciona</a>
+      <a href="#conteudo">Conteúdo</a>
+      <a href="#canais">Canais</a>
+      <a href="#faq">FAQ</a>
+    </nav>
+    <a href="#cta" class="lp-header__cta" data-track="header_cta_click" data-track-ctx="newsletter_gerar">
+      <span class="lp-cta-long">Gerar minha 1ª newsletter</span>
+      <span class="lp-cta-short">Gerar grátis</span>
+      <span class="lp-header__cta-tile" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7"/><path d="M8 7h9v9"/></svg></span>
+    </a>
+  </header>
+</div>
+
+<main id="topo" tabindex="-1">
+
+  <!-- ============ HERO ============ -->
+  <section class="nl-hero" aria-labelledby="nl-title">
+    <div class="nl-hero__in">
+      <div class="nl-hero__top">
+        <div>
+          <h1 id="nl-title">
+            <span class="nl-rise">Sua newsletter mensal,</span>
+            <span class="nl-rise nl-rise--2" style="display:block">pronta para você</span>
+            <span class="nl-rise nl-rise--3 b" style="display:block">revisar em 5 minutos.</span>
+          </h1>
+          <p class="nl-hero__lead nl-rise nl-rise--4">A IA pesquisa novidades jurídicas relevantes para os seus clientes e escreve no seu tom. Você revisa, ajusta o que quiser e dispara — sempre como responsável editorial, em 5 minutos por mês.</p>
+          <div class="nl-hero__ctas nl-rise nl-rise--4">
+            <a href="#cta" class="nl-btn nl-btn--primary nl-btn--lg" data-track="hero_cta_click" data-track-ctx="newsletter_gerar">Gerar minha 1ª newsletter grátis <i data-lucide="arrow-right"></i></a>
+          </div>
+          <ul class="nl-trust nl-rise nl-rise--4">
+            <li><i data-lucide="check"></i>Sem cartão de crédito</li>
+            <li><i data-lucide="check"></i>Gerada em ~4 minutos</li>
+            <li><i data-lucide="check"></i>Você aprova antes de enviar</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Ticker de credenciais -->
+      <div class="nl-ticker-wrap nl-rise nl-rise--4" aria-hidden="true">
+        <div class="nl-ticker" id="nl-ticker">
+          <span class="nl-tick-item"><i data-lucide="check-circle"></i>Sem cartão de crédito</span>
+          <span class="nl-tick-item"><i data-lucide="check-circle"></i>Gerada em ~4 minutos</span>
+          <span class="nl-tick-item"><i data-lucide="check-circle"></i>Revisão em menos de 5 min</span>
+          <span class="nl-tick-item"><i data-lucide="check-circle"></i>Conforme OAB · Provimento 205/2021</span>
+          <span class="nl-tick-item"><i data-lucide="check-circle"></i>LGPD · dados criptografados</span>
+          <span class="nl-tick-item"><i data-lucide="check-circle"></i>WhatsApp API Oficial Meta</span>
+          <span class="nl-tick-item"><i data-lucide="check-circle"></i>STJ · STF · TRTs monitorados pela IA</span>
+          <span class="nl-tick-item"><i data-lucide="check-circle"></i>E-mail · WhatsApp · PDF · LinkedIn</span>
+          <!-- duplicata para loop contínuo -->
+          <span class="nl-tick-item"><i data-lucide="check-circle"></i>Sem cartão de crédito</span>
+          <span class="nl-tick-item"><i data-lucide="check-circle"></i>Gerada em ~4 minutos</span>
+          <span class="nl-tick-item"><i data-lucide="check-circle"></i>Revisão em menos de 5 min</span>
+          <span class="nl-tick-item"><i data-lucide="check-circle"></i>Conforme OAB · Provimento 205/2021</span>
+          <span class="nl-tick-item"><i data-lucide="check-circle"></i>LGPD · dados criptografados</span>
+          <span class="nl-tick-item"><i data-lucide="check-circle"></i>WhatsApp API Oficial Meta</span>
+          <span class="nl-tick-item"><i data-lucide="check-circle"></i>STJ · STF · TRTs monitorados pela IA</span>
+          <span class="nl-tick-item"><i data-lucide="check-circle"></i>E-mail · WhatsApp · PDF · LinkedIn</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ FAIXA ============ -->
+  <div class="nl-band" aria-hidden="true">
+    <div class="nl-wrap">
+      <ul>
+        <li><i data-lucide="shield-check"></i>Conforme OAB · Prov. 205/2021</li>
+        <li><i data-lucide="lock"></i>LGPD · dados criptografados</li>
+        <li><i data-lucide="message-circle"></i>WhatsApp API Oficial Meta</li>
+        <li><i data-lucide="scale"></i>STJ · STF · TRTs monitorados</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- ============ 4 PASSOS ============ -->
+  <section class="nl-section" id="como-funciona" aria-labelledby="steps-title">
+    <div class="nl-wrap">
+      <div class="nl-steps-intro">
+        <h2 class="nl-h2" id="steps-title">4 passos. Sem redator. Sem agência.</h2>
+        <p>Você só aparece no passo 3 — revisar e aprovar. A IA cuida do resto, e tudo leva menos de 5 minutos por mês.</p>
+      </div>
+
+      <div class="nl-stepper">
+
+        <!-- PASSO 1 -->
+        <article class="nl-step">
+          <div class="nl-step__num" aria-hidden="true">1</div>
+          <div class="nl-step__body">
+            <div class="nl-step__kicker"><i data-lucide="settings"></i>Passo 01</div>
+            <h3>Você conta</h3>
+            <p class="nl-step__desc">Cinco perguntas rápidas definem como a IA escreve para o seu escritório. Uma vez só.</p>
+            <ul class="nl-step__feats">
+              <li><i data-lucide="check"></i>Área, clientes, tom, frequência e canais</li>
+              <li><i data-lucide="check"></i>Suba textos seus — a IA aprende o seu estilo</li>
+              <li><i data-lucide="check"></i>Configuração única. Depois é só revisar.</li>
+            </ul>
+            <span class="nl-step__freq"><i data-lucide="repeat"></i>Configurar escritório · 1 vez</span>
+          </div>
+          <div class="nl-step__visual">
+            <div class="nl-mock">
+              <div class="nl-mock__bar">
+                <span class="nl-mock__title"><i data-lucide="sliders-horizontal"></i>Configurar escritório</span>
+                <span style="color:var(--sutil);font-size:12.5px;font-weight:700">1 de 5</span>
+              </div>
+              <div class="nl-mock__body">
+                <div class="nl-setup-form">
+                  <div class="nl-setup-row">
+                    <label>Área de atuação</label>
+                    <div class="nl-setup-chips">
+                      <button class="nl-setup-chip is-on" type="button">Trabalhista</button>
+                      <button class="nl-setup-chip" type="button">Família</button>
+                      <button class="nl-setup-chip" type="button">Tributário</button>
+                      <button class="nl-setup-chip" type="button">Cível</button>
+                      <button class="nl-setup-chip" type="button">Societário</button>
+                    </div>
+                  </div>
+                  <div class="nl-setup-row">
+                    <label>Tom de voz</label>
+                    <div class="nl-tone-bar">
+                      <span>Formal</span>
+                      <i></i>
+                      <span>Próximo</span>
+                    </div>
+                  </div>
+                  <div class="nl-setup-row">
+                    <label>Frequência</label>
+                    <div class="nl-setup-chips">
+                      <button class="nl-setup-chip is-on" type="button">Mensal</button>
+                      <button class="nl-setup-chip" type="button">Quinzenal</button>
+                    </div>
+                  </div>
+                  <div class="nl-setup-row">
+                    <label>Canais</label>
+                    <div class="nl-setup-chips">
+                      <button class="nl-setup-chip is-on" type="button">E-mail</button>
+                      <button class="nl-setup-chip is-on" type="button">WhatsApp</button>
+                      <button class="nl-setup-chip" type="button">PDF</button>
+                      <button class="nl-setup-chip" type="button">Instagram</button>
+                      <button class="nl-setup-chip" type="button">LinkedIn</button>
+                    </div>
+                  </div>
+                  <div class="nl-profile">
+                    <small>Seu perfil</small>
+                    <div class="nl-profile-row"><span>Área</span><b>Trabalhista</b></div>
+                    <div class="nl-profile-row"><span>Tom</span><b>—</b></div>
+                    <div class="nl-profile-row"><span>Envio</span><b>—</b></div>
+                    <div class="nl-profile-row"><span>Canais</span><b>—</b></div>
+                  </div>
+                  <div class="nl-drop-zone"><i data-lucide="upload-cloud"></i><span>+ Seu estilo · Arraste textos · PDF, DOCX</span></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- PASSO 2 -->
+        <article class="nl-step">
+          <div class="nl-step__num" aria-hidden="true">2</div>
+          <div class="nl-step__body">
+            <div class="nl-step__kicker"><i data-lucide="sparkles"></i>Passo 02</div>
+            <h3>IA escreve</h3>
+            <p class="nl-step__desc">A IA pesquisa as novidades da sua área, seleciona o que importa para os seus clientes e escreve a edição completa.</p>
+            <ul class="nl-step__feats">
+              <li><i data-lucide="check"></i>Monitora STJ, STF, TST e publicações do mês</li>
+              <li><i data-lucide="check"></i>Filtra só o que é relevante para o seu escritório</li>
+              <li><i data-lucide="check"></i>Draft completo em cerca de 4 minutos</li>
+            </ul>
+            <span class="nl-step__freq"><i data-lucide="clock"></i>Pesquisando fontes · ~4:00</span>
+          </div>
+          <div class="nl-step__visual">
+            <div class="nl-mock">
+              <div class="nl-mock__bar">
+                <span class="nl-mock__title"><i data-lucide="search"></i>Pesquisando fontes</span>
+                <div class="nl-timer"><i data-lucide="clock"></i><span id="nl-timer-display">~4:00</span></div>
+              </div>
+              <div class="nl-mock__body">
+                <div class="nl-research">
+                  <div class="nl-research__hd">
+                    <span><i data-lucide="sparkles"></i>IA monitorando fontes jurídicas</span>
+                  </div>
+                  <div class="nl-source">
+                    <div class="nl-source__ic">STJ</div>
+                    <div><b>Superior Tribunal de Justiça</b><small>Acórdãos · jun/26 · 84 itens</small></div>
+                    <span class="nl-source__status nl-source__status--ok"><i data-lucide="check"></i>OK</span>
+                  </div>
+                  <div class="nl-source">
+                    <div class="nl-source__ic">TST</div>
+                    <div><b>Trib. Superior do Trabalho</b><small>Temas e súmulas · 9 itens</small></div>
+                    <span class="nl-source__status nl-source__status--ok"><i data-lucide="check"></i>OK</span>
+                  </div>
+                  <div class="nl-source">
+                    <div class="nl-source__ic">STF</div>
+                    <div><b>Supremo Tribunal Federal</b><small>Decisões plenárias</small></div>
+                    <span class="nl-source__status nl-source__status--run"><i data-lucide="loader"></i>Processando</span>
+                  </div>
+                  <div class="nl-source">
+                    <div class="nl-source__ic">DOC</div>
+                    <div><b>Publicações jurídicas</b><small>Edições de mai/26</small></div>
+                    <span class="nl-source__status nl-source__status--run"><i data-lucide="loader"></i>Processando</span>
+                  </div>
+                  <div class="nl-draft-badge"><i data-lucide="file-text"></i>Draft pronto · 5 seções escritas no seu tom</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- PASSO 3 -->
+        <article class="nl-step">
+          <div class="nl-step__num" aria-hidden="true">3</div>
+          <div class="nl-step__body">
+            <div class="nl-step__kicker"><i data-lucide="pen-line"></i>Passo 03</div>
+            <h3>Você revisa</h3>
+            <p class="nl-step__desc">Lê, edita o que quiser — ou aprova direto. A maioria dos advogados muda menos de 10% do conteúdo.</p>
+            <ul class="nl-step__feats">
+              <li><i data-lucide="check"></i>Edite um parágrafo ou peça outra versão à IA</li>
+              <li><i data-lucide="check"></i>Aprove seção por seção, ou a edição inteira</li>
+              <li><i data-lucide="check"></i>Você é sempre o responsável editorial</li>
+            </ul>
+            <span class="nl-step__freq"><i data-lucide="clock"></i>Revisão em menos de 5 min</span>
+          </div>
+          <div class="nl-step__visual">
+            <div class="nl-mock">
+              <div class="nl-mock__bar">
+                <span class="nl-mock__title"><i data-lucide="file-text"></i>Rascunho</span>
+                <span style="color:var(--sutil);font-size:12.5px;font-weight:700">Newsletter · Boletim</span>
+              </div>
+              <div class="nl-editor">
+                <div class="nl-editor__hd">
+                  <i data-lucide="newspaper"></i>
+                  <div class="nl-editor__meta">
+                    <b>Novidades Jurídicas</b>
+                    <small>Jun 2026 · 3 seções · 4 min de leitura</small>
+                  </div>
+                </div>
+                <div class="nl-section-card">
+                  <div class="nl-section-card__hd">
+                    <span>Mudanças regulatórias</span>
+                    <span class="nl-approved"><i data-lucide="check"></i>Aprovado</span>
+                  </div>
+                  <p>O CNJ publicou a Resolução 587/2026 alterando prazos de manifestação em processos trabalhistas. A medida entra em vigor em 1º de julho.</p>
+                </div>
+                <div class="nl-section-card">
+                  <div class="nl-section-card__hd">
+                    <span>Decisões de tribunais</span>
+                    <span class="nl-approved"><i data-lucide="check"></i>Aprovado</span>
+                  </div>
+                  <p>O STJ confirmou entendimento sobre prescrição intercorrente em execuções fiscais.</p>
+                  <div class="nl-section-card__foot">
+                    <button class="nl-action-btn" type="button"><i data-lucide="refresh-cw"></i>Gerar novamente</button>
+                    <button class="nl-action-btn nl-action-btn--ok" type="button"><i data-lucide="check"></i>Aprovar</button>
+                  </div>
+                </div>
+                <div class="nl-section-card">
+                  <div class="nl-section-card__hd">
+                    <span>Dica prática do mês</span>
+                    <span class="nl-approved"><i data-lucide="check"></i>Aprovado</span>
+                  </div>
+                  <p>Ao redigir contestação trabalhista, antecipe a tese de prescrição quinquenal logo na preliminar.</p>
+                  <div class="nl-section-card__foot">
+                    <button class="nl-action-btn" type="button"><i data-lucide="refresh-cw"></i>Gerar novamente</button>
+                    <button class="nl-action-btn nl-action-btn--ok" type="button"><i data-lucide="check"></i>Aprovar</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- PASSO 4 -->
+        <article class="nl-step">
+          <div class="nl-step__num" aria-hidden="true">4</div>
+          <div class="nl-step__body">
+            <div class="nl-step__kicker"><i data-lucide="send"></i>Passo 04</div>
+            <h3>Dispara</h3>
+            <p class="nl-step__desc">Escolha os canais, agende o envio e acompanhe os resultados — tudo num painel só.</p>
+            <ul class="nl-step__feats">
+              <li><i data-lucide="check"></i>E-mail, WhatsApp, PDF e LinkedIn — juntos ou não</li>
+              <li><i data-lucide="check"></i>Agende para o melhor dia e horário</li>
+              <li><i data-lucide="check"></i>Acompanhe abertura, leitura e cliques</li>
+            </ul>
+          </div>
+          <div class="nl-step__visual">
+            <div class="nl-mock">
+              <div class="nl-mock__bar">
+                <span class="nl-mock__title"><i data-lucide="send"></i>Enviar edição</span>
+                <span style="display:flex;align-items:center;gap:5px;padding:3px 9px;border-radius:999px;background:#E3F6EA;color:#11713B;font-size:12.5px;font-weight:700"><i data-lucide="check-circle" style="width:13px;height:13px"></i>Pronta</span>
+              </div>
+              <div class="nl-mock__body">
+                <div class="nl-dispatch">
+                  <div class="nl-channels">
+                    <div class="nl-channel is-on"><i data-lucide="mail"></i>E-mail</div>
+                    <div class="nl-channel is-on"><i data-lucide="message-circle"></i>WhatsApp</div>
+                    <div class="nl-channel"><i data-lucide="file-down"></i>PDF</div>
+                    <div class="nl-channel"><i data-lucide="linkedin"></i>LinkedIn</div>
+                  </div>
+                  <div class="nl-schedule">
+                    <span>Agendar · 1º dia útil · 09:00</span>
+                    <em><i data-lucide="zap" style="width:12px;height:12px"></i>Automático</em>
+                  </div>
+                  <div class="nl-send-btn"><i data-lucide="send"></i>Enviar agora</div>
+                  <div>
+                    <div style="font:600 12px var(--fd);color:var(--sutil);margin-bottom:8px">Última edição</div>
+                    <dl class="nl-metrics">
+                      <div class="nl-metric"><dt>Abertura</dt><dd>0%</dd></div>
+                      <div class="nl-metric"><dt>Leitura</dt><dd>0%</dd></div>
+                      <div class="nl-metric"><dt>Cliques</dt><dd>0%</dd></div>
+                    </dl>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ CONTEÚDO ============ -->
+  <section class="nl-section" id="conteudo" aria-labelledby="content-title" style="background:var(--nevoa)">
+    <div class="nl-wrap">
+      <div class="nl-head">
+        <h2 class="nl-h2" id="content-title">Conteúdo que posiciona. Conteúdo que fideliza.</h2>
+        <p>A IA monta a pauta automaticamente com base na área do seu escritório. Você só aprova.</p>
+      </div>
+
+      <div class="nl-content-grid">
+        <div class="nl-content-card">
+          <div class="nl-content-card__ic"><i data-lucide="file-badge"></i></div>
+          <h3>Mudanças regulatórias</h3>
+          <p>Novas leis, resoluções e portarias relevantes para a área do escritório — explicadas de forma acessível para o cliente.</p>
+          <div class="nl-content-card__ex">
+            <i data-lucide="bookmark"></i>
+            <span><span class="nl-area nl-area--fam">Família</span>&nbsp; Nova lei do divórcio extrajudicial digital, em vigor desde mar/26.</span>
+          </div>
+        </div>
+
+        <div class="nl-content-card">
+          <div class="nl-content-card__ic"><i data-lucide="gavel"></i></div>
+          <h3>Decisões de tribunais</h3>
+          <p>STJ, STF, TRTs — filtrado pelo tema do escritório, com o impacto prático para o cliente final explicado em linguagem simples.</p>
+          <div class="nl-content-card__ex">
+            <i data-lucide="bookmark"></i>
+            <span><span class="nl-area nl-area--trab">Trabalhista</span>&nbsp; TST publicou novo Tema sobre adicional noturno em mai/26.</span>
+          </div>
+        </div>
+
+        <div class="nl-content-card">
+          <div class="nl-content-card__ic"><i data-lucide="star"></i></div>
+          <h3>Caso de destaque</h3>
+          <p>Um caso relevante do mês — narrado com contexto e lição prática, sem expor dados de clientes reais.</p>
+          <div class="nl-content-card__ex">
+            <i data-lucide="bookmark"></i>
+            <span><span class="nl-area nl-area--trib">Tributário</span>&nbsp; STJ reconhece a tese de exclusão do PIS/COFINS da base do IRPJ.</span>
+          </div>
+        </div>
+
+        <div class="nl-content-card">
+          <div class="nl-content-card__ic"><i data-lucide="lightbulb"></i></div>
+          <h3>Dica prática</h3>
+          <p>Um conselho acionável para o cliente naquele mês — documentação, prazos, prevenção de litígios.</p>
+          <div class="nl-content-card__ex">
+            <i data-lucide="bookmark"></i>
+            <span><span class="nl-area nl-area--emp">Empresarial</span>&nbsp; Como adequar contratos de SaaS à LGPD revisada em 2026.</span>
+          </div>
+        </div>
+
+        <div class="nl-content-card">
+          <div class="nl-content-card__ic"><i data-lucide="message-circle-heart"></i></div>
+          <h3>Convite à conversa</h3>
+          <p>Um convite leve para o cliente falar com você — nunca invasivo, sempre contextualizado com o tema da edição.</p>
+          <div class="nl-content-card__ex">
+            <i data-lucide="bookmark"></i>
+            <span style="font-style:italic">"Quer entender se essa mudança impacta o seu caso? Converse com o seu advogado."</span>
+          </div>
+        </div>
+
+        <div class="nl-content-card" style="border-style:dashed;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;background:transparent">
+          <div class="nl-content-card__ic" style="margin:0 auto 14px"><i data-lucide="plus-circle"></i></div>
+          <h3>Seções personalizadas</h3>
+          <p>Adicione seções sob medida para o seu escritório. A IA aprende com o seu estilo a cada edição.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ CANAIS ============ -->
+  <section class="nl-section" id="canais" aria-labelledby="channels-title">
+    <div class="nl-wrap">
+      <div class="nl-head">
+        <h2 class="nl-h2" id="channels-title">Escreva uma vez. Distribua em todo lugar.</h2>
+        <p>A IA adapta o formato para cada canal automaticamente. Você não precisa fazer nada extra.</p>
+      </div>
+
+      <div class="nl-channels-grid">
+        <div class="nl-channel-card">
+          <div class="nl-channel-card__hd">
+            <div class="nl-channel-card__ic nl-channel-card__ic--email"><i data-lucide="mail"></i></div>
+            <h3>E-mail</h3>
+          </div>
+          <p>Integra com Mailchimp e Sendgrid. HTML responsivo gerado automaticamente. Métricas de abertura incluídas.</p>
+          <span class="nl-channel-card__badge"><i data-lucide="bar-chart-2"></i>Métricas de abertura no painel</span>
+        </div>
+
+        <div class="nl-channel-card">
+          <div class="nl-channel-card__hd">
+            <div class="nl-channel-card__ic nl-channel-card__ic--wa"><i data-lucide="message-circle"></i></div>
+            <h3>WhatsApp Broadcast</h3>
+          </div>
+          <p>API Oficial Meta · Mensagem formatada para WhatsApp enviada para toda a lista. Sem risco de banimento.</p>
+          <span class="nl-channel-card__badge"><i data-lucide="users"></i>Entrega individual · sem grupos</span>
+        </div>
+
+        <div class="nl-channel-card">
+          <div class="nl-channel-card__hd">
+            <div class="nl-channel-card__ic nl-channel-card__ic--pdf"><i data-lucide="file-down"></i></div>
+            <h3>PDF profissional</h3>
+          </div>
+          <p>Exporta PDF diagramado, pronto para imprimir ou enviar como anexo. Logomarca do escritório inclusa.</p>
+          <span class="nl-channel-card__badge"><i data-lucide="layout"></i>Layout A4 com identidade visual</span>
+        </div>
+
+        <div class="nl-channel-card">
+          <div class="nl-channel-card__hd">
+            <div class="nl-channel-card__ic nl-channel-card__ic--li"><i data-lucide="linkedin"></i></div>
+            <h3>LinkedIn auto-post</h3>
+          </div>
+          <p>A IA adapta o conteúdo para post no LinkedIn do escritório — tom editorial, hashtags, call to action.</p>
+          <span class="nl-channel-card__badge"><i data-lucide="calendar-clock"></i>Agendamento automático de posts</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ FAQ ============ -->
+  <section class="nl-section" id="faq" aria-labelledby="faq-title" style="background:var(--nevoa)">
+    <div class="nl-wrap nl-faq">
+      <div class="nl-faq__side">
+        <h2 class="nl-h2" id="faq-title">Perguntas frequentes</h2>
+        <p>Ficou alguma dúvida? <a href="https://wa.me/5547988061278?text=Ol%C3%A1!%20Tenho%20d%C3%BAvidas%20sobre%20a%20Newsletter%20com%20IA%20do%20Juris8." target="_blank" rel="noopener noreferrer" data-track="whatsapp_click" data-track-ctx="newsletter_faq">Fale pelo WhatsApp</a>.</p>
+      </div>
+      <ul class="nl-qs" id="nl-qs">
+        <li class="nl-q">
+          <button class="nl-q__btn" type="button" aria-expanded="false" aria-controls="nq1"><span>A IA pode errar informações jurídicas?</span><span aria-hidden="true"><i data-lucide="plus"></i></span></button>
+          <div class="nl-q__body" id="nq1" role="region"><div><p>A IA é treinada com fontes jurídicas verificadas e você revisa tudo antes de enviar. Nenhuma newsletter sai sem sua aprovação — você é sempre o responsável editorial.</p></div></div>
+        </li>
+        <li class="nl-q">
+          <button class="nl-q__btn" type="button" aria-expanded="false" aria-controls="nq2"><span>Isso não fere o Provimento OAB sobre publicidade?</span><span aria-hidden="true"><i data-lucide="plus"></i></span></button>
+          <div class="nl-q__body" id="nq2" role="region"><div><p>Não. O sistema foi desenvolvido conforme o Provimento 205/2021 — sem captação ostensiva, sem divulgação de resultados garantidos. É comunicação de relacionamento, não publicidade.</p></div></div>
+        </li>
+        <li class="nl-q">
+          <button class="nl-q__btn" type="button" aria-expanded="false" aria-controls="nq3"><span>Preciso saber de design ou tecnologia?</span><span aria-hidden="true"><i data-lucide="plus"></i></span></button>
+          <div class="nl-q__body" id="nq3" role="region"><div><p>Zero. Você responde 5 perguntas sobre seu escritório na primeira vez. Depois, a IA faz tudo — pesquisa, redação e formatação. Você só lê e aprova.</p></div></div>
+        </li>
+        <li class="nl-q">
+          <button class="nl-q__btn" type="button" aria-expanded="false" aria-controls="nq4"><span>E se eu não gostar da newsletter gerada?</span><span aria-hidden="true"><i data-lucide="plus"></i></span></button>
+          <div class="nl-q__body" id="nq4" role="region"><div><p>Você edita qualquer parte antes de enviar. Ou pede para a IA reescrever uma seção. Na maioria das vezes, os advogados mudam menos de 10% do conteúdo.</p></div></div>
+        </li>
+        <li class="nl-q">
+          <button class="nl-q__btn" type="button" aria-expanded="false" aria-controls="nq5"><span>O WhatsApp Broadcast é o mesmo que grupo?</span><span aria-hidden="true"><i data-lucide="plus"></i></span></button>
+          <div class="nl-q__body" id="nq5" role="region"><div><p>Não. Via API Oficial Meta, cada cliente recebe a mensagem individualmente — como se você tivesse enviado para ele pessoalmente. Sem grupos, sem exposição de contatos.</p></div></div>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ============ CTA FINAL ============ -->
+  <section class="nl-section nl-cta nl-dark" id="cta" aria-labelledby="cta-title">
+    <div class="nl-wrap">
+      <div class="nl-cta__grid">
+        <div>
+          <h2 class="nl-h2" id="cta-title">Sua primeira newsletter está a 4 minutos de distância.</h2>
+          <p class="nl-lede">Sem cartão. Sem compromisso. Gerada agora, na área do direito que você escolher.</p>
+          <ul class="nl-checklist">
+            <li><i data-lucide="check"></i>A IA pesquisa e escreve — você só revisa</li>
+            <li><i data-lucide="check"></i>Conforme OAB · Provimento 205/2021</li>
+            <li><i data-lucide="check"></i>LGPD · dados criptografados</li>
+            <li><i data-lucide="check"></i>E-mail, WhatsApp, PDF e LinkedIn</li>
+          </ul>
+          <ul class="nl-seals">
+            <li><i data-lucide="lock"></i>LGPD</li>
+            <li><i data-lucide="scale"></i>Conforme OAB</li>
+            <li><i data-lucide="shield-check"></i>Dados criptografados</li>
+          </ul>
+        </div>
+
+        <div class="nl-form-card">
+          <div id="nl-form-wrapper">
+            <h3>Gerar minha 1ª newsletter grátis</h3>
+            <p>Sem cartão · Cancele quando quiser · Suporte em português</p>
+            <form class="nl-form" id="nl-form" novalidate>
+              <div class="lp-field" id="f-nome">
+                <label for="n-nome">Nome</label>
+                <input class="nl-input" type="text" id="n-nome" name="nome" autocomplete="given-name" placeholder="Seu nome">
+                <span class="lp-field__error" id="e-nome">Informe seu nome.</span>
+              </div>
+              <div class="lp-field" id="f-escrit">
+                <label for="n-escrit">Escritório</label>
+                <input class="nl-input" type="text" id="n-escrit" name="escritorio" autocomplete="organization" placeholder="Nome do escritório">
+                <span class="lp-field__error" id="e-escrit">Informe o escritório.</span>
+              </div>
+              <div class="lp-field ct-full" id="f-email">
+                <label for="n-email">E-mail</label>
+                <input class="nl-input" type="email" id="n-email" name="email" autocomplete="email" placeholder="seu@email.com.br">
+                <span class="lp-field__error" id="e-email">Informe um e-mail válido.</span>
+              </div>
+              <div class="lp-field ct-full" id="f-wa">
+                <label for="n-wa">WhatsApp</label>
+                <input class="nl-input" type="tel" id="n-wa" name="whatsapp" autocomplete="tel" inputmode="numeric" placeholder="(00) 00000-0000">
+                <span class="lp-field__error" id="e-wa">Informe um WhatsApp válido.</span>
+              </div>
+              <div class="lp-field ct-full" id="f-cnpj">
+                <label for="n-cnpj">CNPJs dos clientes <i>(opcional)</i></label>
+                <input class="nl-input" type="text" id="n-cnpj" name="cnpj" inputmode="numeric" autocomplete="off" placeholder="00.000.000/0000-00">
+              </div>
+              <div class="lp-field ct-full" id="f-msg">
+                <label for="n-msg">Mensagem <i>(opcional)</i></label>
+                <textarea class="nl-input" id="n-msg" name="mensagem" rows="3" placeholder="Ex: área trabalhista, clientes empresas, tom próximo..."></textarea>
+              </div>
+              <div class="lp-field ct-full" id="f-consent">
+                <label class="ct-check" for="n-consent">
+                  <input type="checkbox" id="n-consent" name="consent" required aria-describedby="e-consent">
+                  <span class="ct-box" aria-hidden="true"><i data-lucide="check"></i></span>
+                  <span>Autorizo o contato e o tratamento dos meus dados conforme a LGPD.</span>
+                </label>
+                <span class="lp-field__error" id="e-consent">Marque para podermos entrar em contato.</span>
+              </div>
+              <input class="lp-hp" type="text" name="website" tabindex="-1" autocomplete="off" aria-hidden="true">
+              <button type="submit" class="lp-submit ct-full" id="nl-submit"><span id="nl-submit-label">Gerar agora minha 1ª newsletter grátis</span><i data-lucide="arrow-right"></i></button>
+              <div class="lp-alert ct-full" id="nl-alert" role="alert">Não foi possível enviar agora. Seus dados continuam preenchidos: tente novamente em instantes.</div>
+              <ul class="nl-seals ct-full" style="margin:2px 0 0;justify-content:center">
+                <li style="border-color:var(--linha);color:var(--sutil)"><i data-lucide="shield-check" style="color:var(--verde)"></i>LGPD</li>
+                <li style="border-color:var(--linha);color:var(--sutil)"><i data-lucide="scale" style="color:var(--verde)"></i>Conforme OAB</li>
+                <li style="border-color:var(--linha);color:var(--sutil)"><i data-lucide="lock-keyhole" style="color:var(--verde)"></i>Dados criptografados</li>
+              </ul>
+            </form>
+          </div>
+          <div class="ct-success" id="nl-success" role="region" aria-live="polite" aria-label="Solicitação enviada">
+            <div class="ct-success__ic"><i data-lucide="check"></i></div>
+            <h3 id="nl-success-title" tabindex="-1">Solicitação enviada!</h3>
+            <p>Em breve um especialista do Juris8 entra em contato para gerar a sua primeira newsletter.</p>
+            <button type="button" class="ct-again" id="nl-again">Enviar outra solicitação</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="jf">
+  <div class="jf__glow" aria-hidden="true"></div>
+  <div class="nl-wrap">
+    <div class="jf__top">
+      <div class="jf__brand">
+        <a href="/" class="jf__logo" aria-label="Juris8, voltar ao topo"><img src="/assets/brand/logo-juris8-light.png" alt="Juris8" width="125" height="32"></a>
+        <p class="jf__tag">A mais completa IA jurídica do Brasil. Pré-elaboração de peças, pesquisa, análise de documentos e transcrição — desenvolvidas por advogados, para advogados.</p>
+        <div class="jf__seals">
+          <span><i data-lucide="lock" aria-hidden="true"></i>LGPD</span>
+          <span><i data-lucide="sparkles" aria-hidden="true"></i>IA jurídica</span>
+        </div>
+        <div class="jf__social">
+          <a href="https://www.instagram.com/juris8.ai" target="_blank" rel="noopener noreferrer" aria-label="Instagram da Juris8" data-track="social_click" data-track-ctx="instagram">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4.2"/><circle cx="17.4" cy="6.6" r=".9" fill="currentColor" stroke="none"/></svg>
+          </a>
+          <a href="https://wa.me/5547988061278?text=Ol%C3%A1!%20Quero%20saber%20mais%20sobre%20o%20Juris8." target="_blank" rel="noopener noreferrer" aria-label="WhatsApp da Juris8" data-track="whatsapp_click" data-track-ctx="footer_icon">
+            <svg viewBox="0 0 32 32" fill="currentColor" aria-hidden="true"><path d="M16.01 3.2c-7.1 0-12.86 5.76-12.86 12.86 0 2.27.6 4.48 1.73 6.43L3.2 28.8l6.5-1.7a12.8 12.8 0 0 0 6.3 1.62h.01c7.1 0 12.86-5.76 12.86-12.86 0-3.44-1.34-6.67-3.77-9.1A12.78 12.78 0 0 0 16.01 3.2Zm0 23.5h-.01a10.6 10.6 0 0 1-5.4-1.48l-.39-.23-4.02 1.05 1.07-3.92-.25-.4a10.62 10.62 0 0 1 16.46-13.1 10.55 10.55 0 0 1 3.12 7.51c0 5.88-4.78 10.65-10.66 10.65Zm5.85-7.98c-.32-.16-1.9-.94-2.2-1.04-.3-.11-.5-.16-.72.16-.21.32-.82 1.03-1 1.25-.18.21-.37.24-.69.08-.32-.16-1.35-.5-2.58-1.59-.95-.85-1.6-1.9-1.78-2.22-.18-.32-.02-.49.14-.65.14-.14.32-.37.48-.56.16-.18.21-.32.32-.53.11-.21.05-.4-.03-.56-.08-.16-.72-1.74-.99-2.38-.26-.62-.52-.54-.72-.55l-.61-.01c-.21 0-.56.08-.85.4-.29.32-1.11 1.09-1.11 2.66 0 1.57 1.14 3.08 1.3 3.3.16.21 2.25 3.43 5.45 4.81.76.33 1.36.53 1.82.68.77.24 1.46.21 2.01.13.61-.09 1.9-.78 2.17-1.53.27-.74.27-1.38.19-1.51-.08-.13-.29-.21-.61-.37Z"/></svg>
+          </a>
+        </div>
+      </div>
+      <nav class="jf__links" aria-label="Rodapé">
+        <div class="jf__col">
+          <h2 class="jf__h">Soluções</h2>
+          <a href="/det">DET Monitor</a>
+          <a href="/crm">CRM com IA</a>
+          <a href="/secretariajuridica">Secretaria jurídica</a>
+          <a href="/newsletter" aria-current="page">Newsletter mensal</a>
+          <a href="/trabalhistaempresarial">Trabalhista empresarial</a>
+        </div>
+        <div class="jf__col">
+          <h2 class="jf__h">Plataforma</h2>
+          <a href="/#redacao">Pré-elaboração de peças</a>
+          <a href="/#jurisprudencia">Pesquisa de jurisprudência</a>
+          <a href="/#revisao-contratual">Análise de documentos</a>
+          <a href="/#transcricao">Transcrição de audiências</a>
+        </div>
+        <div class="jf__col">
+          <h2 class="jf__h">Contato</h2>
+          <a href="https://wa.me/5547988061278?text=Ol%C3%A1!%20Quero%20saber%20mais%20sobre%20o%20Juris8." target="_blank" rel="noopener noreferrer" data-track="whatsapp_click" data-track-ctx="footer_link">WhatsApp</a>
+          <a href="https://www.instagram.com/juris8.ai" target="_blank" rel="noopener noreferrer" data-track="social_click" data-track-ctx="instagram">Instagram</a>
+          <a href="#faq">FAQ</a>
+          <a href="/#solucoes">Soluções</a>
+        </div>
+      </nav>
+    </div>
+    <div class="jf__bottom">
+      <span>© 2026 Juris8 · Todos os direitos reservados.</span>
+      <span class="jf__made"><i aria-hidden="true"></i>Desenvolvido por advogados, para advogados</span>
+      <a href="#topo" class="jf__up">Voltar ao topo<i data-lucide="chevron-up" aria-hidden="true"></i></a>
+    </div>
+  </div>
+</footer>
+
+<a class="lp-wa" id="lp-wa" href="https://wa.me/5547988061278?text=Ol%C3%A1!%20Tenho%20d%C3%BAvidas%20sobre%20a%20Newsletter%20com%20IA%20do%20Juris8." target="_blank" rel="noopener noreferrer" aria-label="Dúvidas sobre a Newsletter? Fale pelo WhatsApp" data-track="whatsapp_click" data-track-ctx="fab">
+  <span class="lp-wa__label">Dúvidas sobre a Newsletter?</span>
+  <span class="lp-wa__btn"><span class="lp-wa__ring" aria-hidden="true"></span><svg viewBox="0 0 32 32" fill="currentColor" aria-hidden="true"><path d="M16.01 3.2c-7.1 0-12.86 5.76-12.86 12.86 0 2.27.6 4.48 1.73 6.43L3.2 28.8l6.5-1.7a12.8 12.8 0 0 0 6.3 1.62h.01c7.1 0 12.86-5.76 12.86-12.86 0-3.44-1.34-6.67-3.77-9.1A12.78 12.78 0 0 0 16.01 3.2Zm0 23.5h-.01a10.6 10.6 0 0 1-5.4-1.48l-.39-.23-4.02 1.05 1.07-3.92-.25-.4a10.62 10.62 0 0 1 16.46-13.1 10.55 10.55 0 0 1 3.12 7.51c0 5.88-4.78 10.65-10.66 10.65Zm5.85-7.98c-.32-.16-1.9-.94-2.2-1.04-.3-.11-.5-.16-.72.16-.21.32-.82 1.03-1 1.25-.18.21-.37.24-.69.08-.32-.16-1.35-.5-2.58-1.59-.95-.85-1.6-1.9-1.78-2.22-.18-.32-.02-.49.14-.65.14-.14.32-.37.48-.56.16-.18.21-.32.32-.53.11-.21.05-.4-.03-.56-.08-.16-.72-1.74-.99-2.38-.26-.62-.52-.54-.72-.55l-.61-.01c-.21 0-.56.08-.85.4-.29.32-1.11 1.09-1.11 2.66 0 1.57 1.14 3.08 1.3 3.3.16.21 2.25 3.43 5.45 4.81.76.33 1.36.53 1.82.68.77.24 1.46.21 2.01.13.61-.09 1.9-.78 2.17-1.53.27-.74.27-1.38.19-1.51-.08-.13-.29-.21-.61-.37Z"/></svg></span>
+</a>
+
+<script src="https://unpkg.com/lucide@0.469.0/dist/umd/lucide.min.js"></script>
+<script src="/assets/site/j8-pages.js"></script>
+<script>
+(function () {
+  'use strict';
+  var $ = function (s, r) { return (r || document).querySelector(s); };
+  var $$ = function (s, r) { return Array.prototype.slice.call((r || document).querySelectorAll(s)); };
+  var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var icons = function () { if (window.lucide && window.lucide.createIcons) window.lucide.createIcons(); };
+
+  icons();
+
+  /* ---------- Chips de configuração interativos (passo 1) ---------- */
+  $$('.nl-setup-chips').forEach(function (group) {
+    group.addEventListener('click', function (e) {
+      var chip = e.target.closest('.nl-setup-chip');
+      if (!chip) return;
+      chip.classList.toggle('is-on');
+      updateProfile();
+    });
+  });
+
+  function updateProfile() {
+    var areaChips = $$('.nl-setup-row:nth-child(1) .nl-setup-chip.is-on');
+    var areaNames = areaChips.map(function (c) { return c.textContent.trim(); });
+    var channelChips = $$('.nl-setup-row:nth-child(4) .nl-setup-chip.is-on');
+    var channelNames = channelChips.map(function (c) { return c.textContent.trim(); });
+    var freqChips = $$('.nl-setup-row:nth-child(3) .nl-setup-chip.is-on');
+    var rows = $$('.nl-profile-row');
+    if (rows[0]) rows[0].querySelector('b').textContent = areaNames.join(', ') || '—';
+    if (rows[2]) rows[2].querySelector('b').textContent = freqChips.length ? freqChips[0].textContent.trim() : '—';
+    if (rows[3]) rows[3].querySelector('b').textContent = channelNames.slice(0, 2).join(', ') + (channelNames.length > 2 ? '…' : '') || '—';
+  }
+
+  /* ---------- WhatsApp flutuante: sai da frente do formulário ---------- */
+  var float = $('#lp-wa');
+  if ('IntersectionObserver' in window && float) {
+    var busy = new Set();
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (en) { if (en.isIntersecting) busy.add(en.target); else busy.delete(en.target); });
+      float.classList.toggle('is-away', busy.size > 0);
+    });
+    ['.nl-form-card'].forEach(function (s) { var n = $(s); if (n) io.observe(n); });
+  }
+
+  /* ---------- FAQ accordion ---------- */
+  $$('.nl-q').forEach(function (q, i, all) {
+    var btn = $('.nl-q__btn', q);
+    btn.addEventListener('click', function () {
+      var open = !q.classList.contains('is-open');
+      all.forEach(function (o) { o.classList.remove('is-open'); $('.nl-q__btn', o).setAttribute('aria-expanded', 'false'); });
+      q.classList.toggle('is-open', open);
+      btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+    });
+  });
+
+  /* ---------- Formulário ---------- */
+  var form = $('#nl-form');
+  var submitBtn = $('#nl-submit');
+  var submitLabel = $('#nl-submit-label');
+  var alertEl = $('#nl-alert');
+  var successEl = $('#nl-success');
+  var againBtn = $('#nl-again');
+
+  function validate() {
+    var ok = true;
+    [
+      { id: 'f-nome',  inp: 'n-nome',  err: 'e-nome',  fn: function (v) { return v.trim().length > 1; } },
+      { id: 'f-escrit',inp: 'n-escrit',err: 'e-escrit', fn: function (v) { return v.trim().length > 1; } },
+      { id: 'f-email', inp: 'n-email', err: 'e-email', fn: function (v) { return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v); } },
+      { id: 'f-wa',    inp: 'n-wa',    err: 'e-wa',    fn: function (v) { return v.replace(/\D/g,'').length >= 10; } },
+    ].forEach(function (f) {
+      var field = $('#' + f.id);
+      var inp = $('#' + f.inp);
+      var valid = inp && f.fn(inp.value);
+      if (field) field.classList.toggle('is-error', !valid);
+      if (!valid) ok = false;
+    });
+    var consent = $('#n-consent');
+    var fc = $('#f-consent');
+    var cv = consent && consent.checked;
+    if (fc) fc.classList.toggle('is-error', !cv);
+    if (!cv) ok = false;
+    return ok;
+  }
+
+  if (form) {
+    form.addEventListener('submit', function (e) {
+      e.preventDefault();
+      if (!validate()) return;
+      submitBtn.disabled = true;
+      submitLabel.textContent = 'Enviando…';
+      submitBtn.innerHTML = '<span class="lp-spinner"></span>';
+      var data = {
+        interest: 'Newsletter com IA · 1ª edição grátis',
+        source: 'lp_newsletter_ia',
+        segment: 'newsletter',
+        nome: ($('#n-nome') || {}).value || '',
+        escritorio: ($('#n-escrit') || {}).value || '',
+        email: ($('#n-email') || {}).value || '',
+        whatsapp: ($('#n-wa') || {}).value || '',
+        cnpj: ($('#n-cnpj') || {}).value || '',
+        mensagem: ($('#n-msg') || {}).value || ''
+      };
+      if (window.J8) {
+        window.J8.mount({ form: data });
+        showSuccess();
+        return;
+      }
+      fetch('/api/lead', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(data)
+      }).then(function (r) {
+        if (r.ok) showSuccess(); else showError();
+      }).catch(showError);
+    });
+  }
+
+  function showSuccess() {
+    if ($('#nl-form-wrapper')) $('#nl-form-wrapper').style.display = 'none';
+    if (successEl) { successEl.classList.add('is-visible'); }
+    var t = $('#nl-success-title'); if (t) t.focus();
+  }
+  function showError() {
+    submitBtn.disabled = false;
+    submitBtn.innerHTML = '<span id="nl-submit-label">Gerar agora minha 1ª newsletter grátis</span><i data-lucide="arrow-right"></i>';
+    if (alertEl) alertEl.classList.add('is-visible');
+    icons();
+  }
+
+  if (againBtn) {
+    againBtn.addEventListener('click', function () {
+      if (successEl) successEl.classList.remove('is-visible');
+      if ($('#nl-form-wrapper')) $('#nl-form-wrapper').style.display = '';
+      form && form.reset();
+      submitBtn.disabled = false;
+      submitBtn.innerHTML = '<span id="nl-submit-label">Gerar agora minha 1ª newsletter grátis</span><i data-lucide="arrow-right"></i>';
+      if (alertEl) alertEl.classList.remove('is-visible');
+      icons();
+    });
+  }
+
+  /* ---------- Máscara WhatsApp ---------- */
+  var waInput = $('#n-wa');
+  if (waInput) {
+    waInput.addEventListener('input', function () {
+      var d = waInput.value.replace(/\D/g,'').slice(0,11);
+      var v = d;
+      if (d.length > 6) v = '(' + d.slice(0,2) + ') ' + d.slice(2,7) + '-' + d.slice(7);
+      else if (d.length > 2) v = '(' + d.slice(0,2) + ') ' + d.slice(2);
+      waInput.value = v;
+    });
+  }
+
+  /* ---------- Intersection Observer para animações de entrada ---------- */
+  if ('IntersectionObserver' in window) {
+    var fadeEls = $$('.nl-content-card, .nl-channel-card, .nl-step');
+    fadeEls.forEach(function (el) {
+      el.style.opacity = '0';
+      el.style.transform = 'translateY(20px)';
+      el.style.transition = 'opacity .55s var(--ease), transform .55s var(--ease)';
+    });
+    var fio = new IntersectionObserver(function (entries) {
+      entries.forEach(function (en) {
+        if (en.isIntersecting) {
+          en.target.style.opacity = '1';
+          en.target.style.transform = 'none';
+          fio.unobserve(en.target);
+        }
+      });
+    }, { threshold: 0.12 });
+    fadeEls.forEach(function (el) { if (!reduce) fio.observe(el); else { el.style.opacity = '1'; el.style.transform = 'none'; } });
+  }
+
+  icons();
+})();
+</script>
+</body>
+</html>

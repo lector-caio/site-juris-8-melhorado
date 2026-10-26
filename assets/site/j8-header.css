@@ -58,6 +58,16 @@
 .lp-cta-short { display: none; }
 .lp-header a:focus-visible { outline: 2.5px solid #7547EF; outline-offset: 3px; }
 
+/* Atalho "Ir para o conteúdo": fica fora da tela até receber o foco do teclado */
+.lp-skip {
+  position: fixed; top: 10px; left: 12px; z-index: 200;
+  padding: 15px 20px; border-radius: 999px; background: #170B45; color: #fff;
+  font: 700 14px/1 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif; text-decoration: none;
+  transform: translateY(-160%); transition: transform .2s;
+}
+.lp-skip:focus { transform: none; outline: 2.5px solid #8B5CF6; outline-offset: 3px; }
+main:focus { outline: none; }
+
 /* Barras com muitos itens (.lp-header--long): mesmas alturas e tamanhos da home,
    mas, onde não cabem, links um pouco mais compactos e o rótulo curto do botão. */
 @media (max-width: 1480px) {
@@ -113,5 +123,5 @@
 .lp-wa:focus-visible .lp-wa__btn { outline: 2.5px solid #7547EF; outline-offset: 3px; }
 
 @media (prefers-reduced-motion: reduce) {
-  .lp-nav__ind, .lp-header__cta, .lp-wa, .lp-wa__label, .lp-wa__btn { transition: none; }
+  .lp-skip, .lp-nav__ind, .lp-header__cta, .lp-wa, .lp-wa__label, .lp-wa__btn { transition: none; }
 }
