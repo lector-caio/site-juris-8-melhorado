@@ -1,0 +1,117 @@
+/* ============================================================
+   JURIS8 · BARRA DE NAVEGAÇÃO E WHATSAPP FLUTUANTE
+   Valores finais da home (index.html), consolidados para as páginas
+   de solução. Mesma marcação da home: .lp-header-wrap > #lp-header,
+   e o indicador deslizante é ligado por J8.mount (j8-pages.js).
+   Escala: 553 unidades = largura da tela (até 1919px), como na home.
+   ============================================================ */
+.lp-header-wrap {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 80;
+  display: flex; justify-content: center;
+  background: rgba(255,255,255,.96);
+  -webkit-backdrop-filter: blur(10px); backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(23,11,69,.05);
+  transition: box-shadow .3s;
+}
+.lp-header-wrap:has(.lp-header.is-scrolled) { box-shadow: 0 10px 30px -18px rgba(36,16,90,.35); }
+.lp-header {
+  --k: calc(min(100vw, 1919px) / 553);
+  display: flex; align-items: center; justify-content: flex-start; gap: 20px;
+  width: 100%; max-width: calc(553 * var(--k)); min-height: max(60px, calc(24 * var(--k)));
+  padding: 0 calc(66.7 * var(--k));
+}
+.lp-header__logo { display: flex; flex: none; align-items: center; }
+.lp-header__logo img { display: block; width: auto; height: max(26px, calc(11.5 * var(--k))); }
+.lp-nav {
+  position: relative; display: flex; align-items: center; gap: 2px; margin: 0 auto; padding: 4px;
+  border: 1px solid #EEEBF7; border-radius: 999px; background: #F6F4FD;
+  font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif; font-size: 14px; font-weight: 600;
+}
+.lp-nav a {
+  position: relative; z-index: 1; padding: 8px 15px; border-radius: 999px;
+  color: #4A4566; font-weight: 600; line-height: normal; white-space: nowrap; text-decoration: none;
+  transition: color .25s, background-color .25s;
+}
+.lp-nav a:hover { color: #1E1A4D; background: rgba(117,71,239,.07); }
+.lp-nav a.is-active, .lp-nav a.is-active:hover { color: #fff; background: transparent; }
+.lp-nav__ind {
+  position: absolute; z-index: 0; top: 4px; bottom: 4px; left: 0; width: 0; border-radius: 999px;
+  background: linear-gradient(90deg, #7547EF, #8B5CF6); box-shadow: 0 8px 18px -8px rgba(117,71,239,.85);
+  opacity: 0; transition: transform .45s cubic-bezier(.22,1,.36,1), width .45s cubic-bezier(.22,1,.36,1), opacity .3s;
+}
+.lp-nav.has-active .lp-nav__ind { opacity: 1; }
+.lp-header__cta {
+  display: inline-flex; flex: none; align-items: center; gap: 10px; padding: 5px 5px 5px 18px;
+  border: 0; border-radius: 999px; background: linear-gradient(90deg, #7547EF, #8B5CF6); color: #fff;
+  font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif; font-size: 14px; font-weight: 700; line-height: normal;
+  white-space: nowrap; text-decoration: none;
+  box-shadow: 0 12px 26px -12px rgba(117,71,239,.9); transition: transform .25s, box-shadow .25s, background .25s;
+}
+.lp-header__cta:hover { color: #fff; background: linear-gradient(90deg, #6334D8, #7547EF); transform: translateY(-1px); box-shadow: 0 16px 30px -12px rgba(117,71,239,.95); }
+.lp-header__cta-tile {
+  display: inline-flex; align-items: center; justify-content: center;
+  width: max(30px, calc(11 * var(--k))); height: max(30px, calc(11 * var(--k)));
+  border-radius: 50%; background: #fff; color: #7547EF;
+}
+.lp-header__cta-tile svg { width: 17px; height: 17px; }
+.lp-header__cta-tile--wa { color: #16A34A; }
+.lp-cta-short { display: none; }
+.lp-header a:focus-visible { outline: 2.5px solid #7547EF; outline-offset: 3px; }
+
+/* Barras com muitos itens (.lp-header--long): mesmas alturas e tamanhos da home,
+   mas, onde não cabem, links um pouco mais compactos e o rótulo curto do botão. */
+@media (max-width: 1480px) {
+  .lp-header--long .lp-nav a { padding: 8px 11px; font-size: 13.5px; }
+  .lp-header--long .lp-cta-long { display: none; }
+  .lp-header--long .lp-cta-short { display: inline; }
+}
+@media (max-width: 1272px) {
+  .lp-header--long { padding: 0 24px; }
+}
+@media (max-width: 1180px) {
+  .lp-header { padding: 0 24px; }
+  .lp-nav a { padding: 8px 11px; font-size: 13.5px; }
+}
+@media (max-width: 1060px) {
+  .lp-nav { display: none; }
+  .lp-header { justify-content: space-between; }
+}
+@media (max-width: 960px) {
+  .lp-header { padding: 0 20px; }
+}
+@media (max-width: 640px) {
+  .lp-header__cta { padding-left: 14px; }
+  .lp-cta-long { display: none; }
+  .lp-cta-short { display: inline; }
+}
+
+/* WhatsApp flutuante (igual ao da home) */
+.lp-wa {
+  position: fixed; right: clamp(16px, 3vw, 28px); bottom: clamp(16px, 3vw, 28px); z-index: 90;
+  display: inline-flex; align-items: center; text-decoration: none;
+  transition: opacity .35s cubic-bezier(.22,1,.36,1), transform .35s cubic-bezier(.22,1,.36,1);
+}
+.lp-wa.is-away { opacity: 0; transform: translateY(16px); pointer-events: none; }
+.lp-wa__label {
+  max-width: 0; margin-right: 0; padding: 11px 0; overflow: hidden; opacity: 0;
+  border-radius: 999px; background: #2E1463; color: #fff;
+  font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif; font-size: .9rem; font-weight: 600; line-height: 1; white-space: nowrap;
+  box-shadow: 0 18px 40px -16px rgba(23,11,69,.5);
+  transition: max-width .3s cubic-bezier(.22,1,.36,1), opacity .25s cubic-bezier(.22,1,.36,1), margin .3s cubic-bezier(.22,1,.36,1), padding .3s cubic-bezier(.22,1,.36,1);
+}
+.lp-wa__btn {
+  position: relative; display: inline-flex; align-items: center; justify-content: center;
+  width: 60px; height: 60px; flex: none; border-radius: 50%; background: #25D366; color: #fff;
+  box-shadow: 0 10px 26px -8px rgba(37,211,102,.5);
+  transition: box-shadow .25s cubic-bezier(.22,1,.36,1), transform .25s cubic-bezier(.22,1,.36,1);
+}
+.lp-wa__ring { position: absolute; inset: 0; border: 2px solid #25D366; border-radius: 50%; }
+.lp-wa__btn svg { display: block; width: 32px; height: 32px; }
+.lp-wa:hover .lp-wa__label, .lp-wa:focus-visible .lp-wa__label { max-width: 260px; margin-right: 12px; padding: 11px 16px; opacity: 1; }
+.lp-wa:hover .lp-wa__btn, .lp-wa:focus-visible .lp-wa__btn { box-shadow: 0 14px 34px -8px rgba(37,211,102,.6); transform: translateY(-2px) scale(1.04); }
+.lp-wa:focus-visible { outline: none; }
+.lp-wa:focus-visible .lp-wa__btn { outline: 2.5px solid #7547EF; outline-offset: 3px; }
+
+@media (prefers-reduced-motion: reduce) {
+  .lp-nav__ind, .lp-header__cta, .lp-wa, .lp-wa__label, .lp-wa__btn { transition: none; }
+}

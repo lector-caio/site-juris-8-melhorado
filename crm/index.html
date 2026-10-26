@@ -1,0 +1,1422 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#7547EF">
+<title>CRM com IA jurídica no WhatsApp | Juris8</title>
+<meta name="description" content="O CRM do Juris8 tem uma IA jurídica no seu WhatsApp 24 horas: responde, qualifica, coleta documentos, agenda, move o kanban e entrega um dossiê ao advogado antes da reunião.">
+<link rel="icon" href="/assets/brand/juris8-favicon-32x32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="/assets/brand/juris8-apple-touch-icon.png">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Juris8">
+<meta property="og:title" content="CRM com IA jurídica no WhatsApp | Juris8">
+<meta property="og:description" content="Do primeiro “olá” ao dossiê na agenda. Ative o CRM com IA por 14 dias, sem cartão.">
+<meta property="og:image" content="/assets/media/julia/escritorio-dia.webp">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebPage","name":"CRM com IA jurídica no WhatsApp | Juris8","description":"Pré-consulta jurídica automática no WhatsApp: qualificação, documentos, agenda, kanban e dossiê.","inLanguage":"pt-BR","isPartOf":{"@type":"WebSite","name":"Juris8","url":"https://juris8.com"},"publisher":{"@type":"Organization","name":"Juris8","logo":"https://juris8.com/assets/brand/logo-juris8.png"}}
+</script>
+<link rel="stylesheet" href="/assets/site/j8-header.css">
+<style>
+/* ============================================================
+   JURIS8 CRM · IA JURÍDICA NO WHATSAPP
+   Conceito: o card anda porque a conversa anda. O kanban é a
+   assinatura da página: ele se move sozinho, puxado pelo WhatsApp.
+   Base visual compartilhada com /secretariajuridica.
+   ============================================================ */
+:root {
+  --noite: #2E135B;
+  --roxo: linear-gradient(170deg, #36196A 0%, #321663 55%, #2E135B 100%);
+  --grad: linear-gradient(90deg, #7547EF, #8B5CF6);
+  --grad-hover: linear-gradient(90deg, #6334D8, #7547EF);
+  --destaque: #6A3AD8;
+  --noite-2: #1C1150;
+  --violeta: #7547EF;
+  --violeta-forte: #5B2FD9;
+  --lavanda: #CDBDFF;
+  --lavanda-2: #ECE6FF;
+  --nevoa: #F3F0FD;
+  --papel: #F9F8FD;
+  --tinta: #170B45;
+  --texto: #5B5776;
+  --sutil: #6F6A86;
+  --linha: #EEEBF6;
+  --verde: #1F9D55;
+  --wa: #25D366;
+  --fd: 'Sora', 'Plus Jakarta Sans', system-ui, sans-serif;
+  --fb: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+  --k: calc(min(100vw, 1919px) / 553);
+  --ease: cubic-bezier(.22, 1, .36, 1);
+  --sombra: 0 40px 90px -48px rgba(30, 14, 92, .5), 0 2px 6px -2px rgba(30, 14, 92, .08);
+  /* áreas do direito: cada uma com uma cor fixa em toda a página */
+  --a-trab: #B45309; --a-trab-bg: #FEF3E2;
+  --a-fam: #BE185D;  --a-fam-bg: #FCE7F1;
+  --a-civ: #1D4ED8;  --a-civ-bg: #E3ECFE;
+  --a-emp: #0F766E;  --a-emp-bg: #DDF5F1;
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+html { scroll-behavior: smooth; scroll-padding-top: 100px; -webkit-text-size-adjust: 100%; }
+body { margin: 0; background: var(--papel); color: var(--texto); font: 400 16px/1.6 var(--fb); -webkit-font-smoothing: antialiased; text-rendering: optimizeLegibility; overflow-x: hidden; }
+img { display: block; max-width: 100%; }
+a { color: inherit; text-decoration: none; }
+button, input, select, textarea { font: inherit; color: inherit; }
+button { padding: 0; border: 0; background: none; cursor: pointer; }
+h1, h2, h3, h4, p { margin: 0; }
+svg.lucide { width: 18px; height: 18px; flex: none; }
+:focus-visible { outline: 2.5px solid var(--violeta); outline-offset: 3px; border-radius: 8px; }
+.cr-dark :focus-visible { outline-color: var(--lavanda); }
+.sr-only { position: absolute; width: 1px; height: 1px; margin: -1px; padding: 0; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0; }
+.cr-wrap { width: 100%; max-width: 1240px; margin: 0 auto; padding: 0 28px; }
+
+/* ---------- Botões ---------- */
+.cr-btn { display: inline-flex; align-items: center; justify-content: center; gap: 10px; height: 54px; padding: 0 26px; border-radius: 999px; font: 600 15.5px/1 var(--fb); white-space: nowrap; transition: transform .25s var(--ease), background-color .25s, box-shadow .25s, border-color .25s, color .25s; }
+.cr-btn svg.lucide { width: 18px; height: 18px; transition: transform .25s var(--ease); }
+.cr-btn:hover svg.lucide { transform: translateX(3px); }
+.cr-btn:active { transform: translateY(1px) scale(.99); }
+.cr-btn--primary { background: var(--grad); color: #fff; box-shadow: inset 0 1px 0 rgba(255,255,255,.22), 0 14px 32px -14px rgba(117,71,239,.9); }
+.cr-btn--primary:hover { background: var(--grad-hover); }
+.cr-btn--line { border: 1.5px solid var(--linha); background: #fff; color: var(--tinta); }
+.cr-btn--line:hover { border-color: var(--lavanda); background: var(--nevoa); }
+.cr-btn--line:hover svg.lucide { transform: none; }
+.cr-btn--sm { height: 42px; padding: 0 20px; font-size: 14px; }
+
+/* ---------- Seções ---------- */
+.cr-section { position: relative; padding: clamp(96px, 11vw, 148px) 0; }
+.cr-head { display: grid; grid-template-columns: minmax(0, 1.1fr) minmax(0, .9fr); gap: 22px 72px; align-items: end; margin-bottom: clamp(44px, 5vw, 64px); }
+.cr-h2 { color: var(--tinta); font: 800 clamp(34px, 4.3vw, 58px)/1.05 var(--fd); letter-spacing: -.042em; text-wrap: balance; }
+.cr-head p, .cr-lede { max-width: 520px; color: var(--texto); font-size: 17.5px; line-height: 1.7; }
+.cr-dark { background: var(--roxo); color: rgba(255,255,255,.72); }
+.cr-dark .cr-h2 { color: #fff; }
+.cr-dark .cr-head p, .cr-dark .cr-lede { color: rgba(255,255,255,.68); }
+/* Palavras que acendem ao rolar (mesmo efeito da home; o JS está em j8-pages.js) */
+.lp-words .w { white-space: nowrap; }
+.lp-words .lp-accent { color: var(--destaque); }
+.lp-words.js-words .w { color: rgba(23,11,69,.14); transition: color .45s var(--ease); }
+.lp-words.js-words .w.is-lit { color: var(--tinta); }
+.lp-words.js-words .w.is-accent.is-lit { color: var(--destaque); }
+.lp-words--lt .lp-accent { color: #A98BFF; }
+.lp-words.lp-words--lt.js-words .w { color: rgba(255,255,255,.14); }
+.lp-words.lp-words--lt.js-words .w.is-lit { color: #fff; }
+.lp-words.lp-words--lt.js-words .w.is-accent.is-lit { color: #8C5CFA; }
+.cr-pull { max-width: 760px; margin: clamp(56px, 6vw, 80px) auto 0; color: var(--tinta); font: 600 clamp(22px, 2.3vw, 30px)/1.35 var(--fd); letter-spacing: -.025em; text-align: center; text-wrap: balance; }
+.cr-pull .lp-accent { color: var(--violeta); }
+
+/* Etiquetas de área do direito */
+.cr-area { display: inline-flex; align-items: center; gap: 5px; padding: 3px 9px; border-radius: 999px; font-size: 12px; font-weight: 700; white-space: nowrap; }
+.cr-area--trab { background: var(--a-trab-bg); color: var(--a-trab); }
+.cr-area--fam { background: var(--a-fam-bg); color: var(--a-fam); }
+.cr-area--civ { background: var(--a-civ-bg); color: var(--a-civ); }
+.cr-area--emp { background: var(--a-emp-bg); color: var(--a-emp); }
+
+/* ---------- Hero ---------- */
+.cr-hero { position: relative; isolation: isolate; padding: 132px 0 96px; background: var(--papel); overflow: hidden; }
+.cr-hero::before { content: ""; position: absolute; inset: 0; z-index: -1; background:
+  radial-gradient(50% 60% at 88% 0%, rgba(117,71,239,.16) 0%, transparent 70%),
+  radial-gradient(40% 50% at 0% 30%, rgba(117,71,239,.07) 0%, transparent 70%),
+  linear-gradient(rgba(117,71,239,.05) 1px, transparent 1px) 0 0 / 100% 56px,
+  linear-gradient(90deg, rgba(117,71,239,.05) 1px, transparent 1px) 0 0 / 56px 100%;
+  mask-image: linear-gradient(180deg, #000 0%, #000 55%, transparent 100%); -webkit-mask-image: linear-gradient(180deg, #000 0%, #000 55%, transparent 100%); }
+.cr-hero__in { width: 100%; max-width: calc(553 * var(--k)); margin: 0 auto; padding: 0 calc(66.7 * var(--k)); }
+.cr-hero__top { display: grid; grid-template-columns: minmax(0, 1.25fr) minmax(0, .75fr); gap: 32px 64px; align-items: end; }
+.cr-hero h1 { color: var(--tinta); font: 800 clamp(42px, 5.6vw, 78px)/1.01 var(--fd); letter-spacing: -.05em; text-wrap: balance; }
+.cr-hero h1 > span { display: block; }
+.cr-hero h1 .b { color: var(--destaque); }
+.cr-hero__lead { color: var(--texto); font-size: 17.5px; line-height: 1.66; }
+.cr-hero__ctas { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 28px; }
+.cr-trust { display: flex; flex-wrap: wrap; gap: 8px 22px; margin: 22px 0 0; padding: 0; list-style: none; color: var(--sutil); font-size: 14px; }
+.cr-trust li { display: flex; align-items: center; gap: 7px; }
+.cr-trust svg.lucide { width: 16px; height: 16px; color: var(--violeta); }
+.cr-rise { animation: cr-rise 1s var(--ease) both; }
+.cr-rise--2 { animation-delay: .08s; } .cr-rise--3 { animation-delay: .18s; } .cr-rise--4 { animation-delay: .3s; }
+
+/* Kanban */
+.cr-board { margin-top: 64px; overflow: hidden; border: 1px solid var(--linha); border-radius: 30px; background: #fff; box-shadow: var(--sombra); animation: cr-rise 1.1s .35s var(--ease) both; }
+.cr-board__bar { display: flex; flex-wrap: wrap; align-items: center; gap: 14px 22px; padding: 18px 22px; border-bottom: 1px solid var(--linha); background: #FCFBFF; }
+.cr-board__title { display: flex; align-items: center; gap: 10px; color: var(--tinta); font: 600 17px var(--fd); }
+.cr-board__title svg.lucide { color: var(--violeta); }
+.cr-live { display: inline-flex; align-items: center; gap: 7px; padding: 5px 11px; border-radius: 999px; background: #E3F6EA; color: #11713B; font-size: 12.5px; font-weight: 700; }
+.cr-pulse { position: relative; width: 7px; height: 7px; flex: none; border-radius: 50%; background: #22C55E; }
+.cr-pulse::after { content: ""; position: absolute; inset: -4px; border-radius: 50%; background: #22C55E; opacity: .35; animation: cr-ping 2.2s var(--ease) infinite; }
+.cr-watch { display: flex; align-items: center; gap: 8px; color: var(--sutil); font-size: 13.5px; }
+.cr-dots { display: inline-flex; gap: 3px; }
+.cr-dots i { width: 4px; height: 4px; border-radius: 50%; background: var(--violeta); animation: cr-dot .9s infinite alternate var(--ease); }
+.cr-dots i:nth-child(2) { animation-delay: .15s; } .cr-dots i:nth-child(3) { animation-delay: .3s; }
+.cr-stats { display: flex; gap: 26px; margin: 0 0 0 auto; padding: 0; list-style: none; }
+.cr-stats li { display: flex; align-items: baseline; gap: 7px; color: var(--sutil); font-size: 13px; }
+.cr-stats b { color: var(--tinta); font: 600 22px/1 var(--fd); font-variant-numeric: tabular-nums; }
+.cr-board__areas { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; padding: 12px 22px; border-bottom: 1px solid var(--linha); }
+.cr-board__areas > span { margin-right: 6px; color: var(--texto); font-size: 14px; font-weight: 600; }
+.cr-chip { padding: 7px 13px; border: 1px solid var(--linha); border-radius: 999px; background: #fff; color: var(--texto); font-size: 13.5px; font-weight: 700; transition: background-color .2s, border-color .2s, color .2s; }
+.cr-chip:hover { border-color: var(--lavanda); }
+.cr-chip[aria-pressed="true"] { border-color: var(--tinta); background: var(--tinta); color: #fff; }
+.cr-cols { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 14px; padding: 18px; background: #F8F6FD; }
+.cr-col { display: flex; flex-direction: column; min-width: 0; padding: 14px 12px 12px; border-radius: 20px; background: #F1EEF9; }
+.cr-col__head { display: flex; align-items: center; gap: 8px; padding: 0 4px; color: var(--tinta); font: 600 14.5px var(--fd); }
+.cr-col__n { min-width: 24px; padding: 2px 7px; border-radius: 999px; background: #fff; color: var(--texto); font: 600 12px var(--fd); text-align: center; font-variant-numeric: tabular-nums; transition: background-color .3s, color .3s; }
+.cr-col__n.is-bump { background: var(--violeta); color: #fff; }
+.cr-col__ia { display: flex; align-items: center; gap: 6px; margin: 6px 4px 12px; color: var(--violeta-forte); font-size: 12.5px; font-weight: 600; }
+.cr-col__ia svg.lucide { width: 14px; height: 14px; }
+.cr-list { display: flex; flex: 1; flex-direction: column; gap: 10px; min-height: 120px; }
+.cr-card { position: relative; padding: 12px 13px 11px; border-radius: 15px; background: #fff; box-shadow: 0 1px 2px rgba(26,19,56,.06), 0 0 0 1px rgba(26,19,56,.04); transition: opacity .35s, transform .35s var(--ease), box-shadow .35s; will-change: transform; }
+.cr-card__top { display: flex; align-items: center; justify-content: space-between; gap: 8px; color: #9D97B3; font-size: 12px; }
+.cr-card b { display: block; margin: 8px 0 10px; color: var(--tinta); font: 600 14.5px/1.35 var(--fd); }
+.cr-card__st { display: flex; align-items: center; gap: 7px; padding-top: 9px; border-top: 1px dashed var(--linha); color: var(--sutil); font-size: 12.5px; font-weight: 600; }
+.cr-card__st svg.lucide { width: 14px; height: 14px; color: var(--violeta); }
+.cr-card__st.is-done svg.lucide { color: var(--verde); }
+.cr-card.is-dim { opacity: .25; transform: scale(.98); }
+.cr-card.is-live { box-shadow: 0 0 0 2px var(--violeta), 0 18px 36px -18px rgba(117,71,239,.7); }
+.cr-card__ping { position: absolute; top: -10px; right: 10px; display: flex; align-items: center; gap: 6px; padding: 5px 9px; border-radius: 10px; background: var(--tinta); color: #fff; font-size: 11.5px; font-weight: 600; white-space: nowrap; box-shadow: 0 10px 20px -10px rgba(0,0,0,.5); animation: cr-pop .4s var(--ease) both; }
+.cr-card__ping svg.lucide { width: 13px; height: 13px; color: var(--wa); }
+.cr-board__foot { padding: 16px 22px; border-top: 1px solid var(--linha); color: var(--texto); font-size: 15px; text-align: center; }
+.cr-board__foot b { color: var(--tinta); }
+
+/* ---------- Faixa de garantias ---------- */
+.cr-band { padding: 34px 0; background: var(--roxo); }
+.cr-band ul { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 18px 28px; margin: 0; padding: 0; list-style: none; }
+.cr-band li { display: flex; align-items: center; gap: 11px; color: rgba(255,255,255,.84); font-size: 14.5px; font-weight: 600; }
+.cr-band svg.lucide { width: 19px; height: 19px; color: var(--lavanda); }
+
+/* ---------- Pré-consulta em 7 movimentos ---------- */
+.cr-railbox { position: relative; margin: 0 0 40px; }
+.cr-rail { position: relative; display: grid; grid-template-columns: repeat(7, minmax(0, 1fr)); margin: 0; padding: 0; list-style: none; }
+.cr-railbox::before, .cr-rail__fill { content: ""; position: absolute; top: 23px; left: calc(100% / 14); right: calc(100% / 14); height: 2px; background: var(--linha); }
+.cr-rail__fill { z-index: 0; right: auto; width: 0; background: var(--violeta); transition: width .5s var(--ease); }
+.cr-node { position: relative; z-index: 1; display: flex; flex-direction: column; align-items: center; gap: 12px; width: 100%; padding: 0 4px 6px; color: var(--sutil); text-align: center; }
+.cr-node__n { display: grid; place-items: center; width: 48px; height: 48px; border: 1.5px solid var(--linha); border-radius: 50%; background: var(--papel); color: var(--sutil); font: 600 15px var(--fd); font-variant-numeric: tabular-nums; transition: background-color .3s, border-color .3s, color .3s, transform .3s var(--ease); }
+.cr-node b { font: 600 15px/1.3 var(--fd); transition: color .3s; }
+.cr-node:hover .cr-node__n { border-color: var(--lavanda); color: var(--violeta-forte); }
+.cr-node.is-past .cr-node__n { border-color: var(--violeta); color: var(--violeta-forte); background: var(--lavanda-2); }
+.cr-node[aria-selected="true"] .cr-node__n { border-color: var(--violeta); background: var(--violeta); color: #fff; transform: scale(1.08); }
+.cr-node[aria-selected="true"] b { color: var(--tinta); }
+.cr-stage { display: grid; grid-template-columns: minmax(0, .9fr) minmax(0, 1.1fr); gap: clamp(32px, 5vw, 72px); align-items: center; min-height: 420px; padding: clamp(28px, 4vw, 48px); border-radius: 32px; background: var(--nevoa); }
+.cr-panel[hidden] { display: none; }
+.cr-panel { animation: cr-pop .45s var(--ease) both; }
+.cr-panel__k { color: var(--violeta-forte); font: 600 15px var(--fd); font-variant-numeric: tabular-nums; }
+.cr-panel h3 { margin-top: 10px; color: var(--tinta); font: 700 clamp(30px, 3.2vw, 44px)/1.08 var(--fd); letter-spacing: -.04em; }
+.cr-panel p { max-width: 440px; margin-top: 16px; font-size: 18px; line-height: 1.65; }
+.cr-stage__nav { display: flex; gap: 10px; margin-top: 30px; }
+.cr-round { display: grid; place-items: center; width: 48px; height: 48px; border: 1.5px solid #D9D2F0; border-radius: 50%; background: #fff; color: var(--tinta); transition: background-color .2s, border-color .2s, opacity .2s; }
+.cr-round:hover { border-color: var(--violeta); }
+.cr-round:disabled { opacity: .35; cursor: default; }
+.cr-mini { position: relative; padding: 22px; border-radius: 24px; background: #fff; box-shadow: 0 30px 60px -40px rgba(30,14,92,.5), 0 0 0 1px rgba(26,19,56,.05); }
+.cr-mini__head { display: flex; align-items: center; justify-content: space-between; gap: 10px; margin-bottom: 16px; color: var(--sutil); font-size: 13px; font-weight: 600; }
+.cr-mini__head b { display: flex; align-items: center; gap: 8px; color: var(--tinta); font: 600 14.5px var(--fd); }
+.cr-mini__head b svg.lucide { width: 16px; height: 16px; color: var(--violeta); }
+.cr-sys { display: flex; align-items: center; gap: 9px; margin-top: 12px; padding: 10px 13px; border-radius: 13px; background: #E3F6EA; color: #11713B; font-size: 13.5px; font-weight: 700; }
+.cr-sys svg.lucide { width: 16px; height: 16px; }
+.cr-sys--violet { background: var(--lavanda-2); color: var(--violeta-forte); }
+.cr-areas-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 8px; }
+.cr-areas-grid span { display: flex; align-items: center; justify-content: center; gap: 6px; padding: 12px 8px; border: 1px solid var(--linha); border-radius: 13px; color: #A39CBC; font-size: 13.5px; font-weight: 700; }
+.cr-areas-grid span.is-hit { border-color: var(--a-trab); background: var(--a-trab-bg); color: var(--a-trab); }
+.cr-qa { display: grid; gap: 10px; margin: 0; padding: 0; list-style: none; }
+.cr-qa li { display: grid; grid-template-columns: 22px minmax(0, 1fr); gap: 10px; align-items: start; padding: 11px 12px; border-radius: 13px; background: #F8F6FD; font-size: 14px; }
+.cr-qa li svg.lucide { width: 18px; height: 18px; margin-top: 1px; color: var(--verde); }
+.cr-qa b { display: block; color: var(--tinta); font-weight: 700; }
+.cr-qa span span { color: var(--sutil); }
+.cr-meter { display: flex; align-items: center; gap: 10px; margin-top: 14px; color: var(--tinta); font-size: 13.5px; font-weight: 700; }
+.cr-meter i { flex: 1; height: 8px; border-radius: 99px; background: linear-gradient(90deg, #22C55E, #F59E0B 55%, #E5484D) 0 0 / 100% 100%; -webkit-mask: linear-gradient(90deg, #000 82%, rgba(0,0,0,.15) 82%); mask: linear-gradient(90deg, #000 82%, rgba(0,0,0,.15) 82%); }
+.cr-meter em { padding: 3px 9px; border-radius: 999px; background: #FDECEC; color: #B4232A; font-style: normal; font-size: 12px; }
+.cr-slots { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px; }
+.cr-slots span { display: flex; align-items: center; justify-content: center; gap: 7px; padding: 14px 8px; border: 1px solid var(--linha); border-radius: 14px; color: var(--texto); font: 600 14.5px var(--fd); }
+.cr-slots span.is-hit { border-color: var(--violeta); background: var(--violeta); color: #fff; }
+.cr-slots svg.lucide { width: 16px; height: 16px; }
+.cr-minicols { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 6px; }
+.cr-minicols > div { min-height: 150px; padding: 8px 6px; border-radius: 12px; background: #F4F2FA; }
+.cr-minicols small { display: block; margin-bottom: 8px; color: var(--sutil); font-size: 11px; font-weight: 700; line-height: 1.25; text-align: center; }
+.cr-minicols i { display: block; height: 30px; margin-bottom: 6px; border-radius: 8px; background: #fff; box-shadow: 0 1px 2px rgba(26,19,56,.06); }
+.cr-minicols i.is-hit { height: auto; padding: 7px; background: #fff; box-shadow: 0 0 0 2px var(--violeta); color: var(--tinta); font: 600 11px/1.3 var(--fd); font-style: normal; }
+
+/* ---------- O card anda ---------- */
+.cr-move { display: grid; grid-template-columns: minmax(0, .8fr) minmax(0, 1.2fr); gap: clamp(28px, 4vw, 56px); align-items: start; }
+.cr-triggers { display: grid; gap: 10px; margin: 0; padding: 0; list-style: none; }
+.cr-trigger { display: grid; grid-template-columns: 46px minmax(0, 1fr); gap: 16px; width: 100%; padding: 18px; border: 1px solid var(--linha); border-radius: 22px; background: #fff; text-align: left; transition: border-color .25s, box-shadow .25s, background-color .25s; }
+.cr-trigger:hover { border-color: var(--lavanda); }
+.cr-trigger[aria-pressed="true"] { border-color: var(--violeta); box-shadow: 0 22px 44px -30px rgba(117,71,239,.8); }
+.cr-trigger.is-done:not([aria-pressed="true"]) { background: #FAF9FE; }
+.cr-trigger__ic { display: grid; place-items: center; width: 46px; height: 46px; border-radius: 15px; background: var(--lavanda-2); color: var(--violeta-forte); }
+.cr-trigger[aria-pressed="true"] .cr-trigger__ic { background: var(--violeta); color: #fff; }
+.cr-trigger__ic svg.lucide { width: 20px; height: 20px; }
+.cr-trigger b { display: block; color: var(--tinta); font: 600 17px/1.3 var(--fd); }
+.cr-trigger small { display: block; margin-top: 5px; color: var(--sutil); font-size: 14.5px; line-height: 1.55; }
+.cr-reset { display: inline-flex; align-items: center; gap: 8px; margin-top: 14px; padding: 8px 4px; color: var(--violeta-forte); font-size: 14px; font-weight: 700; }
+.cr-reset svg.lucide { width: 16px; height: 16px; }
+.cr-ws { display: grid; grid-template-columns: 300px minmax(0, 1fr); height: 548px; overflow: hidden; border: 1px solid var(--linha); border-radius: 28px; background: #fff; box-shadow: var(--sombra); }
+.cr-ws__chat { display: flex; flex-direction: column; min-height: 0; border-right: 1px solid var(--linha); background: radial-gradient(rgba(117,71,239,.06) 1px, transparent 1.4px) 0 0 / 18px 18px, #F7F5FC; }
+.cr-ws__board { display: flex; flex-direction: column; min-width: 0; }
+.cr-ws__cols { display: grid; flex: 1; align-content: start; gap: 8px; padding: 14px; }
+.cr-ws__cols .cr-col { display: grid; grid-template-columns: 112px minmax(0, 1fr); gap: 12px; align-items: center; min-height: 92px; padding: 10px 10px 10px 16px; border-radius: 18px; transition: background-color .4s; }
+.cr-ws__cols .cr-col.is-here { background: var(--lavanda-2); }
+.cr-ws__cols .cr-col__head { display: block; padding: 0; font-size: 14px; line-height: 1.3; }
+.cr-ws__cols .cr-col__head small { display: block; margin-top: 2px; color: var(--sutil); font: 600 11.5px var(--fb); }
+.cr-ws__cols .cr-list { min-height: 0; }
+.cr-ws__cols .cr-card { padding: 10px 12px; }
+.cr-ws__cols .cr-card b { margin: 5px 0 7px; font-size: 13.5px; }
+.cr-ws__cols .cr-card__st { padding-top: 7px; font-size: 12px; }
+.cr-ws__log { display: flex; align-items: center; gap: 10px; min-height: 52px; padding: 12px 18px; border-top: 1px solid var(--linha); color: var(--texto); font-size: 14px; }
+.cr-ws__log svg.lucide { color: var(--violeta); }
+
+/* Conversa (visão do escritório: cliente à esquerda, IA à direita) */
+.cr-chathead { display: flex; align-items: center; gap: 11px; padding: 12px 16px; border-bottom: 1px solid var(--linha); background: #fff; }
+.cr-chathead > svg.lucide { width: 20px; height: 20px; color: var(--sutil); }
+.cr-chathead__id { flex: 1; min-width: 0; }
+.cr-chathead b { display: block; overflow: hidden; color: var(--tinta); font: 600 15px/1.25 var(--fd); white-space: nowrap; text-overflow: ellipsis; }
+.cr-chathead small { display: flex; align-items: center; gap: 6px; margin-top: 2px; color: var(--sutil); font-size: 12px; }
+.cr-face { display: grid; place-items: center; width: 38px; height: 38px; flex: none; border-radius: 50%; background: #E4DCFF; color: var(--violeta-forte); font: 600 14px var(--fd); }
+.cr-wa { display: grid; place-items: center; width: 24px; height: 24px; flex: none; border-radius: 50%; background: var(--wa); color: #fff; font: 700 9px var(--fd); }
+.cr-thread { display: flex; flex: 1; flex-direction: column; gap: 8px; min-height: 0; padding: 14px 12px; overflow-y: auto; scrollbar-width: none; }
+.cr-thread::-webkit-scrollbar { display: none; }
+.cr-thread > :first-child { margin-top: auto; }
+.cr-msg { max-width: 86%; padding: 9px 12px 7px; border-radius: 16px; color: var(--tinta); font-size: 13.5px; line-height: 1.5; box-shadow: 0 1px 1.5px rgba(26,19,56,.07); overflow-wrap: anywhere; }
+.cr-msg small { display: block; margin-top: 2px; color: var(--sutil); font-size: 10.5px; text-align: right; font-variant-numeric: tabular-nums; }
+.cr-msg--lead { align-self: flex-start; border-bottom-left-radius: 5px; background: #fff; }
+.cr-msg--ia { align-self: flex-end; border-bottom-right-radius: 5px; background: var(--lavanda-2); }
+.cr-msg__by { display: flex; align-items: center; gap: 5px; margin-bottom: 3px; color: var(--violeta-forte); font: 600 11.5px var(--fd); }
+.cr-msg__by svg.lucide { width: 12px; height: 12px; }
+.cr-file { display: flex; align-items: center; gap: 10px; align-self: flex-start; width: 78%; padding: 9px 11px; border-radius: 14px; border-bottom-left-radius: 5px; background: #fff; box-shadow: 0 1px 1.5px rgba(26,19,56,.07); }
+.cr-file__ic { display: grid; place-items: center; width: 34px; height: 34px; flex: none; border-radius: 10px; background: #FDECEC; color: #C62F35; }
+.cr-file__ic--img { background: #E3ECFE; color: #1D4ED8; }
+.cr-file__ic svg.lucide { width: 17px; height: 17px; }
+.cr-file b { display: block; overflow: hidden; color: var(--tinta); font-size: 12.5px; font-weight: 700; white-space: nowrap; text-overflow: ellipsis; }
+.cr-file small { display: flex; align-items: center; gap: 4px; color: var(--verde); font-size: 11.5px; font-weight: 600; }
+.cr-file small svg.lucide { width: 12px; height: 12px; }
+.cr-file > span:last-child { min-width: 0; }
+.cr-composer { display: flex; align-items: center; gap: 10px; margin: 0 10px 12px; padding: 6px 6px 6px 16px; border-radius: 999px; background: #fff; color: #9C97AE; font-size: 13.5px; box-shadow: 0 1px 2px rgba(26,19,56,.06); }
+.cr-composer span { flex: 1; }
+.cr-composer > svg.lucide { width: 32px; height: 32px; padding: 7px; border-radius: 50%; background: var(--violeta); color: #fff; }
+.is-new { animation: cr-pop .45s var(--ease) both; }
+
+/* ---------- Qualificação automática (3 celulares) ---------- */
+.cr-julia { background: linear-gradient(180deg, var(--papel) 0%, var(--nevoa) 20%, var(--nevoa) 80%, var(--papel) 100%); }
+.cr-phones { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 28px; }
+.cr-phone { padding: 9px; border-radius: 44px; background: linear-gradient(155deg, #4a3a8f 0%, #1d1250 40%, #0d0724 100%); box-shadow: inset 0 0 0 1px rgba(255,255,255,.14), 0 40px 80px -40px rgba(18,10,48,.7); }
+.cr-phone__screen { position: relative; display: flex; flex-direction: column; height: 660px; overflow: hidden; border-radius: 36px; background: #F1EEF9; }
+.cr-phone__island { position: absolute; top: 10px; left: 50%; z-index: 3; width: 92px; height: 27px; margin-left: -46px; border-radius: 20px; background: #0b0620; }
+.cr-phone__status { display: flex; justify-content: space-between; align-items: center; height: 46px; padding: 6px 26px 0; background: #fff; color: var(--tinta); font: 600 13px var(--fd); font-variant-numeric: tabular-nums; }
+.cr-phone__status span:last-child { display: flex; gap: 4px; }
+.cr-phone__status svg.lucide { width: 14px; height: 14px; }
+.cr-phone .cr-chathead { padding: 6px 14px 10px; }
+.cr-phone .cr-msg { font-size: 13px; }
+.cr-phone .cr-thread { scroll-behavior: smooth; }
+.cr-phone .cr-chathead small .cr-area { padding: 1px 7px; font-size: 11px; }
+.cr-phones__cap { display: flex; align-items: center; justify-content: center; gap: 8px; margin-top: 18px; color: var(--sutil); font-size: 14px; font-weight: 600; }
+.cr-phones__cap svg.lucide { width: 16px; height: 16px; color: var(--verde); }
+
+/* ---------- Dossiê ---------- */
+.cr-dossie { display: grid; grid-template-columns: minmax(0, .85fr) minmax(0, 1.15fr); gap: clamp(32px, 5vw, 80px); align-items: start; }
+.cr-feats { display: grid; gap: 6px; margin: 34px 0 0; padding: 0; list-style: none; }
+.cr-feat { display: grid; grid-template-columns: 44px minmax(0, 1fr); gap: 14px; width: 100%; padding: 14px; border: 1px solid transparent; border-radius: 20px; text-align: left; transition: background-color .25s, border-color .25s, box-shadow .25s; }
+.cr-feat:hover { background: rgba(255,255,255,.7); }
+.cr-feat[aria-pressed="true"] { border-color: var(--linha); background: #fff; box-shadow: 0 20px 40px -30px rgba(40,20,110,.55); }
+.cr-feat__ic { display: grid; place-items: center; width: 44px; height: 44px; border-radius: 14px; background: var(--lavanda-2); color: var(--violeta-forte); }
+.cr-feat[aria-pressed="true"] .cr-feat__ic { background: var(--violeta); color: #fff; }
+.cr-feat__ic svg.lucide { width: 20px; height: 20px; }
+.cr-feat b { display: block; color: var(--tinta); font: 600 17px/1.3 var(--fd); }
+.cr-feat small { display: block; margin-top: 4px; color: var(--sutil); font-size: 14.5px; line-height: 1.55; }
+.cr-doc { position: relative; overflow: hidden; border-radius: 26px; background: #fff; box-shadow: var(--sombra), 0 0 0 1px rgba(26,19,56,.05); }
+.cr-doc::before { content: ""; position: absolute; inset: 0 0 auto; height: 5px; background: linear-gradient(90deg, var(--violeta), #A98BFF); }
+.cr-doc__head { display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: 24px 28px 18px; border-bottom: 1px solid var(--linha); }
+.cr-doc__head h3 { color: var(--tinta); font: 700 21px var(--fd); letter-spacing: -.02em; }
+.cr-doc__ai { display: inline-flex; align-items: center; gap: 6px; padding: 5px 11px; border-radius: 999px; background: var(--lavanda-2); color: var(--violeta-forte); font-size: 12.5px; font-weight: 700; }
+.cr-doc__ai svg.lucide { width: 14px; height: 14px; }
+.cr-doc__body { display: grid; gap: 6px; padding: 18px 20px 22px; }
+.cr-part { padding: 12px 10px; border-radius: 16px; transition: background-color .35s, box-shadow .35s; }
+.cr-part.is-hl { background: #F7F3FF; box-shadow: inset 0 0 0 1.5px var(--lavanda); }
+.cr-person { display: grid; grid-template-columns: 52px minmax(0, 1fr); gap: 14px; align-items: center; }
+.cr-person .cr-face { width: 52px; height: 52px; font-size: 17px; }
+.cr-person b { display: block; color: var(--tinta); font: 600 18px var(--fd); }
+.cr-person small { display: block; color: var(--sutil); font-size: 13.5px; }
+.cr-meta { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 10px; margin: 0; }
+.cr-meta div { padding: 11px 12px; border-radius: 13px; background: #F8F6FD; }
+.cr-meta dt { color: var(--sutil); font-size: 12px; font-weight: 600; }
+.cr-meta dd { margin: 3px 0 0; color: var(--tinta); font-size: 13.5px; font-weight: 700; line-height: 1.35; }
+.cr-urg { display: inline-flex; align-items: center; gap: 5px; padding: 1px 9px; border-radius: 999px; background: #FDECEC; color: #B4232A; }
+.cr-part h4 { margin-bottom: 8px; color: var(--tinta); font: 600 14.5px var(--fd); }
+.cr-part p { font-size: 14.5px; line-height: 1.65; }
+.cr-attn { display: grid; gap: 7px; margin: 0; padding: 0; list-style: none; }
+.cr-attn li { display: flex; align-items: flex-start; gap: 9px; color: var(--tinta); font-size: 14px; line-height: 1.5; }
+.cr-attn svg.lucide { width: 16px; height: 16px; margin-top: 2px; color: #D97706; }
+.cr-docs { display: grid; gap: 8px; }
+.cr-docrow { display: grid; grid-template-columns: 36px minmax(0, 1fr) auto; gap: 11px; align-items: center; padding: 9px 11px; border: 1px solid var(--linha); border-radius: 13px; }
+.cr-docrow .cr-file__ic { width: 36px; height: 36px; }
+.cr-docrow b { display: block; overflow: hidden; color: var(--tinta); font-size: 13.5px; white-space: nowrap; text-overflow: ellipsis; }
+.cr-docrow small { color: var(--sutil); font-size: 12px; }
+.cr-ok { display: inline-flex; align-items: center; gap: 4px; color: var(--verde); font-size: 12.5px; font-weight: 700; }
+.cr-ok svg.lucide { width: 14px; height: 14px; }
+.cr-doc__foot { padding: 14px 28px; border-top: 1px solid var(--linha); background: #FCFBFF; color: var(--sutil); font-size: 12.5px; }
+
+/* ---------- Lead qualificado x curioso ---------- */
+.cr-vs { display: grid; grid-template-columns: minmax(0, .9fr) minmax(0, 1.1fr); gap: 20px; }
+.cr-vs > div { position: relative; display: flex; flex-direction: column; min-height: 460px; padding: clamp(28px, 3.4vw, 44px); border-radius: 30px; }
+.cr-vs h3 { font: 600 15px var(--fd); }
+.cr-vs blockquote { margin: 24px 0 0; font: 600 clamp(24px, 2.4vw, 32px)/1.25 var(--fd); letter-spacing: -.03em; }
+.cr-vs p { margin-top: auto; padding-top: 28px; font-size: 16px; line-height: 1.65; }
+.cr-vs__old { background: #EFEDF5; color: var(--sutil); }
+.cr-vs__old blockquote { color: #8F88A6; }
+.cr-timer { margin-top: 28px; }
+.cr-timer__bar { position: relative; height: 10px; border-radius: 99px; background: #DEDAE9; overflow: hidden; }
+.cr-timer__bar i { position: absolute; inset: 0 auto 0 0; width: 0; border-radius: inherit; background: #A39CBC; transition: width 2.4s var(--ease); }
+.cr-vs.is-in .cr-timer__bar i { width: 66.67%; }
+.cr-timer__lbl span { position: absolute; top: 0; }
+.cr-timer__lbl span:nth-child(2) { left: 66.67%; transform: translateX(-50%); color: var(--tinta); }
+.cr-timer__lbl span:last-child { right: 0; }
+.cr-timer__lbl { position: relative; height: 20px; margin-top: 8px; color: #8F88A6; font-size: 13px; font-weight: 600; font-variant-numeric: tabular-nums; }
+.cr-vs > .cr-vs__new { overflow: hidden; padding: 0; background: var(--noite); color: rgba(255,255,255,.8); }
+.cr-vs__new img { width: 100%; height: 260px; flex: none; object-fit: cover; object-position: 50% 28%; }
+.cr-vs__txt { display: flex; flex: 1; flex-direction: column; padding: clamp(26px, 3vw, 38px) clamp(28px, 3.4vw, 44px) clamp(28px, 3.4vw, 44px); }
+.cr-vs__new blockquote { margin-top: 18px; }
+.cr-vs__new h3 { color: var(--lavanda); }
+.cr-vs__new blockquote { color: #fff; }
+
+/* ---------- Equação de valor ---------- */
+.cr-eq { display: grid; gap: 0; }
+.cr-eq__row { display: grid; gap: 24px; }
+.cr-eq__row--up { grid-template-columns: repeat(2, minmax(0, 1fr)); max-width: 820px; margin: 0 auto; width: 100%; }
+.cr-eq__row--down { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+.cr-eq__cap { margin: 0 0 14px; color: var(--sutil); font: 600 14px var(--fd); text-align: center; }
+.cr-eq__cap--down { margin: 14px 0 0; }
+.cr-eq__bar { position: relative; height: 3px; margin: 34px 0; border-radius: 3px; background: var(--tinta); }
+.cr-eq__item { display: grid; grid-template-columns: 44px minmax(0, 1fr); gap: 16px; padding: 22px; border-radius: 24px; background: #fff; box-shadow: inset 0 0 0 1px var(--linha); }
+.cr-eq__ic { display: grid; place-items: center; width: 44px; height: 44px; border-radius: 14px; }
+.cr-eq__row--up .cr-eq__ic { background: #E3F6EA; color: var(--verde); }
+.cr-eq__row--down .cr-eq__ic { background: var(--lavanda-2); color: var(--violeta-forte); }
+.cr-eq__ic svg.lucide { width: 21px; height: 21px; }
+.cr-eq__item b { display: block; color: var(--tinta); font: 600 18px/1.3 var(--fd); }
+.cr-eq__item p { margin-top: 6px; font-size: 15px; line-height: 1.6; }
+
+/* ---------- Comparação ---------- */
+.cr-cmp { width: 100%; border-collapse: separate; border-spacing: 0; }
+.cr-cmp th { padding: 18px 26px; font: 600 17px var(--fd); text-align: left; }
+.cr-cmp th:first-child { color: var(--sutil); }
+.cr-cmp th:last-child { border-radius: 24px 24px 0 0; background: var(--noite); color: #fff; }
+.cr-cmp td { padding: 17px 26px; border-top: 1px solid var(--linha); font-size: 16px; vertical-align: middle; }
+.cr-cmp td:first-child { color: var(--sutil); }
+.cr-cmp td:last-child { border-top-color: rgba(255,255,255,.08); background: var(--noite); color: #fff; font-weight: 600; }
+.cr-cmp tr:last-child td:last-child { border-radius: 0 0 24px 24px; }
+.cr-cmp td span { display: flex; align-items: center; gap: 12px; }
+.cr-cmp td:first-child svg.lucide { color: #B9B3CC; }
+.cr-cmp td:last-child svg.lucide { color: #6EE7A0; }
+.cr-cmp td:first-child, .cr-cmp th:first-child { width: 50%; }
+
+/* ---------- Oferta + formulário ---------- */
+.cr-oferta { overflow: hidden; background: radial-gradient(55% 70% at 100% 0%, rgba(117,71,239,.32) 0%, transparent 65%), radial-gradient(40% 50% at 0% 100%, rgba(117,71,239,.2) 0%, transparent 70%), var(--roxo); }
+.cr-oferta__grid { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 560px); gap: clamp(40px, 6vw, 96px); align-items: start; }
+.cr-oferta .cr-h2 { font-size: clamp(36px, 4.4vw, 58px); }
+.cr-oferta .cr-lede { margin-top: 22px; }
+.cr-checklist { display: grid; gap: 14px; margin: 34px 0 0; padding: 0; list-style: none; }
+.cr-checklist li { display: flex; align-items: center; gap: 12px; color: rgba(255,255,255,.86); font-size: 16px; }
+.cr-checklist svg.lucide { width: 28px; height: 28px; padding: 6px; border-radius: 50%; background: rgba(205,189,255,.14); color: var(--lavanda); }
+.cr-seals { display: flex; flex-wrap: wrap; gap: 10px; margin: 34px 0 0; padding: 0; list-style: none; }
+.cr-seals li { display: inline-flex; align-items: center; gap: 7px; padding: 7px 13px; border: 1px solid rgba(255,255,255,.12); border-radius: 999px; color: rgba(255,255,255,.82); font-size: 13.5px; font-weight: 700; }
+.cr-seals svg.lucide { width: 15px; height: 15px; color: var(--lavanda); }
+.cr-form-card { padding: 34px; border-radius: 30px; background: #fff; color: var(--texto); box-shadow: 0 50px 100px -40px rgba(0,0,0,.7); }
+.cr-form-card h3 { color: var(--tinta); font: 600 26px/1.2 var(--fd); letter-spacing: -.03em; }
+.cr-form-card > div > p { margin-top: 8px; font-size: 15px; line-height: 1.6; }
+.cr-form { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-top: 24px; }
+.cr-form .ct-full { grid-column: 1 / -1; }
+.lp-field > label:not(.ct-check) { display: block; margin-bottom: 7px; color: var(--tinta); font-size: 14px; font-weight: 700; }
+.lp-field > label i { color: var(--sutil); font-style: normal; font-weight: 500; }
+.cr-input { width: 100%; height: 50px; padding: 0 16px; border: 1px solid var(--linha); border-radius: 14px; background: var(--papel); color: var(--tinta); font-size: 15.5px; transition: border-color .2s, box-shadow .2s, background-color .2s; }
+.cr-input::placeholder { color: #A29DB4; }
+.cr-input:hover { border-color: #D3CBEA; }
+.cr-input:focus { border-color: var(--violeta); background: #fff; outline: none; box-shadow: 0 0 0 4px rgba(117,71,239,.14); }
+select.cr-input { appearance: none; -webkit-appearance: none; padding-right: 42px; background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='18' height='18' viewBox='0 0 24 24' fill='none' stroke='%236E6884' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E"); background-repeat: no-repeat; background-position: right 14px center; cursor: pointer; }
+select.cr-input:invalid { color: #A29DB4; }
+textarea.cr-input { height: 96px; padding: 13px 16px; line-height: 1.5; resize: vertical; }
+.lp-field__error { display: none; margin-top: 6px; color: #C62F35; font-size: 13px; font-weight: 600; }
+.lp-field.is-error .cr-input { border-color: #E5484D; background: #FFF7F7; }
+.lp-field.is-error .lp-field__error { display: block; }
+.lp-field .ct-check { display: flex; align-items: flex-start; gap: 10px; margin: 0; color: var(--texto); font-size: 14px; font-weight: 500; line-height: 1.5; cursor: pointer; }
+.ct-check input { position: absolute; width: 1px; height: 1px; opacity: 0; }
+.ct-box { display: grid; place-items: center; width: 22px; height: 22px; flex: none; margin-top: 1px; border: 1.5px solid #CFC7E6; border-radius: 7px; background: #fff; color: transparent; transition: background-color .2s, border-color .2s, color .2s; }
+.ct-box svg.lucide { width: 14px; height: 14px; stroke-width: 3; }
+.ct-check input:checked + .ct-box { border-color: var(--violeta); background: var(--violeta); color: #fff; }
+.ct-check input:focus-visible + .ct-box { outline: 2.5px solid var(--violeta); outline-offset: 2px; }
+.lp-field.is-error .ct-box { border-color: #E5484D; }
+.lp-hp { position: absolute; left: -9999px; width: 1px; height: 1px; opacity: 0; }
+.lp-submit { display: flex; align-items: center; justify-content: center; gap: 10px; height: 56px; border-radius: 999px; background: var(--grad); color: #fff; font-size: 16px; font-weight: 700; box-shadow: 0 16px 34px -16px rgba(117,71,239,.95); transition: background-color .2s; }
+.lp-submit:hover { background: var(--grad-hover); }
+.lp-submit:disabled { opacity: .75; cursor: progress; }
+.lp-submit svg.lucide { width: 18px; height: 18px; }
+.lp-spinner { width: 18px; height: 18px; border: 2.5px solid rgba(255,255,255,.4); border-top-color: #fff; border-radius: 50%; animation: cr-spin .8s linear infinite; }
+.lp-alert { display: none; padding: 12px 14px; border-radius: 12px; background: #FDECEC; color: #A3262B; font-size: 14px; font-weight: 600; }
+.lp-alert.is-visible { display: block; }
+.ct-success { display: none; padding: 20px 0; text-align: center; }
+.ct-success.is-visible { display: block; animation: cr-pop .5s var(--ease) both; }
+.ct-success__ic { display: grid; place-items: center; width: 64px; height: 64px; margin: 0 auto 18px; border-radius: 50%; background: #E3F6EA; color: var(--verde); }
+.ct-success__ic svg.lucide { width: 30px; height: 30px; stroke-width: 2.6; }
+.ct-success h3 { outline: none; }
+.ct-success p { margin-top: 10px; font-size: 15.5px; line-height: 1.6; }
+.ct-again { margin-top: 18px; color: var(--violeta-forte); font-size: 14.5px; font-weight: 700; text-decoration: underline; text-underline-offset: 3px; }
+
+/* ---------- FAQ ---------- */
+.cr-faq { display: grid; grid-template-columns: minmax(0, .8fr) minmax(0, 1.2fr); gap: clamp(32px, 6vw, 96px); align-items: start; }
+.cr-faq__side p { margin-top: 20px; font-size: 16.5px; line-height: 1.7; }
+.cr-faq__side a { color: var(--violeta-forte); font-weight: 700; text-decoration: underline; text-underline-offset: 3px; }
+.cr-qs { margin: 0; padding: 0; list-style: none; border-top: 1px solid var(--linha); }
+.cr-q { border-bottom: 1px solid var(--linha); }
+.cr-q__btn { display: grid; grid-template-columns: minmax(0, 1fr) 32px; gap: 18px; align-items: center; width: 100%; padding: 22px 0; color: var(--tinta); font: 600 clamp(17px, 1.6vw, 19px)/1.4 var(--fd); text-align: left; }
+.cr-q__btn span:last-child { display: grid; place-items: center; width: 32px; height: 32px; border-radius: 50%; background: var(--nevoa); color: var(--violeta-forte); transition: transform .35s var(--ease), background-color .25s, color .25s; }
+.cr-q__btn[aria-expanded="true"] span:last-child { background: var(--violeta); color: #fff; transform: rotate(45deg); }
+.cr-q__body { display: grid; grid-template-rows: 0fr; transition: grid-template-rows .4s var(--ease); }
+.cr-q__body > div { min-height: 0; overflow: hidden; }
+.cr-q.is-open .cr-q__body { grid-template-rows: 1fr; }
+.cr-q__body p { max-width: 640px; padding: 0 50px 24px 0; font-size: 16px; line-height: 1.7; }
+
+/* ---------- Rodapé ---------- */
+.jf { position: relative; overflow: hidden; padding: 72px 0 28px; background: #1E0C45; color: #A99BD0; }
+.jf__glow { position: absolute; inset: 0; pointer-events: none; background: radial-gradient(40% 60% at 0% 0%, rgba(139,92,246,.18), transparent 70%), radial-gradient(35% 50% at 100% 100%, rgba(117,71,239,.14), transparent 70%); }
+.jf .cr-wrap { position: relative; }
+.jf__top { display: grid; grid-template-columns: minmax(0, 1.3fr) minmax(0, 2fr); gap: 64px; padding-bottom: 48px; border-bottom: 1px solid rgba(255,255,255,.08); }
+.jf__logo { display: inline-block; margin-bottom: 20px; }
+.jf__logo img { width: auto; height: 32px; }
+.jf__tag { max-width: 380px; margin: 0 0 20px; color: #B8AAD9; font-size: 15px; line-height: 1.65; }
+.jf__seals { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 22px; }
+.jf__seals span { display: inline-flex; align-items: center; gap: 6px; padding: 5px 11px; border: 1px solid rgba(255,255,255,.1); border-radius: 999px; background: rgba(255,255,255,.06); color: #E3DAFA; font-size: 12px; font-weight: 700; }
+.jf__seals svg.lucide { width: 13px; height: 13px; color: #A98BFF; }
+.jf__social { display: flex; gap: 10px; }
+.jf__social a { display: flex; align-items: center; justify-content: center; width: 40px; height: 40px; border: 1px solid rgba(255,255,255,.1); border-radius: 12px; background: rgba(255,255,255,.06); color: #E3DAFA; transition: background-color .25s, color .25s, transform .25s, border-color .25s; }
+.jf__social a svg { width: 18px; height: 18px; }
+.jf__social a:hover { border-color: var(--violeta); background: var(--violeta); color: #fff; transform: translateY(-3px); }
+.jf__links { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 32px; }
+.jf__h { margin: 0 0 16px; color: #fff; font: 700 15px var(--fd); }
+.jf__col { display: flex; flex-direction: column; align-items: flex-start; gap: 11px; }
+.jf__col a { position: relative; color: #B8AAD9; font-size: 14.5px; transition: color .2s; }
+.jf__col a::after { content: ""; position: absolute; right: 0; bottom: -3px; left: 0; height: 1.5px; border-radius: 2px; background: #A98BFF; transform: scaleX(0); transform-origin: left; transition: transform .3s var(--ease); }
+.jf__col a:hover { color: #fff; }
+.jf__col a:hover::after { transform: scaleX(1); }
+.jf__bottom { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 16px; padding-top: 24px; color: #8E80B8; font-size: 13px; }
+.jf__made { display: inline-flex; align-items: center; gap: 8px; }
+.jf__made i { width: 7px; height: 7px; border-radius: 50%; background: #22C55E; box-shadow: 0 0 0 4px rgba(34,197,94,.15); }
+.jf__up { display: inline-flex; align-items: center; gap: 6px; padding: 7px 12px; border: 1px solid rgba(255,255,255,.12); border-radius: 999px; color: #E3DAFA; font-weight: 700; transition: background-color .25s, border-color .25s; }
+.jf__up svg.lucide { width: 14px; height: 14px; }
+.jf__up:hover { border-color: rgba(255,255,255,.25); background: rgba(255,255,255,.08); color: #fff; }
+.jf a:focus-visible { outline: 2.5px solid #C9B5FF; outline-offset: 3px; }
+
+/* ---------- Animações ---------- */
+@keyframes cr-rise { from { opacity: 0; transform: translateY(22px); } to { opacity: 1; transform: none; } }
+@keyframes cr-pop { from { opacity: 0; transform: translateY(8px) scale(.98); } to { opacity: 1; transform: none; } }
+@keyframes cr-dot { to { opacity: .25; transform: translateY(-2px); } }
+@keyframes cr-ping { 0% { transform: scale(.6); opacity: .5; } 80%, 100% { transform: scale(2); opacity: 0; } }
+@keyframes cr-spin { to { transform: rotate(360deg); } }
+
+/* ---------- Responsivo ---------- */
+@media (max-width: 1100px) {
+  .cr-hero__top { grid-template-columns: minmax(0, 1fr); align-items: start; }
+  .cr-hero__lead { max-width: 640px; }
+  .cr-board { overflow: visible; }
+  .cr-cols { display: flex; overflow-x: auto; scroll-snap-type: x mandatory; scrollbar-width: none; border-radius: 0 0 30px 30px; }
+  .cr-cols::-webkit-scrollbar { display: none; }
+  .cr-cols .cr-col { flex: 0 0 min(300px, 78%); scroll-snap-align: start; }
+  .cr-stats { margin-left: 0; }
+  .cr-band ul { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .cr-phones { display: flex; gap: 18px; margin: 0 -32px; padding: 6px 32px 18px; overflow-x: auto; scroll-snap-type: x mandatory; scrollbar-width: none; }
+  .cr-phones::-webkit-scrollbar { display: none; }
+  .cr-phone { flex: 0 0 min(340px, 84%); scroll-snap-align: center; }
+  .cr-move { grid-template-columns: minmax(0, 1fr); }
+  .cr-triggers { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+}
+@media (max-width: 900px) {
+  .cr-wrap { padding: 0 24px; }
+  .cr-hero__in { padding: 0 28px; }
+  .cr-hero { padding: 120px 0 72px; }
+  .cr-head { grid-template-columns: minmax(0, 1fr); align-items: start; }
+  .cr-railbox { margin: 0 -24px 28px; }
+  .cr-rail { display: flex; gap: 0; padding: 0 24px 6px; overflow-x: auto; scrollbar-width: none; }
+  .cr-rail::-webkit-scrollbar { display: none; }
+  .cr-railbox::before, .cr-rail__fill { display: none; }
+  .cr-rail li { flex: 0 0 104px; }
+  .cr-node b { font-size: 13.5px; }
+  .cr-stage { grid-template-columns: minmax(0, 1fr); min-height: 0; }
+  .cr-triggers { grid-template-columns: minmax(0, 1fr); }
+  .cr-ws { grid-template-columns: minmax(0, 1fr); height: auto; }
+  .cr-ws__chat { height: 360px; border-right: 0; border-bottom: 1px solid var(--linha); }
+  .cr-ws__cols .cr-col { grid-template-columns: 92px minmax(0, 1fr); padding-left: 12px; }
+  .cr-dossie { grid-template-columns: minmax(0, 1fr); }
+  .cr-vs { grid-template-columns: minmax(0, 1fr); }
+  .cr-vs > div { min-height: 0; }
+  .cr-vs__new img { height: 220px; }
+  .cr-eq__row--up, .cr-eq__row--down { grid-template-columns: minmax(0, 1fr); }
+  .cr-eq__bar { margin: 24px 0; }
+  .cr-oferta__grid { grid-template-columns: minmax(0, 1fr); }
+  .cr-faq { grid-template-columns: minmax(0, 1fr); }
+  .jf__top { grid-template-columns: 1fr; gap: 40px; }
+}
+@media (max-width: 600px) {
+  .cr-wrap { padding: 0 16px; }
+  .cr-hero__in { padding: 0 16px; }
+  .cr-hero h1 { font-size: clamp(36px, 10.4vw, 46px); }
+  .cr-hero__lead { font-size: 16.5px; }
+  .cr-hero__ctas .cr-btn { flex: 1 1 100%; white-space: normal; text-align: center; }
+  .cr-board { margin-top: 44px; border-radius: 24px; }
+  .cr-board__bar { padding: 14px 16px; }
+  .cr-stats { gap: 16px; }
+  .cr-stats b { font-size: 19px; }
+  .cr-board__areas { padding: 12px 16px; flex-wrap: nowrap; overflow-x: auto; scrollbar-width: none; }
+  .cr-board__areas > span { display: none; }
+  .cr-chip { flex: none; }
+  .cr-cols { padding: 14px; }
+  .cr-band ul { grid-template-columns: minmax(0, 1fr); gap: 14px; }
+  .cr-section { padding: 88px 0; }
+  .cr-h2 { font-size: clamp(31px, 8.6vw, 40px); }
+  .cr-head p, .cr-lede { font-size: 16.5px; }
+  .cr-railbox { margin: 0 -16px 24px; }
+  .cr-rail { padding: 0 16px 6px; }
+  .cr-stage { padding: 22px 16px; border-radius: 24px; }
+  .cr-panel p { font-size: 16.5px; }
+  .cr-mini { padding: 16px; }
+  .cr-phones { margin: 0 -16px; padding: 6px 16px 18px; }
+  .cr-phone__screen { height: 600px; }
+  .cr-meta { grid-template-columns: minmax(0, 1fr); }
+  .cr-doc__head { padding: 20px 18px 16px; }
+  .cr-doc__body { padding: 12px 10px 16px; }
+  .cr-cmp th, .cr-cmp td { padding: 14px 12px; font-size: 14.5px; }
+  .cr-cmp th { font-size: 15px; }
+  .cr-cmp td span { gap: 8px; }
+  .cr-form-card { padding: 24px 18px; border-radius: 24px; }
+  .cr-form { grid-template-columns: 1fr; }
+  .cr-q__body p { padding-right: 0; }
+  .jf__links { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 28px 20px; }
+  .jf__bottom { flex-direction: column; align-items: flex-start; gap: 12px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; }
+}
+</style>
+</head>
+<body>
+
+<div class="lp-header-wrap">
+  <header class="lp-header" id="lp-header">
+    <a href="/" class="lp-header__logo" aria-label="Juris8, página inicial"><img src="/assets/brand/logo-juris8.png" alt="Juris8" width="113" height="29"></a>
+    <nav class="lp-nav" aria-label="Navegação da página">
+      <span class="lp-nav__ind" aria-hidden="true"></span>
+      <a href="#como-funciona">IA no WhatsApp</a>
+      <a href="#julia">Julia</a>
+      <a href="#dossie">Dossiê</a>
+      <a href="#oferta">Oferta</a>
+      <a href="#faq">FAQ</a>
+    </nav>
+    <a href="#oferta" class="lp-header__cta" data-track="header_cta_click" data-track-ctx="crm_diagnostico">
+      <span class="lp-cta-long">Diagnóstico gratuito</span>
+      <span class="lp-cta-short">Diagnóstico</span>
+      <span class="lp-header__cta-tile" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7"/><path d="M8 7h9v9"/></svg></span>
+    </a>
+  </header>
+</div>
+
+<main id="topo">
+
+  <!-- ============ HERO ============ -->
+  <section class="cr-hero" aria-labelledby="cr-title">
+    <div class="cr-hero__in">
+      <div class="cr-hero__top">
+        <h1 id="cr-title"><span class="cr-rise">O CRM com uma IA jurídica</span> <span class="b cr-rise cr-rise--2">no seu WhatsApp 24 horas.</span></h1>
+        <div class="cr-rise cr-rise--3">
+          <p class="cr-hero__lead">O Juris8 entrega uma operação comercial jurídica treinada e validada: fluxos por área, perguntas de qualificação, coleta de documentos, regras de encaminhamento, agenda, kanban e dossiê para o advogado.</p>
+          <div class="cr-hero__ctas">
+            <a href="#julia" class="cr-btn cr-btn--primary" data-track="hero_cta_click" data-track-ctx="crm_ver_ia">Ver minha IA qualificando leads <i data-lucide="arrow-right"></i></a>
+            <a href="#oferta" class="cr-btn cr-btn--line" data-track="hero_cta_click" data-track-ctx="crm_trial">Ativar CRM com IA por 14 dias</a>
+          </div>
+          <ul class="cr-trust">
+            <li><i data-lucide="check"></i>Sem cartão</li>
+            <li><i data-lucide="check"></i>WhatsApp API Oficial Meta</li>
+            <li><i data-lucide="check"></i>Implantação guiada</li>
+          </ul>
+        </div>
+      </div>
+
+    </div>
+    <div class="cr-wrap">
+      <div class="cr-board" id="cr-board">
+        <div class="cr-board__bar">
+          <span class="cr-board__title"><i data-lucide="kanban-square"></i>Kanban jurídico</span>
+          <span class="cr-live"><span class="cr-pulse" aria-hidden="true"></span>IA ativa</span>
+          <span class="cr-watch"><span class="cr-dots" aria-hidden="true"><i></i><i></i><i></i></span>IA monitorando o WhatsApp</span>
+          <ul class="cr-stats">
+            <li><b class="tnum" id="cr-stat-leads">12</b>leads hoje</li>
+            <li><b>4</b>reuniões marcadas</li>
+            <li><b>9</b>atendimentos concluídos</li>
+          </ul>
+        </div>
+        <div class="cr-board__areas" role="group" aria-label="Filtrar por área">
+          <span>Comece por uma área do escritório</span>
+          <button class="cr-chip" type="button" data-area="todas" aria-pressed="true">Todas</button>
+          <button class="cr-chip" type="button" data-area="trab" aria-pressed="false">Trabalhista</button>
+          <button class="cr-chip" type="button" data-area="fam" aria-pressed="false">Família</button>
+          <button class="cr-chip" type="button" data-area="civ" aria-pressed="false">Cível</button>
+          <button class="cr-chip" type="button" data-area="emp" aria-pressed="false">Empresarial</button>
+        </div>
+        <div class="cr-cols" id="cr-cols">
+          <section class="cr-col" aria-label="Novo lead">
+            <div class="cr-col__head">Novo lead <span class="cr-col__n">3</span></div>
+            <div class="cr-col__ia"><i data-lucide="message-circle"></i>IA responde e qualifica</div>
+            <div class="cr-list">
+              <article class="cr-card" data-area="trab"><div class="cr-card__top"><span class="cr-area cr-area--trab">Trabalhista</span><span>agora</span></div><b>Horas extras não registradas</b><div class="cr-card__st"><span class="cr-dots" aria-hidden="true"><i></i><i></i><i></i></span>IA analisando conversa</div></article>
+              <article class="cr-card" data-area="fam"><div class="cr-card__top"><span class="cr-area cr-area--fam">Família</span><span>há 4 min</span></div><b>Revisão de pensão alimentícia</b><div class="cr-card__st"><i data-lucide="send"></i>Pergunta enviada</div></article>
+              <article class="cr-card" data-area="civ" id="cr-hero-card"><div class="cr-card__top"><span class="cr-area cr-area--civ">Cível</span><span>há 11 min</span></div><b>Cobrança indevida em fatura</b><div class="cr-card__st"><i data-lucide="list-checks"></i><span>Triagem iniciada</span></div></article>
+            </div>
+          </section>
+          <section class="cr-col" aria-label="Qualificado">
+            <div class="cr-col__head">Qualificado <span class="cr-col__n">2</span></div>
+            <div class="cr-col__ia"><i data-lucide="file-up"></i>IA coleta documentos</div>
+            <div class="cr-list">
+              <article class="cr-card" data-area="trab"><div class="cr-card__top"><span class="cr-area cr-area--trab">Trabalhista</span><span>há 18 min</span></div><b>Horas extras + demissão recente</b><div class="cr-card__st is-done"><i data-lucide="file-check"></i>Docs recebidos · movido pela IA</div></article>
+              <article class="cr-card" data-area="emp"><div class="cr-card__top"><span class="cr-area cr-area--emp">Empresarial</span><span>há 40 min</span></div><b>Revisão de contrato SaaS</b><div class="cr-card__st is-done"><i data-lucide="paperclip"></i>3 arquivos recebidos</div></article>
+            </div>
+          </section>
+          <section class="cr-col" aria-label="Reunião agendada">
+            <div class="cr-col__head">Reunião agendada <span class="cr-col__n">1</span></div>
+            <div class="cr-col__ia"><i data-lucide="calendar-check"></i>IA agenda</div>
+            <div class="cr-list">
+              <article class="cr-card" data-area="fam"><div class="cr-card__top"><span class="cr-area cr-area--fam">Família</span><span>hoje · 18h</span></div><b>Divórcio litigioso · filhos menores</b><div class="cr-card__st is-done"><i data-lucide="file-text"></i>Dossiê gerado</div></article>
+            </div>
+          </section>
+          <section class="cr-col" aria-label="Pronto para atendimento">
+            <div class="cr-col__head">Pronto p/ atendimento <span class="cr-col__n">1</span></div>
+            <div class="cr-col__ia"><i data-lucide="sparkles"></i>IA gera dossiê</div>
+            <div class="cr-list">
+              <article class="cr-card" data-area="trab"><div class="cr-card__top"><span class="cr-area cr-area--trab">Trabalhista</span><span>amanhã · 15h</span></div><b>Resumo + documentos + pontos de atenção</b><div class="cr-card__st is-done"><i data-lucide="user-check"></i>Advogado preparado</div></article>
+            </div>
+          </section>
+        </div>
+        <p class="cr-board__foot">A equipe não precisa lembrar de atualizar o funil. <b>O atendimento atualiza o funil.</b></p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ GARANTIAS ============ -->
+  <section class="cr-band" aria-label="Garantias">
+    <div class="cr-wrap">
+      <ul>
+        <li><i data-lucide="badge-check"></i>WhatsApp API Oficial Meta</li>
+        <li><i data-lucide="clock-3"></i>IA responde 24/7</li>
+        <li><i data-lucide="scale"></i>Conforme OAB · Provimento 205/2021</li>
+        <li><i data-lucide="lock-keyhole"></i>LGPD · dados criptografados</li>
+        <li><i data-lucide="file-search"></i>IA qualifica e coleta documentos</li>
+        <li><i data-lucide="kanban-square"></i>Kanban movido pela IA</li>
+        <li><i data-lucide="file-text"></i>Dossiê antes da reunião</li>
+        <li><i data-lucide="gift"></i>14 dias grátis · sem cartão</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ============ PRÉ-CONSULTA ============ -->
+  <section class="cr-section" id="como-funciona" aria-labelledby="pc-title">
+    <div class="cr-wrap">
+      <header class="cr-head">
+        <h2 class="cr-h2 lp-words" id="pc-title">Como funciona a Pré-Consulta Jurídica?</h2>
+        <p>Do primeiro “olá” ao dossiê na agenda. Sete movimentos que acontecem sozinhos, no canal onde o lead já está.</p>
+      </header>
+
+      <div class="cr-railbox">
+      <span class="cr-rail__fill" id="cr-rail-fill" aria-hidden="true"></span>
+      <ol class="cr-rail" id="cr-rail" role="tablist" aria-label="Os sete movimentos da pré-consulta">
+        <li role="presentation"><button class="cr-node" type="button" role="tab" id="pc-tab-1" aria-controls="pc-1" aria-selected="true"><span class="cr-node__n">01</span><b>Captura</b></button></li>
+        <li role="presentation"><button class="cr-node" type="button" role="tab" id="pc-tab-2" aria-controls="pc-2" aria-selected="false" tabindex="-1"><span class="cr-node__n">02</span><b>Classificação</b></button></li>
+        <li role="presentation"><button class="cr-node" type="button" role="tab" id="pc-tab-3" aria-controls="pc-3" aria-selected="false" tabindex="-1"><span class="cr-node__n">03</span><b>Qualificação</b></button></li>
+        <li role="presentation"><button class="cr-node" type="button" role="tab" id="pc-tab-4" aria-controls="pc-4" aria-selected="false" tabindex="-1"><span class="cr-node__n">04</span><b>Comprometimento</b></button></li>
+        <li role="presentation"><button class="cr-node" type="button" role="tab" id="pc-tab-5" aria-controls="pc-5" aria-selected="false" tabindex="-1"><span class="cr-node__n">05</span><b>Agendamento</b></button></li>
+        <li role="presentation"><button class="cr-node" type="button" role="tab" id="pc-tab-6" aria-controls="pc-6" aria-selected="false" tabindex="-1"><span class="cr-node__n">06</span><b>Organização</b></button></li>
+        <li role="presentation"><button class="cr-node" type="button" role="tab" id="pc-tab-7" aria-controls="pc-7" aria-selected="false" tabindex="-1"><span class="cr-node__n">07</span><b>Dossiê</b></button></li>
+      </ol>
+      </div>
+
+      <div class="cr-stage">
+        <div>
+          <div class="cr-panel" id="pc-1" role="tabpanel" aria-labelledby="pc-tab-1"><div class="cr-panel__k">01 de 07</div><h3>Captura</h3><p>O lead chama no WhatsApp e entra automaticamente no funil.</p></div>
+          <div class="cr-panel" id="pc-2" role="tabpanel" aria-labelledby="pc-tab-2" hidden><div class="cr-panel__k">02 de 07</div><h3>Classificação</h3><p>A IA identifica a área: trabalhista, família, cível, consumidor, previdenciário, empresarial.</p></div>
+          <div class="cr-panel" id="pc-3" role="tabpanel" aria-labelledby="pc-tab-3" hidden><div class="cr-panel__k">03 de 07</div><h3>Qualificação</h3><p>Perguntas específicas para entender urgência, contexto, documentos e intenção.</p></div>
+          <div class="cr-panel" id="pc-4" role="tabpanel" aria-labelledby="pc-tab-4" hidden><div class="cr-panel__k">04 de 07</div><h3>Comprometimento</h3><p>A IA solicita documentos e faz o lead dar o próximo passo.</p></div>
+          <div class="cr-panel" id="pc-5" role="tabpanel" aria-labelledby="pc-tab-5" hidden><div class="cr-panel__k">05 de 07</div><h3>Agendamento</h3><p>A IA oferece horários disponíveis e confirma a reunião.</p></div>
+          <div class="cr-panel" id="pc-6" role="tabpanel" aria-labelledby="pc-tab-6" hidden><div class="cr-panel__k">06 de 07</div><h3>Organização</h3><p>O kanban é atualizado automaticamente conforme a conversa avança.</p></div>
+          <div class="cr-panel" id="pc-7" role="tabpanel" aria-labelledby="pc-tab-7" hidden><div class="cr-panel__k">07 de 07</div><h3>Dossiê</h3><p>O advogado recebe resumo, documentos, pontos de atenção e urgência antes da reunião.</p></div>
+          <div class="cr-stage__nav">
+            <button class="cr-round" type="button" id="pc-prev" aria-label="Movimento anterior" disabled><i data-lucide="arrow-left"></i></button>
+            <button class="cr-round" type="button" id="pc-next" aria-label="Próximo movimento"><i data-lucide="arrow-right"></i></button>
+          </div>
+        </div>
+
+        <div aria-hidden="true">
+          <div class="cr-mini" data-vis="1">
+            <div class="cr-mini__head"><b><i data-lucide="message-circle"></i>WhatsApp do escritório</b><span>22:14</span></div>
+            <div class="cr-thread" style="padding:0"><div class="cr-msg cr-msg--lead">Oi, fui demitido semana passada e acho que não pagaram minhas horas extras.<small>22:14</small></div></div>
+            <div class="cr-sys"><i data-lucide="circle-plus"></i>Novo lead criado no funil · origem WhatsApp</div>
+          </div>
+          <div class="cr-mini" data-vis="2" hidden>
+            <div class="cr-mini__head"><b><i data-lucide="tags"></i>Área identificada pela IA</b></div>
+            <div class="cr-areas-grid"><span class="is-hit"><i data-lucide="check"></i>Trabalhista</span><span>Família</span><span>Cível</span><span>Consumidor</span><span>Previdenciário</span><span>Empresarial</span></div>
+            <div class="cr-sys cr-sys--violet"><i data-lucide="git-branch"></i>Fluxo trabalhista ativado</div>
+          </div>
+          <div class="cr-mini" data-vis="3" hidden>
+            <div class="cr-mini__head"><b><i data-lucide="list-checks"></i>Perguntas de qualificação</b><span>3 de 3</span></div>
+            <ul class="cr-qa">
+              <li><i data-lucide="circle-check"></i><span><b>Quando foi a demissão?</b><span>Semana passada, sem justa causa.</span></span></li>
+              <li><i data-lucide="circle-check"></i><span><b>Tinha carteira assinada?</b><span>Sim, por 2 anos.</span></span></li>
+              <li><i data-lucide="circle-check"></i><span><b>Fazia horas extras com frequência?</b><span>Quase todo dia, sem registro.</span></span></li>
+            </ul>
+            <div class="cr-meter">Urgência <i></i><em>Alta</em></div>
+          </div>
+          <div class="cr-mini" data-vis="4" hidden>
+            <div class="cr-mini__head"><b><i data-lucide="folder-up"></i>Documentos do caso</b><span>2 de 3</span></div>
+            <div class="cr-docs">
+              <div class="cr-docrow"><span class="cr-file__ic"><i data-lucide="file-text"></i></span><span><b>contracheque_mar25.pdf</b><small>PDF</small></span><span class="cr-ok"><i data-lucide="check"></i>Recebido</span></div>
+              <div class="cr-docrow"><span class="cr-file__ic cr-file__ic--img"><i data-lucide="image"></i></span><span><b>ctps_frente_verso.jpg</b><small>Imagem</small></span><span class="cr-ok"><i data-lucide="check"></i>Recebido</span></div>
+              <div class="cr-docrow"><span class="cr-file__ic" style="background:#F4F2FA;color:#A39CBC"><i data-lucide="file-clock"></i></span><span><b>termo_rescisao.pdf</b><small>Solicitado pela IA</small></span><span class="cr-ok" style="color:#B45309"><i data-lucide="clock-3"></i>Aguardando</span></div>
+            </div>
+          </div>
+          <div class="cr-mini" data-vis="5" hidden>
+            <div class="cr-mini__head"><b><i data-lucide="calendar-days"></i>Horários oferecidos</b><span>Agenda do advogado</span></div>
+            <div class="cr-slots"><span>Qua · 10h</span><span>Qua · 15h</span><span class="is-hit"><i data-lucide="check"></i>Qui · 15h</span><span>Sex · 9h</span></div>
+            <div class="cr-sys"><i data-lucide="calendar-check"></i>Reunião confirmada pelo lead</div>
+          </div>
+          <div class="cr-mini" data-vis="6" hidden>
+            <div class="cr-mini__head"><b><i data-lucide="kanban-square"></i>Kanban jurídico</b><span>atualizado agora</span></div>
+            <div class="cr-minicols"><div><small>Novo lead</small><i></i><i></i></div><div><small>Qualificado</small><i></i></div><div><small>Reunião agendada</small><i class="is-hit">Horas extras · demissão</i></div><div><small>Pronto p/ atendimento</small><i></i></div></div>
+            <div class="cr-sys cr-sys--violet"><i data-lucide="move-right"></i>Card movido pela IA, sem ninguém tocar no sistema</div>
+          </div>
+          <div class="cr-mini" data-vis="7" hidden>
+            <div class="cr-mini__head"><b><i data-lucide="file-text"></i>Dossiê do cliente</b><span>gerado pela IA</span></div>
+            <ul class="cr-qa">
+              <li><i data-lucide="align-left"></i><span><b>Resumo do caso</b><span>Demissão sem justa causa, horas extras habituais sem pagamento.</span></span></li>
+              <li><i data-lucide="paperclip"></i><span><b>Documentos</b><span>Contracheque e CTPS verificados.</span></span></li>
+              <li><i data-lucide="triangle-alert"></i><span><b>Pontos de atenção</b><span>Prazo prescricional e possível rescisão indireta.</span></span></li>
+            </ul>
+            <div class="cr-sys"><i data-lucide="calendar-check"></i>Anexado à reunião de quinta, 15h</div>
+          </div>
+        </div>
+      </div>
+
+      <p class="cr-pull lp-words">A IA não substitui o advogado. <span class="lp-accent">Ela prepara o terreno para o advogado entrar melhor.</span></p>
+    </div>
+  </section>
+
+  <!-- ============ O CARD ANDA ============ -->
+  <section class="cr-section" id="kanban" aria-labelledby="mv-title" style="padding-top:0">
+    <div class="cr-wrap">
+      <header class="cr-head">
+        <h2 class="cr-h2 lp-words" id="mv-title">O card anda porque a conversa anda.</h2>
+        <p>Em um CRM comum, o funil só é confiável se a equipe atualiza tudo. No Juris8, o funil acompanha a realidade do WhatsApp. Toque em cada momento da conversa:</p>
+      </header>
+
+      <div class="cr-move">
+        <div>
+          <ul class="cr-triggers">
+            <li><button class="cr-trigger" type="button" data-step="1" aria-pressed="false"><span class="cr-trigger__ic"><i data-lucide="message-square-reply"></i></span><span><b>Cliente responde uma pergunta-chave</b><small>A IA registra a resposta e o card avança no funil, sem ninguém tocar no sistema.</small></span></button></li>
+            <li><button class="cr-trigger" type="button" data-step="2" aria-pressed="false"><span class="cr-trigger__ic"><i data-lucide="file-up"></i></span><span><b>Cliente envia um documento</b><small>O arquivo é vinculado ao caso e o card muda de coluna automaticamente.</small></span></button></li>
+            <li><button class="cr-trigger" type="button" data-step="3" aria-pressed="false"><span class="cr-trigger__ic"><i data-lucide="calendar-check"></i></span><span><b>Cliente escolhe um horário</b><small>A reunião é confirmada, o kanban atualiza e o dossiê começa a ser montado.</small></span></button></li>
+          </ul>
+          <button class="cr-reset" type="button" id="cr-reset"><i data-lucide="rotate-ccw"></i>Recomeçar a conversa</button>
+        </div>
+
+        <div class="cr-ws">
+          <div class="cr-ws__chat">
+            <div class="cr-chathead"><span class="cr-face">JO</span><span class="cr-chathead__id"><b>João · novo lead</b><small><span class="cr-area cr-area--trab">Trabalhista</span>online</small></span><span class="cr-wa">WA</span></div>
+            <div class="cr-thread" id="mv-thread" aria-live="polite"></div>
+          </div>
+          <div class="cr-ws__board">
+            <div class="cr-ws__cols" id="mv-cols">
+              <div class="cr-col"><div class="cr-col__head">Novo lead<small>IA responde</small></div><div class="cr-list"></div></div>
+              <div class="cr-col"><div class="cr-col__head">Qualificado<small>IA qualifica</small></div><div class="cr-list"></div></div>
+              <div class="cr-col"><div class="cr-col__head">Docs recebidos<small>IA coleta</small></div><div class="cr-list"></div></div>
+              <div class="cr-col"><div class="cr-col__head">Reunião agendada<small>IA agenda</small></div><div class="cr-list"></div></div>
+            </div>
+            <div class="cr-ws__log" id="mv-log" aria-live="polite"><i data-lucide="activity"></i><span>Lead entrou pelo WhatsApp. A IA já está conversando.</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ QUALIFICAÇÃO AUTOMÁTICA ============ -->
+  <section class="cr-section cr-julia" id="julia" aria-labelledby="julia-title">
+    <div class="cr-wrap">
+      <header class="cr-head">
+        <h2 class="cr-h2 lp-words" id="julia-title">A Julia não só responde. <span class="lp-accent">Ela qualifica, coleta docs e agenda.</span></h2>
+        <p>Sem formulários. Sem abandono. A IA conduz a conversa do primeiro “oi” até o agendamento, com contexto jurídico real.</p>
+      </header>
+
+      <div class="cr-phones">
+        <div class="cr-phone" role="group" aria-label="Conversa da Julia com João, área trabalhista">
+          <div class="cr-phone__screen">
+            <span class="cr-phone__island"></span>
+            <div class="cr-phone__status"><span>22:18</span><span><i data-lucide="signal"></i><i data-lucide="wifi"></i><i data-lucide="battery-medium"></i></span></div>
+            <div class="cr-chathead"><i data-lucide="chevron-left"></i><span class="cr-face">JO</span><span class="cr-chathead__id"><b>João · novo lead</b><small><span class="cr-area cr-area--trab">Trabalhista</span>online</small></span><span class="cr-wa">WA</span></div>
+            <div class="cr-thread">
+              <div class="cr-msg cr-msg--lead">Oi, fui demitido semana passada e acho que não pagaram minhas horas extras.<small>22:11</small></div>
+              <div class="cr-msg cr-msg--ia"><span class="cr-msg__by"><i data-lucide="sparkles"></i>Julia</span>Sinto muito, João. Você fazia horas extras com frequência? Elas apareciam no holerite?<small>22:11</small></div>
+              <div class="cr-msg cr-msg--lead">Quase todo dia. Nunca apareceram.<small>22:14</small></div>
+              <div class="cr-msg cr-msg--ia"><span class="cr-msg__by"><i data-lucide="sparkles"></i>Julia</span>Entendi. Pode me enviar o último contracheque e a carteira de trabalho?<small>22:15</small></div>
+              <div class="cr-file"><span class="cr-file__ic"><i data-lucide="file-text"></i></span><span><b>contracheque_mar25.pdf</b><small><i data-lucide="check"></i>PDF · recebido</small></span></div>
+              <div class="cr-file"><span class="cr-file__ic cr-file__ic--img"><i data-lucide="image"></i></span><span><b>ctps_frente_verso.jpg</b><small><i data-lucide="check"></i>Imagem · recebida</small></span></div>
+              <div class="cr-msg cr-msg--ia"><span class="cr-msg__by"><i data-lucide="sparkles"></i>Julia</span>Recebi tudo ✅ Tenho quinta às 15h com o advogado. Posso confirmar?<small>22:18</small></div>
+            </div>
+            <div class="cr-composer" aria-hidden="true"><span>Mensagem</span><i data-lucide="mic"></i></div>
+          </div>
+        </div>
+
+        <div class="cr-phone" role="group" aria-label="Conversa da Julia com Marina, área de família">
+          <div class="cr-phone__screen">
+            <span class="cr-phone__island"></span>
+            <div class="cr-phone__status"><span>21:09</span><span><i data-lucide="signal"></i><i data-lucide="wifi"></i><i data-lucide="battery-medium"></i></span></div>
+            <div class="cr-chathead"><i data-lucide="chevron-left"></i><span class="cr-face">MA</span><span class="cr-chathead__id"><b>Marina · novo lead</b><small><span class="cr-area cr-area--fam">Família</span>online</small></span><span class="cr-wa">WA</span></div>
+            <div class="cr-thread">
+              <div class="cr-msg cr-msg--lead">Boa noite. Quero me divorciar, mas temos um apartamento juntos.<small>21:02</small></div>
+              <div class="cr-msg cr-msg--ia"><span class="cr-msg__by"><i data-lucide="sparkles"></i>Julia</span>Boa noite, Marina. Vocês têm filhos menores? Qual é o regime de bens do casamento?<small>21:02</small></div>
+              <div class="cr-msg cr-msg--lead">Sem filhos. Comunhão parcial.<small>21:05</small></div>
+              <div class="cr-msg cr-msg--ia"><span class="cr-msg__by"><i data-lucide="sparkles"></i>Julia</span>Obrigada. Pode me enviar a certidão de casamento e a matrícula do imóvel?<small>21:05</small></div>
+              <div class="cr-file"><span class="cr-file__ic"><i data-lucide="file-text"></i></span><span><b>certidao_casamento.pdf</b><small><i data-lucide="check"></i>PDF · recebido</small></span></div>
+              <div class="cr-file"><span class="cr-file__ic"><i data-lucide="file-text"></i></span><span><b>matricula_imovel.pdf</b><small><i data-lucide="check"></i>PDF · recebido</small></span></div>
+              <div class="cr-msg cr-msg--ia"><span class="cr-msg__by"><i data-lucide="sparkles"></i>Julia</span>Documentos recebidos. Reservei quarta às 18h com a Dra. Helena. Confirma?<small>21:09</small></div>
+            </div>
+            <div class="cr-composer" aria-hidden="true"><span>Mensagem</span><i data-lucide="mic"></i></div>
+          </div>
+        </div>
+
+        <div class="cr-phone" role="group" aria-label="Conversa da Julia com Ricardo, área empresarial">
+          <div class="cr-phone__screen">
+            <span class="cr-phone__island"></span>
+            <div class="cr-phone__status"><span>19:54</span><span><i data-lucide="signal"></i><i data-lucide="wifi"></i><i data-lucide="battery-medium"></i></span></div>
+            <div class="cr-chathead"><i data-lucide="chevron-left"></i><span class="cr-face">RI</span><span class="cr-chathead__id"><b>Ricardo · novo lead</b><small><span class="cr-area cr-area--emp">Empresarial</span>online</small></span><span class="cr-wa">WA</span></div>
+            <div class="cr-thread">
+              <div class="cr-msg cr-msg--lead">Preciso revisar um contrato SaaS com um cliente antes de assinar.<small>19:48</small></div>
+              <div class="cr-msg cr-msg--ia"><span class="cr-msg__by"><i data-lucide="sparkles"></i>Julia</span>Claro, Ricardo. Qual o prazo para assinatura? E o contrato já tem uma minuta?<small>19:48</small></div>
+              <div class="cr-msg cr-msg--lead">Até sexta. A minuta veio do cliente.<small>19:51</small></div>
+              <div class="cr-msg cr-msg--ia"><span class="cr-msg__by"><i data-lucide="sparkles"></i>Julia</span>Pode me enviar a minuta? O advogado já chega com os pontos de risco mapeados.<small>19:51</small></div>
+              <div class="cr-file"><span class="cr-file__ic"><i data-lucide="file-text"></i></span><span><b>contrato_saas_cliente.pdf</b><small><i data-lucide="check"></i>PDF · recebido</small></span></div>
+              <div class="cr-msg cr-msg--ia"><span class="cr-msg__by"><i data-lucide="sparkles"></i>Julia</span>Recebido. Como o prazo é curto, marquei prioridade alta e reservei amanhã às 9h.<small>19:54</small></div>
+            </div>
+            <div class="cr-composer" aria-hidden="true"><span>Mensagem</span><i data-lucide="mic"></i></div>
+          </div>
+        </div>
+      </div>
+      <p class="cr-phones__cap"><i data-lucide="check-check"></i>Três áreas, três fluxos, nenhum formulário.</p>
+    </div>
+  </section>
+
+  <!-- ============ DOSSIÊ ============ -->
+  <section class="cr-section" id="dossie" aria-labelledby="dossie-title">
+    <div class="cr-wrap cr-dossie">
+      <div>
+        <h2 class="cr-h2 lp-words" id="dossie-title">O advogado entra na reunião já preparado.</h2>
+        <p class="cr-lede" style="margin-top:20px">Dossiê automático: após o agendamento, a IA gera um dossiê completo com tudo que importa.</p>
+        <ul class="cr-feats" id="cr-feats">
+          <li><button class="cr-feat" type="button" data-part="resumo" aria-pressed="true"><span class="cr-feat__ic"><i data-lucide="align-left"></i></span><span><b>Resumo do caso</b><small>Entenda rapidamente o problema e o que o cliente já relatou.</small></span></button></li>
+          <li><button class="cr-feat" type="button" data-part="docs" aria-pressed="false"><span class="cr-feat__ic"><i data-lucide="folder-open"></i></span><span><b>Documentos organizados</b><small>Todos os arquivos agrupados e prontos para análise.</small></span></button></li>
+          <li><button class="cr-feat" type="button" data-part="urgencia" aria-pressed="false"><span class="cr-feat__ic"><i data-lucide="siren"></i></span><span><b>Urgência e prioridade</b><small>A IA avalia risco, prazo e impacto para você priorizar melhor.</small></span></button></li>
+          <li><button class="cr-feat" type="button" data-part="agenda" aria-pressed="false"><span class="cr-feat__ic"><i data-lucide="calendar-days"></i></span><span><b>Integrado à agenda</b><small>Dossiê anexado ao compromisso no seu calendário.</small></span></button></li>
+        </ul>
+      </div>
+
+      <article class="cr-doc" aria-label="Exemplo de dossiê do cliente gerado pela IA">
+        <div class="cr-doc__head"><h3>Dossiê do Cliente</h3><span class="cr-doc__ai"><i data-lucide="sparkles"></i>Gerado pela IA</span></div>
+        <div class="cr-doc__body">
+          <div class="cr-part" data-part="agenda urgencia">
+            <div class="cr-person"><span class="cr-face">MC</span><span><b>Marcos Costa</b><small>(11) 98766-4321 · marcoscosta@email.com</small></span></div>
+            <dl class="cr-meta" style="margin-top:14px">
+              <div><dt>Área</dt><dd>Trabalhista · Rescisão indevida</dd></div>
+              <div><dt>Urgência</dt><dd><span class="cr-urg">Alta</span></dd></div>
+              <div><dt>Reunião agendada</dt><dd>Hoje às 14h30</dd></div>
+            </dl>
+          </div>
+          <div class="cr-part is-hl" data-part="resumo">
+            <h4>Resumo do caso</h4>
+            <p>Marcos alega desvio de função e não pagamento de horas extras habituais. Foi demitido em 10/04 sem recebimento das verbas rescisórias corretas. Trabalhou como Analista de Suporte por 2 anos.</p>
+          </div>
+          <div class="cr-part" data-part="urgencia">
+            <h4>Pontos de atenção</h4>
+            <ul class="cr-attn">
+              <li><i data-lucide="triangle-alert"></i>Possível rescisão indireta (art. 483, CLT)</li>
+              <li><i data-lucide="triangle-alert"></i>Horas extras habituais sem pagamento</li>
+              <li><i data-lucide="triangle-alert"></i>Risco de prazo prescricional em 2 anos</li>
+            </ul>
+          </div>
+          <div class="cr-part" data-part="docs">
+            <h4>Documentos recebidos</h4>
+            <div class="cr-docs">
+              <div class="cr-docrow"><span class="cr-file__ic"><i data-lucide="file-text"></i></span><span><b>contracheque_mar25.pdf</b><small>312 KB · PDF</small></span><span class="cr-ok"><i data-lucide="badge-check"></i>Verificado</span></div>
+              <div class="cr-docrow"><span class="cr-file__ic cr-file__ic--img"><i data-lucide="image"></i></span><span><b>ctps_frente_verso.jpg</b><small>1.1 MB · Imagem</small></span><span class="cr-ok"><i data-lucide="badge-check"></i>Verificado</span></div>
+            </div>
+          </div>
+        </div>
+        <p class="cr-doc__foot">Dossiê gerado automaticamente em 13/05/2025 às 11:20.</p>
+      </article>
+    </div>
+  </section>
+
+  <!-- ============ LEAD QUALIFICADO ============ -->
+  <section class="cr-section" aria-labelledby="vs-title" style="padding-top:0">
+    <div class="cr-wrap">
+      <header class="cr-head">
+        <h2 class="cr-h2 lp-words" id="vs-title">Lead qualificado não chega igual lead curioso.</h2>
+        <p>Um lead curioso pergunta preço. Um lead qualificado explicou o problema, respondeu perguntas, enviou documentos e escolheu horário. Isso muda a postura da reunião.</p>
+      </header>
+      <div class="cr-vs" id="cr-vs">
+        <div class="cr-vs__old">
+          <h3>Como toda reunião começa hoje</h3>
+          <blockquote>“Me explica o que aconteceu.”</blockquote>
+          <div class="cr-timer" aria-hidden="true"><div class="cr-timer__bar"><i></i></div><div class="cr-timer__lbl"><span>00:00</span><span>20:00</span><span>30:00</span></div></div>
+          <p>20 minutos descobrindo o básico, com o cliente repetindo tudo o que já contou no WhatsApp.</p>
+        </div>
+        <div class="cr-vs__new">
+          <img src="/assets/media/crm/reuniao.webp" alt="Advogada em reunião com um cliente, segurando um tablet com o resumo do caso" width="1200" height="675" loading="lazy">
+          <div class="cr-vs__txt">
+            <h3>Como a reunião começa com o Juris8</h3>
+            <blockquote>“Eu li o resumo do seu caso. Vi os documentos que você enviou. Tenho alguns pontos importantes para te mostrar.”</blockquote>
+            <p>O cliente sente que o escritório já entendeu o caso antes mesmo da reunião começar.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ VALOR ============ -->
+  <section class="cr-section cr-julia" aria-labelledby="eq-title">
+    <div class="cr-wrap">
+      <header class="cr-head">
+        <h2 class="cr-h2 lp-words" id="eq-title">Mais resultado, mais certeza. <span class="lp-accent">Menos tempo, esforço e risco.</span></h2>
+        <p>Não é mais uma ferramenta para cobrar disciplina da equipe. É um processo que roda no canal onde o lead já está.</p>
+      </header>
+      <div class="cr-eq">
+        <p class="cr-eq__cap">O que aumenta</p>
+        <div class="cr-eq__row cr-eq__row--up">
+          <div class="cr-eq__item"><span class="cr-eq__ic"><i data-lucide="trending-up"></i></span><span><b>Resultado desejado maior</b><p>Você não quer “organizar contatos”. Você quer reunião qualificada com contexto, documentos e intenção.</p></span></div>
+          <div class="cr-eq__item"><span class="cr-eq__ic"><i data-lucide="eye"></i></span><span><b>Probabilidade percebida maior</b><p>Você vê o processo funcionando: WhatsApp, perguntas, documentos, kanban, agenda e dossiê.</p></span></div>
+        </div>
+        <div class="cr-eq__bar" aria-hidden="true"></div>
+        <div class="cr-eq__row cr-eq__row--down">
+          <div class="cr-eq__item"><span class="cr-eq__ic"><i data-lucide="timer"></i></span><span><b>Menor tempo até valor</b><p>O lead começa a ser atendido assim que chama no WhatsApp.</p></span></div>
+          <div class="cr-eq__item"><span class="cr-eq__ic"><i data-lucide="feather"></i></span><span><b>Menos esforço</b><p>A equipe não precisa copiar conversa, pedir documento manualmente, mover card e montar resumo.</p></span></div>
+          <div class="cr-eq__item"><span class="cr-eq__ic"><i data-lucide="layers"></i></span><span><b>Menos sacrifício</b><p>Você não troca toda a operação de uma vez. Começa por uma área, valida o fluxo e depois escala.</p></span></div>
+        </div>
+        <p class="cr-eq__cap cr-eq__cap--down">O que diminui</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ COMPARAÇÃO ============ -->
+  <section class="cr-section" aria-labelledby="cmp-title">
+    <div class="cr-wrap">
+      <header class="cr-head">
+        <h2 class="cr-h2 lp-words" id="cmp-title">CRM comum organiza contato. <span class="lp-accent">Juris8 cria avanço.</span></h2>
+        <p>Um CRM comum ajuda você a lembrar que existe um lead. O Juris8 ajuda o lead a chegar pronto para atendimento.</p>
+      </header>
+      <table class="cr-cmp">
+        <thead><tr><th scope="col">CRM comum</th><th scope="col">Juris8 CRM</th></tr></thead>
+        <tbody>
+          <tr><td><span><i data-lucide="minus"></i>Mostra o lead no funil</span></td><td><span><i data-lucide="check"></i>Move o lead conforme a conversa</span></td></tr>
+          <tr><td><span><i data-lucide="minus"></i>Depende da equipe atualizar</span></td><td><span><i data-lucide="check"></i>A IA atualiza automaticamente</span></td></tr>
+          <tr><td><span><i data-lucide="minus"></i>Guarda informação</span></td><td><span><i data-lucide="check"></i>Faz perguntas para gerar informação</span></td></tr>
+          <tr><td><span><i data-lucide="minus"></i>Não entende área jurídica</span></td><td><span><i data-lucide="check"></i>Classifica a demanda por área</span></td></tr>
+          <tr><td><span><i data-lucide="minus"></i>Não pede documentos</span></td><td><span><i data-lucide="check"></i>Solicita documentos conforme o caso</span></td></tr>
+          <tr><td><span><i data-lucide="minus"></i>Agenda depende de humano</span></td><td><span><i data-lucide="check"></i>A IA oferece horários e confirma</span></td></tr>
+          <tr><td><span><i data-lucide="minus"></i>O advogado entra sem contexto</span></td><td><span><i data-lucide="check"></i>O advogado recebe dossiê</span></td></tr>
+          <tr><td><span><i data-lucide="minus"></i>Vira mais uma ferramenta</span></td><td><span><i data-lucide="check"></i>Vira processo de pré-consulta</span></td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- ============ OFERTA ============ -->
+  <section class="cr-section cr-dark cr-oferta" id="oferta" aria-labelledby="of-title">
+    <div class="cr-wrap cr-oferta__grid">
+      <div>
+        <h2 class="cr-h2 lp-words lp-words--lt" id="of-title">Veja o Juris8 CRM em pleno funcionamento.</h2>
+        <p class="cr-lede">Em até 24 horas, um especialista do Juris8 prepara uma demonstração configurada para o seu escritório de advocacia e a sua área de atuação.</p>
+        <ul class="cr-checklist">
+          <li><i data-lucide="user-round"></i>Reunião dedicada com especialista de vendas</li>
+          <li><i data-lucide="target"></i>Apresentação do CRM aplicada à sua área de atuação</li>
+          <li><i data-lucide="route"></i>Implementação guiada, sem trocar de sistema</li>
+        </ul>
+        <ul class="cr-seals">
+          <li><i data-lucide="gift"></i>14 dias grátis</li>
+          <li><i data-lucide="credit-card"></i>Sem cartão</li>
+          <li><i data-lucide="badge-check"></i>WhatsApp API Oficial Meta</li>
+        </ul>
+      </div>
+
+      <div class="cr-form-card">
+        <div id="lp-form-view">
+          <h3>Solicite sua demonstração</h3>
+          <p>Preencha os dados e um especialista Juris8 prepara uma demonstração para o seu escritório em até 24 horas.</p>
+          <form class="cr-form" id="lp-form" novalidate>
+            <div class="lp-field" id="f-nome"><label for="c-nome">Nome completo</label><input class="cr-input" type="text" id="c-nome" name="nome" required autocomplete="name" placeholder="Seu nome" aria-describedby="e-nome"><span class="lp-field__error" id="e-nome">Informe seu nome.</span></div>
+            <div class="lp-field" id="f-empresa"><label for="c-empresa">Nome do escritório</label><input class="cr-input" type="text" id="c-empresa" name="empresa" required autocomplete="organization" placeholder="Nome do escritório" aria-describedby="e-empresa"><span class="lp-field__error" id="e-empresa">Informe o nome do escritório.</span></div>
+            <div class="lp-field" id="f-email"><label for="c-email">E-mail</label><input class="cr-input" type="email" id="c-email" name="email" required autocomplete="email" placeholder="voce@escritorio.com.br" aria-describedby="e-email"><span class="lp-field__error" id="e-email">Informe um e-mail válido.</span></div>
+            <div class="lp-field" id="f-tel"><label for="c-tel">WhatsApp</label><input class="cr-input" type="tel" id="c-tel" name="telefone" required autocomplete="tel" inputmode="tel" placeholder="(11) 90000-0000" aria-describedby="e-tel"><span class="lp-field__error" id="e-tel">Informe um telefone com DDD.</span></div>
+            <div class="lp-field" id="f-area"><label for="c-area">Principal área de atuação</label>
+              <select class="cr-input" id="c-area" name="area" required aria-describedby="e-area">
+                <option value="" selected disabled>Selecione</option>
+                <option>Trabalhista</option>
+                <option>Família e sucessões</option>
+                <option>Cível</option>
+                <option>Consumidor</option>
+                <option>Previdenciário</option>
+                <option>Empresarial</option>
+                <option>Tributário</option>
+                <option>Criminal</option>
+                <option>Outra área</option>
+              </select>
+              <span class="lp-field__error" id="e-area">Selecione a principal área de atuação.</span></div>
+            <div class="lp-field" id="f-cnpj"><label for="c-cnpj">CNPJ <i>(opcional)</i></label><input class="cr-input" type="text" id="c-cnpj" name="cnpj" inputmode="numeric" autocomplete="off" placeholder="00.000.000/0000-00" maxlength="18"></div>
+            <div class="lp-field ct-full" id="f-msg"><label for="c-msg">Conte sobre sua operação <i>(opcional)</i></label><textarea class="cr-input" id="c-msg" name="mensagem" rows="3" placeholder="Ex: recebemos cerca de 50 leads por mês pelo WhatsApp e hoje respondemos manualmente."></textarea></div>
+            <div class="lp-field ct-full" id="f-consent"><label class="ct-check" for="c-consent"><input type="checkbox" id="c-consent" name="consent" required aria-describedby="e-consent"><span class="ct-box" aria-hidden="true"><i data-lucide="check"></i></span><span>Autorizo o contato do Juris8 e concordo com o tratamento dos meus dados conforme a LGPD.</span></label><span class="lp-field__error" id="e-consent">Marque para podermos entrar em contato.</span></div>
+            <input class="lp-hp" type="text" name="website" tabindex="-1" autocomplete="off" aria-hidden="true">
+            <button type="submit" class="lp-submit ct-full" id="lp-submit"><span id="lp-submit-label">Quero minha demonstração</span><i data-lucide="arrow-right"></i></button>
+            <div class="lp-alert ct-full" id="lp-alert" role="alert">Não foi possível enviar agora. Seus dados continuam preenchidos: tente novamente em instantes.</div>
+            <ul class="cr-seals ct-full" style="margin:2px 0 0;justify-content:center">
+              <li style="border-color:var(--linha);color:var(--sutil)"><i data-lucide="shield-check" style="color:var(--verde)"></i>LGPD</li>
+              <li style="border-color:var(--linha);color:var(--sutil)"><i data-lucide="scale" style="color:var(--verde)"></i>Conforme OAB</li>
+              <li style="border-color:var(--linha);color:var(--sutil)"><i data-lucide="lock-keyhole" style="color:var(--verde)"></i>Dados criptografados</li>
+            </ul>
+          </form>
+        </div>
+        <div class="ct-success" id="lp-success" role="region" aria-live="polite" aria-label="Solicitação enviada">
+          <div class="ct-success__ic"><i data-lucide="check"></i></div>
+          <h3 id="lp-success-title" tabindex="-1">Solicitação enviada</h3>
+          <p>Em até 24 horas, um especialista do Juris8 entra em contato com a sua demonstração configurada.</p>
+          <button type="button" class="ct-again" id="lp-again">Enviar outra solicitação</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ FAQ ============ -->
+  <section class="cr-section" id="faq" aria-labelledby="faq-title">
+    <div class="cr-wrap cr-faq">
+      <div class="cr-faq__side">
+        <h2 class="cr-h2 lp-words" id="faq-title">O que os advogados perguntam antes de ativar.</h2>
+        <p>Ficou alguma dúvida? <a href="https://wa.me/5547988061278?text=Ol%C3%A1!%20Tenho%20d%C3%BAvidas%20sobre%20o%20CRM%20com%20IA%20do%20Juris8." target="_blank" rel="noopener noreferrer" data-track="whatsapp_click" data-track-ctx="crm_faq">Fale com um especialista pelo WhatsApp</a>.</p>
+      </div>
+      <ul class="cr-qs" id="cr-qs">
+        <li class="cr-q"><button class="cr-q__btn" type="button" aria-expanded="false" aria-controls="q1"><span>A IA vai conversar com meus clientes sem supervisão?</span><span aria-hidden="true"><i data-lucide="plus"></i></span></button><div class="cr-q__body" id="q1" role="region"><div><p>A IA conduz a pré-consulta seguindo os fluxos, as perguntas e as regras de encaminhamento que o seu escritório valida na implantação. Ela responde, qualifica, pede documentos e agenda. O que sai do fluxo é encaminhado para a equipe, e o advogado acompanha tudo pelo kanban e pelo dossiê.</p></div></div></li>
+        <li class="cr-q"><button class="cr-q__btn" type="button" aria-expanded="false" aria-controls="q2"><span>A IA dá orientação jurídica ao cliente?</span><span aria-hidden="true"><i data-lucide="plus"></i></span></button><div class="cr-q__body" id="q2" role="region"><div><p>Não. A IA não substitui o advogado: ela organiza o caso, coleta as informações e os documentos e prepara o terreno para a reunião. A análise e a orientação continuam sendo do advogado.</p></div></div></li>
+        <li class="cr-q"><button class="cr-q__btn" type="button" aria-expanded="false" aria-controls="q3"><span>Isso está de acordo com as regras da OAB?</span><span aria-hidden="true"><i data-lucide="plus"></i></span></button><div class="cr-q__body" id="q3" role="region"><div><p>Sim. A operação foi desenhada em conformidade com o Provimento 205/2021 da OAB: a IA atende quem procurou o escritório, informa, qualifica e agenda, sem promessa de resultado.</p></div></div></li>
+        <li class="cr-q"><button class="cr-q__btn" type="button" aria-expanded="false" aria-controls="q4"><span>Preciso trocar de sistema ou de número de WhatsApp?</span><span aria-hidden="true"><i data-lucide="plus"></i></span></button><div class="cr-q__body" id="q4" role="region"><div><p>A implementação é guiada e não exige trocar de sistema. A conexão é feita pela API Oficial do WhatsApp, da Meta, e um especialista do Juris8 acompanha a configuração do número com você.</p></div></div></li>
+        <li class="cr-q"><button class="cr-q__btn" type="button" aria-expanded="false" aria-controls="q5"><span>Quais áreas do direito a IA atende?</span><span aria-hidden="true"><i data-lucide="plus"></i></span></button><div class="cr-q__body" id="q5" role="region"><div><p>A IA classifica a demanda por área, como trabalhista, família, cível, consumidor, previdenciário e empresarial, e segue um fluxo de perguntas e documentos específico para cada uma. Você pode começar por uma área do escritório, validar o fluxo e depois escalar.</p></div></div></li>
+        <li class="cr-q"><button class="cr-q__btn" type="button" aria-expanded="false" aria-controls="q6"><span>Como ficam os dados dos meus clientes?</span><span aria-hidden="true"><i data-lucide="plus"></i></span></button><div class="cr-q__body" id="q6" role="region"><div><p>Os dados são tratados conforme a LGPD e armazenados de forma criptografada. Conversas, documentos e dossiês ficam vinculados ao caso, acessíveis apenas à equipe do escritório.</p></div></div></li>
+        <li class="cr-q"><button class="cr-q__btn" type="button" aria-expanded="false" aria-controls="q7"><span>Preciso de cartão de crédito para testar?</span><span aria-hidden="true"><i data-lucide="plus"></i></span></button><div class="cr-q__body" id="q7" role="region"><div><p>Não. Você ativa o CRM com IA por 14 dias grátis, sem cartão. Em até 24 horas, um especialista prepara uma demonstração configurada para a sua área de atuação.</p></div></div></li>
+      </ul>
+    </div>
+  </section>
+</main>
+
+<footer class="jf">
+  <div class="jf__glow" aria-hidden="true"></div>
+  <div class="cr-wrap">
+    <div class="jf__top">
+      <div class="jf__brand">
+        <a href="#topo" class="jf__logo" aria-label="Juris8, voltar ao topo"><img src="/assets/brand/logo-juris8-light.png" alt="Juris8" width="125" height="32"></a>
+        <p class="jf__tag">A mais completa IA jurídica do Brasil. Pré-elaboração de peças, pesquisa, análise de documentos e transcrição, desenvolvidas por advogados, para advogados.</p>
+        <div class="jf__seals">
+          <span><i data-lucide="lock" aria-hidden="true"></i>LGPD</span>
+          <span><i data-lucide="sparkles" aria-hidden="true"></i>IA jurídica</span>
+        </div>
+        <div class="jf__social">
+          <a href="https://www.instagram.com/juris8.ai" target="_blank" rel="noopener noreferrer" aria-label="Instagram da Juris8" data-track="social_click" data-track-ctx="instagram">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4.2"/><circle cx="17.4" cy="6.6" r=".9" fill="currentColor" stroke="none"/></svg>
+          </a>
+          <a href="https://wa.me/5547988061278?text=Ol%C3%A1!%20Vim%20pelo%20site%20e%20quero%20conhecer%20o%20CRM%20com%20IA%20do%20Juris8." target="_blank" rel="noopener noreferrer" aria-label="WhatsApp da Juris8" data-track="whatsapp_click" data-track-ctx="footer_icon">
+            <svg viewBox="0 0 32 32" fill="currentColor" aria-hidden="true"><path d="M16.01 3.2c-7.1 0-12.86 5.76-12.86 12.86 0 2.27.6 4.48 1.73 6.43L3.2 28.8l6.5-1.7a12.8 12.8 0 0 0 6.3 1.62h.01c7.1 0 12.86-5.76 12.86-12.86 0-3.44-1.34-6.67-3.77-9.1A12.78 12.78 0 0 0 16.01 3.2Zm0 23.5h-.01a10.6 10.6 0 0 1-5.4-1.48l-.39-.23-4.02 1.05 1.07-3.92-.25-.4a10.62 10.62 0 0 1 16.46-13.1 10.55 10.55 0 0 1 3.12 7.51c0 5.88-4.78 10.65-10.66 10.65Zm5.85-7.98c-.32-.16-1.9-.94-2.2-1.04-.3-.11-.5-.16-.72.16-.21.32-.82 1.03-1 1.25-.18.21-.37.24-.69.08-.32-.16-1.35-.5-2.58-1.59-.95-.85-1.6-1.9-1.78-2.22-.18-.32-.02-.49.14-.65.14-.14.32-.37.48-.56.16-.18.21-.32.32-.53.11-.21.05-.4-.03-.56-.08-.16-.72-1.74-.99-2.38-.26-.62-.52-.54-.72-.55l-.61-.01c-.21 0-.56.08-.85.4-.29.32-1.11 1.09-1.11 2.66 0 1.57 1.14 3.08 1.3 3.3.16.21 2.25 3.43 5.45 4.81.76.33 1.36.53 1.82.68.77.24 1.46.21 2.01.13.61-.09 1.9-.78 2.17-1.53.27-.74.27-1.38.19-1.51-.08-.13-.29-.21-.61-.37Z"/></svg>
+          </a>
+        </div>
+      </div>
+      <nav class="jf__links" aria-label="Rodapé">
+        <div class="jf__col">
+          <h2 class="jf__h">Soluções</h2>
+          <a href="/det">DET Monitor</a>
+          <a href="/crm" aria-current="page">CRM com IA</a>
+          <a href="/secretariajuridica">Secretaria jurídica</a>
+          <a href="/newsletter">Newsletter mensal</a>
+          <a href="/trabalhistaempresarial">Trabalhista empresarial</a>
+        </div>
+        <div class="jf__col">
+          <h2 class="jf__h">Plataforma</h2>
+          <a href="/#redacao">Pré-elaboração de peças</a>
+          <a href="/#jurisprudencia">Pesquisa de jurisprudência</a>
+          <a href="/#revisao-contratual">Análise de documentos</a>
+          <a href="/#transcricao">Transcrição de audiências</a>
+        </div>
+        <div class="jf__col">
+          <h2 class="jf__h">Contato</h2>
+          <a href="https://wa.me/5547988061278?text=Ol%C3%A1!%20Vim%20pelo%20site%20e%20quero%20conhecer%20o%20CRM%20com%20IA%20do%20Juris8." target="_blank" rel="noopener noreferrer" data-track="whatsapp_click" data-track-ctx="footer_link">WhatsApp</a>
+          <a href="https://www.instagram.com/juris8.ai" target="_blank" rel="noopener noreferrer" data-track="social_click" data-track-ctx="instagram">Instagram</a>
+          <a href="#faq">FAQ</a>
+          <a href="/#solucoes">Soluções</a>
+        </div>
+      </nav>
+    </div>
+    <div class="jf__bottom">
+      <span>© 2026 Juris8. Todos os direitos reservados.</span>
+      <span class="jf__made"><i aria-hidden="true"></i>Desenvolvido por advogados, para advogados</span>
+      <a href="#topo" class="jf__up">Voltar ao topo<i data-lucide="chevron-up" aria-hidden="true"></i></a>
+    </div>
+  </div>
+</footer>
+
+<a class="lp-wa" id="lp-wa" href="https://wa.me/5547988061278?text=Ol%C3%A1!%20Tenho%20d%C3%BAvidas%20sobre%20o%20CRM%20com%20IA%20do%20Juris8." target="_blank" rel="noopener noreferrer" aria-label="Dúvidas sobre o CRM? Fale com um especialista pelo WhatsApp" data-track="whatsapp_click" data-track-ctx="fab">
+  <span class="lp-wa__label">Dúvidas sobre o CRM?</span>
+  <span class="lp-wa__btn"><span class="lp-wa__ring" aria-hidden="true"></span><svg viewBox="0 0 32 32" fill="currentColor" aria-hidden="true"><path d="M16.01 3.2c-7.1 0-12.86 5.76-12.86 12.86 0 2.27.6 4.48 1.73 6.43L3.2 28.8l6.5-1.7a12.8 12.8 0 0 0 6.3 1.62h.01c7.1 0 12.86-5.76 12.86-12.86 0-3.44-1.34-6.67-3.77-9.1A12.78 12.78 0 0 0 16.01 3.2Zm0 23.5h-.01a10.6 10.6 0 0 1-5.4-1.48l-.39-.23-4.02 1.05 1.07-3.92-.25-.4a10.62 10.62 0 0 1 16.46-13.1 10.55 10.55 0 0 1 3.12 7.51c0 5.88-4.78 10.65-10.66 10.65Zm5.85-7.98c-.32-.16-1.9-.94-2.2-1.04-.3-.11-.5-.16-.72.16-.21.32-.82 1.03-1 1.25-.18.21-.37.24-.69.08-.32-.16-1.35-.5-2.58-1.59-.95-.85-1.6-1.9-1.78-2.22-.18-.32-.02-.49.14-.65.14-.14.32-.37.48-.56.16-.18.21-.32.32-.53.11-.21.05-.4-.03-.56-.08-.16-.72-1.74-.99-2.38-.26-.62-.52-.54-.72-.55l-.61-.01c-.21 0-.56.08-.85.4-.29.32-1.11 1.09-1.11 2.66 0 1.57 1.14 3.08 1.3 3.3.16.21 2.25 3.43 5.45 4.81.76.33 1.36.53 1.82.68.77.24 1.46.21 2.01.13.61-.09 1.9-.78 2.17-1.53.27-.74.27-1.38.19-1.51-.08-.13-.29-.21-.61-.37Z"/></svg></span>
+</a>
+
+<script src="https://unpkg.com/lucide@0.469.0/dist/umd/lucide.min.js"></script>
+<script src="/assets/site/j8-pages.js"></script>
+<script>
+(function () {
+  'use strict';
+  var $ = function (s, r) { return (r || document).querySelector(s); };
+  var $$ = function (s, r) { return Array.prototype.slice.call((r || document).querySelectorAll(s)); };
+  var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var icons = function () { if (window.lucide && window.lucide.createIcons) window.lucide.createIcons(); };
+  var el = function (tag, cls, text) { var n = document.createElement(tag); if (cls) n.className = cls; if (text != null) n.textContent = text; return n; };
+  var icon = function (name) { var i = document.createElement('i'); i.setAttribute('data-lucide', name); return i; };
+
+  /* Move elementos entre colunas animando a troca de posição (técnica FLIP) */
+  function flip(cards, mutate) {
+    var before = new Map();
+    cards.forEach(function (c) { before.set(c, c.getBoundingClientRect()); });
+    mutate();
+    if (reduce) return;
+    cards.forEach(function (c) {
+      var a = before.get(c), b = c.getBoundingClientRect();
+      var dx = a.left - b.left, dy = a.top - b.top;
+      if (!dx && !dy) return;
+      c.animate([{ transform: 'translate(' + dx + 'px,' + dy + 'px)' }, { transform: 'none' }], { duration: 760, easing: 'cubic-bezier(.22,1,.36,1)' });
+    });
+  }
+  function bump(n) { n.classList.add('is-bump'); setTimeout(function () { n.classList.remove('is-bump'); }, 900); }
+
+  /* ---------- WhatsApp flutuante: sai da frente do formulário e do painel ---------- */
+  var float = $('#lp-wa');
+  if ('IntersectionObserver' in window) {
+    var busy = new Set();
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (en) { if (en.isIntersecting) busy.add(en.target); else busy.delete(en.target); });
+      float.classList.toggle('is-away', busy.size > 0);
+    });
+    ['.cr-form-card', '.cr-ws'].forEach(function (s) { var n = $(s); if (n) io.observe(n); });
+  }
+
+  /* ---------- Hero: o card anda sozinho uma vez, quando o quadro aparece ---------- */
+  var board = $('#cr-board');
+  var heroCard = $('#cr-hero-card');
+  var heroCols = $$('#cr-cols .cr-col');
+  function setStatus(card, ic, text, done) {
+    var st = $('.cr-card__st', card);
+    st.textContent = '';
+    st.classList.toggle('is-done', !!done);
+    st.append(icon(ic), el('span', '', text));
+    icons();
+  }
+  function ping(card, ic, text) {
+    var old = $('.cr-card__ping', card); if (old) old.remove();
+    var p = el('span', 'cr-card__ping'); p.append(icon(ic), document.createTextNode(text));
+    card.appendChild(p); icons();
+    setTimeout(function () { if (p.parentNode) p.remove(); }, 2600);
+  }
+  var heroPlayed = false;
+  function playHero() {
+    if (heroPlayed) return; heroPlayed = true;
+    var counts = heroCols.map(function (c) { return $('.cr-col__n', c); });
+    var seq = [
+      [600, function () { heroCard.classList.add('is-live'); ping(heroCard, 'message-circle', 'Cliente respondeu no WhatsApp'); setStatus(heroCard, 'message-square-reply', 'Pergunta respondida'); }],
+      [2400, function () { ping(heroCard, 'paperclip', 'fatura_mar25.pdf recebida'); setStatus(heroCard, 'file-check', 'Docs recebidos', true); }],
+      [3700, function () {
+        var all = $$('#cr-cols .cr-card');
+        flip(all, function () { $('.cr-list', heroCols[1]).prepend(heroCard); });
+        counts[0].textContent = '2'; counts[1].textContent = '3'; bump(counts[1]);
+        setStatus(heroCard, 'file-check', 'Docs recebidos · movido pela IA', true);
+        $('.cr-card__top span:last-child', heroCard).textContent = 'agora';
+      }],
+      [5200, function () { heroCard.classList.remove('is-live'); }]
+    ];
+    if (reduce) { seq.forEach(function (s) { s[1](); }); return; }
+    seq.forEach(function (s) { setTimeout(s[1], s[0]); });
+  }
+  if ('IntersectionObserver' in window) {
+    var bio = new IntersectionObserver(function (entries) { if (entries[0].isIntersecting) { setTimeout(playHero, 700); bio.disconnect(); } }, { threshold: 0.45 });
+    bio.observe(board);
+  } else playHero();
+
+  /* Filtro por área */
+  var chips = $$('.cr-chip');
+  chips.forEach(function (chip) {
+    chip.addEventListener('click', function () {
+      var a = chip.dataset.area;
+      chips.forEach(function (c) { c.setAttribute('aria-pressed', c === chip ? 'true' : 'false'); });
+      $$('#cr-cols .cr-card').forEach(function (card) { card.classList.toggle('is-dim', a !== 'todas' && card.dataset.area !== a); });
+    });
+  });
+
+  /* ---------- Pré-consulta: 7 movimentos ---------- */
+  var tabs = $$('.cr-node');
+  var panels = tabs.map(function (t) { return document.getElementById(t.getAttribute('aria-controls')); });
+  var visuals = $$('.cr-mini');
+  var fill = $('#cr-rail-fill');
+  var prev = $('#pc-prev'), next = $('#pc-next');
+  var pc = 0;
+  function selectStep(i, focus) {
+    pc = i;
+    tabs.forEach(function (t, k) {
+      t.setAttribute('aria-selected', k === i ? 'true' : 'false');
+      t.tabIndex = k === i ? 0 : -1;
+      t.classList.toggle('is-past', k < i);
+    });
+    panels.forEach(function (p, k) { p.hidden = k !== i; });
+    visuals.forEach(function (v, k) { v.hidden = k !== i; if (k === i && !reduce) { v.classList.remove('is-new'); void v.offsetWidth; v.classList.add('is-new'); } });
+    fill.style.width = 'calc((100% - 100% / 7) * ' + (i / 6) + ')';
+    prev.disabled = i === 0; next.disabled = i === tabs.length - 1;
+    if (focus) tabs[i].focus();
+    var li = tabs[i].parentNode; if (li.scrollIntoView && window.innerWidth < 900) li.parentNode.scrollTo({ left: li.offsetLeft - 24, behavior: reduce ? 'auto' : 'smooth' });
+  }
+  tabs.forEach(function (t, i) {
+    t.addEventListener('click', function () { selectStep(i); });
+    t.addEventListener('keydown', function (e) {
+      if (e.key === 'ArrowRight' || e.key === 'ArrowLeft') { e.preventDefault(); selectStep((i + (e.key === 'ArrowRight' ? 1 : -1) + tabs.length) % tabs.length, true); }
+    });
+  });
+  prev.addEventListener('click', function () { if (pc > 0) selectStep(pc - 1); });
+  next.addEventListener('click', function () { if (pc < tabs.length - 1) selectStep(pc + 1); });
+  selectStep(0);
+
+  /* ---------- O card anda porque a conversa anda ---------- */
+  var mvThread = $('#mv-thread');
+  var mvCols = $$('#mv-cols .cr-col');
+  var mvLog = $('#mv-log span');
+  var mvCard;
+  var STEPS = [
+    { col: 0, st: ['message-circle', 'IA qualificando'], log: 'Lead entrou pelo WhatsApp. A IA já está conversando.', msgs: [['l', 'Oi, fui demitido semana passada e acho que não pagaram minhas horas extras.', '22:11'], ['i', 'Sinto muito, João. Você fazia horas extras com frequência? Elas apareciam no holerite?', '22:11']] },
+    { col: 1, st: ['message-square-reply', 'Resposta registrada'], log: 'A IA registrou a resposta e o card avançou para Qualificado.', msgs: [['l', 'Quase todo dia. Nunca apareceram no holerite.', '22:14'], ['i', 'Entendi. Pode me enviar o último contracheque?', '22:15']] },
+    { col: 2, st: ['file-check', 'contracheque vinculado'], log: 'Arquivo vinculado ao caso. O card mudou de coluna sozinho.', msgs: [['f', 'contracheque_mar25.pdf'], ['i', 'Recebido ✅ Tenho quinta às 15h ou sexta às 9h com o advogado. Qual prefere?', '22:16']] },
+    { col: 3, st: ['calendar-check', 'Qui · 15h · dossiê em montagem'], log: 'Reunião confirmada. O kanban atualizou e o dossiê começou a ser montado.', msgs: [['l', 'Quinta às 15h.', '22:17'], ['i', 'Confirmado! 📅 Te envio o link e um lembrete antes da reunião.', '22:18']] }
+  ];
+  function msgNode(m) {
+    if (m[0] === 'f') {
+      var f = el('div', 'cr-file'); var ic = el('span', 'cr-file__ic'); ic.appendChild(icon('file-text'));
+      var t = el('span'); var sm = el('small'); sm.append(icon('check'), document.createTextNode('PDF · recebido'));
+      t.append(el('b', '', m[1]), sm); f.append(ic, t); return f;
+    }
+    var b = el('div', 'cr-msg ' + (m[0] === 'l' ? 'cr-msg--lead' : 'cr-msg--ia'));
+    if (m[0] === 'i') { var by = el('span', 'cr-msg__by'); by.append(icon('sparkles'), document.createTextNode('Julia')); b.appendChild(by); }
+    b.appendChild(document.createTextNode(m[1]));
+    b.appendChild(el('small', '', m[2]));
+    return b;
+  }
+  var mvStage = 0, mvTimers = [];
+  function addMsgs(list, animate) {
+    list.forEach(function (m, k) {
+      var go = function () { var n = msgNode(m); if (animate && !reduce) n.classList.add('is-new'); mvThread.appendChild(n); mvThread.scrollTop = mvThread.scrollHeight; icons(); };
+      if (animate && !reduce) mvTimers.push(setTimeout(go, k * 420)); else go();
+    });
+  }
+  function mvReset() {
+    mvTimers.forEach(clearTimeout); mvTimers = [];
+    mvThread.textContent = '';
+    mvCols.forEach(function (c) { $('.cr-list', c).textContent = ''; });
+    mvCard = el('article', 'cr-card');
+    var top = el('div', 'cr-card__top'); top.append(el('span', 'cr-area cr-area--trab', 'Trabalhista'), el('span', '', 'agora'));
+    mvCard.append(top, el('b', '', 'João · horas extras'), el('div', 'cr-card__st'));
+    $('.cr-list', mvCols[0]).appendChild(mvCard);
+    mvCols.forEach(function (c, k) { c.classList.toggle('is-here', k === 0); });
+    setStatus(mvCard, STEPS[0].st[0], STEPS[0].st[1]);
+    addMsgs(STEPS[0].msgs, false);
+    mvLog.textContent = STEPS[0].log;
+    mvStage = 0;
+    $$('.cr-trigger').forEach(function (t) { t.setAttribute('aria-pressed', 'false'); t.classList.remove('is-done'); });
+  }
+  function mvGo(target) {
+    if (target <= mvStage) { mvReset(); }
+    for (var s = mvStage + 1; s <= target; s++) {
+      var animate = s === target;
+      addMsgs(STEPS[s].msgs, animate);
+    }
+    var st = STEPS[target];
+    var delay = reduce ? 0 : 420 * STEPS[target].msgs.length;
+    mvTimers.push(setTimeout(function () {
+      var cards = [mvCard];
+      flip(cards, function () { $('.cr-list', mvCols[st.col]).appendChild(mvCard); });
+      mvCols.forEach(function (c, k) { c.classList.toggle('is-here', k === st.col); });
+      setStatus(mvCard, st.st[0], st.st[1], target > 1);
+      mvCard.classList.add('is-live'); setTimeout(function () { mvCard.classList.remove('is-live'); }, 1200);
+      mvLog.textContent = st.log;
+    }, delay));
+    mvStage = target;
+    $$('.cr-trigger').forEach(function (t) {
+      var n = Number(t.dataset.step);
+      t.setAttribute('aria-pressed', n === target ? 'true' : 'false');
+      t.classList.toggle('is-done', n < target);
+    });
+  }
+  var ws = $('.cr-ws');
+  $$('.cr-trigger').forEach(function (t) {
+    t.addEventListener('click', function () {
+      mvGo(Number(t.dataset.step));
+      var r = ws.getBoundingClientRect();
+      if (window.innerWidth < 900 && (r.top < 0 || r.top > window.innerHeight * 0.6)) ws.scrollIntoView({ behavior: reduce ? 'auto' : 'smooth', block: 'start' });
+    });
+  });
+  $('#cr-reset').addEventListener('click', mvReset);
+  mvReset();
+
+  /* Conversas da Julia: rolam até o agendamento quando aparecem na tela */
+  var phoneThreads = $$('.cr-phone .cr-thread');
+  var toBottom = function () { phoneThreads.forEach(function (t, k) { setTimeout(function () { t.scrollTop = t.scrollHeight; }, reduce ? 0 : 500 + k * 350); }); };
+  if ('IntersectionObserver' in window) {
+    var pio = new IntersectionObserver(function (e) { if (e[0].isIntersecting) { toBottom(); pio.disconnect(); } }, { threshold: 0.5 });
+    pio.observe($('.cr-phones'));
+  } else toBottom();
+
+  /* ---------- Dossiê: destaque da parte correspondente ---------- */
+  var feats = $$('.cr-feat');
+  var parts = $$('.cr-doc .cr-part');
+  feats.forEach(function (f) {
+    var show = function () {
+      feats.forEach(function (x) { x.setAttribute('aria-pressed', x === f ? 'true' : 'false'); });
+      parts.forEach(function (p) { p.classList.toggle('is-hl', p.dataset.part.split(' ').indexOf(f.dataset.part) > -1); });
+    };
+    f.addEventListener('click', show);
+    f.addEventListener('mouseenter', function () { if (window.matchMedia('(hover: hover)').matches) show(); });
+  });
+
+  /* ---------- Lead curioso x qualificado: a barra de 20 minutos ---------- */
+  if ('IntersectionObserver' in window) {
+    var vs = $('#cr-vs');
+    var vio = new IntersectionObserver(function (e) { if (e[0].isIntersecting) { vs.classList.add('is-in'); vio.disconnect(); } }, { threshold: 0.5 });
+    vio.observe(vs);
+  } else $('#cr-vs').classList.add('is-in');
+
+  /* ---------- FAQ ---------- */
+  $$('.cr-q').forEach(function (q, i, all) {
+    var btn = $('.cr-q__btn', q);
+    btn.addEventListener('click', function () {
+      var open = !q.classList.contains('is-open');
+      all.forEach(function (o) { o.classList.remove('is-open'); $('.cr-q__btn', o).setAttribute('aria-expanded', 'false'); });
+      q.classList.toggle('is-open', open);
+      btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+    });
+  });
+
+  /* Máscara do CNPJ */
+  var cnpj = $('#c-cnpj');
+  cnpj.addEventListener('input', function () {
+    var d = cnpj.value.replace(/\D/g, '').slice(0, 14), v = d;
+    if (d.length > 12) v = d.replace(/^(\d{2})(\d{3})(\d{3})(\d{4})(\d{0,2}).*/, '$1.$2.$3/$4-$5');
+    else if (d.length > 8) v = d.replace(/^(\d{2})(\d{3})(\d{3})(\d{0,4}).*/, '$1.$2.$3/$4');
+    else if (d.length > 5) v = d.replace(/^(\d{2})(\d{3})(\d{0,3}).*/, '$1.$2.$3');
+    else if (d.length > 2) v = d.replace(/^(\d{2})(\d{0,3}).*/, '$1.$2');
+    cnpj.value = v;
+  });
+
+  /* ---------- Formulário (comportamento compartilhado do site) ---------- */
+  if (window.J8) {
+    window.J8.mount({ form: { interest: 'CRM com IA · demonstração', source: 'lp_crm_ia', segment: 'crm' } });
+  }
+  icons();
+})();
+</script>
+</body>
+</html>
