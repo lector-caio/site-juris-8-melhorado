@@ -653,6 +653,8 @@ svg.lucide { width: 18px; height: 18px; flex: none; }
 }
 .jf__social a { width: 44px; height: 44px; }
 </style>
+<link rel="stylesheet" href="/assets/site/j8-menu.css">
+<script src="/assets/site/j8-menu.js" defer></script>
 </head>
 <body>
 <a class="lp-skip" href="#topo">Ir para o conteúdo</a>
@@ -673,7 +675,27 @@ svg.lucide { width: 18px; height: 18px; flex: none; }
       <span class="lp-cta-short">Demonstração</span>
       <span class="lp-header__cta-tile" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7"/><path d="M8 7h9v9"/></svg></span>
     </a>
+    <button type="button" class="lp-burger" aria-expanded="false" aria-controls="lp-drawer" aria-label="Abrir menu"><span class="lp-burger__bars" aria-hidden="true"><span></span><span></span><span></span></span></button>
   </header>
+</div>
+<!-- Menu em gaveta (telas até 1060px): comportamento em /assets/site/j8-menu.js -->
+<div class="lp-drawer" id="lp-drawer" role="dialog" aria-modal="true" aria-label="Menu">
+  <div class="lp-drawer__scrim" data-menu-close=""></div>
+  <div class="lp-drawer__panel">
+    <div class="lp-drawer__head">
+      <a href="/" class="lp-drawer__logo" aria-label="Juris8, página inicial"><img src="/assets/brand/logo-juris8.png" alt="Juris8" width="113" height="29"></a>
+      <button type="button" class="lp-drawer__close" data-menu-close="" aria-label="Fechar menu"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><rect x="10.9" y="3" width="2.2" height="18" rx="1.1" transform="rotate(45 12 12)"></rect><rect x="10.9" y="3" width="2.2" height="18" rx="1.1" transform="rotate(-45 12 12)"></rect></svg></button>
+    </div>
+    <nav class="lp-drawer__nav" aria-label="Seções da página">
+      <a href="#plantao">Plantão 24h</a>
+      <a href="#canais">Canais</a>
+      <a href="#jornada">Jornada do cliente</a>
+      <a href="#tom">Tom de voz</a>
+      <a href="#testar">Testar</a>
+    </nav>
+    <a href="#formulario" data-track="header_cta_click" data-track-ctx="drawer_cta" class="lp-drawer__cta">Solicitar demonstração</a>
+    <a href="/" class="lp-drawer__home">Ir para a página inicial</a>
+  </div>
 </div>
 
 <main id="topo" tabindex="-1">

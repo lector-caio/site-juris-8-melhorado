@@ -25,6 +25,8 @@
 <link rel="stylesheet" href="/assets/site/j8-pages.css">
 <script src="/assets/site/j8-pages.js"></script>
 <script src="/support.js"></script>
+<link rel="stylesheet" href="/assets/site/j8-menu.css">
+<script src="/assets/site/j8-menu.js" defer></script>
 </head>
 <body>
 <x-dc>
@@ -186,7 +188,27 @@
         <span class="lp-cta-short">Especialista</span>
         <span class="lp-header__cta-tile" aria-hidden="true"><svg viewBox="0 0 32 32" fill="currentColor"><path d="M16.01 3.2c-7.1 0-12.86 5.76-12.86 12.86 0 2.27.6 4.48 1.73 6.43L3.2 28.8l6.5-1.7a12.8 12.8 0 0 0 6.3 1.62h.01c7.1 0 12.86-5.76 12.86-12.86 0-3.44-1.34-6.67-3.77-9.1A12.78 12.78 0 0 0 16.01 3.2Zm0 23.5h-.01a10.6 10.6 0 0 1-5.4-1.48l-.39-.23-4.02 1.05 1.07-3.92-.25-.4a10.62 10.62 0 0 1 16.46-13.1 10.55 10.55 0 0 1 3.12 7.51c0 5.88-4.78 10.65-10.66 10.65Zm5.85-7.98c-.32-.16-1.9-.94-2.2-1.04-.3-.11-.5-.16-.72.16-.21.32-.82 1.03-1 1.25-.18.21-.37.24-.69.08-.32-.16-1.35-.5-2.58-1.59-.95-.85-1.6-1.9-1.78-2.22-.18-.32-.02-.49.14-.65.14-.14.32-.37.48-.56.16-.18.21-.32.32-.53.11-.21.05-.4-.03-.56-.08-.16-.72-1.74-.99-2.38-.26-.62-.52-.54-.72-.55l-.61-.01c-.21 0-.56.08-.85.4-.29.32-1.11 1.09-1.11 2.66 0 1.57 1.14 3.08 1.3 3.3.16.21 2.25 3.43 5.45 4.81.76.33 1.36.53 1.82.68.77.24 1.46.21 2.01.13.61-.09 1.9-.78 2.17-1.53.27-.74.27-1.38.19-1.51-.08-.13-.29-.21-.61-.37Z"/></svg></span>
       </a>
+      <button type="button" class="lp-burger" aria-expanded="false" aria-controls="lp-drawer" aria-label="Abrir menu"><span class="lp-burger__bars" aria-hidden="true"><span></span><span></span><span></span></span></button>
     </header>
+  </div>
+  <!-- Menu em gaveta (telas até 1060px): comportamento em /assets/site/j8-menu.js -->
+  <div class="lp-drawer" id="lp-drawer" role="dialog" aria-modal="true" aria-label="Menu">
+    <div class="lp-drawer__scrim" data-menu-close=""></div>
+    <div class="lp-drawer__panel">
+      <div class="lp-drawer__head">
+        <a href="/" class="lp-drawer__logo" aria-label="Juris8, página inicial"><img src="/assets/brand/logo-juris8.png" alt="Juris8" width="113" height="29"></a>
+        <button type="button" class="lp-drawer__close" data-menu-close="" aria-label="Fechar menu"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><rect x="10.9" y="3" width="2.2" height="18" rx="1.1" transform="rotate(45 12 12)"></rect><rect x="10.9" y="3" width="2.2" height="18" rx="1.1" transform="rotate(-45 12 12)"></rect></svg></button>
+      </div>
+      <nav class="lp-drawer__nav" aria-label="Seções da página">
+        <a href="#riscos">Os riscos</a>
+        <a href="#caixa-unificada">Caixa unificada</a>
+        <a href="#como-funciona">Como funciona</a>
+        <a href="#seguranca">Segurança</a>
+        <a href="#faq">FAQ</a>
+      </nav>
+      <a href="https://wa.me/5547988061278?text=Ol%C3%A1%21%20Quero%20unificar%20o%20DET%20de%20todos%20os%20CNPJs%20do%20meu%20grupo.%20Pode%20me%20apresentar%20o%20DET%20Monitor%3F" target="_blank" rel="noopener noreferrer" data-track="whatsapp_click" data-track-ctx="drawer_cta" aria-label="Falar com especialista no WhatsApp" class="lp-drawer__cta">Falar com especialista</a>
+      <a href="/" class="lp-drawer__home">Ir para a página inicial</a>
+    </div>
   </div>
 
   <main id="conteudo" tabindex="-1">
@@ -580,7 +602,7 @@
       <a href="/crm">CRM com IA jurídica</a>
       <a href="/secretariajuridica">Secretaria jurídica</a>
       <a href="/trabalhistaempresarial">Trabalhista empresarial</a>
-      <a href="https://wa.me/5547988061278?text=Ol%C3%A1!%20Quero%20conhecer%20a%20Newsletter%20mensal%20com%20IA%20do%20Juris8." target="_blank" rel="noopener noreferrer">Newsletter mensal com IA</a>
+      <a href="/newsletter">Newsletter mensal com IA</a>
       <a href="/agentejuridico">Agente Jurídico</a>
     </div>
     <div class="jf__col">

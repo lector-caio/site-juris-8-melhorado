@@ -25,7 +25,7 @@
    JURIS8 · AGENTE JURÍDICO
    Conceito: você entra com o contexto, o agente prepara, você decide.
    A assinatura é o agente trabalhando à vista: cada etapa aparece,
-   e a peça só chega quando está pronta para a sua revisão.
+   e organiza subsídios para a redação e decisão do advogado.
    Base visual da home (barra e WhatsApp em /assets/site/j8-header.css).
    ============================================================ */
 :root {
@@ -567,6 +567,8 @@ textarea.ag-input { height: 96px; padding: 13px 16px; line-height: 1.5; resize: 
 }
 .jf__social a { width: 44px; height: 44px; }
 </style>
+<link rel="stylesheet" href="/assets/site/j8-menu.css">
+<script src="/assets/site/j8-menu.js" defer></script>
 </head>
 <body>
 <a class="lp-skip" href="#topo">Ir para o conteúdo</a>
@@ -586,7 +588,26 @@ textarea.ag-input { height: 96px; padding: 13px 16px; line-height: 1.5; resize: 
       <span class="lp-cta-short">Testar grátis</span>
       <span class="lp-header__cta-tile" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7"/><path d="M8 7h9v9"/></svg></span>
     </a>
+    <button type="button" class="lp-burger" aria-expanded="false" aria-controls="lp-drawer" aria-label="Abrir menu"><span class="lp-burger__bars" aria-hidden="true"><span></span><span></span><span></span></span></button>
   </header>
+</div>
+<!-- Menu em gaveta (telas até 1060px): comportamento em /assets/site/j8-menu.js -->
+<div class="lp-drawer" id="lp-drawer" role="dialog" aria-modal="true" aria-label="Menu">
+  <div class="lp-drawer__scrim" data-menu-close=""></div>
+  <div class="lp-drawer__panel">
+    <div class="lp-drawer__head">
+      <a href="/" class="lp-drawer__logo" aria-label="Juris8, página inicial"><img src="/assets/brand/logo-juris8.png" alt="Juris8" width="113" height="29"></a>
+      <button type="button" class="lp-drawer__close" data-menu-close="" aria-label="Fechar menu"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><rect x="10.9" y="3" width="2.2" height="18" rx="1.1" transform="rotate(45 12 12)"></rect><rect x="10.9" y="3" width="2.2" height="18" rx="1.1" transform="rotate(-45 12 12)"></rect></svg></button>
+    </div>
+    <nav class="lp-drawer__nav" aria-label="Seções da página">
+      <a href="#funcionalidades">Funcionalidades</a>
+      <a href="#antes-depois">Antes e depois</a>
+      <a href="#como-funciona">Como funciona</a>
+      <a href="#faq">FAQ</a>
+    </nav>
+    <a href="#contato" data-track="header_cta_click" data-track-ctx="drawer_cta" class="lp-drawer__cta">Testar gratuitamente por 7 dias</a>
+    <a href="/" class="lp-drawer__home">Ir para a página inicial</a>
+  </div>
 </div>
 
 <main id="topo" tabindex="-1">
@@ -599,7 +620,7 @@ textarea.ag-input { height: 96px; padding: 13px 16px; line-height: 1.5; resize: 
     <div class="ag-hero__grid">
       <div>
         <h1 id="ag-title" class="ag-rise">Redija, pesquise, analise e transcreva <em>com uma IA feita para a rotina jurídica.</em></h1>
-        <p class="ag-hero__lead ag-rise ag-rise--2">O Juris8 ajuda advogados a reduzir tarefas manuais no dia a dia: cria rascunhos de peças e contratos, organiza documentos, apoia a pesquisa de fundamentos e transforma audiências em registros úteis, sempre para a sua revisão.</p>
+        <p class="ag-hero__lead ag-rise ag-rise--2">O Juris8 ajuda advogados a reduzir tarefas manuais no dia a dia: organiza documentos, apoia a pesquisa de fundamentos e transforma audiências em registros úteis. O advogado analisa os subsídios, elabora a peça e assina.</p>
         <div class="ag-hero__ctas ag-rise ag-rise--3">
           <a href="#contato" class="ag-btn ag-btn--primary" data-track="hero_cta_click" data-track-ctx="agente_ativar">Ativar meu agente (14 dias grátis) <i data-lucide="arrow-right"></i></a>
           <a href="https://wa.me/5547988061278?text=Ol%C3%A1!%20Quero%20conhecer%20o%20Agente%20Jur%C3%ADdico%20do%20Juris8." target="_blank" rel="noopener noreferrer" class="ag-btn ag-btn--line ag-btn--wa" data-track="whatsapp_click" data-track-ctx="hero_especialista"><svg viewBox="0 0 32 32" fill="currentColor" aria-hidden="true"><path d="M16.01 3.2c-7.1 0-12.86 5.76-12.86 12.86 0 2.27.6 4.48 1.73 6.43L3.2 28.8l6.5-1.7a12.8 12.8 0 0 0 6.3 1.62h.01c7.1 0 12.86-5.76 12.86-12.86 0-3.44-1.34-6.67-3.77-9.1A12.78 12.78 0 0 0 16.01 3.2Zm0 23.5h-.01a10.6 10.6 0 0 1-5.4-1.48l-.39-.23-4.02 1.05 1.07-3.92-.25-.4a10.62 10.62 0 0 1 16.46-13.1 10.55 10.55 0 0 1 3.12 7.51c0 5.88-4.78 10.65-10.66 10.65Zm5.85-7.98c-.32-.16-1.9-.94-2.2-1.04-.3-.11-.5-.16-.72.16-.21.32-.82 1.03-1 1.25-.18.21-.37.24-.69.08-.32-.16-1.35-.5-2.58-1.59-.95-.85-1.6-1.9-1.78-2.22-.18-.32-.02-.49.14-.65.14-.14.32-.37.48-.56.16-.18.21-.32.32-.53.11-.21.05-.4-.03-.56-.08-.16-.72-1.74-.99-2.38-.26-.62-.52-.54-.72-.55l-.61-.01c-.21 0-.56.08-.85.4-.29.32-1.11 1.09-1.11 2.66 0 1.57 1.14 3.08 1.3 3.3.16.21 2.25 3.43 5.45 4.81.76.33 1.36.53 1.82.68.77.24 1.46.21 2.01.13.61-.09 1.9-.78 2.17-1.53.27-.74.27-1.38.19-1.51-.08-.13-.29-.21-.61-.37Z"/></svg>Falar com especialista</a>
@@ -613,7 +634,7 @@ textarea.ag-input { height: 96px; padding: 13px 16px; line-height: 1.5; resize: 
       </div>
 
       <div class="ag-hero__visual">
-        <div class="ag-agent" id="ag-agent" role="img" aria-label="Demonstração: o agente do Juris8 lê os documentos do caso, consulta a CLT e a jurisprudência do TST, estrutura a contestação trabalhista e entrega um rascunho pronto para a revisão do advogado.">
+        <div class="ag-agent" id="ag-agent" role="img" aria-label="Demonstração: o Juris8 lê os documentos do caso, consulta a CLT e a jurisprudência do TST e organiza subsídios para que o advogado elabore a contestação trabalhista.">
           <div class="ag-agent__bar">
             <span class="ag-mark">J8</span>
             <span><b>Juris8</b><small>Contestação trabalhista</small></span>
@@ -632,23 +653,23 @@ textarea.ag-input { height: 96px; padding: 13px 16px; line-height: 1.5; resize: 
                 <li class="ag-step"><span class="ag-step__ic"><i data-lucide="loader"></i></span><span><b>Lendo documentos do caso</b><small>3 arquivos · PDF, Word</small></span><span class="ag-tag">contexto</span></li>
                 <li class="ag-step"><span class="ag-step__ic"><i data-lucide="loader"></i></span><span><b>Consultando legislação</b><small>CLT · arts. 58 e 59</small></span><span class="ag-tag">pesquisa</span></li>
                 <li class="ag-step"><span class="ag-step__ic"><i data-lucide="loader"></i></span><span><b>Verificando entendimento</b><small>jurisprudência do TST</small></span><span class="ag-tag">pesquisa</span></li>
-                <li class="ag-step"><span class="ag-step__ic"><i data-lucide="loader"></i></span><span><b>Estruturando a peça</b><small>preliminares · mérito · pedidos</small></span><span class="ag-tag">redação</span></li>
+                <li class="ag-step"><span class="ag-step__ic"><i data-lucide="loader"></i></span><span><b>Organizando os subsídios</b><small>documentos · fundamentos · pontos de atenção</small></span><span class="ag-tag">análise</span></li>
               </ul>
             </div>
             <div class="ag-doc">
               <span class="ag-doc__ic"><i data-lucide="file-pen-line"></i></span>
-              <span><b>Contestacao_horas-extras.docx</b><span class="ag-doc__bar"><i id="ag-doc-bar"></i></span></span>
+              <span><b>Dossiê_horas-extras.docx</b><span class="ag-doc__bar"><i id="ag-doc-bar"></i></span></span>
               <span class="ag-doc__st" id="ag-doc-st">aguardando</span>
             </div>
             <div class="ag-ready" id="ag-ready">
-              <b><i data-lucide="circle-check"></i>Rascunho pronto para a sua revisão</b>
-              <p>Você ajusta, complementa e decide: a autoria é sempre sua.</p>
-              <div class="ag-ready__row"><span><i data-lucide="pen-line"></i>Abrir p/ revisão</span><span><i data-lucide="copy"></i>Copiar</span><span><i data-lucide="download"></i>Exportar .docx</span></div>
+              <b><i data-lucide="circle-check"></i>Subsídios organizados para a sua análise</b>
+              <p>O advogado analisa os materiais, elabora a peça e mantém a autoria e a decisão.</p>
+              <div class="ag-ready__row"><span><i data-lucide="pen-line"></i>Abrir análise</span><span><i data-lucide="copy"></i>Copiar resumo</span><span><i data-lucide="download"></i>Exportar relatório</span></div>
             </div>
           </div>
           <div class="ag-compose">
-            <div class="ag-compose__in"><i data-lucide="paperclip" style="color:#706987;width:16px;height:16px"></i><span>Comece descrevendo a peça que você precisa</span><i><i data-lucide="arrow-up"></i></i></div>
-            <span class="ag-compose__hint">O Juris8 prepara um rascunho para a sua revisão</span>
+            <div class="ag-compose__in"><i data-lucide="paperclip" style="color:#706987;width:16px;height:16px"></i><span>Descreva o contexto do caso e os documentos</span><i><i data-lucide="arrow-up"></i></i></div>
+            <span class="ag-compose__hint">O Juris8 organiza subsídios para a sua análise</span>
             <div class="ag-tpls"><span><i data-lucide="file-text"></i>Contestação Trabalhista</span><span><i data-lucide="file-text"></i>Recurso Ordinário</span><span><i data-lucide="file-text"></i>Recurso de Revista</span><span><i data-lucide="file-text"></i>Contrato de Trabalho</span></div>
           </div>
         </div>
@@ -677,7 +698,7 @@ textarea.ag-input { height: 96px; padding: 13px 16px; line-height: 1.5; resize: 
     <div class="ag-wrap">
       <header class="ag-head">
         <h2 class="ag-h2 lp-words" id="dor-title">Boa parte do tempo jurídico <span class="lp-accent">vai embora antes da estratégia.</span></h2>
-        <p>Organizar documentos, buscar fundamentos, começar minutas, revisar informações e transformar reuniões em encaminhamentos. Trabalho necessário, mas que consome as horas que deveriam ir para a estratégia e o cliente.</p>
+        <p>Organizar documentos, buscar fundamentos, estruturar informações e transformar reuniões em encaminhamentos. Trabalho necessário, mas que consome as horas que deveriam ir para a estratégia e o cliente.</p>
       </header>
       <div class="ag-pains">
         <article class="ag-pain"><span class="ag-pain__ic"><i data-lucide="file"></i></span><h3>A tela em branco</h3><p>Começar peças e contratos do zero, repetindo estruturas que você já escreveu dezenas de vezes.</p></article>
@@ -694,7 +715,7 @@ textarea.ag-input { height: 96px; padding: 13px 16px; line-height: 1.5; resize: 
   <section class="ag-section ag-soft" id="funcionalidades" aria-labelledby="frentes-title" style="padding-top:0">
     <div class="ag-wrap">
       <header class="ag-head">
-        <h2 class="ag-h2 lp-words" id="frentes-title">Da primeira minuta à organização da audiência, <span class="lp-accent">o Juris8 antecipa o trabalho operacional.</span></h2>
+        <h2 class="ag-h2 lp-words" id="frentes-title">Da análise inicial à organização da audiência, <span class="lp-accent">o Juris8 apoia o trabalho operacional.</span></h2>
         <p>Quatro frentes para reduzir tarefas manuais. Em todas, o Juris8 prepara o material e você revisa, ajusta e decide.</p>
       </header>
       <div class="ag-tabs" role="tablist" aria-label="As quatro frentes do Juris8">
@@ -704,8 +725,8 @@ textarea.ag-input { height: 96px; padding: 13px 16px; line-height: 1.5; resize: 
         <button class="ag-tab" type="button" role="tab" id="fr-tab-4" aria-controls="fr-4" aria-selected="false" tabindex="-1"><span class="ag-tab__ic"><i data-lucide="audio-lines"></i></span><span><small>04</small><b>Transcrição</b></span></button>
       </div>
       <div class="ag-front" id="fr-1" role="tabpanel" aria-labelledby="fr-tab-1">
-        <div><h3>Saia da tela em branco</h3><p>O Juris8 pré-elabora peças, contratos e documentos jurídicos com base no contexto que você enviar, para que você revise e refine. Com o uso, ele passa a refletir melhor o seu estilo de escrita.</p></div>
-        <div class="ag-example"><span class="ag-example__k"><i data-lucide="lightbulb"></i>Exemplo</span><p>Você descreve o caso e anexa os documentos. O Juris8 devolve uma minuta estruturada (preliminares, mérito e pedidos) pronta para a sua revisão.</p></div>
+        <div><h3>Comece com os subsídios organizados</h3><p>O Juris8 reúne informações do caso, pesquisa fundamentos e organiza os pontos relevantes para apoiar a elaboração de peças e documentos. O advogado analisa, redige e assina.</p></div>
+        <div class="ag-example"><span class="ag-example__k"><i data-lucide="lightbulb"></i>Exemplo</span><p>Você descreve o caso e anexa os documentos. O Juris8 organiza os subsídios e os fundamentos relevantes. O advogado usa esse material para elaborar a peça.</p></div>
       </div>
       <div class="ag-front" id="fr-2" role="tabpanel" aria-labelledby="fr-tab-2" hidden>
         <div><h3>Fundamentos com mais contexto</h3><p>O Juris8 apoia a pesquisa jurídica e ajuda a organizar precedentes e argumentos relevantes para o seu caso, respeitando os seus critérios, para você reduzir o tempo de busca e focar na estratégia.</p></div>
@@ -729,10 +750,10 @@ textarea.ag-input { height: 96px; padding: 13px 16px; line-height: 1.5; resize: 
       <!-- Pesquisa -->
       <div class="ag-deep" id="pesquisa">
         <div>
-          <h2 class="lp-words">Jurisprudência do TST e dos principais TRTs, <span class="lp-accent">com link para o inteiro teor.</span></h2>
-          <p>O Juris8 busca precedentes nos tribunais da base e mostra, em cada resultado, o link para o inteiro teor e a data de atualização da base, para você conferir a fonte antes de usar.</p>
+          <h2 class="lp-words">Jurisprudência do TST e do TRT-12, <span class="lp-accent">com link para o inteiro teor.</span></h2>
+          <p>O Juris8 busca precedentes nesses tribunais e apresenta a fonte e a data de coleta associada a cada referência, para você conferir antes de usar.</p>
           <ul class="ag-points">
-            <li><i data-lucide="landmark"></i><span><b>Tribunais cobertos:</b> TST e TRT-12, com a data de atualização da base informada na busca.</span></li>
+            <li><i data-lucide="landmark"></i><span><b>Tribunais desta demonstração:</b> TST e TRT-12, com datas de coleta indicadas em cada exemplo.</span></li>
             <li><i data-lucide="shield-check"></i><span><b>Mecanismo anti-alucinação:</b> toda jurisprudência retornada é validada contra a base real antes de ser exibida; o sistema rejeita automaticamente qualquer correspondência não verificável.</span></li>
             <li><i data-lucide="git-compare"></i><span><b>Correspondências difíceis:</b> o Juris8 encontra precedentes análogos e casos de menor repercussão que escapam das buscas tradicionais por palavras-chave.</span></li>
             <li><i data-lucide="target"></i><span><b>Contexto relevante:</b> cada resultado mostra por que o caso é aplicável ao seu pedido: não apenas a ementa, mas o argumento central e sua aderência ao pedido.</span></li>
@@ -741,7 +762,7 @@ textarea.ag-input { height: 96px; padding: 13px 16px; line-height: 1.5; resize: 
         </div>
         <div class="ag-ui">
           <div class="ag-ui__bar"><i data-lucide="search-check"></i>Juris8 · Pesquisa de Jurisprudência</div>
-          <div class="ag-query"><i data-lucide="search"></i>Ônus da prova de horas extras e cartão de ponto</div>
+          <div class="ag-query"><i data-lucide="search"></i>Responsabilidade subsidiária da Administração Pública, Tema 1.118 do STF</div>
           <div class="ag-courts" role="group" aria-label="Filtrar por tribunal">
             <button type="button" data-court="todos" aria-pressed="true">Todos</button>
             <button type="button" data-court="TST" aria-pressed="false">TST</button>
@@ -749,26 +770,26 @@ textarea.ag-input { height: 96px; padding: 13px 16px; line-height: 1.5; resize: 
           </div>
           <div class="ag-results" id="ag-results">
             <article class="ag-result" data-court="TST">
-              <div class="ag-result__top"><span class="ag-court">TST</span><b>Súmula 338, item III</b><time>Res. 129/2005</time><span class="ag-pill ag-pill--ok"><i data-lucide="badge-check"></i>Validado</span></div>
-              <blockquote>“Os cartões de ponto que demonstram horários de entrada e saída uniformes são inválidos como meio de prova, invertendo-se o ônus da prova, relativo às horas extras, que passa a ser do empregador, prevalecendo a jornada da inicial se dele não se desincumbir.”</blockquote>
-              <div class="ag-result__tags"><span class="ag-rel">Relevância <b>Muito alta</b></span><span class="ag-tag">cartão de ponto uniforme</span><span class="ag-tag">ônus da prova</span><span class="ag-tag">horas extras</span></div>
+              <div class="ag-result__top"><span class="ag-court">TST</span><b>RR 0101907-97.2017.5.01.0283</b><time>18/12/2025 · 7ª Turma</time><span class="ag-pill ag-pill--ok"><i data-lucide="badge-check"></i>Acervo Juris8</span></div>
+              <blockquote>Aplicando o Tema 1.118 do STF, afasta a responsabilidade subsidiária baseada apenas na inversão do ônus da prova. Exige comprovação de negligência ou nexo causal.</blockquote>
+              <div class="ag-result__tags"><span class="ag-tag">Rel. Claudio Mascarenhas Brandao</span><span class="ag-tag">Coletado em 19/09/2026</span><span class="ag-tag">Administração Pública</span><span class="ag-tag">terceirização</span></div>
             </article>
-            <article class="ag-result" data-court="TST">
-              <div class="ag-result__top"><span class="ag-court">TST</span><b>Súmula 338, item I</b><time>Res. 129/2005</time><span class="ag-pill ag-pill--ok"><i data-lucide="badge-check"></i>Validado</span></div>
-              <blockquote>“A não-apresentação injustificada dos controles de frequência gera presunção relativa de veracidade da jornada de trabalho, a qual pode ser elidida por prova em contrário.”</blockquote>
-              <div class="ag-result__tags"><span class="ag-rel">Relevância <b>Alta</b></span><span class="ag-tag">controle de jornada</span><span class="ag-tag">presunção relativa</span><span class="ag-tag">ônus da prova</span></div>
+            <article class="ag-result" data-court="TRT12">
+              <div class="ag-result__top"><span class="ag-court">TRT-12</span><b>ROT 0000324-02.2025.5.12.0051</b><time>15/04/2026 · 1ª Turma</time><span class="ag-pill ag-pill--ok"><i data-lucide="badge-check"></i>Acervo Juris8</span></div>
+              <blockquote>Aplica o Tema 1.118 do STF e mantém decisão que não reconheceu a responsabilidade subsidiária, diante da ausência de prova de comportamento negligente ou omissão do Poder Público.</blockquote>
+              <div class="ag-result__tags"><span class="ag-tag">Rel. Roberto Luiz Guglielmetto</span><span class="ag-tag">Coletado em 14/09/2026</span><span class="ag-tag">responsabilidade subsidiária</span><span class="ag-tag">Tema 1.118/STF</span></div>
             </article>
             <p class="ag-empty" id="ag-empty" hidden>Nenhum resultado validado deste tribunal nesta busca. O Juris8 não exibe correspondências que não consegue verificar.</p>
           </div>
-          <div class="ag-ui__foot">Cobertura atual: TST e TRT-12 · data de atualização da base exibida na busca</div>
+          <div class="ag-ui__foot">Exemplos do acervo Juris8. As datas indicam a coleta dos registros, não uma atualização geral da base.</div>
         </div>
       </div>
 
       <!-- Redação -->
       <div class="ag-deep ag-deep--flip" id="redacao">
         <div>
-          <h2 class="lp-words">Redação assistida, <span class="lp-accent">com o advogado no comando.</span></h2>
-          <p>O Juris8 organiza o trabalho em etapas (leitura da demanda, pesquisa, estruturação e revisão por critérios) e entrega uma base de texto com os subsídios para a sua análise. O advogado decide, redige e assina.</p>
+          <h2 class="lp-words">Subsídios para redação, <span class="lp-accent">com o advogado no comando.</span></h2>
+          <p>O Juris8 organiza documentos, pesquisa jurisprudência e reúne pontos relevantes para análise. O advogado avalia os subsídios, elabora a peça e decide o que será assinado.</p>
           <ul class="ag-points">
             <li><i data-lucide="list-ordered"></i><span><b>Fluxo de agente em 6 etapas:</b> da leitura da demanda à revisão por critérios de qualidade; você vê cada passo e pode intervir a qualquer momento.</span></li>
             <li><i data-lucide="clipboard-check"></i><span><b>Revisão por critérios:</b> a peça recebe notas em fundamentação, precisão dos precedentes, clareza, coerência e adequação formal, com sugestões específicas de melhoria.</span></li>
@@ -856,7 +877,7 @@ textarea.ag-input { height: 96px; padding: 13px 16px; line-height: 1.5; resize: 
           <div class="ag-keys">
             <h4><i data-lucide="sparkles"></i>Análise gerada · pontos-chave</h4>
             <ul>
-              <li><i data-lucide="git-compare"></i>Reclamante alega jornada 7h–20h sem pagamento: contradição com cartão de ponto</li>
+              <li><i data-lucide="git-compare"></i>Reclamante alega jornada das 7h às 20h sem pagamento: contradição com cartão de ponto</li>
               <li><i data-lucide="list-todo"></i>Banco de horas: existência contestada; solicitar extratos (tarefa gerada)</li>
               <li><button type="button" id="ag-jump"><i data-lucide="bookmark"></i>Trecho crítico 00:12:44, depoimento sobre jornada</button></li>
             </ul>
@@ -898,12 +919,12 @@ textarea.ag-input { height: 96px; padding: 13px 16px; line-height: 1.5; resize: 
         <h2 class="ag-h2 lp-words" id="unico-title">Todos os agentes. <span class="lp-accent">Um único fluxo.</span></h2>
         <p>Do alerta de publicação até a ata da audiência: veja como o Juris8 atua em cada etapa de um mesmo processo.</p>
       </header>
-      <p class="ag-case"><i data-lucide="briefcase-business"></i>Caso: Reclamação Trabalhista, horas extras e CTPS, TRT 12ª Região</p>
+      <p class="ag-case"><i data-lucide="briefcase-business"></i>Caso demonstrativo: responsabilidade subsidiária da Administração Pública (Tema 1.118/STF)</p>
       <ol class="ag-chain">
-        <li class="ag-link"><span class="ag-link__n">1</span><small>DJE</small><h3>Monitoramento automático de publicações</h3><span class="ag-pill ag-pill--risk"><i data-lucide="calendar-clock"></i>Prazo detectado</span><ul><li><i data-lucide="hash"></i>Proc. 0018432-69.2024.5.12.0001 (TRT-12)</li><li><i data-lucide="mail-open"></i>Intimação para contestação</li><li class="is-risk"><i data-lucide="clock-3"></i>Prazo: 8 dias úteis</li></ul></li>
-        <li class="ag-link"><span class="ag-link__n">2</span><small>Documentos</small><h3>Análise da CTPS e cartão de ponto</h3><span class="ag-pill ag-pill--warn"><i data-lucide="triangle-alert"></i>2 riscos encontrados</span><ul><li class="is-risk"><i data-lucide="x"></i>Cláus. jornada: ausente</li><li class="is-risk"><i data-lucide="x"></i>Registro CTPS: inconsistente</li><li class="is-ok"><i data-lucide="check"></i>Horas banco: OK</li></ul></li>
-        <li class="ag-link"><span class="ag-link__n">3</span><small>Jurisprudência</small><h3>Busca validada no TST e no TRT-12</h3><span class="ag-pill ag-pill--ok"><i data-lucide="badge-check"></i>4 precedentes válidos</span><ul><li><i data-lucide="scale"></i>TST, Súm. 338, I: ônus da prova</li><li><i data-lucide="scale"></i>TST, Súm. 338, III: cartão de ponto</li><li class="is-ok"><i data-lucide="link"></i>Todos com link verificado</li></ul></li>
-        <li class="ag-link"><span class="ag-link__n">4</span><small>Redação</small><h3>Base da contestação para o advogado</h3><span class="ag-pill ag-pill--ok"><i data-lucide="circle-check"></i>Revisão concluída</span><ul><li><i data-lucide="gauge"></i>Fundamentação: 9.2</li><li><i data-lucide="gauge"></i>Precisão: 9.5</li><li><i data-lucide="gauge"></i>Clareza: 8.9</li></ul></li>
+        <li class="ag-link"><span class="ag-link__n">1</span><small>DJE</small><h3>Monitoramento automático de publicações</h3><span class="ag-pill ag-pill--risk"><i data-lucide="calendar-clock"></i>Prazo detectado</span><ul><li><i data-lucide="mail-open"></i>Publicação em reclamação trabalhista envolvendo ente público</li><li><i data-lucide="file-text"></i>Intimação para manifestação</li><li class="is-risk"><i data-lucide="clock-3"></i>Prazo: 8 dias úteis</li></ul></li>
+        <li class="ag-link"><span class="ag-link__n">2</span><small>Documentos</small><h3>Análise de documentos do contrato e da fiscalização</h3><span class="ag-pill ag-pill--warn"><i data-lucide="triangle-alert"></i>Pontos para análise</span><ul><li><i data-lucide="folder-search"></i>Documentos do contrato</li><li><i data-lucide="clipboard-check"></i>Registros de fiscalização</li><li><i data-lucide="list-checks"></i>Fatos alegados pelas partes</li></ul></li>
+        <li class="ag-link"><span class="ag-link__n">3</span><small>Jurisprudência</small><h3>Pesquisa no TST e no TRT-12</h3><span class="ag-pill ag-pill--ok"><i data-lucide="badge-check"></i>2 acórdãos de exemplo</span><ul><li><i data-lucide="scale"></i>TST, RR 0101907-97.2017.5.01.0283</li><li><i data-lucide="scale"></i>TRT-12, ROT 0000324-02.2025.5.12.0051</li><li class="is-ok"><i data-lucide="calendar-days"></i>Fontes e datas de coleta indicadas</li></ul></li>
+        <li class="ag-link"><span class="ag-link__n">4</span><small>Redação</small><h3>Subsídios para análise do advogado</h3><span class="ag-pill ag-pill--ok"><i data-lucide="circle-check"></i>Advogado elabora e assina</span><ul><li><i data-lucide="folder-search"></i>Documentos e fatos organizados</li><li><i data-lucide="scale"></i>Referências para avaliação</li><li><i data-lucide="list-checks"></i>Pontos de atenção reunidos</li></ul></li>
         <li class="ag-link"><span class="ag-link__n">5</span><small>Transcrição</small><h3>Audiência transcrita e estruturada</h3><span class="ag-pill ag-pill--violet"><i data-lucide="sparkles"></i>Resumo gerado</span><ul><li><i data-lucide="list-checks"></i>3 pontos-chave identificados</li><li><i data-lucide="list-todo"></i>2 tarefas geradas</li><li><i data-lucide="bookmark"></i>Depoimento: trecho de 12:34 marcado</li></ul></li>
       </ol>
     </div>
@@ -976,8 +997,8 @@ textarea.ag-input { height: 96px; padding: 13px 16px; line-height: 1.5; resize: 
       </header>
       <ol class="ag-3">
         <li><span class="ag-3__n">1</span><small>Você entra</small><h3>Envie o contexto</h3><p>Peça, contrato, decisão, áudio, documento ou demanda. Você diz o que precisa e anexa o material do caso.</p></li>
-        <li><span class="ag-3__n">2</span><small>O Juris8 prepara</small><h3>Ele organiza o trabalho inicial</h3><p>Estrutura as informações, sugere caminhos e prepara materiais revisáveis: rascunhos, resumos e pontos de atenção.</p></li>
-        <li><span class="ag-3__n">3</span><small>Você decide</small><h3>Você revisa e decide</h3><p>A estratégia, a autoria e a responsabilidade continuam com você. O Juris8 dá os toques iniciais; você dá os finais.</p></li>
+        <li><span class="ag-3__n">2</span><small>O Juris8 prepara</small><h3>Ele organiza o trabalho inicial</h3><p>Estrutura informações, organiza subsídios e destaca pontos de atenção para apoiar a elaboração pelo advogado.</p></li>
+        <li><span class="ag-3__n">3</span><small>Você decide</small><h3>Você revisa e decide</h3><p>A estratégia, a autoria e a responsabilidade continuam com você. O advogado analisa os subsídios, elabora a peça e assina.</p></li>
       </ol>
     </div>
   </section>
@@ -990,12 +1011,12 @@ textarea.ag-input { height: 96px; padding: 13px 16px; line-height: 1.5; resize: 
         <p class="ag-lede">Respostas diretas sobre controle, segurança e o que o Juris8 faz, e o que ele não faz.</p>
       </div>
       <ul class="ag-qs">
-        <li class="ag-q"><button class="ag-q__btn" type="button" aria-expanded="false" aria-controls="q1"><span>O Juris8 substitui o advogado?</span><span aria-hidden="true"><i data-lucide="plus"></i></span></button><div class="ag-q__body" id="q1" role="region"><div><p>Não. O Juris8 prepara o trabalho inicial (rascunhos, pesquisas, resumos e pontos de atenção), e você revisa, ajusta e decide. A estratégia, a autoria e a responsabilidade continuam com o advogado.</p></div></div></li>
+        <li class="ag-q"><button class="ag-q__btn" type="button" aria-expanded="false" aria-controls="q1"><span>O Juris8 substitui o advogado?</span><span aria-hidden="true"><i data-lucide="plus"></i></span></button><div class="ag-q__body" id="q1" role="region"><div><p>Não. O Juris8 organiza documentos, pesquisas, subsídios e pontos de atenção. O advogado analisa o material, elabora a peça e mantém a estratégia, a autoria e a responsabilidade.</p></div></div></li>
         <li class="ag-q"><button class="ag-q__btn" type="button" aria-expanded="false" aria-controls="q2"><span>Meus documentos são usados para treinar IAs?</span><span aria-hidden="true"><i data-lucide="plus"></i></span></button><div class="ag-q__body" id="q2" role="region"><div><p>Não. Seus documentos não treinam IAs de terceiros, e os dados são criptografados em trânsito e em repouso, com tratamento conforme a LGPD.</p></div></div></li>
         <li class="ag-q"><button class="ag-q__btn" type="button" aria-expanded="false" aria-controls="q3"><span>A IA pode inventar jurisprudência?</span><span aria-hidden="true"><i data-lucide="plus"></i></span></button><div class="ag-q__body" id="q3" role="region"><div><p>O Juris8 só retorna jurisprudência que existe e pode ser verificada: cada resultado é validado contra a base real antes de ser exibido e vem com o link de origem. Na redação, o sistema bloqueia citações que não foram validadas na pesquisa.</p></div></div></li>
         <li class="ag-q"><button class="ag-q__btn" type="button" aria-expanded="false" aria-controls="q4"><span>Que tipo de arquivo posso enviar?</span><span aria-hidden="true"><i data-lucide="plus"></i></span></button><div class="ag-q__body" id="q4" role="region"><div><p>Documentos em PDF e Word (contratos, decisões judiciais, laudos, registros) e áudios em MP3, MP4 ou WAV, de celular, computador ou sistema de audiência do tribunal.</p></div></div></li>
-        <li class="ag-q"><button class="ag-q__btn" type="button" aria-expanded="false" aria-controls="q5"><span>O Juris8 escreve no meu estilo?</span><span aria-hidden="true"><i data-lucide="plus"></i></span></button><div class="ag-q__body" id="q5" role="region"><div><p>Sim, com o uso. Ele aprende vocabulário, estrutura de pedidos, estilo de citação e preferências argumentativas: quanto mais você usa, mais o rascunho se aproxima da sua forma de escrever.</p></div></div></li>
-        <li class="ag-q"><button class="ag-q__btn" type="button" aria-expanded="false" aria-controls="q6"><span>Quais tribunais a pesquisa cobre?</span><span aria-hidden="true"><i data-lucide="plus"></i></span></button><div class="ag-q__body" id="q6" role="region"><div><p>Hoje, TST e TRT-12. Cada resultado traz o link para o inteiro teor, e a data de atualização da base aparece na busca.</p></div></div></li>
+        <li class="ag-q"><button class="ag-q__btn" type="button" aria-expanded="false" aria-controls="q5"><span>O Juris8 escreve no meu estilo?</span><span aria-hidden="true"><i data-lucide="plus"></i></span></button><div class="ag-q__body" id="q5" role="region"><div><p>O Juris8 pode considerar suas preferências de vocabulário, estrutura e citação ao organizar os subsídios. O advogado continua responsável por elaborar e assinar a peça.</p></div></div></li>
+        <li class="ag-q"><button class="ag-q__btn" type="button" aria-expanded="false" aria-controls="q6"><span>Quais tribunais a pesquisa cobre?</span><span aria-hidden="true"><i data-lucide="plus"></i></span></button><div class="ag-q__body" id="q6" role="region"><div><p>A demonstração apresenta referências do TST e do TRT-12. Cada resultado mostra sua fonte e a data de coleta associada ao registro.</p></div></div></li>
       </ul>
     </div>
   </section>
@@ -1078,7 +1099,7 @@ textarea.ag-input { height: 96px; padding: 13px 16px; line-height: 1.5; resize: 
           <a href="/crm">CRM com IA jurídica</a>
           <a href="/secretariajuridica">Secretaria jurídica</a>
           <a href="/trabalhistaempresarial">Trabalhista empresarial</a>
-          <a href="https://wa.me/5547988061278?text=Ol%C3%A1!%20Quero%20conhecer%20a%20Newsletter%20mensal%20com%20IA%20do%20Juris8." target="_blank" rel="noopener noreferrer">Newsletter mensal com IA</a>
+          <a href="/newsletter">Newsletter mensal com IA</a>
           <a href="/agentejuridico" aria-current="page">Agente Jurídico</a>
         </div>
         <div class="jf__col">

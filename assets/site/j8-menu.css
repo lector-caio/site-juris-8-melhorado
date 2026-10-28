@@ -21,6 +21,16 @@
 @media (max-width: 640px) {
   .lp-header .lp-burger { margin-left: -8px; }
 }
+/* Celulares estreitos: só o espaçamento diminui, para logo, botão de contato e menu caberem
+   mesmo com os rótulos curtos mais longos ("Time comercial", "Demonstração"). */
+@media (max-width: 400px) {
+  .lp-header-wrap .lp-header { gap: 12px; }
+  .lp-header-wrap .lp-header .lp-burger { margin-left: -4px; }
+  .lp-header-wrap .lp-header .lp-header__cta { padding-left: 12px; }
+}
+@media (max-width: 370px) {
+  .lp-header-wrap .lp-header { padding-left: 16px; padding-right: 16px; }
+}
 
 .lp-drawer { display: none; position: fixed; inset: 0; z-index: 1000; }
 .lp-drawer.is-active { display: block; }

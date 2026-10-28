@@ -25,6 +25,8 @@
 <link rel="stylesheet" href="/design-system/tokens/effects.css">
 <link rel="stylesheet" href="/design-system/tokens/base.css">
 <script src="/support.js"></script>
+<link rel="stylesheet" href="/assets/site/j8-menu.css">
+<script src="/assets/site/j8-menu.js" defer></script>
 </head>
 <body>
 <x-dc>
@@ -869,6 +871,7 @@
   .jr-res__h b { font-size: 12.5px; color: var(--ink); }
   .jr-res__h > svg { width: 13px; height: 13px; color: var(--pri); }
   .jr-res__h small { font-size: 12px; color: var(--mut); }
+  .jr-res__meta { display: flex; flex-wrap: wrap; gap: 4px 12px; margin: 7px 0; font-size: 12px; line-height: 1.4; color: var(--mut); }
   .jr-ok { margin-left: auto; display: inline-flex; align-items: center; gap: 4px; padding: 3px 9px 3px 6px; border-radius: 999px; background: #EAF7EE; color: #15803D; font-size: 12px; font-weight: 800; }
   .jr-ok svg { width: 12px; height: 12px; }
   .jr-rel { display: flex; align-items: center; gap: 8px; margin: 10px 0 8px; font-size: 12px; color: var(--mut); }
@@ -1469,7 +1472,26 @@
         <span class="lp-cta-short">Especialista</span>
         <span class="lp-header__cta-tile" aria-hidden="true"><svg viewBox="0 0 32 32" fill="currentColor"><path d="M16.01 3.2c-7.1 0-12.86 5.76-12.86 12.86 0 2.27.6 4.48 1.73 6.43L3.2 28.8l6.5-1.7a12.8 12.8 0 0 0 6.3 1.62h.01c7.1 0 12.86-5.76 12.86-12.86 0-3.44-1.34-6.67-3.77-9.1A12.78 12.78 0 0 0 16.01 3.2Zm0 23.5h-.01a10.6 10.6 0 0 1-5.4-1.48l-.39-.23-4.02 1.05 1.07-3.92-.25-.4a10.62 10.62 0 0 1 16.46-13.1 10.55 10.55 0 0 1 3.12 7.51c0 5.88-4.78 10.65-10.66 10.65Zm5.85-7.98c-.32-.16-1.9-.94-2.2-1.04-.3-.11-.5-.16-.72.16-.21.32-.82 1.03-1 1.25-.18.21-.37.24-.69.08-.32-.16-1.35-.5-2.58-1.59-.95-.85-1.6-1.9-1.78-2.22-.18-.32-.02-.49.14-.65.14-.14.32-.37.48-.56.16-.18.21-.32.32-.53.11-.21.05-.4-.03-.56-.08-.16-.72-1.74-.99-2.38-.26-.62-.52-.54-.72-.55l-.61-.01c-.21 0-.56.08-.85.4-.29.32-1.11 1.09-1.11 2.66 0 1.57 1.14 3.08 1.3 3.3.16.21 2.25 3.43 5.45 4.81.76.33 1.36.53 1.82.68.77.24 1.46.21 2.01.13.61-.09 1.9-.78 2.17-1.53.27-.74.27-1.38.19-1.51-.08-.13-.29-.21-.61-.37Z"/></svg></span>
       </a>
+      <button type="button" class="lp-burger" aria-expanded="false" aria-controls="lp-drawer" aria-label="Abrir menu"><span class="lp-burger__bars" aria-hidden="true"><span></span><span></span><span></span></span></button>
     </header>
+  </div>
+  <!-- Menu em gaveta (telas até 1060px): comportamento em /assets/site/j8-menu.js -->
+  <div class="lp-drawer" id="lp-drawer" role="dialog" aria-modal="true" aria-label="Menu">
+    <div class="lp-drawer__scrim" data-menu-close=""></div>
+    <div class="lp-drawer__panel">
+      <div class="lp-drawer__head">
+        <a href="#topo" class="lp-drawer__logo" aria-label="Juris8, voltar ao topo"><img src="/assets/brand/logo-juris8.png" alt="Juris8" width="113" height="29"></a>
+        <button type="button" class="lp-drawer__close" data-menu-close="" aria-label="Fechar menu"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><rect x="10.9" y="3" width="2.2" height="18" rx="1.1" transform="rotate(45 12 12)"></rect><rect x="10.9" y="3" width="2.2" height="18" rx="1.1" transform="rotate(-45 12 12)"></rect></svg></button>
+      </div>
+      <nav class="lp-drawer__nav" aria-label="Seções da página">
+        <a href="#solucoes">Soluções</a>
+        <a href="#funcionalidades">Funcionalidades</a>
+        <a href="#ganhos">Ganhos</a>
+        <a href="#planos">Planos</a>
+        <a href="#faq">FAQ</a>
+      </nav>
+      <a href="https://wa.me/5547988061278?text=Ol%C3%A1!%20Vim%20pelo%20site%20e%20quero%20conhecer%20o%20Juris8%2C%20a%20IA%20jur%C3%ADdica.%20Pode%20me%20apresentar%20a%20plataforma%3F" target="_blank" rel="noopener noreferrer" data-track="whatsapp_click" data-track-ctx="drawer_cta" aria-label="Falar com especialista no WhatsApp" class="lp-drawer__cta">Falar com especialista</a>
+    </div>
   </div>
 
   <main id="conteudo" tabindex="-1">
@@ -1683,24 +1705,23 @@
 
                 <div class="fx-scene is-active" data-s="1">
                   <div class="fx-doc fx">
-                    <div class="fx-doc__h"><span class="fx-ic"><i data-lucide="file-text"></i></span><div><b>Contestação</b><small>RT 0000412-39.2025.5.12.0019</small></div><span class="fx-pill fx-pill--ok">Pré-elaborada</span></div>
+                    <div class="fx-doc__h"><span class="fx-ic"><i data-lucide="file-text"></i></span><div><b>Dossiê trabalhista</b><small>RT 0000412-39.2025.5.12.0019</small></div><span class="fx-pill fx-pill--ok">Subsídios organizados</span></div>
                     <span class="fx-l" style="width: 94%"></span><span class="fx-l" style="width: 82%"></span>
                     <div class="fx-ai fx" style="--d: .35s">
-                      <span class="fx-ai__lbl"><i data-lucide="sparkles"></i>Sugestão da IA</span>
+                      <span class="fx-ai__lbl"><i data-lucide="sparkles"></i>Ponto de atenção</span>
                       <span class="fx-l fx-l--ai fx-type" style="--w: 96%; --d: .6s"></span><span class="fx-l fx-l--ai fx-type" style="--w: 88%; --d: .95s"></span><span class="fx-l fx-l--ai fx-type" style="--w: 60%; --d: 1.3s"></span>
                     </div>
                     <span class="fx-l" style="width: 76%"></span><span class="fx-l" style="width: 54%"></span>
                   </div>
-                  <div class="fx-float fx" style="--d: 1.5s"><span class="fx-ring"></span><div><b>Aprendendo o seu estilo</b><small>Tom, estrutura e teses preferidas</small></div></div>
-                  <div class="fx-bar fx" style="--d: 1.8s"><span><i data-lucide="check-circle-2"></i>Pronta para os seus toques finais</span><span class="fx-btn">Revisar peça</span></div>
+                  <div class="fx-float fx" style="--d: 1.5s"><span class="fx-ring"></span><div><b>Preferências do escritório</b><small>Organização, formato e fontes</small></div></div>
+                  <div class="fx-bar fx" style="--d: 1.8s"><span><i data-lucide="check-circle-2"></i>Subsídios organizados para a redação do advogado</span><span class="fx-btn">Revisar análise</span></div>
                 </div>
 
                 <div class="fx-scene" data-s="2">
-                  <div class="fx-search fx"><i data-lucide="search"></i><span class="fx-typed">insalubridade em manutenção mecânica</span><span class="fx-caret"></span></div>
-                  <div class="fx-filters fx" style="--d: .25s"><span class="is-on">TST</span><span class="is-on">TRT-12</span><span>Últimos 5 anos</span><span>Com uso de EPI</span></div>
-                  <div class="fx-res fx" style="--d: .5s"><div class="fx-res__h"><b>Súmula 289 do TST</b><span class="fx-pill fx-pill--ok">Alta relevância</span></div><p>O simples fornecimento do EPI não exime o empregador do adicional.</p><span class="fx-rel"><i style="--w: 94%"></i></span></div>
-                  <div class="fx-res fx" style="--d: .75s"><div class="fx-res__h"><b>Súmula 80 do TST</b><span class="fx-pill">Relevante</span></div><p>Eliminada a insalubridade por EPI aprovado, exclui-se o adicional.</p><span class="fx-rel"><i style="--w: 82%"></i></span></div>
-                  <div class="fx-res fx" style="--d: 1s"><div class="fx-res__h"><b>Precedentes do TRT-12</b><span class="fx-pill">Mesmo contexto</span></div><p>Decisões com o mesmo contexto fático, filtradas pelos seus critérios.</p><span class="fx-rel"><i style="--w: 70%"></i></span></div>
+                  <div class="fx-search fx"><i data-lucide="search"></i><span class="fx-typed">responsabilidade subsidiária da Administração Pública</span><span class="fx-caret"></span></div>
+                  <div class="fx-filters fx" style="--d: .25s"><span class="is-on">TST</span><span class="is-on">TRT-12</span><span>Tema 1.118/STF</span></div>
+                  <div class="fx-res fx" style="--d: .5s"><div class="fx-res__h"><b>TST · RR 0101907-97.2017.5.01.0283</b></div><p>7ª Turma · 18/12/2025. Tema 1.118/STF: não basta inverter o ônus da prova para reconhecer responsabilidade subsidiária.</p></div>
+                  <div class="fx-res fx" style="--d: .75s"><div class="fx-res__h"><b>TRT-12 · ROT 0000324-02.2025.5.12.0051</b></div><p>1ª Turma · 15/04/2026. A responsabilidade subsidiária exige prova de negligência ou omissão do Poder Público.</p></div>
                 </div>
 
                 <div class="fx-scene" data-s="3">
@@ -1756,7 +1777,7 @@
                   <div class="fx-mail fx" style="--d: .3s"><span class="fx-src"><i data-lucide="mail"></i></span><div><b>Intimação · audiência designada</b><small>E-mail · hoje, 07:02</small></div><span class="fx-tag fx-tag--hi">Urgente</span></div>
                   <div class="fx-mail fx-mail--open fx" style="--d: .55s">
                     <div class="fx-mail__row"><span class="fx-src fx-src--wa"><i data-lucide="message-circle"></i></span><div><b>Cliente pede andamento do processo</b><small>WhatsApp · hoje, 07:15</small></div><span class="fx-tag fx-tag--md">Cliente</span></div>
-                    <div class="fx-draft fx" style="--d: .9s"><span><i data-lucide="pen-line"></i>Minuta pronta</span><p>Olá! O processo está na fase de instrução; a audiência foi designada e já estamos preparando…</p><div class="fx-draft__act"><span class="fx-btn-ghost">Editar</span><span class="fx-btn">Enviar</span></div></div>
+                    <div class="fx-draft fx" style="--d: .9s"><span><i data-lucide="pen-line"></i>Resposta sugerida para revisão</span><p>Olá! O processo está na fase de instrução e a audiência foi designada. A equipe está acompanhando o caso.</p><div class="fx-draft__act"><span class="fx-btn-ghost">Editar</span><span class="fx-btn">Enviar</span></div></div>
                   </div>
                   <div class="fx-mail fx" style="--d: .8s"><span class="fx-src"><i data-lucide="mail"></i></span><div><b>Proposta de acordo recebida</b><small>E-mail · ontem</small></div><span class="fx-tag">Prazo</span></div>
                 </div>
@@ -1816,9 +1837,9 @@
     <div class="lp-wrap sx__grid">
       <div class="sx__copy" data-reveal="">
         <h2 class="sx__title" id="sx-juris-title">Jurisprudência do TST e dos principais TRTs, <span class="lp-accent">com link para o inteiro teor.</span></h2>
-        <p class="sx__lead">O Juris8 busca precedentes nos tribunais da base e mostra, em cada resultado, o link para o inteiro teor e a data de atualização da base, para você conferir a fonte antes de usar.</p>
+        <p class="sx__lead">O Juris8 pesquisa no TST e no TRT-12 e mostra a fonte, a data de coleta de cada referência e o acesso ao inteiro teor do tribunal. As datas desta demonstração são de coleta dos exemplos, não de atualização geral da base.</p>
         <ul class="sx__list">
-          <li><span class="sx__ic" aria-hidden="true"><i data-lucide="landmark"></i></span><p><strong>Tribunais cobertos:</strong> TST e TRT-12, com a data de atualização da base informada na busca.</p></li>
+          <li><span class="sx__ic" aria-hidden="true"><i data-lucide="landmark"></i></span><p><strong>Tribunais desta demonstração:</strong> TST e TRT-12, com a data de coleta informada para cada exemplo.</p></li>
           <li><span class="sx__ic" aria-hidden="true"><i data-lucide="shield-check"></i></span><p><strong>Mecanismo anti-alucinação:</strong> toda jurisprudência retornada é validada contra a base real antes de ser exibida; o sistema rejeita automaticamente qualquer correspondência não verificável.</p></li>
           <li><span class="sx__ic" aria-hidden="true"><i data-lucide="git-compare"></i></span><p><strong>Correspondências difíceis:</strong> o Juris8 encontra precedentes análogos e casos de menor repercussão que escapam das buscas tradicionais por palavras-chave.</p></li>
           <li><span class="sx__ic" aria-hidden="true"><i data-lucide="target"></i></span><p><strong>Contexto relevante:</strong> cada resultado mostra por que o caso é aplicável ao seu pedido: não apenas a ementa, mas o argumento central e sua aderência ao pedido.</p></li>
@@ -1826,24 +1847,26 @@
         <p class="sx__badge"><i data-lucide="badge-check" aria-hidden="true"></i>Cada resultado com link para o inteiro teor</p>
       </div>
       <div class="sx__media" data-reveal="" data-reveal-delay="120">
-        <div class="sx-app" role="img" aria-label="Prévia da pesquisa de jurisprudência do Juris8: busca por ônus da prova de horas extras, com dois itens da Súmula 338 do TST, relevância e trechos citados.">
+        <div class="sx-app" role="img" aria-label="Prévia da pesquisa de jurisprudência do Juris8: acórdão do TST e acórdão do TRT-12 sobre responsabilidade subsidiária da Administração Pública e o Tema 1.118 do STF, com dados do processo e datas de coleta.">
           <div class="sx-app__bar" aria-hidden="true"><span class="sx-app__dots"><i></i><i></i><i></i></span><span class="sx-app__mark"><img src="/assets/brand/juris8-mark-white.png" alt=""></span><b>Juris8 · Pesquisa de Jurisprudência</b></div>
           <div class="sx-app__body" aria-hidden="true">
-            <div class="jr-search"><i data-lucide="search"></i><span>Ônus da prova de horas extras e cartão de ponto</span><span class="jr-caret"></span></div>
-            <div class="jr-chips"><span class="is-on">TST</span><span class="is-on">TRT-12</span></div>
+            <div class="jr-search"><i data-lucide="search"></i><span>Responsabilidade subsidiária da Administração Pública, Tema 1.118 do STF</span><span class="jr-caret"></span></div>
+            <div class="jr-chips"><span class="is-on">TST</span><span class="is-on">TRT-12</span><span>Acórdãos</span></div>
             <article class="jr-res sx-a" style="--d: .25s">
-              <div class="jr-res__h"><span class="jr-court">TST</span><b>Súmula 338, item III</b><i data-lucide="external-link"></i><small>Res. 129/2005</small><span class="jr-ok"><i data-lucide="check"></i>Validado</span></div>
-              <div class="jr-rel"><span>Relevância</span><b>Muito alta</b><span class="jr-meter"><i></i><i></i><i></i><i></i><i></i></span></div>
-              <p>“Os cartões de ponto que demonstram horários de entrada e saída uniformes são inválidos como meio de prova, invertendo-se o ônus da prova, relativo às horas extras, que passa a ser do empregador, prevalecendo a jornada da inicial se dele não se desincumbir.”</p>
-              <div class="jr-tags"><span>cartão de ponto uniforme</span><span>ônus da prova</span><span>horas extras</span></div>
+              <div class="jr-res__h"><span class="jr-court">TST</span><b>RR 0101907-97.2017.5.01.0283</b><span class="jr-ok"><i data-lucide="check"></i>Acervo Juris8</span></div>
+              <div class="jr-res__meta"><span>7ª Turma</span><span>Rel. Claudio Mascarenhas Brandao</span><span>Julgamento: 18/12/2025</span></div>
+              <p>Aplicando o Tema 1.118 do STF, afasta a responsabilidade subsidiária baseada apenas na inversão do ônus da prova. Exige comprovação de negligência ou nexo causal.</p>
+              <div class="jr-tags"><span>Administração Pública</span><span>terceirização</span><span>ônus da prova</span></div>
+              <div class="jr-res__meta">Fonte: acervo Juris8, coletado em 19/09/2026. Inteiro teor no site do TST.</div>
             </article>
             <article class="jr-res sx-a" style="--d: .55s">
-              <div class="jr-res__h"><span class="jr-court">TST</span><b>Súmula 338, item I</b><i data-lucide="external-link"></i><small>Res. 129/2005</small><span class="jr-ok"><i data-lucide="check"></i>Validado</span></div>
-              <div class="jr-rel"><span>Relevância</span><b>Alta</b><span class="jr-meter jr-meter--4"><i></i><i></i><i></i><i></i><i></i></span></div>
-              <p>“A não-apresentação injustificada dos controles de frequência gera presunção relativa de veracidade da jornada de trabalho, a qual pode ser elidida por prova em contrário.”</p>
-              <div class="jr-tags"><span>controle de jornada</span><span>presunção relativa</span><span>ônus da prova</span></div>
+              <div class="jr-res__h"><span class="jr-court">TRT-12</span><b>ROT 0000324-02.2025.5.12.0051</b><span class="jr-ok"><i data-lucide="check"></i>Acervo Juris8</span></div>
+              <div class="jr-res__meta"><span>1ª Turma</span><span>Rel. Roberto Luiz Guglielmetto</span><span>Julgamento: 15/04/2026</span></div>
+              <p>Aplica o Tema 1.118 do STF e mantém decisão que não reconheceu a responsabilidade subsidiária, diante da ausência de prova de comportamento negligente ou omissão do Poder Público.</p>
+              <div class="jr-tags"><span>Administração Pública</span><span>responsabilidade subsidiária</span><span>Tema 1.118/STF</span></div>
+              <div class="jr-res__meta">Fonte: acervo Juris8, coletado em 14/09/2026. Inteiro teor no site do TRT-12.</div>
             </article>
-            <div class="sx-app__foot"><span class="sx-live"></span>Cobertura atual: TST e TRT-12 · data de atualização da base exibida na busca</div>
+            <div class="sx-app__foot"><span class="sx-live"></span>Cobertura da demonstração: TST e TRT-12. As datas indicam a coleta dos exemplos, não a atualização geral da base.</div>
           </div>
         </div>
       </div>
@@ -1855,29 +1878,29 @@
     <div class="sx__bg" aria-hidden="true"></div>
     <div class="lp-wrap sx__grid sx__grid--rev">
       <div class="sx__copy" data-reveal="">
-        <h2 class="sx__title" id="sx-red-title">Redação assistida, <span class="lp-accent">com o advogado no comando.</span></h2>
-        <p class="sx__lead">O Juris8 organiza o trabalho em etapas (leitura da demanda, pesquisa, estruturação e revisão por critérios) e entrega uma base de texto com os subsídios para a sua análise. O advogado decide, redige e assina.</p>
+        <h2 class="sx__title" id="sx-red-title">Subsídios para redação, <span class="lp-accent">com o advogado no comando.</span></h2>
+        <p class="sx__lead">O Juris8 reúne documentos do caso, pesquisa referências e organiza pontos para análise. O advogado avalia os subsídios, elabora a peça e assina.</p>
         <ul class="sx__list">
-          <li><span class="sx__ic" aria-hidden="true"><i data-lucide="workflow"></i></span><p><strong>Fluxo de agente em 6 etapas:</strong> da leitura da demanda à revisão por critérios de qualidade. Você vê cada passo e pode intervir a qualquer momento.</p></li>
-          <li><span class="sx__ic" aria-hidden="true"><i data-lucide="gauge"></i></span><p><strong>Revisão por critérios:</strong> a peça recebe notas em fundamentação, precisão dos precedentes, clareza, coerência e adequação formal, com sugestões específicas de melhoria.</p></li>
-          <li><span class="sx__ic" aria-hidden="true"><i data-lucide="pen-tool"></i></span><p><strong>Aprende seu estilo:</strong> vocabulário, estrutura de pedidos, estilo de citação e preferências argumentativas. Quanto mais você usa, mais preciso fica.</p></li>
+          <li><span class="sx__ic" aria-hidden="true"><i data-lucide="workflow"></i></span><p><strong>Fluxo de apoio em 6 etapas:</strong> da leitura da demanda à organização de subsídios para análise. Você acompanha cada etapa e pode intervir.</p></li>
+          <li><span class="sx__ic" aria-hidden="true"><i data-lucide="gauge"></i></span><p><strong>Pontos de atenção:</strong> referências, coerência, clareza e adequação formal ficam organizadas para avaliação do advogado.</p></li>
+          <li><span class="sx__ic" aria-hidden="true"><i data-lucide="pen-tool"></i></span><p><strong>Preferências do advogado:</strong> vocabulário, estrutura e estilo de citação ajudam a organizar os subsídios conforme a rotina do escritório.</p></li>
           <li><span class="sx__ic" aria-hidden="true"><i data-lucide="shield-check"></i></span><p><strong>Anti-alucinação:</strong> todos os precedentes citados na peça são os mesmos validados na pesquisa; o sistema bloqueia citações não validadas.</p></li>
         </ul>
         <p class="sx__badge"><i data-lucide="lock" aria-hidden="true"></i>Precedentes citados são bloqueados se não validados</p>
       </div>
       <div class="sx__media" data-reveal="" data-reveal-delay="120">
-        <div class="sx-app" role="img" aria-label="Prévia da redação de uma contestação trabalhista no Juris8: fluxo do agente em seis etapas e revisão por critérios de qualidade com notas e uma sugestão de melhoria.">
-          <div class="sx-app__bar" aria-hidden="true"><span class="sx-app__dots"><i></i><i></i><i></i></span><span class="sx-app__mark"><img src="/assets/brand/juris8-mark-white.png" alt=""></span><b>Juris8 · Redação: contestação trabalhista</b></div>
+        <div class="sx-app" role="img" aria-label="Prévia do Juris8 organizando documentos, referências e pontos de atenção para análise; a elaboração e assinatura da peça cabem ao advogado.">
+          <div class="sx-app__bar" aria-hidden="true"><span class="sx-app__dots"><i></i><i></i><i></i></span><span class="sx-app__mark"><img src="/assets/brand/juris8-mark-white.png" alt=""></span><b>Juris8 · Subsídios para análise trabalhista</b></div>
           <div class="sx-app__body rd" aria-hidden="true">
             <div class="rd-flow">
               <span class="sx-cap">Fluxo do agente</span>
               <ol>
                 <li class="rd-step sx-a" style="--d: .2s"><span class="rd-dot"><i data-lucide="check"></i></span><div><b>Leitura e análise da demanda</b><small>Partes, pedidos, causa de pedir e fatos identificados</small></div></li>
-                <li class="rd-step sx-a" style="--d: .45s"><span class="rd-dot"><i data-lucide="check"></i></span><div><b>Identificação de teses e precedentes</b><small>4 precedentes validados do TST e do TRT-12 selecionados</small></div></li>
-                <li class="rd-step sx-a" style="--d: .7s"><span class="rd-dot"><i data-lucide="check"></i></span><div><b>Estruturação da peça</b><small>Preliminar, mérito e pedidos no seu formato</small></div></li>
-                <li class="rd-step sx-a" style="--d: .95s"><span class="rd-dot"><i data-lucide="check"></i></span><div><b>Base de texto seção por seção</b><small>No estilo e vocabulário do advogado, para revisão</small></div></li>
-                <li class="rd-step rd-step--run sx-a" style="--d: 1.2s"><span class="rd-dot"><span class="rd-spin"></span></span><div><b>Revisão interna por critérios</b><small>Verificando coerência, precisão e fundamentação...</small></div></li>
-                <li class="rd-step rd-step--next sx-a" style="--d: 1.45s"><span class="rd-dot"></span><div><b>Pronto para revisão do advogado</b><small>Score geral e sugestões de melhoria</small></div></li>
+                <li class="rd-step sx-a" style="--d: .45s"><span class="rd-dot"><i data-lucide="check"></i></span><div><b>Referências para avaliação</b><small>Jurisprudência do TST e do TRT-12 para consulta</small></div></li>
+                <li class="rd-step sx-a" style="--d: .7s"><span class="rd-dot"><i data-lucide="check"></i></span><div><b>Organização dos pontos do caso</b><small>Fatos, documentos e temas relevantes</small></div></li>
+                <li class="rd-step sx-a" style="--d: .95s"><span class="rd-dot"><i data-lucide="check"></i></span><div><b>Síntese de fatos e fontes</b><small>Material de apoio para a análise do advogado</small></div></li>
+                <li class="rd-step rd-step--run sx-a" style="--d: 1.2s"><span class="rd-dot"><span class="rd-spin"></span></span><div><b>Conferência das referências</b><small>Organizando fontes e pontos de atenção...</small></div></li>
+                <li class="rd-step rd-step--next sx-a" style="--d: 1.45s"><span class="rd-dot"></span><div><b>Subsídios organizados</b><small>O advogado analisa, elabora e assina a peça</small></div></li>
               </ol>
             </div>
             <div class="rd-score">
@@ -1953,7 +1976,7 @@
             <div class="tr-sp sx-a" style="--d: .7s"><span class="tr-av tr-av--p">P</span><div><b>Preposto</b><p>A empresa contesta. Os cartões de ponto registravam saída às 18h e os registros eram assinados pelo próprio reclamante.</p></div></div>
             <div class="tr-an sx-a" style="--d: 1s">
               <span class="sx-cap"><i data-lucide="sparkles"></i>Análise gerada · pontos-chave</span>
-              <p><i class="tr-k tr-k--a"></i>Reclamante alega jornada 7h–20h sem pagamento, em contradição com o cartão de ponto</p>
+              <p><i class="tr-k tr-k--a"></i>Reclamante alega jornada das 7h às 20h sem pagamento, em contradição com o cartão de ponto</p>
               <p><i class="tr-k tr-k--p"></i>Banco de horas: existência contestada; solicitar extratos (tarefa gerada)</p>
               <p><i class="tr-k tr-k--r"></i>Trecho crítico em 00:12:44, depoimento sobre jornada</p>
             </div>
@@ -2005,7 +2028,7 @@
 
       <div class="fl-case" data-reveal="">
         <span class="fl-case__ic" aria-hidden="true"><i data-lucide="briefcase"></i></span>
-        <div class="fl-case__txt"><small>Caso</small><b>Reclamação trabalhista: horas extras e CTPS (TRT 12ª Região)</b></div>
+        <div class="fl-case__txt"><small>Caso demonstrativo</small><b>Responsabilidade subsidiária da Administração Pública (Tema 1.118/STF)</b></div>
         <span class="fl-case__st" aria-hidden="true"><i></i><span class="fl-st-run">Agentes em execução</span><span class="fl-st-done">Fluxo concluído</span><span class="fl-st-step"></span></span>
         <button type="button" class="fl-replay"><i data-lucide="rotate-ccw" aria-hidden="true"></i>Ver de novo</button>
       </div>
@@ -2019,8 +2042,8 @@
             <span class="fl-skel" aria-hidden="true"><i></i><i></i><i></i></span>
             <span class="fl-out">
               <span class="fl-chip fl-chip--warn">Prazo detectado</span>
-              <span class="fl-l fl-l--b">Proc. 0018432-69.2024.5.12.0001 (TRT-12)</span>
-              <span class="fl-l">Intimação para contestação</span>
+              <span class="fl-l fl-l--b">Publicação em reclamação trabalhista envolvendo ente público</span>
+              <span class="fl-l">Intimação para manifestação</span>
               <span class="fl-l fl-l--hl"><i data-lucide="clock" aria-hidden="true"></i>Prazo: 8 dias úteis</span>
             </span>
           </button>
@@ -2029,13 +2052,13 @@
           <button type="button" class="fl-card" aria-pressed="false">
             <span class="fl-node" aria-hidden="true"><span class="fl-node__n">2</span><i data-lucide="check"></i><span class="fl-node__spin"></span></span>
             <span class="fl-agent"><i data-lucide="file-search" aria-hidden="true"></i>2 · Documentos</span>
-            <span class="fl-t">Análise da CTPS e cartão de ponto</span>
+            <span class="fl-t">Análise de documentos do contrato e da fiscalização</span>
             <span class="fl-skel" aria-hidden="true"><i></i><i></i><i></i></span>
             <span class="fl-out">
-              <span class="fl-chip fl-chip--risk">2 riscos encontrados</span>
-              <span class="fl-l"><i class="fl-ic fl-ic--r" data-lucide="x-circle" aria-hidden="true"></i>Cláus. jornada: ausente</span>
-              <span class="fl-l"><i class="fl-ic fl-ic--a" data-lucide="alert-circle" aria-hidden="true"></i>Registro CTPS: inconsistente</span>
-              <span class="fl-l"><i class="fl-ic fl-ic--g" data-lucide="check-circle-2" aria-hidden="true"></i>Horas banco: OK</span>
+              <span class="fl-chip fl-chip--risk">Pontos para análise</span>
+              <span class="fl-l"><i class="fl-ic fl-ic--r" data-lucide="file-search" aria-hidden="true"></i>Documentos do contrato</span>
+              <span class="fl-l"><i class="fl-ic fl-ic--a" data-lucide="clipboard-check" aria-hidden="true"></i>Registros de fiscalização</span>
+              <span class="fl-l"><i class="fl-ic fl-ic--g" data-lucide="list-checks" aria-hidden="true"></i>Fatos alegados pelas partes</span>
             </span>
           </button>
         </li>
@@ -2046,10 +2069,10 @@
             <span class="fl-t">Busca validada no TST e no TRT-12</span>
             <span class="fl-skel" aria-hidden="true"><i></i><i></i><i></i></span>
             <span class="fl-out">
-              <span class="fl-chip fl-chip--ok">4 precedentes válidos</span>
-              <span class="fl-l fl-l--b">TST, Súm. 338, I: ônus da prova</span>
-              <span class="fl-l fl-l--b">TST, Súm. 338, III: cartão de ponto</span>
-              <span class="fl-l fl-l--ok"><i data-lucide="link" aria-hidden="true"></i>Todos com link verificado</span>
+              <span class="fl-chip fl-chip--ok">2 acórdãos de exemplo</span>
+              <span class="fl-l fl-l--b">TST, RR 0101907-97.2017.5.01.0283</span>
+              <span class="fl-l fl-l--b">TRT-12, ROT 0000324-02.2025.5.12.0051</span>
+              <span class="fl-l fl-l--ok"><i data-lucide="calendar-days" aria-hidden="true"></i>Fontes e datas de coleta indicadas</span>
             </span>
           </button>
         </li>
@@ -2057,13 +2080,13 @@
           <button type="button" class="fl-card" aria-pressed="false">
             <span class="fl-node" aria-hidden="true"><span class="fl-node__n">4</span><i data-lucide="check"></i><span class="fl-node__spin"></span></span>
             <span class="fl-agent"><i data-lucide="pen-tool" aria-hidden="true"></i>4 · Redação</span>
-            <span class="fl-t">Base da contestação para o advogado</span>
+            <span class="fl-t">Subsídios para análise do advogado</span>
             <span class="fl-skel" aria-hidden="true"><i></i><i></i><i></i></span>
             <span class="fl-out">
-              <span class="fl-chip fl-chip--pri">Revisão concluída</span>
-              <span class="fl-score"><span>Fundamentação</span><b>9.2</b><span class="fl-bar"><i style="--w: 92%"></i></span></span>
-              <span class="fl-score"><span>Precisão</span><b>9.5</b><span class="fl-bar"><i style="--w: 95%"></i></span></span>
-              <span class="fl-score"><span>Clareza</span><b>8.9</b><span class="fl-bar"><i style="--w: 89%"></i></span></span>
+              <span class="fl-chip fl-chip--pri">Advogado elabora e assina</span>
+              <span class="fl-l">Documentos e fatos organizados</span>
+              <span class="fl-l">Referências para avaliação</span>
+              <span class="fl-l">Pontos de atenção reunidos</span>
             </span>
           </button>
         </li>
@@ -2133,26 +2156,18 @@
     <div class="gn-loop" id="gn-loop" data-reveal="">
       <div class="gn-track">
         <div class="gn-group">
-            <article class="gn-card"><span class="gn-ic" aria-hidden="true"><i data-lucide="clock-3"></i></span><h3><span>Mais</span> tempo</h3><p>Peças, pesquisa, documentos e transcrição saem da fila. Você revisa e decide, em vez de começar do zero.</p></article>
-            <article class="gn-card"><span class="gn-ic" aria-hidden="true"><i data-lucide="trending-up"></i></span><h3><span>Mais</span> produtividade</h3><p>Entregue mais processos com a mesma equipe. O operacional acelera; a estratégia fica com você.</p></article>
-            <article class="gn-card"><span class="gn-ic" aria-hidden="true"><i data-lucide="file-search"></i></span><h3><span>Mais</span> qualidade</h3><p>Jurisprudência com contexto, análise sem perder detalhe e minutas no seu estilo, com você no controle.</p></article>
-            <article class="gn-card"><span class="gn-ic" aria-hidden="true"><i data-lucide="users-round"></i></span><h3><span>Mais</span> proximidade</h3><p>CRM e secretaria com IA triam, respondem e organizam o cliente antes de você abrir a caixa de entrada.</p></article>
-            <article class="gn-card"><span class="gn-ic" aria-hidden="true"><i data-lucide="award"></i></span><h3><span>Mais</span> diferenciação</h3><p>Do DET ao WhatsApp, da peça à newsletter: um ecossistema que a concorrência ainda monta no improviso.</p></article>
+            <article class="gn-card"><span class="gn-ic" aria-hidden="true"><i data-lucide="clock-3"></i></span><h3><span>Mais</span> tempo</h3><p>Pesquisa, documentos e transcrição saem da fila. Você analisa e decide, com mais tempo para a estratégia.</p></article>
+            <article class="gn-card"><span class="gn-ic" aria-hidden="true"><i data-lucide="trending-up"></i></span><h3><span>Mais</span> produtividade</h3><p>Organize mais processos com a mesma equipe. O trabalho operacional fica mais ágil e a estratégia continua com você.</p></article>
+            <article class="gn-card"><span class="gn-ic" aria-hidden="true"><i data-lucide="file-search"></i></span><h3><span>Mais</span> qualidade</h3><p>Jurisprudência com contexto e análise de documentos sem perder detalhes, sempre com você no controle.</p></article>
             <article class="gn-card"><span class="gn-ic" aria-hidden="true"><i data-lucide="layout-dashboard"></i></span><h3><span>Mais</span> controle</h3><p>Documentos, prazos, clientes e comunicações no mesmo fluxo. Nada se perde entre abas e planilhas.</p></article>
-            <article class="gn-card"><span class="gn-ic" aria-hidden="true"><i data-lucide="wallet-cards"></i></span><h3><span>Mais</span> previsibilidade</h3><p>Rotina com menos surpresa: triagem, minuta e alerta antes da urgência, e menos dependência de horas extras.</p></article>
-            <article class="gn-card"><span class="gn-ic" aria-hidden="true"><i data-lucide="lock"></i></span><h3><span>Mais</span> retenção</h3><p>Cliente bem atendido, bem informado e com resposta rápida não troca de escritório.</p></article>
-            <article class="gn-card"><span class="gn-ic" aria-hidden="true"><i data-lucide="crown"></i></span><h3><span>Mais</span> autoridade</h3><p>Deixe de apagar incêndio. Vire o escritório que chega primeiro, com peça, dossiê ou alerta na mão.</p></article>
+            <article class="gn-card"><span class="gn-ic" aria-hidden="true"><i data-lucide="wallet-cards"></i></span><h3><span>Mais</span> previsibilidade</h3><p>Rotina com menos surpresa: organização e alertas para agir com antecedência, reduzindo urgências e horas extras.</p></article>
         </div>
         <div class="gn-group" aria-hidden="true">
-            <article class="gn-card"><span class="gn-ic" aria-hidden="true"><i data-lucide="clock-3"></i></span><h3><span>Mais</span> tempo</h3><p>Peças, pesquisa, documentos e transcrição saem da fila. Você revisa e decide, em vez de começar do zero.</p></article>
-            <article class="gn-card"><span class="gn-ic" aria-hidden="true"><i data-lucide="trending-up"></i></span><h3><span>Mais</span> produtividade</h3><p>Entregue mais processos com a mesma equipe. O operacional acelera; a estratégia fica com você.</p></article>
-            <article class="gn-card"><span class="gn-ic" aria-hidden="true"><i data-lucide="file-search"></i></span><h3><span>Mais</span> qualidade</h3><p>Jurisprudência com contexto, análise sem perder detalhe e minutas no seu estilo, com você no controle.</p></article>
-            <article class="gn-card"><span class="gn-ic" aria-hidden="true"><i data-lucide="users-round"></i></span><h3><span>Mais</span> proximidade</h3><p>CRM e secretaria com IA triam, respondem e organizam o cliente antes de você abrir a caixa de entrada.</p></article>
-            <article class="gn-card"><span class="gn-ic" aria-hidden="true"><i data-lucide="award"></i></span><h3><span>Mais</span> diferenciação</h3><p>Do DET ao WhatsApp, da peça à newsletter: um ecossistema que a concorrência ainda monta no improviso.</p></article>
+            <article class="gn-card"><span class="gn-ic" aria-hidden="true"><i data-lucide="clock-3"></i></span><h3><span>Mais</span> tempo</h3><p>Pesquisa, documentos e transcrição saem da fila. Você analisa e decide, com mais tempo para a estratégia.</p></article>
+            <article class="gn-card"><span class="gn-ic" aria-hidden="true"><i data-lucide="trending-up"></i></span><h3><span>Mais</span> produtividade</h3><p>Organize mais processos com a mesma equipe. O trabalho operacional fica mais ágil e a estratégia continua com você.</p></article>
+            <article class="gn-card"><span class="gn-ic" aria-hidden="true"><i data-lucide="file-search"></i></span><h3><span>Mais</span> qualidade</h3><p>Jurisprudência com contexto e análise de documentos sem perder detalhes, sempre com você no controle.</p></article>
             <article class="gn-card"><span class="gn-ic" aria-hidden="true"><i data-lucide="layout-dashboard"></i></span><h3><span>Mais</span> controle</h3><p>Documentos, prazos, clientes e comunicações no mesmo fluxo. Nada se perde entre abas e planilhas.</p></article>
-            <article class="gn-card"><span class="gn-ic" aria-hidden="true"><i data-lucide="wallet-cards"></i></span><h3><span>Mais</span> previsibilidade</h3><p>Rotina com menos surpresa: triagem, minuta e alerta antes da urgência, e menos dependência de horas extras.</p></article>
-            <article class="gn-card"><span class="gn-ic" aria-hidden="true"><i data-lucide="lock"></i></span><h3><span>Mais</span> retenção</h3><p>Cliente bem atendido, bem informado e com resposta rápida não troca de escritório.</p></article>
-            <article class="gn-card"><span class="gn-ic" aria-hidden="true"><i data-lucide="crown"></i></span><h3><span>Mais</span> autoridade</h3><p>Deixe de apagar incêndio. Vire o escritório que chega primeiro, com peça, dossiê ou alerta na mão.</p></article>
+            <article class="gn-card"><span class="gn-ic" aria-hidden="true"><i data-lucide="wallet-cards"></i></span><h3><span>Mais</span> previsibilidade</h3><p>Rotina com menos surpresa: organização e alertas para agir com antecedência, reduzindo urgências e horas extras.</p></article>
         </div>
       </div>
     </div>
@@ -2229,8 +2244,8 @@
             <div class="fq-panel" id="fq-p1" role="region" aria-labelledby="fq-b1"><div class="fq-inner"><p>O Juris8 foi desenvolvido especificamente para o direito brasileiro, com acesso à jurisprudência real do TST e do TRT-12 e capacidade de identificar precedentes com contexto relevante para o seu caso. O ChatGPT é um modelo genérico, sem acesso a tribunais atualizados.</p></div></div>
           </div>
           <div class="fq-item" data-reveal="" data-reveal-delay="70">
-            <h3 class="fq-q"><button type="button" class="fq-btn" id="fq-b2" aria-expanded="false" aria-controls="fq-p2"><span class="fq-n" aria-hidden="true">02</span><span class="fq-t">Como se evita que os documentos gerados sejam genéricos e distantes da forma em que escrevo?</span><span class="fq-ic" aria-hidden="true"><i data-lucide="plus"></i></span></button></h3>
-            <div class="fq-panel" id="fq-p2" role="region" aria-labelledby="fq-b2"><div class="fq-inner"><p>O Juris8 aprende com as peças que você já escreveu: estilo, vocabulário, formatação e preferências argumentativas. Você pode carregar peças antigas para acelerar esse aprendizado. Quanto mais você usa, mais preciso ele fica em reproduzir o seu jeito de escrever.</p></div></div>
+            <h3 class="fq-q"><button type="button" class="fq-btn" id="fq-b2" aria-expanded="false" aria-controls="fq-p2"><span class="fq-n" aria-hidden="true">02</span><span class="fq-t">Como o Juris8 considera a forma de trabalho do meu escritório?</span><span class="fq-ic" aria-hidden="true"><i data-lucide="plus"></i></span></button></h3>
+            <div class="fq-panel" id="fq-p2" role="region" aria-labelledby="fq-b2"><div class="fq-inner"><p>O Juris8 pode considerar preferências de vocabulário, formatação e organização ao reunir os subsídios. O advogado continua responsável por analisar o material, elaborar e assinar a peça.</p></div></div>
           </div>
           <div class="fq-item" data-reveal="" data-reveal-delay="140">
             <h3 class="fq-q"><button type="button" class="fq-btn" id="fq-b3" aria-expanded="false" aria-controls="fq-p3"><span class="fq-n" aria-hidden="true">03</span><span class="fq-t">Quais tipos de documentos posso analisar com o Juris8?</span><span class="fq-ic" aria-hidden="true"><i data-lucide="plus"></i></span></button></h3>
@@ -2242,7 +2257,7 @@
           </div>
           <div class="fq-item" data-reveal="" data-reveal-delay="70">
             <h3 class="fq-q"><button type="button" class="fq-btn" id="fq-b5" aria-expanded="false" aria-controls="fq-p5"><span class="fq-n" aria-hidden="true">05</span><span class="fq-t">O Juris8 substitui o advogado?</span><span class="fq-ic" aria-hidden="true"><i data-lucide="plus"></i></span></button></h3>
-            <div class="fq-panel" id="fq-p5" role="region" aria-labelledby="fq-b5"><div class="fq-inner"><p>Não. O Juris8 automatiza as tarefas operacionais e repetitivas para que você se concentre no que realmente importa: estratégia, relacionamento com o cliente e tomada de decisão. A autoria e a responsabilidade continuam sendo suas: o Juris8 dá os toques iniciais, você dá os finais.</p></div></div>
+            <div class="fq-panel" id="fq-p5" role="region" aria-labelledby="fq-b5"><div class="fq-inner"><p>Não. O Juris8 reúne subsídios, pesquisa jurisprudência e organiza informações para análise. O advogado elabora e assina a peça, mantendo a estratégia, a autoria e a responsabilidade.</p></div></div>
           </div>
           <div class="fq-item" data-reveal="" data-reveal-delay="140">
             <h3 class="fq-q"><button type="button" class="fq-btn" id="fq-b6" aria-expanded="false" aria-controls="fq-p6"><span class="fq-n" aria-hidden="true">06</span><span class="fq-t">As minhas informações poderão ser utilizadas pelo Juris8?</span><span class="fq-ic" aria-hidden="true"><i data-lucide="plus"></i></span></button></h3>
@@ -2370,7 +2385,7 @@
           </div>
           <div class="jf__col">
             <h2 class="jf__h">Plataforma</h2>
-            <a href="#redacao">Pré-elaboração de peças</a>
+            <a href="#redacao">Apoio à elaboração de peças</a>
             <a href="#jurisprudencia">Pesquisa de jurisprudência</a>
             <a href="#revisao-contratual">Análise de documentos</a>
             <a href="#transcricao">Transcrição de audiências</a>
@@ -2750,18 +2765,18 @@ class Component extends DCLogic {
   /* api/contact.js lê nome, empresa, email, telefone, interesse, mensagem e origem; os demais campos seguem no corpo. */
   _toContactApi(p) {
     const lines = [
-      'Porte do escritório: ' + (p.porte || '—'),
-      'Mensagem: ' + (p.mensagem || '—'),
+      'Porte do escritório: ' + (p.porte || 'não informado'),
+      'Mensagem: ' + (p.mensagem || 'não informada'),
       '',
       'Segmento: ' + p.segment,
       'Fonte do lead: ' + p.lead_source,
       'Enviado em: ' + p.submitted_at,
       'URL de origem: ' + p.origin_url,
-      'utm_source: ' + (p.utm_source || '—'),
-      'utm_medium: ' + (p.utm_medium || '—'),
-      'utm_campaign: ' + (p.utm_campaign || '—'),
-      'utm_content: ' + (p.utm_content || '—'),
-      'utm_term: ' + (p.utm_term || '—')
+      'utm_source: ' + (p.utm_source || 'não informado'),
+      'utm_medium: ' + (p.utm_medium || 'não informado'),
+      'utm_campaign: ' + (p.utm_campaign || 'não informada'),
+      'utm_content: ' + (p.utm_content || 'não informado'),
+      'utm_term: ' + (p.utm_term || 'não informado')
     ];
     return {
       nome: p.nome,
