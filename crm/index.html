@@ -596,6 +596,7 @@ textarea.cr-input { height: 96px; padding: 13px 16px; line-height: 1.5; resize: 
 .jf__social a { width: 44px; height: 44px; }
 </style>
 <link rel="stylesheet" href="/assets/site/j8-menu.css">
+<link rel="stylesheet" href="/assets/site/j8-cloud.css">
 <script src="/assets/site/j8-menu.js" defer></script>
 </head>
 <body>
@@ -844,19 +845,22 @@ textarea.cr-input { height: 96px; padding: 13px 16px; line-height: 1.5; resize: 
           <button class="cr-reset" type="button" id="cr-reset"><i data-lucide="rotate-ccw"></i>Recomeçar a conversa</button>
         </div>
 
-        <div class="cr-ws">
-          <div class="cr-ws__chat">
-            <div class="cr-chathead"><span class="cr-face">JO</span><span class="cr-chathead__id"><b>João · novo lead</b><small><span class="cr-area cr-area--trab">Trabalhista</span>online</small></span><span class="cr-wa">WA</span></div>
-            <div class="cr-thread" id="mv-thread" aria-live="polite"></div>
-          </div>
-          <div class="cr-ws__board">
-            <div class="cr-ws__cols" id="mv-cols">
-              <div class="cr-col"><div class="cr-col__head">Novo lead<small>IA responde</small></div><div class="cr-list"></div></div>
-              <div class="cr-col"><div class="cr-col__head">Qualificado<small>IA qualifica</small></div><div class="cr-list"></div></div>
-              <div class="cr-col"><div class="cr-col__head">Docs recebidos<small>IA coleta</small></div><div class="cr-list"></div></div>
-              <div class="cr-col"><div class="cr-col__head">Reunião agendada<small>IA agenda</small></div><div class="cr-list"></div></div>
+        <div class="j8-cloudy">
+          <span class="j8-cloud" aria-hidden="true"><span></span><span></span><span></span></span>
+          <div class="cr-ws">
+            <div class="cr-ws__chat">
+              <div class="cr-chathead"><span class="cr-face">JO</span><span class="cr-chathead__id"><b>João · novo lead</b><small><span class="cr-area cr-area--trab">Trabalhista</span>online</small></span><span class="cr-wa">WA</span></div>
+              <div class="cr-thread" id="mv-thread" aria-live="polite"></div>
             </div>
-            <div class="cr-ws__log" id="mv-log" aria-live="polite"><i data-lucide="activity"></i><span>Lead entrou pelo WhatsApp. A IA já está conversando.</span></div>
+            <div class="cr-ws__board">
+              <div class="cr-ws__cols" id="mv-cols">
+                <div class="cr-col"><div class="cr-col__head">Novo lead<small>IA responde</small></div><div class="cr-list"></div></div>
+                <div class="cr-col"><div class="cr-col__head">Qualificado<small>IA qualifica</small></div><div class="cr-list"></div></div>
+                <div class="cr-col"><div class="cr-col__head">Docs recebidos<small>IA coleta</small></div><div class="cr-list"></div></div>
+                <div class="cr-col"><div class="cr-col__head">Reunião agendada<small>IA agenda</small></div><div class="cr-list"></div></div>
+              </div>
+              <div class="cr-ws__log" id="mv-log" aria-live="polite"><i data-lucide="activity"></i><span>Lead entrou pelo WhatsApp. A IA já está conversando.</span></div>
+            </div>
           </div>
         </div>
       </div>
@@ -943,39 +947,42 @@ textarea.cr-input { height: 96px; padding: 13px 16px; line-height: 1.5; resize: 
         </ul>
       </div>
 
-      <article class="cr-doc" aria-label="Exemplo de dossiê do cliente gerado pela IA">
-        <div class="cr-doc__head"><h3>Dossiê do Cliente</h3><span class="cr-doc__ai"><i data-lucide="sparkles"></i>Gerado pela IA</span></div>
-        <div class="cr-doc__body">
-          <div class="cr-part" data-part="agenda urgencia">
-            <div class="cr-person"><span class="cr-face">MC</span><span><b>Marcos Costa</b><small>(11) 98766-4321 · marcoscosta@email.com</small></span></div>
-            <dl class="cr-meta" style="margin-top:14px">
-              <div><dt>Área</dt><dd>Trabalhista · Rescisão indevida</dd></div>
-              <div><dt>Urgência</dt><dd><span class="cr-urg">Alta</span></dd></div>
-              <div><dt>Reunião agendada</dt><dd>Hoje às 14h30</dd></div>
-            </dl>
-          </div>
-          <div class="cr-part is-hl" data-part="resumo">
-            <h4>Resumo do caso</h4>
-            <p>Marcos alega desvio de função e não pagamento de horas extras habituais. Foi demitido em 10/04 sem recebimento das verbas rescisórias corretas. Trabalhou como Analista de Suporte por 2 anos.</p>
-          </div>
-          <div class="cr-part" data-part="urgencia">
-            <h4>Pontos de atenção</h4>
-            <ul class="cr-attn">
-              <li><i data-lucide="triangle-alert"></i>Possível rescisão indireta (art. 483, CLT)</li>
-              <li><i data-lucide="triangle-alert"></i>Horas extras habituais sem pagamento</li>
-              <li><i data-lucide="triangle-alert"></i>Risco de prazo prescricional em 2 anos</li>
-            </ul>
-          </div>
-          <div class="cr-part" data-part="docs">
-            <h4>Documentos recebidos</h4>
-            <div class="cr-docs">
-              <div class="cr-docrow"><span class="cr-file__ic"><i data-lucide="file-text"></i></span><span><b>contracheque_mar25.pdf</b><small>312 KB · PDF</small></span><span class="cr-ok"><i data-lucide="badge-check"></i>Verificado</span></div>
-              <div class="cr-docrow"><span class="cr-file__ic cr-file__ic--img"><i data-lucide="image"></i></span><span><b>ctps_frente_verso.jpg</b><small>1.1 MB · Imagem</small></span><span class="cr-ok"><i data-lucide="badge-check"></i>Verificado</span></div>
+      <div class="j8-cloudy">
+        <span class="j8-cloud" aria-hidden="true"><span></span><span></span><span></span></span>
+        <article class="cr-doc" aria-label="Exemplo de dossiê do cliente gerado pela IA">
+          <div class="cr-doc__head"><h3>Dossiê do Cliente</h3><span class="cr-doc__ai"><i data-lucide="sparkles"></i>Gerado pela IA</span></div>
+          <div class="cr-doc__body">
+            <div class="cr-part" data-part="agenda urgencia">
+              <div class="cr-person"><span class="cr-face">MC</span><span><b>Marcos Costa</b><small>(11) 98766-4321 · marcoscosta@email.com</small></span></div>
+              <dl class="cr-meta" style="margin-top:14px">
+                <div><dt>Área</dt><dd>Trabalhista · Rescisão indevida</dd></div>
+                <div><dt>Urgência</dt><dd><span class="cr-urg">Alta</span></dd></div>
+                <div><dt>Reunião agendada</dt><dd>Hoje às 14h30</dd></div>
+              </dl>
+            </div>
+            <div class="cr-part is-hl" data-part="resumo">
+              <h4>Resumo do caso</h4>
+              <p>Marcos alega desvio de função e não pagamento de horas extras habituais. Foi demitido em 10/04 sem recebimento das verbas rescisórias corretas. Trabalhou como Analista de Suporte por 2 anos.</p>
+            </div>
+            <div class="cr-part" data-part="urgencia">
+              <h4>Pontos de atenção</h4>
+              <ul class="cr-attn">
+                <li><i data-lucide="triangle-alert"></i>Possível rescisão indireta (art. 483, CLT)</li>
+                <li><i data-lucide="triangle-alert"></i>Horas extras habituais sem pagamento</li>
+                <li><i data-lucide="triangle-alert"></i>Risco de prazo prescricional em 2 anos</li>
+              </ul>
+            </div>
+            <div class="cr-part" data-part="docs">
+              <h4>Documentos recebidos</h4>
+              <div class="cr-docs">
+                <div class="cr-docrow"><span class="cr-file__ic"><i data-lucide="file-text"></i></span><span><b>contracheque_mar25.pdf</b><small>312 KB · PDF</small></span><span class="cr-ok"><i data-lucide="badge-check"></i>Verificado</span></div>
+                <div class="cr-docrow"><span class="cr-file__ic cr-file__ic--img"><i data-lucide="image"></i></span><span><b>ctps_frente_verso.jpg</b><small>1.1 MB · Imagem</small></span><span class="cr-ok"><i data-lucide="badge-check"></i>Verificado</span></div>
+              </div>
             </div>
           </div>
-        </div>
-        <p class="cr-doc__foot">Dossiê gerado automaticamente em 13/05/2025 às 11:20.</p>
-      </article>
+          <p class="cr-doc__foot">Dossiê gerado automaticamente em 13/05/2025 às 11:20.</p>
+        </article>
+      </div>
     </div>
   </section>
 

@@ -654,6 +654,7 @@ svg.lucide { width: 18px; height: 18px; flex: none; }
 .jf__social a { width: 44px; height: 44px; }
 </style>
 <link rel="stylesheet" href="/assets/site/j8-menu.css">
+<link rel="stylesheet" href="/assets/site/j8-cloud.css">
 <script src="/assets/site/j8-menu.js" defer></script>
 </head>
 <body>
@@ -819,22 +820,25 @@ svg.lucide { width: 18px; height: 18px; flex: none; }
           <li><button class="jl-channel" type="button" data-filter="form" aria-pressed="false"><span class="jl-channel__ic"><i data-lucide="clipboard-list"></i></span><span><b>Formulários do site</b><small>Contatos que chegam direto para o seu fluxo.</small></span><span class="jl-channel__n">1</span></button></li>
         </ul>
 
-        <div class="jl-inbox" id="jl-inbox">
-          <div class="jl-inbox__side">
-            <div class="jl-inbox__top"><b>Caixa de entrada</b><span id="jl-inbox-count">7 conversas</span></div>
-            <div class="jl-inbox__search" aria-hidden="true"><i data-lucide="search"></i>Buscar clientes e conversas</div>
-            <ul class="jl-inbox__list" id="jl-inbox-list" aria-label="Conversas"></ul>
-          </div>
-          <div class="jl-inbox__main">
-            <div class="jl-inbox__head">
-              <span class="jl-face" id="jl-inbox-face"></span>
-              <span class="jl-inbox__who"><b id="jl-inbox-name"></b><small id="jl-inbox-meta"></small></span>
-              <span class="jl-tag" id="jl-inbox-tag"></span>
+        <div class="j8-cloudy">
+          <span class="j8-cloud" aria-hidden="true"><span></span><span></span><span></span></span>
+          <div class="jl-inbox" id="jl-inbox">
+            <div class="jl-inbox__side">
+              <div class="jl-inbox__top"><b>Caixa de entrada</b><span id="jl-inbox-count">7 conversas</span></div>
+              <div class="jl-inbox__search" aria-hidden="true"><i data-lucide="search"></i>Buscar clientes e conversas</div>
+              <ul class="jl-inbox__list" id="jl-inbox-list" aria-label="Conversas"></ul>
             </div>
-            <div class="jl-inbox__msgs" id="jl-inbox-msgs" aria-live="polite"></div>
-            <div class="jl-inbox__foot">
-              <span class="jl-inbox__status"><span class="jl-avatar">J</span><span id="jl-inbox-status">A Júlia está conduzindo esta conversa.</span></span>
-              <button class="jl-take" type="button" id="jl-take" aria-pressed="false"><i data-lucide="hand"></i><span>Assumir conversa</span></button>
+            <div class="jl-inbox__main">
+              <div class="jl-inbox__head">
+                <span class="jl-face" id="jl-inbox-face"></span>
+                <span class="jl-inbox__who"><b id="jl-inbox-name"></b><small id="jl-inbox-meta"></small></span>
+                <span class="jl-tag" id="jl-inbox-tag"></span>
+              </div>
+              <div class="jl-inbox__msgs" id="jl-inbox-msgs" aria-live="polite"></div>
+              <div class="jl-inbox__foot">
+                <span class="jl-inbox__status"><span class="jl-avatar">J</span><span id="jl-inbox-status">A Júlia está conduzindo esta conversa.</span></span>
+                <button class="jl-take" type="button" id="jl-take" aria-pressed="false"><i data-lucide="hand"></i><span>Assumir conversa</span></button>
+              </div>
             </div>
           </div>
         </div>
@@ -1035,27 +1039,30 @@ svg.lucide { width: 18px; height: 18px; flex: none; }
       </header>
 
       <div class="jl-testar__grid">
-        <div class="jl-live">
-          <div class="jl-chathead">
-            <span class="jl-avatar">J</span>
-            <span class="jl-chathead__id"><b>Júlia · Seu escritório</b><small><span class="jl-pulse" aria-hidden="true"></span>online agora</small></span>
+        <div class="j8-cloudy">
+          <span class="j8-cloud j8-cloud--flip" aria-hidden="true"><span></span><span></span><span></span></span>
+          <div class="jl-live">
+            <div class="jl-chathead">
+              <span class="jl-avatar">J</span>
+              <span class="jl-chathead__id"><b>Júlia · Seu escritório</b><small><span class="jl-pulse" aria-hidden="true"></span>online agora</small></span>
+            </div>
+            <div class="jl-live__log" id="jl-live-log" role="log" aria-live="polite" aria-relevant="additions">
+              <div class="jl-msg jl-msg--julia"><span class="jl-msg__by"><i data-lucide="sparkles"></i>Júlia</span>Olá! Sou a Júlia, assistente virtual do escritório. Como posso te ajudar hoje?<small>agora</small></div>
+            </div>
+            <div class="jl-quick" id="jl-quick" aria-label="Sugestões de mensagem">
+              <button type="button">Quero falar com um advogado</button>
+              <button type="button">Tirar uma dúvida</button>
+              <button type="button">Agendar um atendimento</button>
+              <button type="button">Como está meu processo?</button>
+              <button type="button">Quanto custa?</button>
+            </div>
+            <form class="jl-live__form" id="jl-live-form">
+              <label class="sr-only" for="jl-live-input">Escreva uma mensagem para a Júlia</label>
+              <input class="jl-input" id="jl-live-input" type="text" maxlength="300" autocomplete="off" placeholder="Escreva como um cliente escreveria…">
+              <button class="jl-send" type="submit" aria-label="Enviar mensagem"><i data-lucide="send-horizontal"></i></button>
+            </form>
+            <p class="jl-live__note">Demonstração interativa com respostas ilustrativas. Não envia mensagens nem substitui orientação jurídica.</p>
           </div>
-          <div class="jl-live__log" id="jl-live-log" role="log" aria-live="polite" aria-relevant="additions">
-            <div class="jl-msg jl-msg--julia"><span class="jl-msg__by"><i data-lucide="sparkles"></i>Júlia</span>Olá! Sou a Júlia, assistente virtual do escritório. Como posso te ajudar hoje?<small>agora</small></div>
-          </div>
-          <div class="jl-quick" id="jl-quick" aria-label="Sugestões de mensagem">
-            <button type="button">Quero falar com um advogado</button>
-            <button type="button">Tirar uma dúvida</button>
-            <button type="button">Agendar um atendimento</button>
-            <button type="button">Como está meu processo?</button>
-            <button type="button">Quanto custa?</button>
-          </div>
-          <form class="jl-live__form" id="jl-live-form">
-            <label class="sr-only" for="jl-live-input">Escreva uma mensagem para a Júlia</label>
-            <input class="jl-input" id="jl-live-input" type="text" maxlength="300" autocomplete="off" placeholder="Escreva como um cliente escreveria…">
-            <button class="jl-send" type="submit" aria-label="Enviar mensagem"><i data-lucide="send-horizontal"></i></button>
-          </form>
-          <p class="jl-live__note">Demonstração interativa com respostas ilustrativas. Não envia mensagens nem substitui orientação jurídica.</p>
         </div>
 
         <aside class="jl-aside">

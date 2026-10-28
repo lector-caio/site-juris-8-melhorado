@@ -568,6 +568,7 @@ textarea.ag-input { height: 96px; padding: 13px 16px; line-height: 1.5; resize: 
 .jf__social a { width: 44px; height: 44px; }
 </style>
 <link rel="stylesheet" href="/assets/site/j8-menu.css">
+<link rel="stylesheet" href="/assets/site/j8-cloud.css">
 <script src="/assets/site/j8-menu.js" defer></script>
 </head>
 <body>
@@ -760,28 +761,31 @@ textarea.ag-input { height: 96px; padding: 13px 16px; line-height: 1.5; resize: 
           </ul>
           <p class="ag-proof"><i data-lucide="badge-check"></i>Cada resultado com link para o inteiro teor</p>
         </div>
-        <div class="ag-ui">
-          <div class="ag-ui__bar"><i data-lucide="search-check"></i>Juris8 · Pesquisa de Jurisprudência</div>
-          <div class="ag-query"><i data-lucide="search"></i>Responsabilidade subsidiária da Administração Pública, Tema 1.118 do STF</div>
-          <div class="ag-courts" role="group" aria-label="Filtrar por tribunal">
-            <button type="button" data-court="todos" aria-pressed="true">Todos</button>
-            <button type="button" data-court="TST" aria-pressed="false">TST</button>
-            <button type="button" data-court="TRT12" aria-pressed="false">TRT-12</button>
+        <div class="j8-cloudy">
+          <span class="j8-cloud" aria-hidden="true"><span></span><span></span><span></span></span>
+          <div class="ag-ui">
+            <div class="ag-ui__bar"><i data-lucide="search-check"></i>Juris8 · Pesquisa de Jurisprudência</div>
+            <div class="ag-query"><i data-lucide="search"></i>Responsabilidade subsidiária da Administração Pública, Tema 1.118 do STF</div>
+            <div class="ag-courts" role="group" aria-label="Filtrar por tribunal">
+              <button type="button" data-court="todos" aria-pressed="true">Todos</button>
+              <button type="button" data-court="TST" aria-pressed="false">TST</button>
+              <button type="button" data-court="TRT12" aria-pressed="false">TRT-12</button>
+            </div>
+            <div class="ag-results" id="ag-results">
+              <article class="ag-result" data-court="TST">
+                <div class="ag-result__top"><span class="ag-court">TST</span><b>RR 0101907-97.2017.5.01.0283</b><time>18/12/2025 · 7ª Turma</time><span class="ag-pill ag-pill--ok"><i data-lucide="badge-check"></i>Acervo Juris8</span></div>
+                <blockquote>Aplicando o Tema 1.118 do STF, afasta a responsabilidade subsidiária baseada apenas na inversão do ônus da prova. Exige comprovação de negligência ou nexo causal.</blockquote>
+                <div class="ag-result__tags"><span class="ag-tag">Rel. Claudio Mascarenhas Brandao</span><span class="ag-tag">Coletado em 19/09/2026</span><span class="ag-tag">Administração Pública</span><span class="ag-tag">terceirização</span></div>
+              </article>
+              <article class="ag-result" data-court="TRT12">
+                <div class="ag-result__top"><span class="ag-court">TRT-12</span><b>ROT 0000324-02.2025.5.12.0051</b><time>15/04/2026 · 1ª Turma</time><span class="ag-pill ag-pill--ok"><i data-lucide="badge-check"></i>Acervo Juris8</span></div>
+                <blockquote>Aplica o Tema 1.118 do STF e mantém decisão que não reconheceu a responsabilidade subsidiária, diante da ausência de prova de comportamento negligente ou omissão do Poder Público.</blockquote>
+                <div class="ag-result__tags"><span class="ag-tag">Rel. Roberto Luiz Guglielmetto</span><span class="ag-tag">Coletado em 14/09/2026</span><span class="ag-tag">responsabilidade subsidiária</span><span class="ag-tag">Tema 1.118/STF</span></div>
+              </article>
+              <p class="ag-empty" id="ag-empty" hidden>Nenhum resultado validado deste tribunal nesta busca. O Juris8 não exibe correspondências que não consegue verificar.</p>
+            </div>
+            <div class="ag-ui__foot">Exemplos do acervo Juris8. As datas indicam a coleta dos registros, não uma atualização geral da base.</div>
           </div>
-          <div class="ag-results" id="ag-results">
-            <article class="ag-result" data-court="TST">
-              <div class="ag-result__top"><span class="ag-court">TST</span><b>RR 0101907-97.2017.5.01.0283</b><time>18/12/2025 · 7ª Turma</time><span class="ag-pill ag-pill--ok"><i data-lucide="badge-check"></i>Acervo Juris8</span></div>
-              <blockquote>Aplicando o Tema 1.118 do STF, afasta a responsabilidade subsidiária baseada apenas na inversão do ônus da prova. Exige comprovação de negligência ou nexo causal.</blockquote>
-              <div class="ag-result__tags"><span class="ag-tag">Rel. Claudio Mascarenhas Brandao</span><span class="ag-tag">Coletado em 19/09/2026</span><span class="ag-tag">Administração Pública</span><span class="ag-tag">terceirização</span></div>
-            </article>
-            <article class="ag-result" data-court="TRT12">
-              <div class="ag-result__top"><span class="ag-court">TRT-12</span><b>ROT 0000324-02.2025.5.12.0051</b><time>15/04/2026 · 1ª Turma</time><span class="ag-pill ag-pill--ok"><i data-lucide="badge-check"></i>Acervo Juris8</span></div>
-              <blockquote>Aplica o Tema 1.118 do STF e mantém decisão que não reconheceu a responsabilidade subsidiária, diante da ausência de prova de comportamento negligente ou omissão do Poder Público.</blockquote>
-              <div class="ag-result__tags"><span class="ag-tag">Rel. Roberto Luiz Guglielmetto</span><span class="ag-tag">Coletado em 14/09/2026</span><span class="ag-tag">responsabilidade subsidiária</span><span class="ag-tag">Tema 1.118/STF</span></div>
-            </article>
-            <p class="ag-empty" id="ag-empty" hidden>Nenhum resultado validado deste tribunal nesta busca. O Juris8 não exibe correspondências que não consegue verificar.</p>
-          </div>
-          <div class="ag-ui__foot">Exemplos do acervo Juris8. As datas indicam a coleta dos registros, não uma atualização geral da base.</div>
         </div>
       </div>
 
@@ -798,25 +802,28 @@ textarea.ag-input { height: 96px; padding: 13px 16px; line-height: 1.5; resize: 
           </ul>
           <p class="ag-proof"><i data-lucide="lock"></i>Precedentes citados são bloqueados se não validados</p>
         </div>
-        <div class="ag-ui">
-          <div class="ag-ui__bar"><i data-lucide="pen-line"></i>Juris8 · Redação: contestação trabalhista<small>Fluxo do agente</small></div>
-          <ol class="ag-flow">
-            <li><span class="ag-flow__ic"><i data-lucide="check"></i></span><span><b>Leitura e análise da demanda</b><small>Partes, pedidos, causa de pedir e fatos identificados</small></span></li>
-            <li><span class="ag-flow__ic"><i data-lucide="check"></i></span><span><b>Identificação de teses e precedentes</b><small>4 precedentes validados do TST e do TRT-12 selecionados</small></span></li>
-            <li><span class="ag-flow__ic"><i data-lucide="check"></i></span><span><b>Estruturação da peça</b><small>Preliminar, mérito e pedidos no seu formato</small></span></li>
-            <li><span class="ag-flow__ic"><i data-lucide="check"></i></span><span><b>Base de texto seção por seção</b><small>No estilo e vocabulário do advogado, para revisão</small></span></li>
-            <li class="is-run"><span class="ag-flow__ic"><i data-lucide="loader"></i></span><span><b>Revisão interna por critérios</b><small>Verificando coerência, precisão e fundamentação...</small></span></li>
-            <li><span class="ag-flow__ic" style="background:#EDEAF5;color:var(--sutil)"><i data-lucide="flag"></i></span><span><b>Pronto para revisão do advogado</b><small>Score geral e sugestões de melhoria</small></span></li>
-          </ol>
-          <div class="ag-scores" id="ag-scores">
-            <div class="ag-scores__h"><span>Revisão por critérios de qualidade</span><i data-lucide="sparkles" style="width:16px;height:16px;color:var(--violeta)"></i></div>
-            <div class="ag-score"><span>Fundamentação jurídica</span><i style="--v:92%"></i><b>9.2</b></div>
-            <div class="ag-score"><span>Precisão dos precedentes</span><i style="--v:96%"></i><b>9.6</b></div>
-            <div class="ag-score"><span>Clareza argumentativa</span><i style="--v:89%"></i><b>8.9</b></div>
-            <div class="ag-score"><span>Coerência interna</span><i style="--v:94%"></i><b>9.4</b></div>
-            <div class="ag-score"><span>Adequação formal (CLT)</span><i style="--v:88%"></i><b>8.8</b></div>
+        <div class="j8-cloudy">
+          <span class="j8-cloud j8-cloud--flip" aria-hidden="true"><span></span><span></span><span></span></span>
+          <div class="ag-ui">
+            <div class="ag-ui__bar"><i data-lucide="pen-line"></i>Juris8 · Redação: contestação trabalhista<small>Fluxo do agente</small></div>
+            <ol class="ag-flow">
+              <li><span class="ag-flow__ic"><i data-lucide="check"></i></span><span><b>Leitura e análise da demanda</b><small>Partes, pedidos, causa de pedir e fatos identificados</small></span></li>
+              <li><span class="ag-flow__ic"><i data-lucide="check"></i></span><span><b>Identificação de teses e precedentes</b><small>4 precedentes validados do TST e do TRT-12 selecionados</small></span></li>
+              <li><span class="ag-flow__ic"><i data-lucide="check"></i></span><span><b>Estruturação da peça</b><small>Preliminar, mérito e pedidos no seu formato</small></span></li>
+              <li><span class="ag-flow__ic"><i data-lucide="check"></i></span><span><b>Base de texto seção por seção</b><small>No estilo e vocabulário do advogado, para revisão</small></span></li>
+              <li class="is-run"><span class="ag-flow__ic"><i data-lucide="loader"></i></span><span><b>Revisão interna por critérios</b><small>Verificando coerência, precisão e fundamentação...</small></span></li>
+              <li><span class="ag-flow__ic" style="background:#EDEAF5;color:var(--sutil)"><i data-lucide="flag"></i></span><span><b>Pronto para revisão do advogado</b><small>Score geral e sugestões de melhoria</small></span></li>
+            </ol>
+            <div class="ag-scores" id="ag-scores">
+              <div class="ag-scores__h"><span>Revisão por critérios de qualidade</span><i data-lucide="sparkles" style="width:16px;height:16px;color:var(--violeta)"></i></div>
+              <div class="ag-score"><span>Fundamentação jurídica</span><i style="--v:92%"></i><b>9.2</b></div>
+              <div class="ag-score"><span>Precisão dos precedentes</span><i style="--v:96%"></i><b>9.6</b></div>
+              <div class="ag-score"><span>Clareza argumentativa</span><i style="--v:89%"></i><b>8.9</b></div>
+              <div class="ag-score"><span>Coerência interna</span><i style="--v:94%"></i><b>9.4</b></div>
+              <div class="ag-score"><span>Adequação formal (CLT)</span><i style="--v:88%"></i><b>8.8</b></div>
+            </div>
+            <p class="ag-tip"><i data-lucide="lightbulb"></i><span><b>Sugestão · Adequação formal:</b> o pedido de condenação em honorários (§3°, art. 791-A CLT) não menciona o percentual mínimo de 5%. Recomenda-se especificar o intervalo de 5% a 15%.</span></p>
           </div>
-          <p class="ag-tip"><i data-lucide="lightbulb"></i><span><b>Sugestão · Adequação formal:</b> o pedido de condenação em honorários (§3°, art. 791-A CLT) não menciona o percentual mínimo de 5%. Recomenda-se especificar o intervalo de 5% a 15%.</span></p>
         </div>
       </div>
 
@@ -833,21 +840,24 @@ textarea.ag-input { height: 96px; padding: 13px 16px; line-height: 1.5; resize: 
           </ul>
           <p class="ag-proof"><i data-lucide="scan-eye"></i>Critérios aplicados de forma auditável e rastreável</p>
         </div>
-        <div class="ag-ui">
-          <div class="ag-ui__bar"><i data-lucide="file-search"></i>Juris8 · Análise de Documento</div>
-          <div class="ag-skills" role="group" aria-label="Skills ativas: toque para filtrar as cláusulas">
-            <button type="button" data-skill="resp" aria-pressed="false">Responsabilidade civil <i>2</i></button>
-            <button type="button" data-skill="nda" aria-pressed="false">Cláusulas de NDA <i>4</i></button>
-            <button type="button" data-skill="resc" aria-pressed="false">Rescisão e multa</button>
-            <button type="button" data-skill="lgpd" aria-pressed="false">Conformidade LGPD</button>
-          </div>
-          <div class="ag-count"><span>Cláusulas revisadas</span><i></i><b>47 / 52</b></div>
-          <div class="ag-clauses" id="ag-clauses">
-            <div class="ag-clause ag-clause--ok" data-skills="geral"><span class="ag-clause__ic"><i data-lucide="check"></i></span><span><b>Cláusula 2.1 · Objeto do contrato</b><small>Sem observações, conforme escopo acordado</small></span></div>
-            <div class="ag-clause ag-clause--risk" data-skills="resp"><span class="ag-clause__ic"><i data-lucide="triangle-alert"></i></span><span><b>Cláusula 4.3 · Responsabilidade</b><small>Risco identificado: responsabilidade ilimitada por danos indiretos</small></span></div>
-            <div class="ag-clause ag-clause--warn" data-skills="resc"><span class="ag-clause__ic"><i data-lucide="circle-alert"></i></span><span><b>Cláusula 7.1 · Caso fortuito</b><small>Atenção: exclusão não cobre atos de terceiros</small></span></div>
-            <div class="ag-clause ag-clause--ok" data-skills="nda lgpd"><span class="ag-clause__ic"><i data-lucide="check"></i></span><span><b>Cláusula 9.2 · Confidencialidade (NDA)</b><small>Prazo e escopo conforme padrão do escritório</small></span></div>
-            <div class="ag-clause ag-clause--risk" data-skills="resp"><span class="ag-clause__ic"><i data-lucide="triangle-alert"></i></span><span><b>Cláusula 8.0 · Indenização</b><small>Risco identificado: ausência de teto de indenização</small></span></div>
+        <div class="j8-cloudy">
+          <span class="j8-cloud" aria-hidden="true"><span></span><span></span><span></span></span>
+          <div class="ag-ui">
+            <div class="ag-ui__bar"><i data-lucide="file-search"></i>Juris8 · Análise de Documento</div>
+            <div class="ag-skills" role="group" aria-label="Skills ativas: toque para filtrar as cláusulas">
+              <button type="button" data-skill="resp" aria-pressed="false">Responsabilidade civil <i>2</i></button>
+              <button type="button" data-skill="nda" aria-pressed="false">Cláusulas de NDA <i>4</i></button>
+              <button type="button" data-skill="resc" aria-pressed="false">Rescisão e multa</button>
+              <button type="button" data-skill="lgpd" aria-pressed="false">Conformidade LGPD</button>
+            </div>
+            <div class="ag-count"><span>Cláusulas revisadas</span><i></i><b>47 / 52</b></div>
+            <div class="ag-clauses" id="ag-clauses">
+              <div class="ag-clause ag-clause--ok" data-skills="geral"><span class="ag-clause__ic"><i data-lucide="check"></i></span><span><b>Cláusula 2.1 · Objeto do contrato</b><small>Sem observações, conforme escopo acordado</small></span></div>
+              <div class="ag-clause ag-clause--risk" data-skills="resp"><span class="ag-clause__ic"><i data-lucide="triangle-alert"></i></span><span><b>Cláusula 4.3 · Responsabilidade</b><small>Risco identificado: responsabilidade ilimitada por danos indiretos</small></span></div>
+              <div class="ag-clause ag-clause--warn" data-skills="resc"><span class="ag-clause__ic"><i data-lucide="circle-alert"></i></span><span><b>Cláusula 7.1 · Caso fortuito</b><small>Atenção: exclusão não cobre atos de terceiros</small></span></div>
+              <div class="ag-clause ag-clause--ok" data-skills="nda lgpd"><span class="ag-clause__ic"><i data-lucide="check"></i></span><span><b>Cláusula 9.2 · Confidencialidade (NDA)</b><small>Prazo e escopo conforme padrão do escritório</small></span></div>
+              <div class="ag-clause ag-clause--risk" data-skills="resp"><span class="ag-clause__ic"><i data-lucide="triangle-alert"></i></span><span><b>Cláusula 8.0 · Indenização</b><small>Risco identificado: ausência de teto de indenização</small></span></div>
+            </div>
           </div>
         </div>
       </div>
@@ -865,22 +875,25 @@ textarea.ag-input { height: 96px; padding: 13px 16px; line-height: 1.5; resize: 
           </ul>
           <p class="ag-proof"><i data-lucide="sparkles"></i>Muito além de notas: análise jurídica completa da audiência</p>
         </div>
-        <div class="ag-ui">
-          <div class="ag-ui__bar"><i data-lucide="audio-lines"></i>Juris8 · Transcrição de Audiência</div>
-          <div class="ag-trans__meta"><span class="ag-pill ag-pill--ok"><i data-lucide="check"></i>Transcrição concluída</span><small>39:14 min · 3 participantes</small></div>
-          <div class="ag-wave" id="ag-wave" aria-hidden="true"></div>
-          <div class="ag-lines">
-            <div class="ag-line"><b><span class="ag-spk--juiz">Juiz</span></b><p>O reclamante pode esclarecer em que consistia a jornada habitual na empresa?</p></div>
-            <div class="ag-line" id="ag-critico"><b><span class="ag-spk--rec">Reclamante</span><span style="margin-left:auto;background:#FFF1D6;color:#8A5200">00:12:44</span></b><p>Trabalhava das 7h às 20h todos os dias, com apenas 30 minutos de intervalo. Nunca tive horas extras pagas. O gerente dizia que estava no banco de horas, mas nunca vi saldo.</p></div>
-            <div class="ag-line"><b><span class="ag-spk--pre">Preposto</span></b><p>A empresa contesta. Os cartões de ponto registravam saída às 18h e os registros eram assinados pelo próprio reclamante.</p></div>
-          </div>
-          <div class="ag-keys">
-            <h4><i data-lucide="sparkles"></i>Análise gerada · pontos-chave</h4>
-            <ul>
-              <li><i data-lucide="git-compare"></i>Reclamante alega jornada das 7h às 20h sem pagamento: contradição com cartão de ponto</li>
-              <li><i data-lucide="list-todo"></i>Banco de horas: existência contestada; solicitar extratos (tarefa gerada)</li>
-              <li><button type="button" id="ag-jump"><i data-lucide="bookmark"></i>Trecho crítico 00:12:44, depoimento sobre jornada</button></li>
-            </ul>
+        <div class="j8-cloudy">
+          <span class="j8-cloud j8-cloud--flip" aria-hidden="true"><span></span><span></span><span></span></span>
+          <div class="ag-ui">
+            <div class="ag-ui__bar"><i data-lucide="audio-lines"></i>Juris8 · Transcrição de Audiência</div>
+            <div class="ag-trans__meta"><span class="ag-pill ag-pill--ok"><i data-lucide="check"></i>Transcrição concluída</span><small>39:14 min · 3 participantes</small></div>
+            <div class="ag-wave" id="ag-wave" aria-hidden="true"></div>
+            <div class="ag-lines">
+              <div class="ag-line"><b><span class="ag-spk--juiz">Juiz</span></b><p>O reclamante pode esclarecer em que consistia a jornada habitual na empresa?</p></div>
+              <div class="ag-line" id="ag-critico"><b><span class="ag-spk--rec">Reclamante</span><span style="margin-left:auto;background:#FFF1D6;color:#8A5200">00:12:44</span></b><p>Trabalhava das 7h às 20h todos os dias, com apenas 30 minutos de intervalo. Nunca tive horas extras pagas. O gerente dizia que estava no banco de horas, mas nunca vi saldo.</p></div>
+              <div class="ag-line"><b><span class="ag-spk--pre">Preposto</span></b><p>A empresa contesta. Os cartões de ponto registravam saída às 18h e os registros eram assinados pelo próprio reclamante.</p></div>
+            </div>
+            <div class="ag-keys">
+              <h4><i data-lucide="sparkles"></i>Análise gerada · pontos-chave</h4>
+              <ul>
+                <li><i data-lucide="git-compare"></i>Reclamante alega jornada das 7h às 20h sem pagamento: contradição com cartão de ponto</li>
+                <li><i data-lucide="list-todo"></i>Banco de horas: existência contestada; solicitar extratos (tarefa gerada)</li>
+                <li><button type="button" id="ag-jump"><i data-lucide="bookmark"></i>Trecho crítico 00:12:44, depoimento sobre jornada</button></li>
+              </ul>
+            </div>
           </div>
         </div>
       </div>

@@ -1,0 +1,35 @@
+/* ============================================================
+   JURIS8 · NUVEM ATRÁS DOS PAINÉIS (mesma linguagem do topo da Newsletter)
+   Três círculos na mesma cor sólida, agrupados atrás da borda de cima do
+   painel: a parte que sobra para fora forma o contorno de uma nuvem.
+
+   Uso: o contêiner do painel recebe .j8-cloudy e, como primeiro filho,
+   <span class="j8-cloud" aria-hidden="true"><span></span><span></span><span></span></span>
+   Painel na coluna da esquerda: .j8-cloud--flip (a nuvem sai para a borda da página).
+
+   A nuvem fica em z-index -1 no contexto da seção (que ganha isolation), então
+   passa por cima do fundo da seção e por baixo de todo o conteúdo: nunca cobre texto.
+   ============================================================ */
+section:has(.j8-cloud) { isolation: isolate; }
+.j8-cloudy { position: relative; }
+/* o brilho roxo desfocado que alguns painéis tinham dá lugar à nuvem */
+.j8-cloudy::before { display: none !important; }
+
+/* O grupo tem largura limitada e fica ancorado perto do canto de cima,
+   então a nuvem tem o mesmo peso em painéis largos e estreitos. */
+.j8-cloud { position: absolute; top: 0; right: 4%; width: clamp(220px, 62%, 400px); height: 0; z-index: -1; pointer-events: none; }
+.j8-cloud--flip { right: auto; left: 4%; transform: scaleX(-1); }
+.j8-cloud > span { position: absolute; top: 0; aspect-ratio: 1; border-radius: 50%; background: #E7DFFF; }
+.j8-cloud > span:nth-child(1) { left: 30%; width: 52%; transform: translateY(-58%); }
+.j8-cloud > span:nth-child(2) { left: 4%; width: 38%; transform: translateY(-46%); }
+.j8-cloud > span:nth-child(3) { left: 64%; width: 38%; transform: translateY(-40%); }
+
+/* Entrada suave ao rolar, onde o navegador suporta (sem JavaScript) */
+@supports (animation-timeline: view()) {
+  @media (prefers-reduced-motion: no-preference) {
+    .j8-cloud > span { animation: j8-cloud-in linear both; animation-timeline: view(); animation-range: entry 0% cover 28%; }
+    .j8-cloud > span:nth-child(2) { animation-range: entry 8% cover 32%; }
+    .j8-cloud > span:nth-child(3) { animation-range: entry 14% cover 36%; }
+  }
+}
+@keyframes j8-cloud-in { from { opacity: 0; scale: .55; } to { opacity: 1; scale: 1; } }

@@ -20,6 +20,7 @@
 </script>
 <link rel="stylesheet" href="/assets/site/j8-header.css">
 <link rel="stylesheet" href="/assets/site/j8-menu.css">
+<link rel="stylesheet" href="/assets/site/j8-cloud.css">
 <script src="/assets/site/j8-menu.js" defer></script>
 <style>
 /* ============================================================
@@ -313,7 +314,8 @@ li.is-ok .nl-st svg.lucide { display: inline-block; }
 .nl-type-btn b { display: block; color: var(--tinta); font: 700 18px/1.3 var(--fd); letter-spacing: -.015em; }
 .nl-type-btn__d { display: block; color: var(--texto); font-size: 15px; line-height: 1.6; }
 
-.nl-edition { position: sticky; top: 108px; padding: 30px 32px 22px; border: 1px solid #EDE8FA; border-radius: 26px; background: #fff; box-shadow: 16px 16px 0 0 var(--lavanda-2), var(--sombra); }
+.nl-edition-wrap { position: sticky; top: 108px; }
+.nl-edition { position: relative; padding: 30px 32px 22px; border: 1px solid #EDE8FA; border-radius: 26px; background: #fff; box-shadow: 16px 16px 0 0 var(--lavanda-2), var(--sombra); }
 .nl-edition__mast { display: flex; align-items: center; justify-content: space-between; gap: 12px; padding-bottom: 14px; border-bottom: 2px solid var(--tinta); }
 .nl-edition__mast .nl-mono { width: 34px; height: 34px; border-radius: 10px; font-size: 13px; }
 .nl-edition__mast b { margin-right: auto; color: var(--tinta); font: 700 14px var(--fd); }
@@ -494,7 +496,8 @@ textarea.nl-input { height: 96px; padding: 13px 16px; line-height: 1.5; resize: 
   .nl-hero__grid { grid-template-columns: minmax(0, 1fr); gap: 48px; max-width: 760px; padding: 0 28px; }
   .nl-visual { width: 100%; max-width: 720px; margin: 0 auto; }
   .nl-steps, .nl-anat { grid-template-columns: minmax(0, 1fr); }
-  .nl-tabs, .nl-edition { position: static; }
+  .nl-tabs { position: static; }
+  .nl-edition-wrap { position: relative; }
   .nl-tab[aria-selected="true"]::before, .nl-tab[aria-selected="true"]::after { display: none; }
   .nl-hint__m { display: inline; }
   .nl-hint__d { display: none; }
@@ -693,128 +696,131 @@ textarea.nl-input { height: 96px; padding: 13px 16px; line-height: 1.5; resize: 
           </button>
         </div>
 
-        <div class="nl-app">
-          <!-- Passo 1 -->
-          <div class="nl-panel" role="tabpanel" id="st-1" aria-labelledby="st-tab-1" tabindex="0">
-            <div class="nl-app__bar"><span class="nl-dots" aria-hidden="true"><i></i><i></i><i></i></span><span class="nl-app__step">Passo 1 de 4</span>Configurar escritório<small><i data-lucide="settings-2"></i>Uma vez só</small></div>
-            <div class="nl-app__body">
-              <div class="nl-cfg">
-                <div>
-                  <div class="nl-cfg__row"><span class="nl-cfg__k" id="cfg-area-l">Área de atuação</span>
-                    <div class="nl-chips" role="group" aria-labelledby="cfg-area-l" data-cfg="area" data-multi>
-                      <button type="button" class="nl-chip" aria-pressed="true">Trabalhista</button>
-                      <button type="button" class="nl-chip" aria-pressed="false">Família</button>
-                      <button type="button" class="nl-chip" aria-pressed="false">Tributário</button>
-                      <button type="button" class="nl-chip" aria-pressed="false">Cível</button>
-                      <button type="button" class="nl-chip" aria-pressed="false">Societário</button>
-                    </div></div>
-                  <div class="nl-cfg__row"><span class="nl-cfg__k" id="cfg-tom-l">Tom de voz</span>
-                    <div class="nl-chips nl-seg" role="group" aria-labelledby="cfg-tom-l" data-cfg="tom">
-                      <button type="button" class="nl-chip" aria-pressed="true">Formal</button>
-                      <button type="button" class="nl-chip" aria-pressed="false">Próximo</button>
-                    </div></div>
-                  <div class="nl-cfg__row"><span class="nl-cfg__k" id="cfg-freq-l">Frequência</span>
-                    <div class="nl-chips nl-seg" role="group" aria-labelledby="cfg-freq-l" data-cfg="freq">
-                      <button type="button" class="nl-chip" aria-pressed="true">Mensal</button>
-                      <button type="button" class="nl-chip" aria-pressed="false">Quinzenal</button>
-                    </div></div>
-                  <div class="nl-cfg__row"><span class="nl-cfg__k" id="cfg-can-l">Canais</span>
-                    <div class="nl-chips" role="group" aria-labelledby="cfg-can-l" data-cfg="canais" data-multi>
-                      <button type="button" class="nl-chip" aria-pressed="true">E-mail</button>
-                      <button type="button" class="nl-chip" aria-pressed="true">WhatsApp</button>
-                      <button type="button" class="nl-chip" aria-pressed="false">PDF</button>
-                      <button type="button" class="nl-chip" aria-pressed="false">Instagram</button>
-                      <button type="button" class="nl-chip" aria-pressed="false">LinkedIn</button>
-                    </div></div>
-                </div>
-                <aside class="nl-profile" aria-live="polite">
-                  <p class="nl-profile__h"><i data-lucide="user-round-check"></i>Seu perfil</p>
-                  <dl>
-                    <div><dt>Área</dt><dd data-out="area">Trabalhista</dd></div>
-                    <div><dt>Tom</dt><dd data-out="tom">Formal</dd></div>
-                    <div><dt>Envio</dt><dd data-out="freq">Mensal</dd></div>
-                    <div><dt>Canais</dt><dd data-out="canais">E-mail, WhatsApp</dd></div>
-                  </dl>
-                  <div class="nl-drop"><i data-lucide="file-up"></i><span><b>Seu estilo</b>Arraste textos seus (PDF, DOCX) e a IA aprende como você escreve.</span></div>
-                </aside>
-              </div>
-            </div>
-            <div class="nl-app__foot"><span class="nl-cap">Clique nas opções: o perfil se atualiza.</span><button type="button" class="nl-next" data-go="2">Próxima etapa<i data-lucide="arrow-right"></i></button></div>
-          </div>
-
-          <!-- Passo 2 -->
-          <div class="nl-panel" role="tabpanel" id="st-2" aria-labelledby="st-tab-2" tabindex="0" hidden>
-            <div class="nl-app__bar"><span class="nl-dots" aria-hidden="true"><i></i><i></i><i></i></span><span class="nl-app__step">Passo 2 de 4</span>Pesquisando fontes<small><i data-lucide="timer"></i><span class="nl-timer num" id="nl-timer">4:00</span></small></div>
-            <div class="nl-app__body">
-              <div class="nl-research__top"><p>IA monitorando fontes jurídicas</p><button type="button" class="nl-next" id="nl-research-again"><i data-lucide="rotate-ccw"></i>Pesquisar de novo</button></div>
-              <ul class="nl-src" id="nl-src">
-                <li><span class="nl-src__b">STJ</span><div><b>Superior Tribunal de Justiça</b><small>Acórdãos · out/26 · 84 itens</small><span class="nl-bar"><i></i></span></div><span class="nl-st"><span class="nl-spin"></span><i data-lucide="check"></i><span>Na fila</span></span></li>
-                <li><span class="nl-src__b">TST</span><div><b>Tribunal Superior do Trabalho</b><small>Temas e súmulas · 9 itens</small><span class="nl-bar"><i></i></span></div><span class="nl-st"><span class="nl-spin"></span><i data-lucide="check"></i><span>Na fila</span></span></li>
-                <li><span class="nl-src__b">STF</span><div><b>Supremo Tribunal Federal</b><small>Decisões plenárias</small><span class="nl-bar"><i></i></span></div><span class="nl-st"><span class="nl-spin"></span><i data-lucide="check"></i><span>Na fila</span></span></li>
-                <li><span class="nl-src__b"><i data-lucide="newspaper"></i></span><div><b>Publicações jurídicas</b><small>Edições de outubro</small><span class="nl-bar"><i></i></span></div><span class="nl-st"><span class="nl-spin"></span><i data-lucide="check"></i><span>Na fila</span></span></li>
-              </ul>
-              <div class="nl-ready" id="nl-ready"><i data-lucide="circle-check"></i>Rascunho pronto · 5 seções escritas no seu tom</div>
-            </div>
-            <div class="nl-app__foot"><span class="nl-cap">Demonstração acelerada: na prática, cerca de 4 minutos.</span><button type="button" class="nl-next" data-go="3">Próxima etapa<i data-lucide="arrow-right"></i></button></div>
-          </div>
-
-          <!-- Passo 3 -->
-          <div class="nl-panel" role="tabpanel" id="st-3" aria-labelledby="st-tab-3" tabindex="0" hidden>
-            <div class="nl-app__bar"><span class="nl-dots" aria-hidden="true"><i></i><i></i><i></i></span><span class="nl-app__step">Passo 3 de 4</span>Rascunho<small><i data-lucide="list-checks"></i><span class="num" id="nl-okcount">1</span>&nbsp;de 3 aprovadas</small></div>
-            <div class="nl-app__body">
-              <article class="nl-doc" aria-label="Rascunho da edição">
-                <div class="nl-doc__top"><span class="nl-doc__brand">Newsletter · Boletim</span><span class="nl-ex">Exemplo de edição</span></div>
-                <h3 class="nl-doc__title">Novidades Jurídicas</h3>
-                <p class="nl-doc__meta">Nov 2026 · 3 seções · 4 min de leitura</p>
-                <section class="nl-dsec is-ok" data-dsec>
-                  <div class="nl-dsec__h"><span class="nl-dsec__k">Mudanças regulatórias</span><span class="nl-state"><i data-lucide="check"></i><span>Aprovado</span></span></div>
-                  <p data-alt="As regras do mês que mexem com a rotina da sua empresa, com o que muda e o prazo para se adequar.">Uma nova norma altera prazos de manifestação em processos trabalhistas. Explicamos o que muda e a partir de quando vale.</p>
-                  <div class="nl-dsec__act"><button type="button" class="nl-act" data-act="regen"><i data-lucide="refresh-cw"></i>Gerar novamente</button><button type="button" class="nl-act nl-act--ok" data-act="ok"><i data-lucide="check"></i>Aprovar</button></div>
-                </section>
-                <section class="nl-dsec" data-dsec>
-                  <div class="nl-dsec__h"><span class="nl-dsec__k">Decisões de tribunais</span><span class="nl-state"><i data-lucide="check"></i><span>Em revisão</span></span></div>
-                  <p data-alt="Um julgado do STJ sobre prescrição em execuções fiscais e o que ele muda para quem tem débitos em discussão.">O STJ firmou entendimento sobre prescrição intercorrente em execuções fiscais. Veja o efeito prático para quem tem débitos em discussão.</p>
-                  <div class="nl-dsec__act"><button type="button" class="nl-act" data-act="regen"><i data-lucide="refresh-cw"></i>Gerar novamente</button><button type="button" class="nl-act nl-act--ok" data-act="ok"><i data-lucide="check"></i>Aprovar</button></div>
-                </section>
-                <section class="nl-dsec" data-dsec>
-                  <div class="nl-dsec__h"><span class="nl-dsec__k">Dica prática do mês</span><span class="nl-state"><i data-lucide="check"></i><span>Em revisão</span></span></div>
-                  <p data-alt="Guarde desde o início os cartões de ponto, recibos e comunicações com o empregado: são eles que sustentam a defesa.">Recebeu uma reclamação trabalhista? Reúna logo os cartões de ponto e os recibos: são eles que sustentam a defesa.</p>
-                  <div class="nl-dsec__act"><button type="button" class="nl-act" data-act="regen"><i data-lucide="refresh-cw"></i>Gerar novamente</button><button type="button" class="nl-act nl-act--ok" data-act="ok"><i data-lucide="check"></i>Aprovar</button></div>
-                </section>
-              </article>
-              <div class="nl-approved" id="nl-approved" role="status"><span><i data-lucide="badge-check"></i>Edição aprovada. Pronta para disparar.</span><button type="button" class="nl-btn nl-btn--primary nl-btn--sm" data-go="4">Ir para o disparo<i data-lucide="arrow-right"></i></button></div>
-            </div>
-            <div class="nl-app__foot"><span class="nl-cap">Aprove as seções ou peça outra versão à IA.</span><button type="button" class="nl-next" data-go="4">Próxima etapa<i data-lucide="arrow-right"></i></button></div>
-          </div>
-
-          <!-- Passo 4 -->
-          <div class="nl-panel" role="tabpanel" id="st-4" aria-labelledby="st-tab-4" tabindex="0" hidden>
-            <div class="nl-app__bar"><span class="nl-dots" aria-hidden="true"><i></i><i></i><i></i></span><span class="nl-app__step">Passo 4 de 4</span>Enviar edição<small><i data-lucide="circle-check"></i>Pronta</small></div>
-            <div class="nl-app__body">
-              <div class="nl-send">
-                <div>
-                  <p class="nl-cfg__k">Canais</p>
-                  <div class="nl-switches">
-                    <button type="button" class="nl-switch" role="switch" aria-checked="true" data-sw="E-mail"><i data-lucide="mail"></i>E-mail<span class="nl-switch__t" aria-hidden="true"></span></button>
-                    <button type="button" class="nl-switch" role="switch" aria-checked="true" data-sw="WhatsApp"><i data-lucide="message-circle"></i>WhatsApp<span class="nl-switch__t" aria-hidden="true"></span></button>
-                    <button type="button" class="nl-switch" role="switch" aria-checked="true" data-sw="PDF"><i data-lucide="file-text"></i>PDF<span class="nl-switch__t" aria-hidden="true"></span></button>
-                    <button type="button" class="nl-switch" role="switch" aria-checked="false" data-sw="LinkedIn"><i data-lucide="share-2"></i>LinkedIn<span class="nl-switch__t" aria-hidden="true"></span></button>
+        <div class="j8-cloudy">
+          <span class="j8-cloud" aria-hidden="true"><span></span><span></span><span></span></span>
+          <div class="nl-app">
+            <!-- Passo 1 -->
+            <div class="nl-panel" role="tabpanel" id="st-1" aria-labelledby="st-tab-1" tabindex="0">
+              <div class="nl-app__bar"><span class="nl-dots" aria-hidden="true"><i></i><i></i><i></i></span><span class="nl-app__step">Passo 1 de 4</span>Configurar escritório<small><i data-lucide="settings-2"></i>Uma vez só</small></div>
+              <div class="nl-app__body">
+                <div class="nl-cfg">
+                  <div>
+                    <div class="nl-cfg__row"><span class="nl-cfg__k" id="cfg-area-l">Área de atuação</span>
+                      <div class="nl-chips" role="group" aria-labelledby="cfg-area-l" data-cfg="area" data-multi>
+                        <button type="button" class="nl-chip" aria-pressed="true">Trabalhista</button>
+                        <button type="button" class="nl-chip" aria-pressed="false">Família</button>
+                        <button type="button" class="nl-chip" aria-pressed="false">Tributário</button>
+                        <button type="button" class="nl-chip" aria-pressed="false">Cível</button>
+                        <button type="button" class="nl-chip" aria-pressed="false">Societário</button>
+                      </div></div>
+                    <div class="nl-cfg__row"><span class="nl-cfg__k" id="cfg-tom-l">Tom de voz</span>
+                      <div class="nl-chips nl-seg" role="group" aria-labelledby="cfg-tom-l" data-cfg="tom">
+                        <button type="button" class="nl-chip" aria-pressed="true">Formal</button>
+                        <button type="button" class="nl-chip" aria-pressed="false">Próximo</button>
+                      </div></div>
+                    <div class="nl-cfg__row"><span class="nl-cfg__k" id="cfg-freq-l">Frequência</span>
+                      <div class="nl-chips nl-seg" role="group" aria-labelledby="cfg-freq-l" data-cfg="freq">
+                        <button type="button" class="nl-chip" aria-pressed="true">Mensal</button>
+                        <button type="button" class="nl-chip" aria-pressed="false">Quinzenal</button>
+                      </div></div>
+                    <div class="nl-cfg__row"><span class="nl-cfg__k" id="cfg-can-l">Canais</span>
+                      <div class="nl-chips" role="group" aria-labelledby="cfg-can-l" data-cfg="canais" data-multi>
+                        <button type="button" class="nl-chip" aria-pressed="true">E-mail</button>
+                        <button type="button" class="nl-chip" aria-pressed="true">WhatsApp</button>
+                        <button type="button" class="nl-chip" aria-pressed="false">PDF</button>
+                        <button type="button" class="nl-chip" aria-pressed="false">Instagram</button>
+                        <button type="button" class="nl-chip" aria-pressed="false">LinkedIn</button>
+                      </div></div>
                   </div>
-                  <div class="nl-sched"><i data-lucide="calendar-clock"></i>Agendar · 1º dia útil · 09:00<small>Automático</small></div>
-                  <button type="button" class="nl-btn nl-btn--primary nl-sendbtn" id="nl-sendbtn"><i data-lucide="send"></i><span>Enviar agora</span></button>
-                  <p class="nl-warn" id="nl-warn" role="alert"></p>
-                </div>
-                <div class="nl-metrics">
-                  <div class="nl-metrics__h">Última edição<span class="nl-cap">painel</span></div>
-                  <div class="nl-metric"><div><span>Abertura</span><b class="num" data-metric="58">0%</b></div><span class="nl-bar"><i></i></span></div>
-                  <div class="nl-metric"><div><span>Leitura</span><b class="num" data-metric="41">0%</b></div><span class="nl-bar"><i></i></span></div>
-                  <div class="nl-metric"><div><span>Cliques</span><b class="num" data-metric="9">0%</b></div><span class="nl-bar"><i></i></span></div>
-                  <p class="nl-sentlog" id="nl-sentlog" role="status"></p>
-                  <p class="nl-metrics__note">Valores ilustrativos, apenas para demonstração.</p>
+                  <aside class="nl-profile" aria-live="polite">
+                    <p class="nl-profile__h"><i data-lucide="user-round-check"></i>Seu perfil</p>
+                    <dl>
+                      <div><dt>Área</dt><dd data-out="area">Trabalhista</dd></div>
+                      <div><dt>Tom</dt><dd data-out="tom">Formal</dd></div>
+                      <div><dt>Envio</dt><dd data-out="freq">Mensal</dd></div>
+                      <div><dt>Canais</dt><dd data-out="canais">E-mail, WhatsApp</dd></div>
+                    </dl>
+                    <div class="nl-drop"><i data-lucide="file-up"></i><span><b>Seu estilo</b>Arraste textos seus (PDF, DOCX) e a IA aprende como você escreve.</span></div>
+                  </aside>
                 </div>
               </div>
+              <div class="nl-app__foot"><span class="nl-cap">Clique nas opções: o perfil se atualiza.</span><button type="button" class="nl-next" data-go="2">Próxima etapa<i data-lucide="arrow-right"></i></button></div>
             </div>
-            <div class="nl-app__foot"><span class="nl-cap">Ligue e desligue canais e clique em Enviar agora.</span><button type="button" class="nl-next" data-go="1"><i data-lucide="rotate-ccw"></i>Recomeçar</button></div>
+  
+            <!-- Passo 2 -->
+            <div class="nl-panel" role="tabpanel" id="st-2" aria-labelledby="st-tab-2" tabindex="0" hidden>
+              <div class="nl-app__bar"><span class="nl-dots" aria-hidden="true"><i></i><i></i><i></i></span><span class="nl-app__step">Passo 2 de 4</span>Pesquisando fontes<small><i data-lucide="timer"></i><span class="nl-timer num" id="nl-timer">4:00</span></small></div>
+              <div class="nl-app__body">
+                <div class="nl-research__top"><p>IA monitorando fontes jurídicas</p><button type="button" class="nl-next" id="nl-research-again"><i data-lucide="rotate-ccw"></i>Pesquisar de novo</button></div>
+                <ul class="nl-src" id="nl-src">
+                  <li><span class="nl-src__b">STJ</span><div><b>Superior Tribunal de Justiça</b><small>Acórdãos · out/26 · 84 itens</small><span class="nl-bar"><i></i></span></div><span class="nl-st"><span class="nl-spin"></span><i data-lucide="check"></i><span>Na fila</span></span></li>
+                  <li><span class="nl-src__b">TST</span><div><b>Tribunal Superior do Trabalho</b><small>Temas e súmulas · 9 itens</small><span class="nl-bar"><i></i></span></div><span class="nl-st"><span class="nl-spin"></span><i data-lucide="check"></i><span>Na fila</span></span></li>
+                  <li><span class="nl-src__b">STF</span><div><b>Supremo Tribunal Federal</b><small>Decisões plenárias</small><span class="nl-bar"><i></i></span></div><span class="nl-st"><span class="nl-spin"></span><i data-lucide="check"></i><span>Na fila</span></span></li>
+                  <li><span class="nl-src__b"><i data-lucide="newspaper"></i></span><div><b>Publicações jurídicas</b><small>Edições de outubro</small><span class="nl-bar"><i></i></span></div><span class="nl-st"><span class="nl-spin"></span><i data-lucide="check"></i><span>Na fila</span></span></li>
+                </ul>
+                <div class="nl-ready" id="nl-ready"><i data-lucide="circle-check"></i>Rascunho pronto · 5 seções escritas no seu tom</div>
+              </div>
+              <div class="nl-app__foot"><span class="nl-cap">Demonstração acelerada: na prática, cerca de 4 minutos.</span><button type="button" class="nl-next" data-go="3">Próxima etapa<i data-lucide="arrow-right"></i></button></div>
+            </div>
+  
+            <!-- Passo 3 -->
+            <div class="nl-panel" role="tabpanel" id="st-3" aria-labelledby="st-tab-3" tabindex="0" hidden>
+              <div class="nl-app__bar"><span class="nl-dots" aria-hidden="true"><i></i><i></i><i></i></span><span class="nl-app__step">Passo 3 de 4</span>Rascunho<small><i data-lucide="list-checks"></i><span class="num" id="nl-okcount">1</span>&nbsp;de 3 aprovadas</small></div>
+              <div class="nl-app__body">
+                <article class="nl-doc" aria-label="Rascunho da edição">
+                  <div class="nl-doc__top"><span class="nl-doc__brand">Newsletter · Boletim</span><span class="nl-ex">Exemplo de edição</span></div>
+                  <h3 class="nl-doc__title">Novidades Jurídicas</h3>
+                  <p class="nl-doc__meta">Nov 2026 · 3 seções · 4 min de leitura</p>
+                  <section class="nl-dsec is-ok" data-dsec>
+                    <div class="nl-dsec__h"><span class="nl-dsec__k">Mudanças regulatórias</span><span class="nl-state"><i data-lucide="check"></i><span>Aprovado</span></span></div>
+                    <p data-alt="As regras do mês que mexem com a rotina da sua empresa, com o que muda e o prazo para se adequar.">Uma nova norma altera prazos de manifestação em processos trabalhistas. Explicamos o que muda e a partir de quando vale.</p>
+                    <div class="nl-dsec__act"><button type="button" class="nl-act" data-act="regen"><i data-lucide="refresh-cw"></i>Gerar novamente</button><button type="button" class="nl-act nl-act--ok" data-act="ok"><i data-lucide="check"></i>Aprovar</button></div>
+                  </section>
+                  <section class="nl-dsec" data-dsec>
+                    <div class="nl-dsec__h"><span class="nl-dsec__k">Decisões de tribunais</span><span class="nl-state"><i data-lucide="check"></i><span>Em revisão</span></span></div>
+                    <p data-alt="Um julgado do STJ sobre prescrição em execuções fiscais e o que ele muda para quem tem débitos em discussão.">O STJ firmou entendimento sobre prescrição intercorrente em execuções fiscais. Veja o efeito prático para quem tem débitos em discussão.</p>
+                    <div class="nl-dsec__act"><button type="button" class="nl-act" data-act="regen"><i data-lucide="refresh-cw"></i>Gerar novamente</button><button type="button" class="nl-act nl-act--ok" data-act="ok"><i data-lucide="check"></i>Aprovar</button></div>
+                  </section>
+                  <section class="nl-dsec" data-dsec>
+                    <div class="nl-dsec__h"><span class="nl-dsec__k">Dica prática do mês</span><span class="nl-state"><i data-lucide="check"></i><span>Em revisão</span></span></div>
+                    <p data-alt="Guarde desde o início os cartões de ponto, recibos e comunicações com o empregado: são eles que sustentam a defesa.">Recebeu uma reclamação trabalhista? Reúna logo os cartões de ponto e os recibos: são eles que sustentam a defesa.</p>
+                    <div class="nl-dsec__act"><button type="button" class="nl-act" data-act="regen"><i data-lucide="refresh-cw"></i>Gerar novamente</button><button type="button" class="nl-act nl-act--ok" data-act="ok"><i data-lucide="check"></i>Aprovar</button></div>
+                  </section>
+                </article>
+                <div class="nl-approved" id="nl-approved" role="status"><span><i data-lucide="badge-check"></i>Edição aprovada. Pronta para disparar.</span><button type="button" class="nl-btn nl-btn--primary nl-btn--sm" data-go="4">Ir para o disparo<i data-lucide="arrow-right"></i></button></div>
+              </div>
+              <div class="nl-app__foot"><span class="nl-cap">Aprove as seções ou peça outra versão à IA.</span><button type="button" class="nl-next" data-go="4">Próxima etapa<i data-lucide="arrow-right"></i></button></div>
+            </div>
+  
+            <!-- Passo 4 -->
+            <div class="nl-panel" role="tabpanel" id="st-4" aria-labelledby="st-tab-4" tabindex="0" hidden>
+              <div class="nl-app__bar"><span class="nl-dots" aria-hidden="true"><i></i><i></i><i></i></span><span class="nl-app__step">Passo 4 de 4</span>Enviar edição<small><i data-lucide="circle-check"></i>Pronta</small></div>
+              <div class="nl-app__body">
+                <div class="nl-send">
+                  <div>
+                    <p class="nl-cfg__k">Canais</p>
+                    <div class="nl-switches">
+                      <button type="button" class="nl-switch" role="switch" aria-checked="true" data-sw="E-mail"><i data-lucide="mail"></i>E-mail<span class="nl-switch__t" aria-hidden="true"></span></button>
+                      <button type="button" class="nl-switch" role="switch" aria-checked="true" data-sw="WhatsApp"><i data-lucide="message-circle"></i>WhatsApp<span class="nl-switch__t" aria-hidden="true"></span></button>
+                      <button type="button" class="nl-switch" role="switch" aria-checked="true" data-sw="PDF"><i data-lucide="file-text"></i>PDF<span class="nl-switch__t" aria-hidden="true"></span></button>
+                      <button type="button" class="nl-switch" role="switch" aria-checked="false" data-sw="LinkedIn"><i data-lucide="share-2"></i>LinkedIn<span class="nl-switch__t" aria-hidden="true"></span></button>
+                    </div>
+                    <div class="nl-sched"><i data-lucide="calendar-clock"></i>Agendar · 1º dia útil · 09:00<small>Automático</small></div>
+                    <button type="button" class="nl-btn nl-btn--primary nl-sendbtn" id="nl-sendbtn"><i data-lucide="send"></i><span>Enviar agora</span></button>
+                    <p class="nl-warn" id="nl-warn" role="alert"></p>
+                  </div>
+                  <div class="nl-metrics">
+                    <div class="nl-metrics__h">Última edição<span class="nl-cap">painel</span></div>
+                    <div class="nl-metric"><div><span>Abertura</span><b class="num" data-metric="58">0%</b></div><span class="nl-bar"><i></i></span></div>
+                    <div class="nl-metric"><div><span>Leitura</span><b class="num" data-metric="41">0%</b></div><span class="nl-bar"><i></i></span></div>
+                    <div class="nl-metric"><div><span>Cliques</span><b class="num" data-metric="9">0%</b></div><span class="nl-bar"><i></i></span></div>
+                    <p class="nl-sentlog" id="nl-sentlog" role="status"></p>
+                    <p class="nl-metrics__note">Valores ilustrativos, apenas para demonstração.</p>
+                  </div>
+                </div>
+              </div>
+              <div class="nl-app__foot"><span class="nl-cap">Ligue e desligue canais e clique em Enviar agora.</span><button type="button" class="nl-next" data-go="1"><i data-lucide="rotate-ccw"></i>Recomeçar</button></div>
+            </div>
           </div>
         </div>
       </div>
@@ -837,18 +843,21 @@ textarea.nl-input { height: 96px; padding: 13px 16px; line-height: 1.5; resize: 
           <button type="button" class="nl-type-btn" aria-pressed="false" aria-controls="blk-5"><span aria-hidden="true"><i data-lucide="messages-square"></i></span><b>Convite à conversa</b><span class="nl-type-btn__d">Um convite leve para o cliente falar com você, nunca invasivo, sempre contextualizado com o tema da edição.</span></button>
           <button type="button" class="nl-type-btn" aria-pressed="false" aria-controls="blk-6"><span aria-hidden="true"><i data-lucide="layout-template"></i></span><b>Seções personalizadas</b><span class="nl-type-btn__d">Adicione seções sob medida para o seu escritório. A IA aprende com o seu estilo a cada edição.</span></button>
         </div>
-        <figure class="nl-edition has-focus" id="nl-edition" aria-label="Exemplo de edição com as seis seções" style="margin:0">
-          <div class="nl-edition__mast"><span class="nl-mono">SE</span><b>Seu escritório</b><small>Edição nº 12</small></div>
-          <p class="nl-edition__t">Novidades Jurídicas</p>
-          <p class="nl-edition__m">Exemplo de pauta para novembro · 6 seções</p>
-          <div class="nl-blk is-on" id="blk-1"><p class="nl-blk__k">Mudanças regulatórias<span class="nl-tag">Família</span></p><p class="nl-blk__t">Divórcio extrajudicial: quando é possível e o que levar ao cartório.</p></div>
-          <div class="nl-blk" id="blk-2"><p class="nl-blk__k">Decisões de tribunais<span class="nl-tag">Trabalhista</span></p><p class="nl-blk__t">Adicional noturno: como o TST tem decidido e o que isso muda para a empresa.</p></div>
-          <div class="nl-blk" id="blk-3"><p class="nl-blk__k">Caso de destaque<span class="nl-tag">Tributário</span></p><p class="nl-blk__t">PIS e Cofins: um caso do mês, com contexto e a lição prática para o caixa.</p></div>
-          <div class="nl-blk" id="blk-4"><p class="nl-blk__k">Dica prática<span class="nl-tag">Empresarial</span></p><p class="nl-blk__t">Contratos de SaaS e LGPD: um checklist rápido de adequação.</p></div>
-          <div class="nl-blk nl-blk--quote" id="blk-5"><p class="nl-blk__k">Convite à conversa</p><p class="nl-blk__t">“Quer entender se essa mudança impacta o seu caso? Converse com o seu advogado.”</p></div>
-          <div class="nl-blk" id="blk-6"><p class="nl-blk__k">Seção personalizada<span class="nl-tag">Sua escolha</span></p><p class="nl-blk__t">Agenda do escritório, artigos da equipe ou o que fizer sentido para os seus clientes.</p></div>
-          <figcaption class="nl-edition__foot">Temas ilustrativos. A pauta real sai da área e dos clientes do seu escritório.</figcaption>
-        </figure>
+        <div class="j8-cloudy nl-edition-wrap">
+          <span class="j8-cloud" aria-hidden="true"><span></span><span></span><span></span></span>
+          <figure class="nl-edition has-focus" id="nl-edition" aria-label="Exemplo de edição com as seis seções" style="margin:0">
+            <div class="nl-edition__mast"><span class="nl-mono">SE</span><b>Seu escritório</b><small>Edição nº 12</small></div>
+            <p class="nl-edition__t">Novidades Jurídicas</p>
+            <p class="nl-edition__m">Exemplo de pauta para novembro · 6 seções</p>
+            <div class="nl-blk is-on" id="blk-1"><p class="nl-blk__k">Mudanças regulatórias<span class="nl-tag">Família</span></p><p class="nl-blk__t">Divórcio extrajudicial: quando é possível e o que levar ao cartório.</p></div>
+            <div class="nl-blk" id="blk-2"><p class="nl-blk__k">Decisões de tribunais<span class="nl-tag">Trabalhista</span></p><p class="nl-blk__t">Adicional noturno: como o TST tem decidido e o que isso muda para a empresa.</p></div>
+            <div class="nl-blk" id="blk-3"><p class="nl-blk__k">Caso de destaque<span class="nl-tag">Tributário</span></p><p class="nl-blk__t">PIS e Cofins: um caso do mês, com contexto e a lição prática para o caixa.</p></div>
+            <div class="nl-blk" id="blk-4"><p class="nl-blk__k">Dica prática<span class="nl-tag">Empresarial</span></p><p class="nl-blk__t">Contratos de SaaS e LGPD: um checklist rápido de adequação.</p></div>
+            <div class="nl-blk nl-blk--quote" id="blk-5"><p class="nl-blk__k">Convite à conversa</p><p class="nl-blk__t">“Quer entender se essa mudança impacta o seu caso? Converse com o seu advogado.”</p></div>
+            <div class="nl-blk" id="blk-6"><p class="nl-blk__k">Seção personalizada<span class="nl-tag">Sua escolha</span></p><p class="nl-blk__t">Agenda do escritório, artigos da equipe ou o que fizer sentido para os seus clientes.</p></div>
+            <figcaption class="nl-edition__foot">Temas ilustrativos. A pauta real sai da área e dos clientes do seu escritório.</figcaption>
+          </figure>
+        </div>
       </div>
     </div>
   </section>

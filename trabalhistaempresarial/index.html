@@ -331,7 +331,8 @@ svg.lucide { width: 18px; height: 18px; flex: none; }
 .tb-steps__n { display: grid; place-items: center; width: 44px; height: 44px; border-radius: 50%; background: #fff; color: var(--violeta-forte); font: 600 16px var(--fd); box-shadow: inset 0 0 0 1.5px var(--lavanda); }
 .tb-steps h3 { margin-top: 9px; color: var(--tinta); font: 600 19px var(--fd); }
 .tb-steps p { margin-top: 6px; font-size: 15.5px; line-height: 1.65; }
-.tb-recorte { position: sticky; top: 110px; padding: 28px; border-radius: 28px; background: #fff; box-shadow: var(--sombra), inset 0 0 0 1px var(--linha); }
+.tb-recorte-wrap { position: sticky; top: 110px; }
+.tb-recorte { position: relative; padding: 28px; border-radius: 28px; background: #fff; box-shadow: var(--sombra), inset 0 0 0 1px var(--linha); }
 .tb-recorte__h { color: var(--tinta); font: 600 17px var(--fd); }
 .tb-recorte__chips { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 14px; }
 .tb-chip { padding: 8px 14px; border: 1px solid var(--linha); border-radius: 999px; background: #fff; color: var(--texto); font-size: 14px; font-weight: 700; transition: background-color .2s, border-color .2s, color .2s; }
@@ -486,7 +487,7 @@ textarea.tb-input { height: 96px; padding: 13px 16px; line-height: 1.5; resize: 
   .tb-io { grid-template-columns: minmax(0, 1fr); }
   .tb-io__arrow { transform: rotate(90deg); height: 28px; }
   .tb-impl { grid-template-columns: minmax(0, 1fr); }
-  .tb-recorte { position: static; }
+  .tb-recorte-wrap { position: relative; }
   .tb-faq { grid-template-columns: minmax(0, 1fr); }
   .tb-agendar__grid { grid-template-columns: minmax(0, 1fr); }
   .jf__top { grid-template-columns: 1fr; gap: 40px; }
@@ -533,6 +534,7 @@ textarea.tb-input { height: 96px; padding: 13px 16px; line-height: 1.5; resize: 
 .jf__social a { width: 44px; height: 44px; }
 </style>
 <link rel="stylesheet" href="/assets/site/j8-menu.css">
+<link rel="stylesheet" href="/assets/site/j8-cloud.css">
 <script src="/assets/site/j8-menu.js" defer></script>
 </head>
 <body>
@@ -866,15 +868,18 @@ textarea.tb-input { height: 96px; padding: 13px 16px; line-height: 1.5; resize: 
           <li><span class="tb-steps__n">5</span><div><h3>Leitura conjunta</h3><p>Reunião mensal com empresa e escritório para revisar os dois números acima e decidir a expansão para o restante da carteira.</p></div></li>
         </ol>
         <div>
-          <div class="tb-recorte">
-            <p class="tb-recorte__h">Escolha por onde começar</p>
-            <div class="tb-recorte__chips" role="group" aria-label="Tipo de recorte">
-              <button class="tb-chip" type="button" data-cut="filial" aria-pressed="true">Uma filial</button>
-              <button class="tb-chip" type="button" data-cut="pedido" aria-pressed="false">Um tipo de pedido</button>
-              <button class="tb-chip" type="button" data-cut="escritorio" aria-pressed="false">Um escritório</button>
+          <div class="j8-cloudy tb-recorte-wrap">
+            <span class="j8-cloud" aria-hidden="true"><span></span><span></span><span></span></span>
+            <div class="tb-recorte">
+              <p class="tb-recorte__h">Escolha por onde começar</p>
+              <div class="tb-recorte__chips" role="group" aria-label="Tipo de recorte">
+                <button class="tb-chip" type="button" data-cut="filial" aria-pressed="true">Uma filial</button>
+                <button class="tb-chip" type="button" data-cut="pedido" aria-pressed="false">Um tipo de pedido</button>
+                <button class="tb-chip" type="button" data-cut="escritorio" aria-pressed="false">Um escritório</button>
+              </div>
+              <div class="tb-dots" id="tb-dots" aria-hidden="true"></div>
+              <p class="tb-recorte__cap" aria-live="polite"><b id="tb-cut-label">Filial Contagem</b><span id="tb-cut-count">entra na esteira; o restante segue como está.</span></p>
             </div>
-            <div class="tb-dots" id="tb-dots" aria-hidden="true"></div>
-            <p class="tb-recorte__cap" aria-live="polite"><b id="tb-cut-label">Filial Contagem</b><span id="tb-cut-count">entra na esteira; o restante segue como está.</span></p>
           </div>
           <p class="tb-calm"><i data-lucide="heart-handshake"></i><span><b>Nota de tranquilidade:</b> contrato mensal, sem fidelidade longa, e a base de dados e as peças produzidas pertencem à empresa.</span></p>
         </div>
