@@ -295,7 +295,7 @@
         if (!el.name || el.name === 'website' || el.type === 'checkbox' || el.type === 'submit') return;
         var v = valueOf(el);
         if (Object.prototype.hasOwnProperty.call(core, el.name)) core[el.name] = v;
-        else if (v) extras.push({ label: labelOf(el), value: v });
+        else if (v) extras.push({ name: el.name, label: labelOf(el), value: v });
       });
       var u = utms();
       var submittedAt = new Date().toISOString();
@@ -312,7 +312,7 @@
         origem: source + (u.utm_source ? ' · ' + u.utm_source : '') + (u.utm_campaign ? ' · ' + u.utm_campaign : ''),
         mensagem: lines.join('\n'),
         extras: extras,
-        porte: extras.length ? extras[0].value : '',
+        porte: (extras.find(function (x) { return x.name === 'processos'; }) || extras[0] || {}).value || '',
         consentimento_lgpd: true,
         segment: segment,
         lead_source: source,
