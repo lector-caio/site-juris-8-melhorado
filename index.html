@@ -414,14 +414,14 @@
   /* ── Hero claro (foto 2200×910 com a área do texto já clara) ── */
   .lp-hero {
     --k: calc(min(100vw, 1919px) / 553);
-    background: var(--j8-hero-bg); min-height: 0; height: max(628px, calc(238 * var(--k)));
-    padding: max(88px, calc(34 * var(--k))) 0 max(24px, calc(8 * var(--k))); align-items: center;
+    background: var(--j8-hero-bg); min-height: max(628px, calc(238 * var(--k))); height: auto;
+    padding: max(88px, calc(34 * var(--k))) 0 max(40px, calc(16 * var(--k))); align-items: center;
   }
   .lp-hero__media::after { background: linear-gradient(90deg, rgba(249,248,253,.55) 0%, rgba(249,248,253,0) 34%); }
   .lp-hero__photo { object-position: 0 12%; }
   .lp-hero__inner { max-width: calc(553 * var(--k)); padding: 0 0 0 calc(66.7 * var(--k)); grid-template-columns: minmax(0, calc(190 * var(--k))) 1fr; }
   .lp-hero__title {
-    font-size: max(34px, calc(16.2 * var(--k))); line-height: 1.07; letter-spacing: -.03em;
+    font-family: var(--font-sans); font-size: max(34px, calc(16.2 * var(--k))); line-height: 1.07; letter-spacing: -.03em;
     color: var(--navy-800); margin: 0 0 calc(4 * var(--k)); text-shadow: none;
   }
   .lp-hero__title em { color: #6A3AD8; font-style: normal; padding-right: 0; }
@@ -1388,6 +1388,15 @@
   .lp-nav a.is-active, .lp-nav a.is-active:hover { color: #fff; background: transparent; }
   .lp-nav__ind { position: absolute; z-index: 0; top: 4px; bottom: 4px; left: 0; width: 0; border-radius: 999px; background: linear-gradient(90deg, #7547EF, #8B5CF6); box-shadow: 0 8px 18px -8px rgba(117,71,239,.85); opacity: 0; transition: transform .45s var(--ease-out), width .45s var(--ease-out), opacity .3s; }
   .lp-nav.has-active .lp-nav__ind { opacity: 1; }
+  .lp-header__actions { display: flex; align-items: center; gap: 12px; flex: none; }
+  .lp-header__company {
+    display: inline-flex; align-items: center; justify-content: center; padding: 8px 12px;
+    border: 1px solid #DDD7EF; border-radius: 999px; color: #5C4B8E;
+    font-size: 13.5px; font-weight: 600; line-height: 1; white-space: nowrap;
+    transition: border-color .2s, background-color .2s, color .2s;
+  }
+  .lp-header__company-short { display: none; }
+  .lp-header__company:hover { border-color: #C9B5FF; background: rgba(117,71,239,.05); color: #6334D8; }
   .lp-header__cta { margin-left: 0; padding: 5px 5px 5px 18px; gap: 10px; border: none; background: linear-gradient(90deg, #7547EF, #8B5CF6); color: #fff; font-size: 14px; font-weight: 700; box-shadow: 0 12px 26px -12px rgba(117,71,239,.9); transition: transform .25s, box-shadow .25s, background .25s; }
   .lp-header__cta:hover { color: #fff; background: linear-gradient(90deg, #6334D8, #7547EF); border: none; transform: translateY(-1px); box-shadow: 0 16px 30px -12px rgba(117,71,239,.95); }
   .lp-header__cta-tile { background: #fff; color: #16A34A; }
@@ -1399,6 +1408,7 @@
   @media (max-width: 1060px) {
     .lp-nav { display: none; }
     .lp-header { justify-content: space-between; }
+    .lp-header__actions { margin-left: auto; margin-right: 12px; }
   }
   /* ── Botões ── */
   .lp-cta:hover { background: var(--brand-hover); }
@@ -1427,8 +1437,15 @@
   @media (max-width: 640px) {
     .lp-hero__inner { padding: 0 20px; }
     .lp-hero__ctas .lp-cta { min-width: 0; }
+    .lp-header__actions { gap: 6px; margin-right: 8px; }
+    .lp-header__company { padding: 7px 9px; font-size: 12.5px; }
+    .lp-header__company-long { display: none; }
+    .lp-header__company-short { display: inline; }
     .lp-header__cta { padding-left: 14px; }
     .jm__case { display: none; }
+  }
+  @media (max-width: 370px) {
+    .lp-header__company { display: none; }
   }
 
   /* Atalho "Ir para o conteúdo": fica fora da tela até receber o foco do teclado */
@@ -1467,15 +1484,20 @@
         <a href="#solucoes">Soluções</a>
         <a href="#jurisprudencia">Jurisprudência</a>
         <a href="#governanca">Governança de IA</a>
-        <a href="#portas">Sou escritório / empresa</a>
         <a href="#guia-det">Guia DET</a>
         <a href="#faq">FAQ</a>
       </nav>
-      <a href="https://wa.me/5547988061278?text=Ol%C3%A1!%20Vim%20pelo%20site%20e%20quero%20conhecer%20o%20Juris8%2C%20a%20IA%20jur%C3%ADdica.%20Pode%20me%20apresentar%20a%20plataforma%3F" class="lp-header__cta" target="_blank" rel="noopener noreferrer" data-track="whatsapp_click" data-track-ctx="header_cta" aria-label="Falar com especialista no WhatsApp">
-        <span class="lp-cta-long">Falar com especialista</span>
-        <span class="lp-cta-short">Especialista</span>
-        <span class="lp-header__cta-tile" aria-hidden="true"><svg viewBox="0 0 32 32" fill="currentColor"><path d="M16.01 3.2c-7.1 0-12.86 5.76-12.86 12.86 0 2.27.6 4.48 1.73 6.43L3.2 28.8l6.5-1.7a12.8 12.8 0 0 0 6.3 1.62h.01c7.1 0 12.86-5.76 12.86-12.86 0-3.44-1.34-6.67-3.77-9.1A12.78 12.78 0 0 0 16.01 3.2Zm0 23.5h-.01a10.6 10.6 0 0 1-5.4-1.48l-.39-.23-4.02 1.05 1.07-3.92-.25-.4a10.62 10.62 0 0 1 16.46-13.1 10.55 10.55 0 0 1 3.12 7.51c0 5.88-4.78 10.65-10.66 10.65Zm5.85-7.98c-.32-.16-1.9-.94-2.2-1.04-.3-.11-.5-.16-.72.16-.21.32-.82 1.03-1 1.25-.18.21-.37.24-.69.08-.32-.16-1.35-.5-2.58-1.59-.95-.85-1.6-1.9-1.78-2.22-.18-.32-.02-.49.14-.65.14-.14.32-.37.48-.56.16-.18.21-.32.32-.53.11-.21.05-.4-.03-.56-.08-.16-.72-1.74-.99-2.38-.26-.62-.52-.54-.72-.55l-.61-.01c-.21 0-.56.08-.85.4-.29.32-1.11 1.09-1.11 2.66 0 1.57 1.14 3.08 1.3 3.3.16.21 2.25 3.43 5.45 4.81.76.33 1.36.53 1.82.68.77.24 1.46.21 2.01.13.61-.09 1.9-.78 2.17-1.53.27-.74.27-1.38.19-1.51-.08-.13-.29-.21-.61-.37Z"/></svg></span>
-      </a>
+      <div class="lp-header__actions">
+        <a href="/trabalhistaempresarial" class="lp-header__company" data-track="company_nav_click" data-track-ctx="header_nav" aria-label="Sou empresa">
+          <span class="lp-header__company-long">Sou empresa</span>
+          <span class="lp-header__company-short">Empresa</span>
+        </a>
+        <a href="https://wa.me/5547988061278?text=Ol%C3%A1!%20Vim%20pelo%20site%20e%20quero%20conhecer%20o%20Juris8%2C%20a%20IA%20jur%C3%ADdica.%20Pode%20me%20apresentar%20a%20plataforma%3F" class="lp-header__cta" target="_blank" rel="noopener noreferrer" data-track="whatsapp_click" data-track-ctx="header_cta" aria-label="Falar com especialista no WhatsApp">
+          <span class="lp-cta-long">Falar com especialista</span>
+          <span class="lp-cta-short">Especialista</span>
+          <span class="lp-header__cta-tile" aria-hidden="true"><svg viewBox="0 0 32 32" fill="currentColor"><path d="M16.01 3.2c-7.1 0-12.86 5.76-12.86 12.86 0 2.27.6 4.48 1.73 6.43L3.2 28.8l6.5-1.7a12.8 12.8 0 0 0 6.3 1.62h.01c7.1 0 12.86-5.76 12.86-12.86 0-3.44-1.34-6.67-3.77-9.1A12.78 12.78 0 0 0 16.01 3.2Zm0 23.5h-.01a10.6 10.6 0 0 1-5.4-1.48l-.39-.23-4.02 1.05 1.07-3.92-.25-.4a10.62 10.62 0 0 1 16.46-13.1 10.55 10.55 0 0 1 3.12 7.51c0 5.88-4.78 10.65-10.66 10.65Zm5.85-7.98c-.32-.16-1.9-.94-2.2-1.04-.3-.11-.5-.16-.72.16-.21.32-.82 1.03-1 1.25-.18.21-.37.24-.69.08-.32-.16-1.35-.5-2.58-1.59-.95-.85-1.6-1.9-1.78-2.22-.18-.32-.02-.49.14-.65.14-.14.32-.37.48-.56.16-.18.21-.32.32-.53.11-.21.05-.4-.03-.56-.08-.16-.72-1.74-.99-2.38-.26-.62-.52-.54-.72-.55l-.61-.01c-.21 0-.56.08-.85.4-.29.32-1.11 1.09-1.11 2.66 0 1.57 1.14 3.08 1.3 3.3.16.21 2.25 3.43 5.45 4.81.76.33 1.36.53 1.82.68.77.24 1.46.21 2.01.13.61-.09 1.9-.78 2.17-1.53.27-.74.19-1.51-.08-.13-.29-.21-.5-.37Z"/></svg></span>
+        </a>
+      </div>
       <button type="button" class="lp-burger" aria-expanded="false" aria-controls="lp-drawer" aria-label="Abrir menu"><span class="lp-burger__bars" aria-hidden="true"><span></span><span></span><span></span></span></button>
     </header>
   </div>
@@ -1491,7 +1513,7 @@
         <a href="#solucoes">Soluções</a>
         <a href="#jurisprudencia">Jurisprudência</a>
         <a href="#governanca">Governança de IA</a>
-        <a href="#portas">Sou escritório / empresa</a>
+        <a href="/trabalhistaempresarial" data-track="company_nav_click" data-track-ctx="drawer_nav">Sou empresa</a>
         <a href="#guia-det">Guia DET</a>
         <a href="#faq">FAQ</a>
       </nav>
@@ -1511,17 +1533,12 @@
     </div>
     <div class="lp-hero__inner">
       <div data-reveal="">
-        <h1 class="lp-hero__title">Garanta os detalhes que decidem a defesa trabalhista, <em>com mais agilidade e embasamento em cada processo.</em></h1>
+        <h1 class="lp-hero__title">Garanta os detalhes que decidem a defesa trabalhista, <em>com mais agilidade e embasamento<br>em cada processo.</em></h1>
         <p class="lp-hero__lead">Acompanhe comunicações e novos processos no DET e no Domicílio Judicial Eletrônico dos clientes em um painel só. Consulte jurisprudência do TST e dos TRTs, com link verificável. Receba dossiês integrados com subsídios por empregado para conduzir a defesa.</p>
         <div class="lp-hero__ctas">
-          <a href="#formulario" class="lp-cta" data-track="hero_cta_click" data-track-ctx="hero_primary">
+          <a href="#formulario" class="lp-cta" data-track="hero_cta_click" data-track-ctx="trial_7_days">
             <span class="lp-cta__sheen" aria-hidden="true"></span>
-            <span class="lp-cta__label">Sou escritório</span>
-            <span class="lp-cta__icon" aria-hidden="true"><i data-lucide="arrow-right"></i></span>
-          </a>
-          <a href="/trabalhistaempresarial" class="lp-cta" data-track="hero_cta_click" data-track-ctx="hero_company">
-            <span class="lp-cta__sheen" aria-hidden="true"></span>
-            <span class="lp-cta__label">Sou empresa</span>
+            <span class="lp-cta__label">Testar gratuitamente por 7 dias</span>
             <span class="lp-cta__icon" aria-hidden="true"><i data-lucide="arrow-right"></i></span>
           </a>
         </div>
