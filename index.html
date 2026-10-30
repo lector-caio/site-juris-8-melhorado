@@ -33,11 +33,11 @@
 <x-dc>
 <helmet>
 <title>Juris8 | IA jurídica desenvolvida por advogados</title>
-<meta name="description" content="Apoio à elaboração de peças, jurisprudência do TST e do TRT-12 com link para o inteiro teor, análise de documentos, transcrição de audiências e monitoramento do DJE. IA jurídica desenvolvida por advogados, para advogados.">
+<meta name="description" content="Subsídios para o contencioso trabalhista de massa, monitoramento do DET e do Domicílio Judicial Eletrônico e jurisprudência do TST e dos TRTs com links verificáveis.">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Juris8">
 <meta property="og:title" content="Juris8 | IA jurídica desenvolvida por advogados">
-<meta property="og:description" content="Pré-elaboração de peças, jurisprudência validada, análise de documentos, transcrição de audiências e monitoramento do DJE em uma única plataforma.">
+<meta property="og:description" content="Esteira de subsídios para o contencioso trabalhista de massa, monitoramento de canais e pesquisa de jurisprudência do TST e dos TRTs.">
 <meta property="og:image" content="/assets/media/hero-juris8.jpg">
 <meta name="robots" content="noindex, nofollow">
 <script type="application/ld+json">
@@ -74,6 +74,7 @@
   ::selection { background: var(--brand); color: #fff; }
   :focus-visible { outline: 3px solid var(--brand); outline-offset: 3px; }
   [hidden] { display: none !important; }
+  .home-hidden { display: none !important; }
   .sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border: 0; }
   @keyframes lpGlow {
     0%, 100% {
@@ -815,6 +816,7 @@
   .sx--dark .sx__title { color: #fff; }
   .sx--dark .sx__title .lp-accent { color: #A98BFF; }
   .sx__lead { margin: 0 0 28px; font-size: 17px; line-height: 1.65; color: var(--ink-500); }
+  .sx__lead a { color: #6A3AD8; font-weight: 700; text-decoration: underline; text-underline-offset: 3px; }
   .sx--dark .sx__lead { color: #C3B0E6; }
   .sx__list { list-style: none; margin: 0 0 28px; padding: 0; display: flex; flex-direction: column; gap: 16px; }
   .sx__list li { display: flex; gap: 14px; align-items: flex-start; }
@@ -1463,9 +1465,10 @@
       <nav class="lp-nav" aria-label="Navegação da página">
         <span class="lp-nav__ind" aria-hidden="true"></span>
         <a href="#solucoes">Soluções</a>
-        <a href="#funcionalidades">Funcionalidades</a>
-        <a href="#ganhos">Ganhos</a>
-        <a href="#planos">Planos</a>
+        <a href="#jurisprudencia">Jurisprudência</a>
+        <a href="#governanca">Governança de IA</a>
+        <a href="#portas">Sou escritório / empresa</a>
+        <a href="#guia-det">Guia DET</a>
         <a href="#faq">FAQ</a>
       </nav>
       <a href="https://wa.me/5547988061278?text=Ol%C3%A1!%20Vim%20pelo%20site%20e%20quero%20conhecer%20o%20Juris8%2C%20a%20IA%20jur%C3%ADdica.%20Pode%20me%20apresentar%20a%20plataforma%3F" class="lp-header__cta" target="_blank" rel="noopener noreferrer" data-track="whatsapp_click" data-track-ctx="header_cta" aria-label="Falar com especialista no WhatsApp">
@@ -1486,9 +1489,10 @@
       </div>
       <nav class="lp-drawer__nav" aria-label="Seções da página">
         <a href="#solucoes">Soluções</a>
-        <a href="#funcionalidades">Funcionalidades</a>
-        <a href="#ganhos">Ganhos</a>
-        <a href="#planos">Planos</a>
+        <a href="#jurisprudencia">Jurisprudência</a>
+        <a href="#governanca">Governança de IA</a>
+        <a href="#portas">Sou escritório / empresa</a>
+        <a href="#guia-det">Guia DET</a>
         <a href="#faq">FAQ</a>
       </nav>
       <a href="https://wa.me/5547988061278?text=Ol%C3%A1!%20Vim%20pelo%20site%20e%20quero%20conhecer%20o%20Juris8%2C%20a%20IA%20jur%C3%ADdica.%20Pode%20me%20apresentar%20a%20plataforma%3F" target="_blank" rel="noopener noreferrer" data-track="whatsapp_click" data-track-ctx="drawer_cta" aria-label="Falar com especialista no WhatsApp" class="lp-drawer__cta">Falar com especialista</a>
@@ -1507,12 +1511,17 @@
     </div>
     <div class="lp-hero__inner">
       <div data-reveal="">
-        <h1 class="lp-hero__title">Elimine o<br>trabalho manual<br><em>da sua rotina<br>jurídica.</em></h1>
-        <p class="lp-hero__lead">Aumente sua produtividade de ponta a ponta com IA jurídica desenvolvida por advogados: apoio às peças, jurisprudência, análise de documentos e audiências em uma única plataforma.</p>
+        <h1 class="lp-hero__title">Garanta os detalhes que decidem a defesa trabalhista, <em>com mais agilidade e embasamento em cada processo.</em></h1>
+        <p class="lp-hero__lead">Acompanhe comunicações e novos processos no DET e no Domicílio Judicial Eletrônico dos clientes em um painel só. Consulte jurisprudência do TST e dos TRTs, com link verificável. Receba dossiês integrados com subsídios por empregado para conduzir a defesa.</p>
         <div class="lp-hero__ctas">
           <a href="#formulario" class="lp-cta" data-track="hero_cta_click" data-track-ctx="hero_primary">
             <span class="lp-cta__sheen" aria-hidden="true"></span>
-            <span class="lp-cta__label">Teste gratuitamente por 7 dias</span>
+            <span class="lp-cta__label">Sou escritório</span>
+            <span class="lp-cta__icon" aria-hidden="true"><i data-lucide="arrow-right"></i></span>
+          </a>
+          <a href="/trabalhistaempresarial" class="lp-cta" data-track="hero_cta_click" data-track-ctx="hero_company">
+            <span class="lp-cta__sheen" aria-hidden="true"></span>
+            <span class="lp-cta__label">Sou empresa</span>
             <span class="lp-cta__icon" aria-hidden="true"><i data-lucide="arrow-right"></i></span>
           </a>
         </div>
@@ -1520,26 +1529,26 @@
 
       <div class="lp-hero__visual" data-reveal="">
         <div class="lp-hero__scale">
-        <div class="jm" role="img" aria-label="Prévia da Assistente Júlia: pergunta sobre o prazo para contestação na reclamação trabalhista e resposta com fonte na CLT, art. 847.">
+        <div class="jm" role="img" aria-label="Prévia de um dossiê trabalhista com documentos e subsídios organizados para revisão do advogado.">
           <div class="jm__top" aria-hidden="true">
             <span class="jm__av"><img src="/assets/brand/juris8-mark-white.png" alt=""></span>
-            <span class="jm__who"><b>Assistente Júlia</b><span>IA jurídica · online</span></span>
-            <span class="jm__case"><i data-lucide="briefcase"></i>Calçados Serra Azul Ltda.</span>
+            <span class="jm__who"><b>Dossiê trabalhista</b><span>Subsídios por empregado</span></span>
+            <span class="jm__case"><i data-lucide="briefcase"></i>Carteira de clientes</span>
           </div>
           <div class="jm__body" aria-hidden="true">
-            <div class="jm__user">Em uma frase: qual o prazo para contestação na reclamação trabalhista?</div>
+            <div class="jm__user">Quais documentos e fatos precisam de revisão neste caso?</div>
             <div class="jm__msg">
               <span class="jm__av jm__av--sm"><img src="/assets/brand/juris8-mark-white.png" alt=""></span>
               <div class="jm__ans">
-                <div class="jm__meta">Júlia<span>09:13 · levou 34 s</span></div>
-                <p class="jm__txt">Na reclamação trabalhista não há prazo em dias: a defesa é apresentada <strong>em audiência</strong>, após a proposta de conciliação, e no PJe pode ser juntada por escrito <strong>até a audiência</strong> (CLT, art. 847, caput e parágrafo único).</p>
-                <div class="jm__src"><small>Fontes</small><span><i data-lucide="scale"></i>CLT, art. 847</span></div>
+                <div class="jm__meta">Juris8<span>Dossiê integrado</span></div>
+                <p class="jm__txt">Pontos de atenção organizados por pedido, com documentos relacionados para o advogado <strong>conferir e revisar</strong>.</p>
+                <div class="jm__src"><small>Etapas</small><span><i data-lucide="folder-check"></i>Entra · Monta · Subsidia</span></div>
               </div>
             </div>
           </div>
           <div class="jm__comp" aria-hidden="true">
             <i data-lucide="paperclip"></i>
-            <span class="jm__ph">Pergunte à Júlia…</span>
+            <span class="jm__ph">Consulte o dossiê do caso…</span>
             <span class="jm__send"><i data-lucide="arrow-up"></i></span>
           </div>
         </div>
@@ -1553,47 +1562,47 @@
     <div class="lp-sol__glow" aria-hidden="true"></div>
     <div class="lp-wrap">
       <div class="lp-pain__head">
-        <h2 class="lp-pain__title lp-words" id="solucoes-title">Uma plataforma. <span class="lp-accent">Todas as frentes do seu escritório.</span></h2>
-        <p class="lp-pain__lead" data-reveal="">Do atendimento no WhatsApp ao monitoramento de prazos, cada solução Juris8 resolve uma dor real da advocacia, e todas conversam entre si.</p>
+        <h2 class="lp-pain__title lp-words" id="solucoes-title">Contencioso trabalhista de massa. <span class="lp-accent">Subsídios e canais em um só fluxo.</span></h2>
+        <p class="lp-pain__lead" data-reveal="">Esteira de subsídios por processo e monitoramento do DET e do Domicílio Judicial Eletrônico para apoiar o trabalho do escritório.</p>
       </div>
 
       <div class="lp-bento">
-        <a href="/det" class="lp-bc lp-bc--w7 lp-bc--featured" data-reveal="" data-reveal-delay="0" data-track="solution_click" data-track-ctx="det_monitor">
+        <a href="/trabalhistaempresarial" class="lp-bc lp-bc--w7 lp-bc--featured" data-reveal="" data-reveal-delay="0" data-track="solution_click" data-track-ctx="trabalhista_empresarial">
+          <div class="lp-bc__viz" aria-hidden="true">
+            <div class="sv-mass">
+              <div class="sv-mass__flow"><span></span><span></span><span></span><span></span><span></span></div>
+              <div class="sv-lane sv-a" style="--d: .2s"><small>Entra · processo e documentos</small><span class="sv-lane__bar"><i style="--w: 92%; --d: .5s"></i></span></div>
+              <div class="sv-lane sv-a" style="--d: .4s"><small>Monta · dossiê por pedido</small><span class="sv-lane__bar"><i style="--w: 70%; --d: .8s"></i></span></div>
+              <div class="sv-lane sv-a" style="--d: .6s"><small>Subsidia · revisão do advogado</small><span class="sv-lane__bar"><i style="--w: 48%; --d: 1.1s"></i></span></div>
+            </div>
+          </div>
+          <div class="lp-bc__body">
+            <div class="lp-bc__top"><span class="lp-bc__icon"><i data-lucide="briefcase-business"></i></span><span class="lp-bc__tag">Contencioso trabalhista de massa</span></div>
+            <h3>Esteira de subsídios, pedido a pedido</h3>
+            <p>Organize documentos, fatos e pontos de atenção por empregado e por pedido. O escritório recebe dossiês integrados para revisar e conduzir a defesa.</p>
+            <span class="lp-bc__link">Conhecer a solução trabalhista <i data-lucide="arrow-right"></i></span>
+          </div>
+        </a>
+
+        <a href="/det" class="lp-bc lp-bc--w5" data-reveal="" data-reveal-delay="90" data-track="solution_click" data-track-ctx="det_monitor">
           <div class="lp-bc__viz" aria-hidden="true">
             <div class="sv-det">
-              <div class="sv-det__bar"><span class="sv-bell"><i data-lucide="bell-ring"></i></span>Caixa DET · clientes monitorados<span class="sv-live">Ao vivo</span></div>
-              <div class="sv-det__row sv-a" style="--d: .15s"><span class="sv-co">Calçados Serra Azul</span><span class="sv-kind">Notificação</span><span class="sv-chip sv-chip--warn">Prazo em 3 dias</span></div>
-              <div class="sv-det__row sv-a" style="--d: .35s"><span class="sv-co">Metalúrgica Vale Norte</span><span class="sv-kind">Intimação</span><span class="sv-chip sv-chip--new">Nova</span></div>
-              <div class="sv-det__row sv-a" style="--d: .55s"><span class="sv-co">Transportes Litoral</span><span class="sv-kind">Comunicado</span><span class="sv-chip">Lida</span></div>
-              <div class="sv-toast sv-a" style="--d: 1.1s"><i data-lucide="send"></i>Alerta enviado ao cliente antes do prazo</div>
+              <div class="sv-det__bar"><span class="sv-bell"><i data-lucide="bell-ring"></i></span>DET + Domicílio Judicial<span class="sv-live">Monitorados</span></div>
+              <div class="sv-det__row sv-a" style="--d: .15s"><span class="sv-co">Caixa do DET</span><span class="sv-kind">Notificação</span><span class="sv-chip sv-chip--warn">Prazo</span></div>
+              <div class="sv-det__row sv-a" style="--d: .35s"><span class="sv-co">Domicílio Judicial</span><span class="sv-kind">Citação</span><span class="sv-chip sv-chip--new">Nova</span></div>
+              <div class="sv-det__row sv-a" style="--d: .55s"><span class="sv-co">Painel do escritório</span><span class="sv-kind">Alertas</span><span class="sv-chip">Centralizados</span></div>
+              <div class="sv-toast sv-a" style="--d: 1.1s"><i data-lucide="send"></i>Comunicações em um painel</div>
             </div>
           </div>
           <div class="lp-bc__body">
-            <div class="lp-bc__top"><span class="lp-bc__icon"><i data-lucide="radar"></i></span><span class="lp-bc__tag">DET e Domicílio Judicial · Receita recorrente</span></div>
-            <h3>DET Monitor para escritórios</h3>
-            <p>Monitore, com procuração eletrônica concedida pelo cliente, as caixas do DET e do Domicílio Judicial Eletrônico, e transforme prevenção em receita mensal recorrente.</p>
-            <span class="lp-bc__link">Conhecer o DET Monitor <i data-lucide="arrow-right"></i></span>
+            <div class="lp-bc__top"><span class="lp-bc__icon"><i data-lucide="radar"></i></span><span class="lp-bc__tag">DET · Domicílio Judicial Eletrônico</span></div>
+            <h3>Monitor de canais</h3>
+            <p>Acompanhe comunicações do DET e do Domicílio Judicial Eletrônico em um painel e organize alertas para a carteira de clientes.</p>
+            <span class="lp-bc__link">Conhecer o monitor de canais <i data-lucide="arrow-right"></i></span>
           </div>
         </a>
 
-        <a href="/det/det-monitor-grupos.html" class="lp-bc lp-bc--w5" data-reveal="" data-reveal-delay="90" data-track="solution_click" data-track-ctx="det_grupos">
-          <div class="lp-bc__viz" aria-hidden="true">
-            <div class="sv-grp">
-              <div class="sv-grp__root sv-a"><i data-lucide="building-2"></i>Grupo empresarial · caixa única</div>
-              <div class="sv-grp__item sv-a" style="--d: .3s"><span>Matriz</span><small>CNPJ /0001</small><b class="sv-pri sv-pri--hi">Prazo hoje</b></div>
-              <div class="sv-grp__item sv-a" style="--d: .5s"><span>Filial SP</span><small>CNPJ /0002</small><b class="sv-pri sv-pri--md">2 alertas</b></div>
-              <div class="sv-grp__item sv-a" style="--d: .7s"><span>Coligada RS</span><small>CNPJ /0003</small><b class="sv-pri">Em dia</b></div>
-            </div>
-          </div>
-          <div class="lp-bc__body">
-            <div class="lp-bc__top"><span class="lp-bc__icon"><i data-lucide="network"></i></span><span class="lp-bc__tag">DET · Grupos e holdings</span></div>
-            <h3>DET Monitor para grupos</h3>
-            <p>Matriz, filiais e coligadas com vários CNPJs numa caixa única, com alerta por empresa e prioridade por prazo, sem depender de alguém lembrar de abrir cada portal.</p>
-            <span class="lp-bc__link">Conhecer a solução para grupos <i data-lucide="arrow-right"></i></span>
-          </div>
-        </a>
-
-        <a href="/crm" class="lp-bc lp-bc--w4" data-reveal="" data-reveal-delay="0" data-track="solution_click" data-track-ctx="crm">
+        <a href="/crm" class="lp-bc lp-bc--w4 home-hidden" data-reveal="" data-reveal-delay="0" data-track="solution_click" data-track-ctx="crm">
           <div class="lp-bc__viz" aria-hidden="true">
             <div class="sv-wa">
               <div class="sv-msg sv-msg--in sv-a" style="--d: .1s">Minha empresa recebeu uma ação trabalhista.</div>
@@ -1610,7 +1619,7 @@
           </div>
         </a>
 
-        <a href="/secretariajuridica" class="lp-bc lp-bc--w4" data-reveal="" data-reveal-delay="90" data-track="solution_click" data-track-ctx="secretaria_julia">
+        <a href="/secretariajuridica" class="lp-bc lp-bc--w4 home-hidden" data-reveal="" data-reveal-delay="90" data-track="solution_click" data-track-ctx="secretaria_julia">
           <div class="lp-bc__viz" aria-hidden="true">
             <div class="sv-inbox">
               <div class="sv-mail sv-a" style="--d: .1s"><span class="sv-src"><i data-lucide="mail"></i></span><span class="sv-mail__t">Intimação · audiência designada</span><b class="sv-tag sv-tag--hi">Urgente</b></div>
@@ -1627,7 +1636,7 @@
           </div>
         </a>
 
-        <a href="/trabalhistaempresarial" class="lp-bc lp-bc--w4" data-reveal="" data-reveal-delay="180" data-track="solution_click" data-track-ctx="trabalhista_empresarial">
+        <a href="/trabalhistaempresarial" class="lp-bc lp-bc--w4 home-hidden" data-reveal="" data-reveal-delay="180" data-track="solution_click" data-track-ctx="trabalhista_empresarial_old">
           <div class="lp-bc__viz" aria-hidden="true">
             <div class="sv-mass">
               <div class="sv-mass__flow"><span></span><span></span><span></span><span></span><span></span></div>
@@ -1644,7 +1653,7 @@
           </div>
         </a>
 
-        <a href="/newsletter" class="lp-bc lp-bc--w5" data-reveal="" data-reveal-delay="0" data-track="solution_click" data-track-ctx="newsletter">
+        <a href="/newsletter" class="lp-bc lp-bc--w5 home-hidden" data-reveal="" data-reveal-delay="0" data-track="solution_click" data-track-ctx="newsletter">
           <div class="lp-bc__viz" aria-hidden="true">
             <div class="sv-news">
               <div class="sv-news__h"><span><i data-lucide="mail"></i>Newsletter do mês</span><b class="sv-chip sv-chip--new">No seu tom</b></div>
@@ -1661,7 +1670,7 @@
           </div>
         </a>
 
-        <a href="/agentejuridico" class="lp-bc lp-bc--w7 lp-bc--dark" data-reveal="" data-reveal-delay="90" data-track="solution_click" data-track-ctx="agente_juridico">
+        <a href="/agentejuridico" class="lp-bc lp-bc--w7 lp-bc--dark home-hidden" data-reveal="" data-reveal-delay="90" data-track="solution_click" data-track-ctx="agente_juridico">
           <div class="lp-bc__viz" aria-hidden="true">
             <div class="sv-agent">
               <div class="sv-agent__rail"><span></span></div>
@@ -1684,7 +1693,7 @@
   </section>
 
   <!-- SECTION: funcionalidades (scrollytelling: janela fixa + 6 recursos) -->
-  <section class="lp-sec lp-sec--dark ft" id="funcionalidades" aria-labelledby="ft-title" data-active="1">
+  <section class="lp-sec lp-sec--dark ft home-hidden" id="funcionalidades" aria-labelledby="ft-title" data-active="1">
     <div class="ft__bg" aria-hidden="true"></div>
     <div class="lp-wrap">
       <div class="lp-pain__head">
@@ -1837,19 +1846,19 @@
   <section class="lp-sec sx sx--light" id="jurisprudencia" aria-labelledby="sx-juris-title">
     <div class="lp-wrap sx__grid">
       <div class="sx__copy" data-reveal="">
-        <h2 class="sx__title" id="sx-juris-title">Jurisprudência do TST e dos principais TRTs, <span class="lp-accent">com link para o inteiro teor.</span></h2>
-        <p class="sx__lead">O Juris8 pesquisa no TST e no TRT-12 e mostra a fonte, a data de coleta de cada referência e o acesso ao inteiro teor do tribunal. As datas desta demonstração são de coleta dos exemplos, não de atualização geral da base.</p>
+        <h2 class="sx__title" id="sx-juris-title">Jurisprudência do TST e dos TRTs, <span class="lp-accent">com link verificável para a fonte.</span></h2>
+        <p class="sx__lead">Consulte decisões trabalhistas com identificação do tribunal e acesso à fonte oficial. A demonstração abaixo mostra exemplos do TST e do TRT-12; as datas indicam a coleta desses exemplos. <a href="https://www.tst.jus.br/jurisprudencia" target="_blank" rel="noopener noreferrer">Pesquise no TST</a> ou acesse o <a href="https://portal.trt12.jus.br/" target="_blank" rel="noopener noreferrer">portal oficial do TRT-12</a>.</p>
         <ul class="sx__list">
-          <li><span class="sx__ic" aria-hidden="true"><i data-lucide="landmark"></i></span><p><strong>Tribunais desta demonstração:</strong> TST e TRT-12, com a data de coleta informada para cada exemplo.</p></li>
+          <li><span class="sx__ic" aria-hidden="true"><i data-lucide="landmark"></i></span><p><strong>TST e TRTs:</strong> encontre referências de diferentes tribunais regionais, além do Tribunal Superior do Trabalho.</p></li>
           <li><span class="sx__ic" aria-hidden="true"><i data-lucide="shield-check"></i></span><p><strong>Mecanismo anti-alucinação:</strong> toda jurisprudência retornada é validada contra a base real antes de ser exibida; o sistema rejeita automaticamente qualquer correspondência não verificável.</p></li>
           <li><span class="sx__ic" aria-hidden="true"><i data-lucide="git-compare"></i></span><p><strong>Correspondências difíceis:</strong> o Juris8 encontra precedentes análogos e casos de menor repercussão que escapam das buscas tradicionais por palavras-chave.</p></li>
-          <li><span class="sx__ic" aria-hidden="true"><i data-lucide="target"></i></span><p><strong>Contexto relevante:</strong> cada resultado mostra por que o caso é aplicável ao seu pedido: não apenas a ementa, mas o argumento central e sua aderência ao pedido.</p></li>
+          <li><span class="sx__ic" aria-hidden="true"><i data-lucide="target"></i></span><p><strong>Contexto relevante:</strong> veja o argumento central e avalie a aderência do precedente ao pedido do caso.</p></li>
         </ul>
-        <p class="sx__badge"><i data-lucide="badge-check" aria-hidden="true"></i>Cada resultado com link para o inteiro teor</p>
+        <p class="sx__badge"><i data-lucide="badge-check" aria-hidden="true"></i>Fonte identificada para conferência pelo advogado</p>
       </div>
       <div class="j8-cloudy sx__media" data-reveal="" data-reveal-delay="120">
         <span class="j8-cloud" aria-hidden="true"><span></span><span></span><span></span></span>
-        <div class="sx-app" role="img" aria-label="Prévia da pesquisa de jurisprudência do Juris8: acórdão do TST e acórdão do TRT-12 sobre responsabilidade subsidiária da Administração Pública e o Tema 1.118 do STF, com dados do processo e datas de coleta.">
+        <div class="sx-app" role="img" aria-label="Prévia da pesquisa de jurisprudência do Juris8: decisões do TST e TRT-12 com identificação de fonte e data de coleta.">
           <div class="sx-app__bar" aria-hidden="true"><span class="sx-app__dots"><i></i><i></i><i></i></span><span class="sx-app__mark"><img src="/assets/brand/juris8-mark-white.png" alt=""></span><b>Juris8 · Pesquisa de Jurisprudência</b></div>
           <div class="sx-app__body" aria-hidden="true">
             <div class="jr-search"><i data-lucide="search"></i><span>Responsabilidade subsidiária da Administração Pública, Tema 1.118 do STF</span><span class="jr-caret"></span></div>
@@ -1859,24 +1868,129 @@
               <div class="jr-res__meta"><span>7ª Turma</span><span>Rel. Claudio Mascarenhas Brandao</span><span>Julgamento: 18/12/2025</span></div>
               <p>Aplicando o Tema 1.118 do STF, afasta a responsabilidade subsidiária baseada apenas na inversão do ônus da prova. Exige comprovação de negligência ou nexo causal.</p>
               <div class="jr-tags"><span>Administração Pública</span><span>terceirização</span><span>ônus da prova</span></div>
-              <div class="jr-res__meta">Fonte: acervo Juris8, coletado em 19/09/2026. Inteiro teor no site do TST.</div>
+              <div class="jr-res__meta">Fonte oficial: TST · conferir inteiro teor</div>
             </article>
             <article class="jr-res sx-a" style="--d: .55s">
               <div class="jr-res__h"><span class="jr-court">TRT-12</span><b>ROT 0000324-02.2025.5.12.0051</b><span class="jr-ok"><i data-lucide="check"></i>Acervo Juris8</span></div>
               <div class="jr-res__meta"><span>1ª Turma</span><span>Rel. Roberto Luiz Guglielmetto</span><span>Julgamento: 15/04/2026</span></div>
               <p>Aplica o Tema 1.118 do STF e mantém decisão que não reconheceu a responsabilidade subsidiária, diante da ausência de prova de comportamento negligente ou omissão do Poder Público.</p>
               <div class="jr-tags"><span>Administração Pública</span><span>responsabilidade subsidiária</span><span>Tema 1.118/STF</span></div>
-              <div class="jr-res__meta">Fonte: acervo Juris8, coletado em 14/09/2026. Inteiro teor no site do TRT-12.</div>
+              <div class="jr-res__meta">Fonte oficial: TRT-12 · conferir inteiro teor</div>
             </article>
-            <div class="sx-app__foot"><span class="sx-live"></span>Cobertura da demonstração: TST e TRT-12. As datas indicam a coleta dos exemplos, não a atualização geral da base.</div>
+            <div class="sx-app__foot"><span class="sx-live"></span>TST e TRTs · fonte e data de coleta indicadas</div>
           </div>
         </div>
       </div>
     </div>
   </section>
 
+  <!-- SECTION: governanca de IA -->
+  <section class="lp-sec sx sx--light" id="governanca" aria-labelledby="sx-gov-title">
+    <div class="lp-wrap sx__grid">
+      <div class="sx__copy" data-reveal="">
+        <h2 class="sx__title" id="sx-gov-title">Governança do uso de IA, <span class="lp-accent">com revisão sob controle do advogado.</span></h2>
+        <p class="sx__lead">Acompanhe o uso da IA em cada caso e mantenha visibilidade sobre o material produzido e revisado pela equipe.</p>
+        <ul class="sx__list">
+          <li><span class="sx__ic" aria-hidden="true"><i data-lucide="user-round"></i></span><p><strong>Quem usou:</strong> identifique o responsável por iniciar cada atividade com IA.</p></li>
+          <li><span class="sx__ic" aria-hidden="true"><i data-lucide="file-output"></i></span><p><strong>O que foi gerado:</strong> consulte o conteúdo produzido e associado ao caso.</p></li>
+          <li><span class="sx__ic" aria-hidden="true"><i data-lucide="pencil"></i></span><p><strong>O que foi editado:</strong> acompanhe as alterações feitas pelo advogado.</p></li>
+          <li><span class="sx__ic" aria-hidden="true"><i data-lucide="user-check"></i></span><p><strong>Quem revisou:</strong> mantenha a revisão profissional como etapa do fluxo.</p></li>
+        </ul>
+      </div>
+      <div class="sx__media" data-reveal="" data-reveal-delay="120">
+        <div class="sx-app" role="img" aria-label="Registro de governança de IA mostrando usuário, conteúdo gerado, edição e revisão do advogado.">
+          <div class="sx-app__bar" aria-hidden="true"><span class="sx-app__dots"><i></i><i></i><i></i></span><span class="sx-app__mark"><img src="/assets/brand/juris8-mark-white.png" alt=""></span><b>Juris8 · Registro de atividade</b></div>
+          <div class="sx-app__body rd" aria-hidden="true">
+            <div class="rd-flow">
+              <span class="sx-cap"><i data-lucide="history"></i>Trilha de revisão · caso trabalhista</span>
+              <ol>
+                <li class="rd-step sx-a" style="--d: .2s"><span class="rd-dot"><i data-lucide="check"></i></span><div><b>Uso iniciado</b><small>Usuário e horário registrados</small></div></li>
+                <li class="rd-step sx-a" style="--d: .45s"><span class="rd-dot"><i data-lucide="check"></i></span><div><b>Subsídios gerados</b><small>Conteúdo relacionado ao caso</small></div></li>
+                <li class="rd-step sx-a" style="--d: .7s"><span class="rd-dot"><i data-lucide="check"></i></span><div><b>Edição do advogado</b><small>Alterações acompanhadas</small></div></li>
+                <li class="rd-step rd-step--next sx-a" style="--d: .95s"><span class="rd-dot"></span><div><b>Revisão profissional</b><small>Responsável identificado</small></div></li>
+              </ol>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION: portas por publico -->
+  <section class="lp-pain lp-sol" id="portas" aria-labelledby="portas-title">
+    <div class="lp-sol__glow" aria-hidden="true"></div>
+    <div class="lp-wrap">
+      <div class="lp-pain__head">
+        <h2 class="lp-pain__title lp-words" id="portas-title">Uma solução para cada lado <span class="lp-accent">do contencioso trabalhista.</span></h2>
+        <p class="lp-pain__lead" data-reveal="">Escolha a visão que corresponde à sua atuação.</p>
+      </div>
+      <div class="lp-bento">
+        <a href="#formulario" class="lp-bc lp-bc--w7 lp-bc--featured" data-reveal="" data-track="audience_click" data-track-ctx="office">
+          <div class="lp-bc__viz" aria-hidden="true">
+            <div class="sv-mass">
+              <div class="sv-mass__flow"><span></span><span></span><span></span><span></span><span></span></div>
+              <div class="sv-lane"><small>Carteira dos clientes</small><span class="sv-lane__bar"><i style="--w: 90%"></i></span></div>
+              <div class="sv-lane"><small>Subsídios por pedido</small><span class="sv-lane__bar"><i style="--w: 72%"></i></span></div>
+              <div class="sv-lane"><small>Dossiê para revisão</small><span class="sv-lane__bar"><i style="--w: 58%"></i></span></div>
+            </div>
+          </div>
+          <div class="lp-bc__body">
+            <div class="lp-bc__top"><span class="lp-bc__icon"><i data-lucide="scale"></i></span><span class="lp-bc__tag">Para escritórios</span></div>
+            <h3>Sou escritório</h3>
+            <p>Organize a carteira de clientes com contencioso trabalhista de massa. Receba subsídios por pedido e dossiês para o seu time revisar e conduzir a defesa.</p>
+            <span class="lp-bc__link">Falar com um especialista <i data-lucide="arrow-right"></i></span>
+          </div>
+        </a>
+        <a href="/trabalhistaempresarial" class="lp-bc lp-bc--w5" data-reveal="" data-reveal-delay="90" data-track="audience_click" data-track-ctx="company">
+          <div class="lp-bc__viz" aria-hidden="true">
+            <div class="sv-grp">
+              <div class="sv-grp__root sv-a"><i data-lucide="building-2"></i>Jurídico da empresa</div>
+              <div class="sv-grp__item sv-a" style="--d: .3s"><span>Documentos</span><small>Organizados por caso</small><b class="sv-pri">Dossiê</b></div>
+              <div class="sv-grp__item sv-a" style="--d: .5s"><span>RH</span><small>Fatos para confirmação</small><b class="sv-pri sv-pri--md">Subsídio</b></div>
+              <div class="sv-grp__item sv-a" style="--d: .7s"><span>Escritório</span><small>Conduz a defesa</small><b class="sv-pri">Revisão</b></div>
+            </div>
+          </div>
+          <div class="lp-bc__body">
+            <div class="lp-bc__top"><span class="lp-bc__icon"><i data-lucide="building-2"></i></span><span class="lp-bc__tag">Para empresas</span></div>
+            <h3>Sou empresa</h3>
+            <p>Organize documentos e subsídios do contencioso trabalhista e convide o escritório que atende a sua empresa para conduzir a defesa.</p>
+            <span class="lp-bc__link">Conhecer a visão para empresas <i data-lucide="arrow-right"></i></span>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION: guia DET -->
+  <section class="lp-pain lp-sol" id="guia-det" aria-labelledby="guia-det-title">
+    <div class="lp-sol__glow" aria-hidden="true"></div>
+    <div class="lp-wrap">
+      <div class="lp-pain__head">
+        <h2 class="lp-pain__title lp-words" id="guia-det-title">Comece pelo <span class="lp-accent">Guia DET.</span></h2>
+        <p class="lp-pain__lead" data-reveal="">Entenda o Domicílio Eletrônico Trabalhista, os prazos e o que fazer para acompanhar as comunicações da fiscalização.</p>
+      </div>
+      <div class="lp-bento">
+        <a href="/guia-det" class="lp-bc lp-bc--featured" style="grid-column: 1 / -1" data-reveal="" data-track="guide_click" data-track-ctx="det">
+          <div class="lp-bc__viz" aria-hidden="true">
+            <div class="sv-det">
+              <div class="sv-det__bar"><span class="sv-bell"><i data-lucide="book-open-check"></i></span>Guia prático · DET<span class="sv-live">Acesso livre</span></div>
+              <div class="sv-det__row"><span class="sv-co">Comunicações oficiais</span><span class="sv-kind">DET</span><span class="sv-chip sv-chip--new">Entenda</span></div>
+              <div class="sv-det__row"><span class="sv-co">Ciência e prazos</span><span class="sv-kind">Orientação</span><span class="sv-chip sv-chip--warn">Confira</span></div>
+            </div>
+          </div>
+          <div class="lp-bc__body">
+            <div class="lp-bc__top"><span class="lp-bc__icon"><i data-lucide="book-open"></i></span><span class="lp-bc__tag">Conteúdo de entrada</span></div>
+            <h3>O que o escritório precisa saber sobre o DET</h3>
+            <p>Veja como funciona o canal, como acompanhar notificações e onde consultar as regras aplicáveis.</p>
+            <span class="lp-bc__link">Acessar o Guia DET <i data-lucide="arrow-right"></i></span>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+
   <!-- SECTION: redacao -->
-  <section class="lp-sec lp-sec--dark sx sx--dark" id="redacao" aria-labelledby="sx-red-title">
+  <section class="lp-sec lp-sec--dark sx sx--dark home-hidden" id="redacao" aria-labelledby="sx-red-title">
     <div class="sx__bg" aria-hidden="true"></div>
     <div class="lp-wrap sx__grid sx__grid--rev">
       <div class="sx__copy" data-reveal="">
@@ -1921,7 +2035,7 @@
   </section>
 
   <!-- SECTION: revisao-contratual -->
-  <section class="lp-sec sx sx--light" id="revisao-contratual" aria-labelledby="sx-rev-title">
+  <section class="lp-sec sx sx--light home-hidden" id="revisao-contratual" aria-labelledby="sx-rev-title">
     <div class="lp-wrap sx__grid">
       <div class="sx__copy" data-reveal="">
         <h2 class="sx__title" id="sx-rev-title">Revisão contratual com <span class="lp-accent">guidelines do seu escritório.</span></h2>
@@ -1954,7 +2068,7 @@
   </section>
 
   <!-- SECTION: transcricao -->
-  <section class="lp-sec lp-sec--dark sx sx--dark" id="transcricao" aria-labelledby="sx-tr-title">
+  <section class="lp-sec lp-sec--dark sx sx--dark home-hidden" id="transcricao" aria-labelledby="sx-tr-title">
     <div class="sx__bg" aria-hidden="true"></div>
     <div class="lp-wrap sx__grid sx__grid--rev">
       <div class="sx__copy" data-reveal="">
@@ -1990,7 +2104,7 @@
   </section>
 
   <!-- SECTION: dje -->
-  <section class="lp-sec sx sx--light" id="dje" aria-labelledby="sx-dje-title">
+  <section class="lp-sec sx sx--light home-hidden" id="dje" aria-labelledby="sx-dje-title">
     <div class="lp-wrap sx__grid">
       <div class="sx__copy" data-reveal="">
         <h2 class="sx__title" id="sx-dje-title">Nunca perca um prazo <span class="lp-accent">por falta de monitoramento</span></h2>
@@ -2022,7 +2136,7 @@
   </section>
 
   <!-- SECTION: fluxo (todos os agentes em um caso; reprodução automática + clique por etapa) -->
-  <section class="lp-sec lp-sec--dark fl" id="fluxo" aria-labelledby="fl-title">
+  <section class="lp-sec lp-sec--dark fl home-hidden" id="fluxo" aria-labelledby="fl-title">
     <div class="fl__bg" aria-hidden="true"></div>
     <div class="lp-wrap">
       <div class="fl__head" data-reveal="">
@@ -2113,7 +2227,7 @@
   </section>
 
   <!-- SECTION: comparativo -->
-  <section class="lp-sec cmp" id="comparativo" aria-labelledby="cmp-title">
+  <section class="lp-sec cmp home-hidden" id="comparativo" aria-labelledby="cmp-title">
     <div class="lp-wrap">
       <div class="cmp__head" data-reveal="">
         <h2 class="cmp__title" id="cmp-title">Feito para o direito brasileiro.<br><span class="lp-accent">Não um ChatGPT genérico.</span></h2>
@@ -2145,7 +2259,7 @@
   </section>
 
   <!-- SECTION: ganhos (carrossel infinito; a 2ª cópia dos cards é só visual) -->
-  <section class="lp-sec lp-sec--dark gn" id="ganhos" aria-labelledby="gn-title">
+  <section class="lp-sec lp-sec--dark gn home-hidden" id="ganhos" aria-labelledby="gn-title">
     <div class="gn__bg" aria-hidden="true"></div>
     <div class="lp-wrap">
       <div class="gn__head" data-reveal="">
@@ -2178,7 +2292,7 @@
   </section>
 
   <!-- SECTION: planos -->
-  <section class="lp-sec pl" id="planos" aria-labelledby="pl-title">
+  <section class="lp-sec pl home-hidden" id="planos" aria-labelledby="pl-title">
     <div class="lp-wrap">
       <div class="pl__head" data-reveal="">
         <h2 class="pl__title" id="pl-title">Simples, transparente, <span class="lp-accent">sem surpresas.</span></h2>
@@ -2239,13 +2353,13 @@
     <div class="lp-wrap fq__grid">
       <div class="fq__head" data-reveal="">
         <h2 class="fq__title" id="fq-title">Dúvidas <span class="lp-accent">frequentes.</span></h2>
-        <p class="fq__lead">Tudo o que você precisa saber antes de começar o seu teste.</p>
+        <p class="fq__lead">Respostas sobre subsídios, jurisprudência e proteção dos dados do seu escritório.</p>
         <span class="fq__deco" aria-hidden="true"><i data-lucide="message-circle-question"></i></span>
       </div>
       <div class="fq-list">
           <div class="fq-item is-open" data-reveal="" data-reveal-delay="0">
             <h3 class="fq-q"><button type="button" class="fq-btn" id="fq-b1" aria-expanded="true" aria-controls="fq-p1"><span class="fq-n" aria-hidden="true">01</span><span class="fq-t">O que diferencia o Juris8 do ChatGPT para a pesquisa de jurisprudência?</span><span class="fq-ic" aria-hidden="true"><i data-lucide="plus"></i></span></button></h3>
-            <div class="fq-panel" id="fq-p1" role="region" aria-labelledby="fq-b1"><div class="fq-inner"><p>O Juris8 foi desenvolvido especificamente para o direito brasileiro, com acesso à jurisprudência real do TST e do TRT-12 e capacidade de identificar precedentes com contexto relevante para o seu caso. O ChatGPT é um modelo genérico, sem acesso a tribunais atualizados.</p></div></div>
+            <div class="fq-panel" id="fq-p1" role="region" aria-labelledby="fq-b1"><div class="fq-inner"><p>O Juris8 permite pesquisar jurisprudência do TST e dos TRTs e consultar a fonte indicada em cada resultado. O advogado confere a referência e avalia sua pertinência para o caso.</p></div></div>
           </div>
           <div class="fq-item" data-reveal="" data-reveal-delay="70">
             <h3 class="fq-q"><button type="button" class="fq-btn" id="fq-b2" aria-expanded="false" aria-controls="fq-p2"><span class="fq-n" aria-hidden="true">02</span><span class="fq-t">Como o Juris8 considera a forma de trabalho do meu escritório?</span><span class="fq-ic" aria-hidden="true"><i data-lucide="plus"></i></span></button></h3>
@@ -2264,8 +2378,12 @@
             <div class="fq-panel" id="fq-p5" role="region" aria-labelledby="fq-b5"><div class="fq-inner"><p>Não. O Juris8 reúne subsídios, pesquisa jurisprudência e organiza informações para análise. O advogado elabora e assina a peça, mantendo a estratégia, a autoria e a responsabilidade.</p></div></div>
           </div>
           <div class="fq-item" data-reveal="" data-reveal-delay="140">
-            <h3 class="fq-q"><button type="button" class="fq-btn" id="fq-b6" aria-expanded="false" aria-controls="fq-p6"><span class="fq-n" aria-hidden="true">06</span><span class="fq-t">As minhas informações poderão ser utilizadas pelo Juris8?</span><span class="fq-ic" aria-hidden="true"><i data-lucide="plus"></i></span></button></h3>
-            <div class="fq-panel" id="fq-p6" role="region" aria-labelledby="fq-b6"><div class="fq-inner"><p>Seus documentos e dados não são usados para treinar modelos de IA de terceiros. Tudo fica no seu ambiente, com criptografia em trânsito e em repouso. Seus dados são seus, sempre.</p></div></div>
+            <h3 class="fq-q"><button type="button" class="fq-btn" id="fq-b6" aria-expanded="false" aria-controls="fq-p6"><span class="fq-n" aria-hidden="true">06</span><span class="fq-t">Como os dados do meu escritório são protegidos?</span><span class="fq-ic" aria-hidden="true"><i data-lucide="plus"></i></span></button></h3>
+            <div class="fq-panel" id="fq-p6" role="region" aria-labelledby="fq-b6"><div class="fq-inner"><p>Seus documentos não são usados para treinar modelos de terceiros. A proteção inclui criptografia em trânsito e em repouso e dados segregados por cliente.</p></div></div>
+          </div>
+          <div class="fq-item" data-reveal="" data-reveal-delay="0">
+            <h3 class="fq-q"><button type="button" class="fq-btn" id="fq-b7" aria-expanded="false" aria-controls="fq-p7"><span class="fq-n" aria-hidden="true">07</span><span class="fq-t">Como conecto meus dados?</span><span class="fq-ic" aria-hidden="true"><i data-lucide="plus"></i></span></button></h3>
+            <div class="fq-panel" id="fq-p7" role="region" aria-labelledby="fq-b7"><div class="fq-inner"><p>Na conversa com nossa equipe, mapeamos os sistemas e documentos do seu escritório e orientamos a forma de integração adequada para o seu fluxo.</p></div></div>
           </div>
       </div>
     </div>
@@ -2277,9 +2395,9 @@
       <div class="ct-panel">
         <div class="ct-panel__bg" aria-hidden="true"></div>
         <div class="ct-copy" data-reveal="">
-          <h2 class="ct-title" id="ct-title">Pronto para acelerar a prática jurídica <span class="lp-accent">com a IA Juris8.</span></h2>
-          <p>Peças, jurisprudência, análise de documentos, transcrição e soluções que conversam entre si, do DET e do Domicílio Judicial Eletrônico ao WhatsApp.</p>
-          <p>Devolva o tempo do escritório ao que só o advogado pode fazer: estratégia, cliente e decisão.</p>
+          <h2 class="ct-title" id="ct-title">Conheça a esteira de subsídios <span class="lp-accent">para o contencioso trabalhista de massa.</span></h2>
+          <p>Veja como organizar dossiês por empregado, acompanhar o DET e o Domicílio Judicial Eletrônico e consultar jurisprudência do TST e dos TRTs.</p>
+          <p>Conte à nossa equipe sobre o porte do seu escritório e sua atuação em contencioso trabalhista de massa.</p>
           <ul class="ct-seals">
             <li><i data-lucide="check" aria-hidden="true"></i>Demonstração gratuita</li>
             <li><i data-lucide="lock" aria-hidden="true"></i>Sem compromisso</li>
@@ -2291,7 +2409,7 @@
           <div id="lp-form-view">
             <span class="ct-kicker">Contato comercial</span>
             <h3 class="ct-card__t">Falar com um especialista</h3>
-            <p class="ct-card__d">Preencha os dados abaixo. Nossa equipe entrará em contato para apresentar o Juris8 e entender o momento do seu escritório.</p>
+            <p class="ct-card__d">Preencha os dados para conversar com nossa equipe sobre o contencioso trabalhista do seu escritório.</p>
             <form class="ct-form" id="lp-form" novalidate>
               <div class="lp-field" id="f-nome">
                 <label for="c-nome">Nome completo</label>
@@ -2317,13 +2435,21 @@
                 <label for="c-porte">Qual o porte do seu escritório?</label>
                 <select id="c-porte" name="porte" required aria-describedby="e-porte">
                   <option value="">Selecione...</option>
-                  <option value="1-5">1 a 5 advogados</option>
-                  <option value="6-15">6 a 15 advogados</option>
                   <option value="16-30">16 a 30 advogados</option>
                   <option value="31-50">31 a 50 advogados</option>
-                  <option value="50+">Mais de 50 advogados</option>
+                  <option value="50+">mais de 50 advogados</option>
                 </select>
                 <span class="lp-field__error" id="e-porte">Selecione o porte do escritório.</span>
+              </div>
+              <div class="lp-field ct-full" id="f-contencioso">
+                <label for="c-contencioso">O escritório atua em contencioso trabalhista de massa?</label>
+                <select id="c-contencioso" name="contencioso" required aria-describedby="e-contencioso">
+                  <option value="">Selecione...</option>
+                  <option value="sim">Sim</option>
+                  <option value="nao">Não</option>
+                  <option value="em-expansao">Estamos estruturando essa atuação</option>
+                </select>
+                <span class="lp-field__error" id="e-contencioso">Selecione uma opção.</span>
               </div>
               <div class="lp-field ct-full" id="f-msg">
                 <label for="c-msg">Mensagem <span class="ct-opt">(opcional)</span></label>
@@ -2345,7 +2471,7 @@
           <div class="ct-success" id="lp-success" role="region" aria-live="polite" aria-label="Contato enviado">
             <div class="ct-success__ic" aria-hidden="true"><i data-lucide="check"></i></div>
             <h3 id="lp-success-title" tabindex="-1">Recebemos os seus dados!</h3>
-            <p>Nossa equipe entrará em contato para apresentar o Juris8 e entender o momento do seu escritório.</p>
+            <p>Nossa equipe entrará em contato para conversar sobre a atuação do seu escritório em contencioso trabalhista.</p>
             <button type="button" class="ct-again" id="lp-again">Enviar outra mensagem</button>
           </div>
         </div>
@@ -2362,7 +2488,7 @@
       <div class="jf__top">
         <div class="jf__brand">
           <a href="#topo" class="jf__logo" aria-label="Juris8, voltar ao topo"><img src="/assets/brand/logo-juris8-light.png" alt="Juris 8" width="125" height="32"></a>
-          <p class="jf__tag">IA jurídica desenvolvida por advogados, para advogados: pesquisa de jurisprudência, análise de documentos, transcrição e apoio à elaboração de peças.</p>
+          <p class="jf__tag">Subsídios para o contencioso trabalhista de massa, monitoramento de canais e jurisprudência do TST e dos TRTs.</p>
           <div class="jf__seals">
             <span><i data-lucide="lock" aria-hidden="true"></i>LGPD</span>
             <span><i data-lucide="sparkles" aria-hidden="true"></i>IA jurídica</span>
@@ -2379,20 +2505,15 @@
         <nav class="jf__links" aria-label="Rodapé">
           <div class="jf__col">
             <h2 class="jf__h">Soluções</h2>
+            <a href="/trabalhistaempresarial">Contencioso trabalhista empresarial</a>
             <a href="/det">DET Monitor para escritórios</a>
-            <a href="/det/det-monitor-grupos.html">DET Monitor para grupos</a>
-            <a href="/crm">CRM com IA jurídica</a>
-            <a href="/secretariajuridica">Secretaria jurídica</a>
-            <a href="/trabalhistaempresarial">Trabalhista empresarial</a>
-            <a href="/newsletter">Newsletter mensal</a>
-            <a href="/agentejuridico">Agente Jurídico</a>
+            <a href="/guia-det">Guia DET</a>
           </div>
           <div class="jf__col">
             <h2 class="jf__h">Plataforma</h2>
-            <a href="#redacao">Apoio à elaboração de peças</a>
             <a href="#jurisprudencia">Pesquisa de jurisprudência</a>
-            <a href="#revisao-contratual">Análise de documentos</a>
-            <a href="#transcricao">Transcrição de audiências</a>
+            <a href="#governanca">Governança do uso de IA</a>
+            <a href="#portas">Sou escritório / empresa</a>
           </div>
           <div class="jf__col">
             <h2 class="jf__h">Contato</h2>
@@ -2431,7 +2552,8 @@ const PAGE_CONFIG = {
 
 const FORM_FIELDS = [
   ['f-nome', 'c-nome'], ['f-email', 'c-email'], ['f-tel', 'c-tel'],
-  ['f-escritorio', 'c-escritorio'], ['f-porte', 'c-porte'], ['f-consent', 'c-consent']
+  ['f-escritorio', 'c-escritorio'], ['f-porte', 'c-porte'],
+  ['f-contencioso', 'c-contencioso'], ['f-consent', 'c-consent']
 ];
 const UTM_KEYS = ['utm_source', 'utm_medium', 'utm_campaign', 'utm_content', 'utm_term'];
 
@@ -2722,6 +2844,7 @@ class Component extends DCLogic {
         telefone: get('c-tel'),
         escritorio: get('c-escritorio'),
         porte: porte.selectedIndex > 0 ? porte.options[porte.selectedIndex].text : '',
+        contencioso: document.getElementById('c-contencioso').selectedOptions[0].text,
         mensagem: get('c-msg'),
         segment: 'juris8',
         lead_source: 'lp_juris8',
@@ -2770,6 +2893,7 @@ class Component extends DCLogic {
   _toContactApi(p) {
     const lines = [
       'Porte do escritório: ' + (p.porte || 'não informado'),
+      'Atua em contencioso trabalhista de massa: ' + (p.contencioso || 'não informado'),
       'Mensagem: ' + (p.mensagem || 'não informada'),
       '',
       'Segmento: ' + p.segment,
