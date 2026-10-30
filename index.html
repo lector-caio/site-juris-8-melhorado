@@ -120,7 +120,7 @@
   .lp-wa:hover { color: #fff; }
   /* ── Layout ── */
   .lp-wrap { max-width: 1240px; margin: 0 auto; padding: 0 28px; position: relative; z-index: 1; }
-  .lp-sec { padding: 100px 0; position: relative; overflow: hidden; }
+  .lp-sec { padding: 64px 0; position: relative; overflow: hidden; }
   .lp-sec--dark { background: var(--ink-950); color: rgba(255,255,255,.9); }
   /* ── Buttons ── */
   .lp-cta {
@@ -230,7 +230,7 @@
      (ou em telas muito altas) o JS encolhe o card para não passar da borda direita. */
   .lp-hero__scale { transform: scale(var(--card-s, var(--stage-s, 1))); transform-origin: 0 0; }
   /* ── Dor: título que acende ao rolar + bento com micro-animações ── */
-  .lp-pain { position: relative; overflow: hidden; background: var(--surface-page); padding: 120px 0 110px; }
+  .lp-pain { position: relative; overflow: hidden; background: var(--surface-page); padding: 80px 0 72px; }
   .lp-pain::before {
     content: ''; position: absolute; inset: 0; pointer-events: none;
     background-image: radial-gradient(rgba(23,11,69,.08) 1px, transparent 1px); background-size: 22px 22px;
@@ -349,7 +349,7 @@
   }
   @media (max-width: 640px) {
     .lp-wrap { padding: 0 20px; }
-    .lp-sec { padding: 72px 0; }
+    .lp-sec { padding: 52px 0; }
     .lp-hero__inner { padding: 0 20px; }
     .lp-hero__ctas { align-items: stretch; }
     .lp-hero__ctas a { width: 100%; }
@@ -368,7 +368,7 @@
     .lp-bc, .lp-bc--w7, .lp-bc--w5 { grid-column: span 12; }
   }
   @media (max-width: 640px) {
-    .lp-pain { padding: 80px 0 72px; }
+    .lp-pain { padding: 64px 0 56px; }
     .lp-bc__viz { height: 184px; padding: 16px; }
     .lp-bc__body { padding: 20px 22px 24px; }
   }
